@@ -25,7 +25,11 @@ npm run build          # static site in dist/ (deploy to Vercel/Netlify)
 npm run build:preview  # one self-contained HTML file in dist-preview/
 ```
 
-## Deploy (GitHub + Vercel)
+## Deploy
+
+**GitHub Pages (already set up):** every push to `main` builds the app and publishes it to the `gh-pages` branch via `.github/workflows/deploy.yml`. Live at `https://<user>.github.io/living-room-app/`.
+
+**Or Vercel:**
 
 ```bash
 git remote add origin https://github.com/<you>/living-room-app.git
