@@ -1,5 +1,6 @@
 import type { Menu, MenuItem } from '@/core/services/types';
 import source from './menu.source.json';
+import remotePhotos from './photos.json'; // { "<item-id>": "https://…" } — the café's own photo links
 
 /**
  * The Living Room SDSU / College menu, sourced from the café's public Toast ordering
@@ -39,7 +40,7 @@ const items: MenuItem[] = src.items.map((i) => {
     modifierGroups: groupsFor(i.cat, i.flags),
     art: i.flags.includes('a') ? 'sparkles' : c.art,
     tint: i.flags.includes('a') ? '#2B1D16' : c.tint,
-    image: photoFor(i.id),
+    image: photoFor(i.id) ?? (remotePhotos as Record<string, string>)[i.id],
   };
 });
 

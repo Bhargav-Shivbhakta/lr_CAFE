@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode, type ButtonHTMLAttributes } from 'react';
+import { useEffect, useState, type ReactNode, type ButtonHTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import { create } from 'zustand';
@@ -37,7 +37,9 @@ const ART: Record<string, LucideIcon> = { cup: CupSoda, coffee: Coffee, leaf: Le
 export function ItemArt({ image, art = 'coffee', tint = '#F4F1EC', size = 72, height, radius, iconSize, alt = '' }: { image?: string; art?: string; tint?: string; size?: number | string; height?: number; radius?: number; iconSize?: number; alt?: string }) {
   const r = radius ?? (typeof size === 'number' ? size / 2 : 16);
   const style = { width: size, height: height ?? size, borderRadius: r, flexShrink: 0 } as const;
-  if (image) return <img src={image} alt={alt} loading="lazy" style={{ ...style, objectFit: 'cover', background: tint }} />;
+  const [failed, setFailed] = useState(false);
+  // If a photo link ever breaks, fall back to the illustration instead of a broken image.
+  if (image && !failed) return <img src={image} alt={alt} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} style={{ ...style, objectFit: 'cover', background: tint }} />;
   const Icon = ART[art] ?? Coffee;
   const dark = tint === '#2B1D16';
   const px = iconSize ?? (typeof size === 'number' ? Math.round(size * 0.42) : 40);
