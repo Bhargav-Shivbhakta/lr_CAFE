@@ -3,12 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ChevronLeft, Heart, Minus, Plus, Search } from 'lucide-react';
 import { useMenu } from '@/core/hooks';
 import { money, pointsFor, useApp } from '@/core/store/app';
-import { categoryArt } from '@/data/menu';
+import { categoryArt, SECTIONS } from '@/data/menu';
 import type { Menu, MenuItem } from '@/core/services/types';
 import { Button, ItemArt, Screen, Tag, toast } from '@/core/ui';
 
-const SECTIONS = [
-  { id: 'Coffee & drinks', label: 'Drinks' }, { id: 'Food', label: 'Food' }, { id: 'Sweets', label: 'Sweets' }] as const;
 
 function ItemRow({ item, onClick }: { item: MenuItem; onClick: () => void }) {
   return (
@@ -58,9 +56,9 @@ export function MenuHome() {
           <div>{results.map((i) => <ItemRow key={i.id} item={i} onClick={() => nav(`/order/item/${i.id}`)} />)}
             {results.length === 0 && <p className="muted">Nothing matches “{q}”. Try “latte”, “bagel” or “burger”.</p>}</div>
         ) : SECTIONS.map((s) => (
-          <section key={s.id}>
-            <h2 className="section-title">{s.label}</h2>
-            {menu.categories.filter((c) => c.section === s.id).map((c) => (
+          <section key={s}>
+            <h2 className="section-title">{s}</h2>
+            {menu.categories.filter((c) => c.section === s).map((c) => (
               <button key={c.id} className="cat-row" onClick={() => nav(`/order/c/${c.id}`)}>
                 <ItemArt art={categoryArt[c.id]?.art} tint={categoryArt[c.id]?.tint} size={64} alt="" />
                 <span style={{ flex: 1 }}>{c.name}</span>

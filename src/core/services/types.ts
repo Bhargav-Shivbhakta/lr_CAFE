@@ -32,7 +32,7 @@ export interface MenuItem {
   tint?: string;               // placeholder art background
 }
 
-export interface MenuCategory { id: string; name: string; section: 'Coffee & drinks' | 'Food' | 'Sweets' }
+export interface MenuCategory { id: string; name: string; section: string }
 export interface Menu { categories: MenuCategory[]; items: MenuItem[]; modifierGroups: ModifierGroup[] }
 
 export interface CartLine {

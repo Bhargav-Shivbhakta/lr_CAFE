@@ -1,0 +1,2097 @@
+{
+ "categories": [
+  {
+   "id": "light-breakfast",
+   "name": "Light breakfast",
+   "section": "Breakfast",
+   "art": "salad",
+   "tint": "#EAE3C2"
+  },
+  {
+   "id": "croissants",
+   "name": "Croissants",
+   "section": "Breakfast",
+   "art": "croissant",
+   "tint": "#F2E1B9"
+  },
+  {
+   "id": "burritos",
+   "name": "Burritos",
+   "section": "Breakfast",
+   "art": "sandwich",
+   "tint": "#F0D6B2"
+  },
+  {
+   "id": "bagels",
+   "name": "Bagels",
+   "section": "Breakfast",
+   "art": "donut",
+   "tint": "#EED9B6"
+  },
+  {
+   "id": "sweets-crepes",
+   "name": "Breakfast sweets & crepes",
+   "section": "Breakfast",
+   "art": "cake",
+   "tint": "#F3DCC0"
+  },
+  {
+   "id": "omelettes",
+   "name": "Omelettes",
+   "section": "Breakfast",
+   "art": "egg",
+   "tint": "#F6E6B4"
+  },
+  {
+   "id": "benedicts",
+   "name": "Benedicts",
+   "section": "Breakfast",
+   "art": "egg",
+   "tint": "#F3DFB0"
+  },
+  {
+   "id": "skillets",
+   "name": "Skillets",
+   "section": "Breakfast",
+   "art": "soup",
+   "tint": "#EFCDB0"
+  },
+  {
+   "id": "breakfast-sides",
+   "name": "Breakfast sides",
+   "section": "Breakfast",
+   "art": "egg",
+   "tint": "#F1E4C8"
+  },
+  {
+   "id": "light-bites",
+   "name": "Light bites",
+   "section": "Lunch & dinner",
+   "art": "salad",
+   "tint": "#EAE0BE"
+  },
+  {
+   "id": "pizza",
+   "name": "7\" personal pizza",
+   "section": "Lunch & dinner",
+   "art": "soup",
+   "tint": "#EDC3AE"
+  },
+  {
+   "id": "soups-salads",
+   "name": "Soups & salads",
+   "section": "Lunch & dinner",
+   "art": "salad",
+   "tint": "#DCE6C8"
+  },
+  {
+   "id": "burgers",
+   "name": "Burgers",
+   "section": "Lunch & dinner",
+   "art": "sandwich",
+   "tint": "#EBCBAE"
+  },
+  {
+   "id": "wraps",
+   "name": "Wraps",
+   "section": "Lunch & dinner",
+   "art": "sandwich",
+   "tint": "#E8D6B6"
+  },
+  {
+   "id": "paninis",
+   "name": "Paninis",
+   "section": "Lunch & dinner",
+   "art": "sandwich",
+   "tint": "#E9D2B3"
+  },
+  {
+   "id": "traditional-sandwiches",
+   "name": "Traditional sandwiches",
+   "section": "Lunch & dinner",
+   "art": "sandwich",
+   "tint": "#E6D3B8"
+  },
+  {
+   "id": "signature-sandwiches",
+   "name": "Signature sandwiches",
+   "section": "Lunch & dinner",
+   "art": "sandwich",
+   "tint": "#E9CBAD"
+  },
+  {
+   "id": "pastas",
+   "name": "Pastas & entrées",
+   "section": "Lunch & dinner",
+   "art": "soup",
+   "tint": "#EDC1AA"
+  },
+  {
+   "id": "coffee-espresso",
+   "name": "Coffee & espresso",
+   "section": "Coffee & drinks",
+   "art": "coffee",
+   "tint": "#D9C2A7"
+  },
+  {
+   "id": "teas",
+   "name": "Teas (hot & iced)",
+   "section": "Coffee & drinks",
+   "art": "cup",
+   "tint": "#E4DCC4"
+  },
+  {
+   "id": "fall",
+   "name": "Fall drinks",
+   "section": "Coffee & drinks",
+   "art": "coffee",
+   "tint": "#EBC6A0"
+  },
+  {
+   "id": "lattes",
+   "name": "Lattes",
+   "section": "Coffee & drinks",
+   "art": "coffee",
+   "tint": "#E8D5BF"
+  },
+  {
+   "id": "mochas",
+   "name": "Mochas",
+   "section": "Coffee & drinks",
+   "art": "coffee",
+   "tint": "#D7BFA4"
+  },
+  {
+   "id": "matcha",
+   "name": "Ceremonial matcha",
+   "section": "Coffee & drinks",
+   "art": "leaf",
+   "tint": "#DCE6CC"
+  },
+  {
+   "id": "frappes",
+   "name": "Frappes",
+   "section": "Coffee & drinks",
+   "art": "cup",
+   "tint": "#EADCCB"
+  },
+  {
+   "id": "refreshers",
+   "name": "Refreshers & fresh juices",
+   "section": "Coffee & drinks",
+   "art": "glass",
+   "tint": "#F4D3D6"
+  },
+  {
+   "id": "smoothies",
+   "name": "Smoothies (20 oz)",
+   "section": "Coffee & drinks",
+   "art": "glass",
+   "tint": "#F2D0C8"
+  },
+  {
+   "id": "non-coffee",
+   "name": "Non-coffee drinks",
+   "section": "Coffee & drinks",
+   "art": "cup",
+   "tint": "#EEDDD0"
+  },
+  {
+   "id": "pastries",
+   "name": "Pastries",
+   "section": "Pastries & dessert",
+   "art": "cake",
+   "tint": "#F1D9C6"
+  }
+ ],
+ "items": [
+  {
+   "id": "acai-bowl",
+   "cat": "light-breakfast",
+   "name": "Acai bowl",
+   "desc": "Homemade granola, strawberry and bananas with toasted coconut.",
+   "price": 12.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "granola",
+   "cat": "light-breakfast",
+   "name": "Homemade granola",
+   "desc": "Our homemade granola over Greek yogurt, topped with fresh seasonal fruit.",
+   "price": 10.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "fruit-bowl",
+   "cat": "light-breakfast",
+   "name": "Fresh fruit bowl",
+   "desc": "Seasonal fruit, cut fresh.",
+   "price": 10.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "cottage-avo-toast",
+   "cat": "light-breakfast",
+   "name": "Cottage avocado toast",
+   "desc": "House vegan multigrain, cottage cheese, mashed avocado, arugula and cherry tomato drizzled in balsamic.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "quiche",
+   "cat": "light-breakfast",
+   "name": "Quiche Lorraine",
+   "desc": "House favorite. Savory French pie with bacon, eggs, cream and a buttery crust.",
+   "price": 13.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "turkey-croissant",
+   "cat": "light-breakfast",
+   "name": "Turkey & cheese croissant",
+   "desc": "Turkey, onions, bell peppers and cheese.",
+   "price": 12.0,
+   "flags": []
+  },
+  {
+   "id": "breakfast-croissant",
+   "cat": "croissants",
+   "name": "Breakfast croissant",
+   "desc": "Soft, flaky butter croissant, folded eggs, choice of protein and cheese.",
+   "price": 12.0,
+   "flags": [
+    "p",
+    "eggs"
+   ]
+  },
+  {
+   "id": "sdsu-croissant",
+   "cat": "croissants",
+   "name": "SDSU croissant",
+   "desc": "Flaky butter croissant, avocado, choice of protein, cheese and folded eggs.",
+   "price": 13.0,
+   "flags": [
+    "eggs"
+   ]
+  },
+  {
+   "id": "sob-croissant",
+   "cat": "croissants",
+   "name": "SOB croissant",
+   "desc": "Buttery croissant, avocado, chorizo, pepper jack and folded eggs.",
+   "price": 13.0,
+   "flags": []
+  },
+  {
+   "id": "aztec-melt",
+   "cat": "croissants",
+   "name": "The Aztec Melt",
+   "desc": "Grilled sourdough, eggs, pepper jack, bacon, avocado and smoky chipotle mayo.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "breakfast-burrito",
+   "cat": "burritos",
+   "name": "Breakfast burrito",
+   "desc": "Tomato tortilla, eggs, choice of protein and cheese, avocado and diced potato.",
+   "price": 13.0,
+   "flags": [
+    "p",
+    "eggs"
+   ]
+  },
+  {
+   "id": "hashbrown-burrito",
+   "cat": "burritos",
+   "name": "Hashbrown burrito",
+   "desc": "Eggs, choice of protein, cheddar and hashbrowns.",
+   "price": 12.0,
+   "flags": [
+    "protein"
+   ]
+  },
+  {
+   "id": "chicken-sausage-burrito",
+   "cat": "burritos",
+   "name": "Chicken sausage burrito",
+   "desc": "Chicken sausage, eggs, pepper jack, avocado, potato and chipotle mayo in a tomato tortilla.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "cilantro-burrito",
+   "cat": "burritos",
+   "name": "Cilantro burrito",
+   "desc": "Sweet and spicy cilantro dressing, chorizo, hashbrown, eggs, pepper jack and avocado in a tomato tortilla.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "veggie-burrito",
+   "cat": "burritos",
+   "name": "Veggie breakfast burrito",
+   "desc": "Scrambled eggs, veggie patties, cheese of your choice, diced potatoes and mashed avocado.",
+   "price": 13.0,
+   "flags": [
+    "v",
+    "cheese"
+   ]
+  },
+  {
+   "id": "bagel-cc",
+   "cat": "bagels",
+   "name": "Bagel & cream cheese",
+   "desc": "Your choice of bagel with cream cheese.",
+   "price": 4.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "sunrise-bagel",
+   "cat": "bagels",
+   "name": "Sunrise bagel",
+   "desc": "Eggs, choice of ham, bacon or sausage, and cheese.",
+   "price": 12.0,
+   "flags": [
+    "eggs"
+   ]
+  },
+  {
+   "id": "hot-honey-bagel",
+   "cat": "bagels",
+   "name": "Hot honey bagel",
+   "desc": "Jalapeño cheddar bagel, whipped cream cheese, eggs, pepper jack and bacon, topped with Mike's Hot Honey.",
+   "price": 13.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "ultimate-veggie-bagel",
+   "cat": "bagels",
+   "name": "Ultimate veggie bagel",
+   "desc": "Cream cheese, mashed avocado, arugula, tomatoes, onions and cucumber.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "smoked-salmon-bagel",
+   "cat": "bagels",
+   "name": "Smoked salmon bagel",
+   "desc": "Cream cheese, lettuce, tomato, onions, cucumbers and capers.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "club-bagel",
+   "cat": "bagels",
+   "name": "Club bagel",
+   "desc": "Chicken, bacon, avocado, tomato, lettuce and cream cheese.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "lr-special",
+   "cat": "sweets-crepes",
+   "name": "Living Room Special",
+   "desc": "Choice of 2 pancakes, French toast or waffle, with 2 eggs any style, potato or hashbrown, and sausage or bacon.",
+   "price": 17.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "pancakes",
+   "cat": "sweets-crepes",
+   "name": "Pancakes",
+   "desc": "A fluffy stack with butter and syrup.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "french-toast",
+   "cat": "sweets-crepes",
+   "name": "French toast",
+   "desc": "House favorite. Traditional or cinnamon roll.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "waffle",
+   "cat": "sweets-crepes",
+   "name": "Belgian waffle",
+   "desc": "Homemade Belgian waffle served with strawberries and bananas.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "nutella-crepe",
+   "cat": "sweets-crepes",
+   "name": "Nutella® crepe",
+   "desc": "Homemade crepe with Nutella, topped with strawberry and banana.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "veggie-crepe",
+   "cat": "sweets-crepes",
+   "name": "Veggie breakfast crepe",
+   "desc": "Spinach, onion, mushroom, eggs, mozzarella and hollandaise.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "ca-omelette",
+   "cat": "omelettes",
+   "name": "CA omelette",
+   "desc": "House favorite. Tomatoes, bell peppers, onions, cheddar and avocado.",
+   "price": 17.0,
+   "flags": [
+    "v",
+    "p"
+   ]
+  },
+  {
+   "id": "med-omelette",
+   "cat": "omelettes",
+   "name": "Mediterranean omelette",
+   "desc": "Spinach, olives, tomato and feta, with potato or hashbrown, house vegan multigrain and fruit.",
+   "price": 17.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "denver-omelette",
+   "cat": "omelettes",
+   "name": "Denver omelette",
+   "desc": "Ham, bell peppers, onions and Swiss.",
+   "price": 17.0,
+   "flags": []
+  },
+  {
+   "id": "works-omelette",
+   "cat": "omelettes",
+   "name": "Works omelette",
+   "desc": "Bacon, ham, tomatoes, bell peppers, onions and provolone.",
+   "price": 17.0,
+   "flags": []
+  },
+  {
+   "id": "ranchero-omelette",
+   "cat": "omelettes",
+   "name": "Ranchero omelette",
+   "desc": "Bacon, mushrooms, jalapeños, onions, spicy ranchero sauce and pepper jack.",
+   "price": 17.0,
+   "flags": []
+  },
+  {
+   "id": "byo-omelette",
+   "cat": "omelettes",
+   "name": "Build your own omelette",
+   "desc": "Choice of 4 toppings and cheese.",
+   "price": 19.0,
+   "flags": []
+  },
+  {
+   "id": "two-eggs",
+   "cat": "omelettes",
+   "name": "2 eggs any style",
+   "desc": "House potatoes or hashbrowns and bread.",
+   "price": 13.0,
+   "flags": []
+  },
+  {
+   "id": "classic-benedict",
+   "cat": "benedicts",
+   "name": "Classic eggs Benedict",
+   "desc": "English muffin, Canadian bacon and house hollandaise, with potato or hashbrown.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "lox-benedict",
+   "cat": "benedicts",
+   "name": "Lox Benedict",
+   "desc": "Cream cheese, smoked salmon, hollandaise, pickled red onions and capers.",
+   "price": 18.0,
+   "flags": []
+  },
+  {
+   "id": "short-rib-benedict",
+   "cat": "benedicts",
+   "name": "Short rib eggs Benedict",
+   "desc": "Braised short rib, poached eggs and hollandaise on a toasted English muffin.",
+   "price": 19.0,
+   "flags": [
+    "n"
+   ]
+  },
+  {
+   "id": "chorizo-skillet",
+   "cat": "skillets",
+   "name": "Chorizo skillet",
+   "desc": "House favorite. Chorizo, tomatoes, onions, serrano peppers, potatoes, tostada, spicy ranchero sauce, pepper jack and avocado.",
+   "price": 17.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "garden-skillet",
+   "cat": "skillets",
+   "name": "Garden skillet",
+   "desc": "Tomatoes, bell peppers, onions, mushroom, spinach and provolone.",
+   "price": 16.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "mexican-skillet",
+   "cat": "skillets",
+   "name": "Mexican skillet",
+   "desc": "Ham, tomatoes, onions, bell peppers, spicy ranchero sauce, pepper jack and avocado.",
+   "price": 17.0,
+   "flags": []
+  },
+  {
+   "id": "italian-skillet",
+   "cat": "skillets",
+   "name": "Italian sausage skillet",
+   "desc": "Sausage, mushroom, olives, tomatoes, bell peppers, onions and provolone.",
+   "price": 17.0,
+   "flags": []
+  },
+  {
+   "id": "machaca-skillet",
+   "cat": "skillets",
+   "name": "Machaca skillet",
+   "desc": "Braised short rib, pepper jack, eggs, tomato, onion and grilled bell pepper on hashbrown.",
+   "price": 20.0,
+   "flags": []
+  },
+  {
+   "id": "shakshouka",
+   "cat": "skillets",
+   "name": "Shakshouka",
+   "desc": "Slow-simmered tomato, onion and bell pepper sauce with warm spices, baked eggs and feta, with chimichurri.",
+   "price": 16.0,
+   "flags": [
+    "v",
+    "n"
+   ]
+  },
+  {
+   "id": "side-hashbrown",
+   "cat": "breakfast-sides",
+   "name": "Side of hash brown",
+   "desc": "",
+   "price": 4.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "side-potato",
+   "cat": "breakfast-sides",
+   "name": "Side of potato",
+   "desc": "",
+   "price": 4.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "side-bacon",
+   "cat": "breakfast-sides",
+   "name": "Side of bacon",
+   "desc": "",
+   "price": 4.0,
+   "flags": []
+  },
+  {
+   "id": "side-sausage",
+   "cat": "breakfast-sides",
+   "name": "Side of sausage",
+   "desc": "",
+   "price": 4.0,
+   "flags": []
+  },
+  {
+   "id": "side-bacon-sausage",
+   "cat": "breakfast-sides",
+   "name": "Side of bacon & sausage",
+   "desc": "",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "side-ham",
+   "cat": "breakfast-sides",
+   "name": "Side of Canadian bacon (ham)",
+   "desc": "",
+   "price": 3.0,
+   "flags": []
+  },
+  {
+   "id": "side-veggie-patty",
+   "cat": "breakfast-sides",
+   "name": "Side of veggie patty",
+   "desc": "",
+   "price": 3.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "side-chicken-sausage",
+   "cat": "breakfast-sides",
+   "name": "Side of chicken sausage",
+   "desc": "",
+   "price": 3.5,
+   "flags": []
+  },
+  {
+   "id": "side-turkey-bacon",
+   "cat": "breakfast-sides",
+   "name": "Side of turkey bacon",
+   "desc": "",
+   "price": 3.0,
+   "flags": []
+  },
+  {
+   "id": "side-avocado",
+   "cat": "breakfast-sides",
+   "name": "Side of avocado",
+   "desc": "",
+   "price": 3.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "wings",
+   "cat": "light-bites",
+   "name": "Buffalo hot wings",
+   "desc": "6 homemade hot wings tossed in buffalo, ranch on the side.",
+   "price": 12.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "tenders",
+   "cat": "light-bites",
+   "name": "Chicken tenders & fries",
+   "desc": "4 chicken tenders served with fries.",
+   "price": 12.0,
+   "flags": []
+  },
+  {
+   "id": "fries",
+   "cat": "light-bites",
+   "name": "French fries",
+   "desc": "",
+   "price": 6.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "truffle-fries",
+   "cat": "light-bites",
+   "name": "Truffle Parmesan fries",
+   "desc": "",
+   "price": 7.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "chips",
+   "cat": "light-bites",
+   "name": "Homemade chips basket",
+   "desc": "",
+   "price": 6.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "quesadilla",
+   "cat": "light-bites",
+   "name": "Quesadilla",
+   "desc": "",
+   "price": 9.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "hummus",
+   "cat": "light-bites",
+   "name": "Homemade hummus",
+   "desc": "",
+   "price": 9.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "pesto-pizza",
+   "cat": "pizza",
+   "name": "Pesto chicken pizza",
+   "desc": "Chicken, homemade pesto, onions and fresh mozzarella.",
+   "price": 12.0,
+   "flags": []
+  },
+  {
+   "id": "veggie-hummus-pizza",
+   "cat": "pizza",
+   "name": "Artisan veggie hummus pizza",
+   "desc": "House favorite. Hummus, pesto, artichoke hearts, olives and onions with feta and fresh mozzarella.",
+   "price": 10.0,
+   "flags": [
+    "v",
+    "p"
+   ]
+  },
+  {
+   "id": "cheese-pizza",
+   "cat": "pizza",
+   "name": "Cheese pizza",
+   "desc": "",
+   "price": 8.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "pepperoni-pizza",
+   "cat": "pizza",
+   "name": "Pepperoni pizza",
+   "desc": "",
+   "price": 9.0,
+   "flags": []
+  },
+  {
+   "id": "diavola-pizza",
+   "cat": "pizza",
+   "name": "Diavola pizza",
+   "desc": "Red sauce, pepperoni, jalapeño, hot honey drizzle and cheese.",
+   "price": 11.0,
+   "flags": []
+  },
+  {
+   "id": "soup-salad-combo",
+   "cat": "soups-salads",
+   "name": "Cup of soup, salad, fruit & bread",
+   "desc": "Homemade cup of soup with a house salad, lemon chiffon, house vegan multigrain and fruit.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "bowl-soup",
+   "cat": "soups-salads",
+   "name": "Bowl of soup",
+   "desc": "Homemade, served with multigrain and butter.",
+   "price": 10.0,
+   "flags": []
+  },
+  {
+   "id": "cup-soup",
+   "cat": "soups-salads",
+   "name": "Cup of soup",
+   "desc": "Homemade, served with multigrain and butter.",
+   "price": 8.0,
+   "flags": []
+  },
+  {
+   "id": "chicken-apple-salad",
+   "cat": "soups-salads",
+   "name": "Chicken apple pecan salad",
+   "desc": "Mixed greens, pecans, apples, chicken, feta and balsamic vinaigrette.",
+   "price": 15.0,
+   "flags": []
+  },
+  {
+   "id": "blackened-chicken-salad",
+   "cat": "soups-salads",
+   "name": "Blackened grilled chicken salad",
+   "desc": "Mixed greens, tomatoes, red onions, black olives, balsamic, blackened chicken and avocado.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "salmon-salad",
+   "cat": "soups-salads",
+   "name": "Blackened grilled salmon salad",
+   "desc": "Arugula, cherry tomato, red onion, cucumber, capers, lemon chiffon, blackened salmon and Parmesan.",
+   "price": 18.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "sw-shrimp-salad",
+   "cat": "soups-salads",
+   "name": "Southwest shrimp salad",
+   "desc": "Mixed greens, cherry tomato, red onion, roasted bell pepper, tortilla strips, shrimp, spicy cilantro dressing and chipotle aioli.",
+   "price": 18.0,
+   "flags": []
+  },
+  {
+   "id": "caesar-salad",
+   "cat": "soups-salads",
+   "name": "Caesar salad",
+   "desc": "Romaine, Caesar dressing, kalamata olives, croutons and Parmesan.",
+   "price": 12.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "house-salad",
+   "cat": "soups-salads",
+   "name": "House salad",
+   "desc": "Mixed greens, tomatoes, cucumbers, artichokes, kalamata olives, onions and croutons with lemon chiffon.",
+   "price": 12.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "greek-salad",
+   "cat": "soups-salads",
+   "name": "Greek salad",
+   "desc": "Romaine, cherry tomato, onion, cucumber, olives and artichoke.",
+   "price": 13.0,
+   "flags": [
+    "v",
+    "s"
+   ]
+  },
+  {
+   "id": "cheeseburger",
+   "cat": "burgers",
+   "name": "Cheeseburger",
+   "desc": "Lettuce, tomatoes, onions, 1000 Island and cheddar.",
+   "price": 15.0,
+   "flags": []
+  },
+  {
+   "id": "mushroom-swiss",
+   "cat": "burgers",
+   "name": "Mushroom Swiss burger",
+   "desc": "Sautéed mushrooms and onions, lettuce, tomatoes, garlic aioli and Swiss.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "sams-burger",
+   "cat": "burgers",
+   "name": "Sam's burger",
+   "desc": "Lettuce, onion, grilled tomato, house chipotle and pepper jack.",
+   "price": 17.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "garlic-bacon-burger",
+   "cat": "burgers",
+   "name": "Garlic aioli bacon burger",
+   "desc": "Arugula, tomato, bacon, house garlic aioli and provolone.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "chipotle-chicken",
+   "cat": "burgers",
+   "name": "Chipotle chicken sandwich",
+   "desc": "Honey mustard, lettuce, tomato, pickle, fried or grilled chicken and provolone on brioche, with fries.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "caesar-wrap",
+   "cat": "wraps",
+   "name": "Caesar chicken wrap",
+   "desc": "Grilled chicken, lettuce, Caesar dressing and Parmesan, with homemade chips and a pickle.",
+   "price": 13.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "falafel-wrap",
+   "cat": "wraps",
+   "name": "Falafel hummus wrap",
+   "desc": "Falafel, hummus, lettuce, cucumbers, tomatoes, onions and pickles, with homemade chips and a pickle.",
+   "price": 12.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "veggie-wrap",
+   "cat": "wraps",
+   "name": "Fresh veggie wrap",
+   "desc": "Artichoke hearts, pesto and olive tapenade, tomatoes, onions, cucumbers, pepperoncinis, lettuce, arugula and avocado.",
+   "price": 13.0,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "buffalo-wrap",
+   "cat": "wraps",
+   "name": "Spicy buffalo chicken wrap",
+   "desc": "Crispy chicken, buffalo sauce, ranch and greens.",
+   "price": 13.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "garlic-chicken-panini",
+   "cat": "paninis",
+   "name": "Garlic aioli chicken panini",
+   "desc": "Grilled chicken, garlic aioli, arugula, tomato, bacon and provolone on sourdough, with chips and a pickle.",
+   "price": 16.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "santa-fe-panini",
+   "cat": "paninis",
+   "name": "Santa Fe chicken panini",
+   "desc": "Grilled chicken, avocado, roasted bell pepper, grilled onions, chipotle mayo and pepper jack on sourdough.",
+   "price": 17.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "pesto-panini",
+   "cat": "paninis",
+   "name": "Pesto chicken panini",
+   "desc": "Grilled chicken, homemade pesto, provolone, lettuce and tomatoes on French bread.",
+   "price": 16.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "ahi-sandwich",
+   "cat": "paninis",
+   "name": "Ahi tuna steak sandwich",
+   "desc": "Seared sashimi-grade ahi, arugula, tomato and house garlic aioli.",
+   "price": 18.0,
+   "flags": []
+  },
+  {
+   "id": "ca-turkey",
+   "cat": "traditional-sandwiches",
+   "name": "California turkey",
+   "desc": "Turkey, avocado, Swiss, arugula, cucumber, mustard and raspberry vinaigrette, with chips and a pickle.",
+   "price": 13.0,
+   "flags": []
+  },
+  {
+   "id": "blt",
+   "cat": "traditional-sandwiches",
+   "name": "B.L.T.",
+   "desc": "Bacon, lettuce, tomato and homemade garlic aioli, with chips and a pickle.",
+   "price": 13.0,
+   "flags": []
+  },
+  {
+   "id": "club-turkey",
+   "cat": "traditional-sandwiches",
+   "name": "Club turkey",
+   "desc": "Turkey, bacon, avocado, lettuce, tomato, onion, provolone, mayo and mustard, with chips and a pickle.",
+   "price": 15.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "italian-sub",
+   "cat": "traditional-sandwiches",
+   "name": "Italian sub",
+   "desc": "Salami, pepperoni, ham, provolone, lettuce, tomatoes, pepperoncinis and red onions with Italian dressing.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "godfather-sub",
+   "cat": "traditional-sandwiches",
+   "name": "The God Father sub",
+   "desc": "Spicy soppressata, capocollo, mortadella, lettuce, tomatoes, pepperoncinis, red onions and provolone.",
+   "price": 16.0,
+   "flags": []
+  },
+  {
+   "id": "tuna-sandwich",
+   "cat": "traditional-sandwiches",
+   "name": "Tuna sandwich",
+   "desc": "House vegan multigrain, house tuna mix, mustard, lettuce, tomato and onion, with chips and a pickle.",
+   "price": 13.0,
+   "flags": []
+  },
+  {
+   "id": "steak-sandwich",
+   "cat": "signature-sandwiches",
+   "name": "Steak sandwich & fries",
+   "desc": "Flat iron steak cooked medium, garlic aioli, arugula, tomato, sautéed onion and gouda on grilled sourdough.",
+   "price": 20.0,
+   "flags": []
+  },
+  {
+   "id": "grilled-cheese",
+   "cat": "signature-sandwiches",
+   "name": "Grilled cheese — the best ever",
+   "desc": "Special mayo and Parmesan mix, with chips and a pickle.",
+   "price": 13.0,
+   "flags": [
+    "v",
+    "p"
+   ]
+  },
+  {
+   "id": "short-rib-grilled-cheese",
+   "cat": "signature-sandwiches",
+   "name": "Short rib grilled cheese",
+   "desc": "Braised short rib grilled cheese, with chips and a pickle.",
+   "price": 18.0,
+   "flags": []
+  },
+  {
+   "id": "tuna-melt",
+   "cat": "signature-sandwiches",
+   "name": "Grilled sourdough tuna melt",
+   "desc": "Sharp cheddar, house tuna mix, tomato, pickled onion and pickles.",
+   "price": 14.0,
+   "flags": []
+  },
+  {
+   "id": "muffuletta",
+   "cat": "signature-sandwiches",
+   "name": "Sicilian muffuletta",
+   "desc": "Salami, pepperoni, ham, olive tapenade, lettuce, tomatoes, provolone, pepperoncinis and red onions with olive oil.",
+   "price": 15.0,
+   "flags": []
+  },
+  {
+   "id": "rigatoni-vodka",
+   "cat": "pastas",
+   "name": "Rigatoni alla vodka",
+   "desc": "Signature LR sauce, sweet onion, Calabrian chillies, San Marzano tomato.",
+   "price": 17.0,
+   "flags": [
+    "s",
+    "p"
+   ]
+  },
+  {
+   "id": "spicy-shrimp-pasta",
+   "cat": "pastas",
+   "name": "Spicy shrimp pasta",
+   "desc": "Red sauce, cherry tomato and cavatappi.",
+   "price": 19.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "chicken-alfredo",
+   "cat": "pastas",
+   "name": "Chicken Alfredo",
+   "desc": "Cherry tomato, garlic, basil, Parmesan, spaghetti.",
+   "price": 17.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "pesto-chicken-pasta",
+   "cat": "pastas",
+   "name": "Pesto chicken pasta",
+   "desc": "Parmesan, sun-dried tomato, fettuccine.",
+   "price": 17.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "bolognese",
+   "cat": "pastas",
+   "name": "Bolognese pasta",
+   "desc": "Beef, Parmesan, rigatoni.",
+   "price": 18.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "house-coffee",
+   "cat": "coffee-espresso",
+   "name": "House coffee",
+   "desc": "Our light roast, Ethiopian Mystic Lyon: rich honey flavor, wild blueberry notes, a sweet lemony tang and a spiced chai finish.",
+   "price": 3.5,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "iced-coffee",
+   "cat": "coffee-espresso",
+   "name": "Iced coffee",
+   "desc": "",
+   "price": 4.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "coffee-refill",
+   "cat": "coffee-espresso",
+   "name": "Coffee refill",
+   "desc": "For dine-in mugs.",
+   "price": 1.0,
+   "flags": []
+  },
+  {
+   "id": "espresso",
+   "cat": "coffee-espresso",
+   "name": "Espresso",
+   "desc": "",
+   "price": 3.25,
+   "flags": []
+  },
+  {
+   "id": "cafe-au-lait",
+   "cat": "coffee-espresso",
+   "name": "Café au lait",
+   "desc": "",
+   "price": 4.25,
+   "flags": []
+  },
+  {
+   "id": "americano",
+   "cat": "coffee-espresso",
+   "name": "Americano",
+   "desc": "",
+   "price": 4.25,
+   "flags": []
+  },
+  {
+   "id": "macchiato",
+   "cat": "coffee-espresso",
+   "name": "Macchiato",
+   "desc": "",
+   "price": 4.25,
+   "flags": []
+  },
+  {
+   "id": "cappuccino",
+   "cat": "coffee-espresso",
+   "name": "Cappuccino",
+   "desc": "",
+   "price": 4.75,
+   "flags": []
+  },
+  {
+   "id": "hammerhead",
+   "cat": "coffee-espresso",
+   "name": "Hammerhead",
+   "desc": "House coffee with a shot of espresso.",
+   "price": 4.5,
+   "flags": []
+  },
+  {
+   "id": "flat-white",
+   "cat": "coffee-espresso",
+   "name": "Flat white",
+   "desc": "",
+   "price": 4.75,
+   "flags": []
+  },
+  {
+   "id": "cortado",
+   "cat": "coffee-espresso",
+   "name": "Cortado",
+   "desc": "Equal parts espresso and steamed milk.",
+   "price": 4.75,
+   "flags": []
+  },
+  {
+   "id": "cold-brew",
+   "cat": "coffee-espresso",
+   "name": "Cold brew",
+   "desc": "",
+   "price": 5.0,
+   "flags": []
+  },
+  {
+   "id": "hot-tea",
+   "cat": "teas",
+   "name": "Hot tea",
+   "desc": "",
+   "price": 3.5,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "tea-au-lait",
+   "cat": "teas",
+   "name": "Tea au lait",
+   "desc": "",
+   "price": 4.0,
+   "flags": []
+  },
+  {
+   "id": "medicine-ball",
+   "cat": "teas",
+   "name": "Medicine ball",
+   "desc": "",
+   "price": 5.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "london-fog",
+   "cat": "teas",
+   "name": "London fog",
+   "desc": "",
+   "price": 4.5,
+   "flags": []
+  },
+  {
+   "id": "thai-tea",
+   "cat": "teas",
+   "name": "Traditional Thai tea",
+   "desc": "Brewed Thai tea topped with half and half, served iced.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "arnold-palmer",
+   "cat": "teas",
+   "name": "Arnold Palmer",
+   "desc": "",
+   "price": 4.5,
+   "flags": []
+  },
+  {
+   "id": "iced-tea",
+   "cat": "teas",
+   "name": "Iced tea",
+   "desc": "",
+   "price": 4.0,
+   "flags": [
+    "vg"
+   ]
+  },
+  {
+   "id": "iced-tea-refill",
+   "cat": "teas",
+   "name": "Iced tea refill",
+   "desc": "",
+   "price": 1.0,
+   "flags": []
+  },
+  {
+   "id": "pumpkin-shaken",
+   "cat": "fall",
+   "name": "Pumpkin shaken espresso",
+   "desc": "Shaken pumpkin espresso with a splash of oat milk.",
+   "price": 6.75,
+   "flags": [
+    "n"
+   ]
+  },
+  {
+   "id": "pumpkin-chai",
+   "cat": "fall",
+   "name": "Pumpkin chai latte",
+   "desc": "Iced chai latte with our homemade pumpkin sauce cold foam.",
+   "price": 7.25,
+   "flags": [
+    "n",
+    "p"
+   ]
+  },
+  {
+   "id": "psl",
+   "cat": "fall",
+   "name": "Pumpkin spice latte",
+   "desc": "",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "falltastic",
+   "cat": "fall",
+   "name": "Falltastic white mocha",
+   "desc": "Spiced brown sugar blondie white mocha.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "cinnamon-cold-brew",
+   "cat": "fall",
+   "name": "Cinnamon crunch foam cold brew",
+   "desc": "Iced cold brew with homemade cinnamon cold foam.",
+   "price": 6.25,
+   "flags": []
+  },
+  {
+   "id": "cookie-butter-latte",
+   "cat": "fall",
+   "name": "Cookie butter latte",
+   "desc": "Spiced cookie butter latte with Biscoff cookie foam and Biscoff crumble.",
+   "price": 7.0,
+   "flags": []
+  },
+  {
+   "id": "couch-blend",
+   "cat": "lattes",
+   "name": "The Couch Blend",
+   "desc": "App-only secret latte: spiced brown sugar, cinnamon and a double shot. Concept drink for the app.",
+   "price": 7.25,
+   "flags": [
+    "a",
+    "n",
+    "s"
+   ]
+  },
+  {
+   "id": "cafe-latte",
+   "cat": "lattes",
+   "name": "Café latte",
+   "desc": "Double shot and silky steamed milk.",
+   "price": 4.75,
+   "flags": []
+  },
+  {
+   "id": "vanilla-latte",
+   "cat": "lattes",
+   "name": "Vanilla latte",
+   "desc": "",
+   "price": 5.75,
+   "flags": []
+  },
+  {
+   "id": "caramel-latte",
+   "cat": "lattes",
+   "name": "Caramel latte",
+   "desc": "",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "sb-macchiato",
+   "cat": "lattes",
+   "name": "SB macchiato",
+   "desc": "Caramel vanilla latte.",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "chai",
+   "cat": "lattes",
+   "name": "Chai latte",
+   "desc": "Living Room signature and favorite: our delicious spiced chai.",
+   "price": 6.5,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "dirty-chai",
+   "cat": "lattes",
+   "name": "Dirty chai latte",
+   "desc": "Chai latte with a double shot of espresso.",
+   "price": 7.25,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "maple-chai",
+   "cat": "lattes",
+   "name": "Maple spice chai latte",
+   "desc": "",
+   "price": 6.25,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "spanish-latte",
+   "cat": "lattes",
+   "name": "Spanish latte",
+   "desc": "Iced latte with condensed milk and oat milk, topped with cinnamon.",
+   "price": 6.5,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "butter-brew",
+   "cat": "lattes",
+   "name": "Butter brew",
+   "desc": "Spiced brown sugar and sea salt caramel toffee latte.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "shaken-espresso",
+   "cat": "lattes",
+   "name": "Shaken espresso",
+   "desc": "Iced shaken spiced brown sugar latte with oat milk.",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "banana-bread-latte",
+   "cat": "lattes",
+   "name": "Banana bread latte",
+   "desc": "Banana, hazelnut and white chocolate latte.",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "iced-vietnamese",
+   "cat": "lattes",
+   "name": "Iced Vietnamese",
+   "desc": "Condensed milk and 4 shots of espresso.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "cafe-mocha",
+   "cat": "mochas",
+   "name": "Café mocha",
+   "desc": "",
+   "price": 5.25,
+   "flags": []
+  },
+  {
+   "id": "trembler",
+   "cat": "mochas",
+   "name": "Trembler",
+   "desc": "4-shot mocha.",
+   "price": 6.0,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "milky-way",
+   "cat": "mochas",
+   "name": "Milky Way",
+   "desc": "Caramel and vanilla mocha.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "rocky-road",
+   "cat": "mochas",
+   "name": "Rocky Road",
+   "desc": "Toasted marshmallow and hazelnut mocha.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "caramel-sea",
+   "cat": "mochas",
+   "name": "Caramel by the Sea",
+   "desc": "Salted caramel mocha.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "black-forest",
+   "cat": "mochas",
+   "name": "Black Forest",
+   "desc": "Cherry mocha.",
+   "price": 6.0,
+   "flags": []
+  },
+  {
+   "id": "tuxedo-mocha",
+   "cat": "mochas",
+   "name": "Tuxedo mocha",
+   "desc": "Dark and white chocolate.",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "mexican-mocha",
+   "cat": "mochas",
+   "name": "Mexican mocha",
+   "desc": "",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "cafe-blondie",
+   "cat": "mochas",
+   "name": "Café blondie",
+   "desc": "White chocolate mocha.",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "raspberry-white-mocha",
+   "cat": "mochas",
+   "name": "Raspberry white mocha",
+   "desc": "",
+   "price": 5.75,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "matcha",
+   "cat": "matcha",
+   "name": "Ceremonial matcha latte",
+   "desc": "Ceremonial-grade matcha sweetened with agave.",
+   "price": 6.75,
+   "flags": [
+    "vg",
+    "p"
+   ]
+  },
+  {
+   "id": "stramatcha",
+   "cat": "matcha",
+   "name": "Stramatcha",
+   "desc": "Iced ceremonial matcha with strawberry cold foam.",
+   "price": 8.0,
+   "flags": []
+  },
+  {
+   "id": "cookie-butter-matcha",
+   "cat": "matcha",
+   "name": "Cookie butter matcha",
+   "desc": "Iced cookie butter matcha.",
+   "price": 7.5,
+   "flags": []
+  },
+  {
+   "id": "earl-grey-matcha",
+   "cat": "matcha",
+   "name": "Earl Grey matcha",
+   "desc": "Iced matcha with Earl Grey cold foam.",
+   "price": 7.0,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "blueberry-matcha",
+   "cat": "matcha",
+   "name": "Blueberry matcha",
+   "desc": "Ceremonial matcha with blueberry.",
+   "price": 6.5,
+   "flags": [
+    "s"
+   ]
+  },
+  {
+   "id": "latte-frappe",
+   "cat": "frappes",
+   "name": "Latte frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "mocha-frappe",
+   "cat": "frappes",
+   "name": "Mocha frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "strawberry-mocha-frappe",
+   "cat": "frappes",
+   "name": "Strawberry mocha frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "banana-mocha-frappe",
+   "cat": "frappes",
+   "name": "Banana mocha frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "cookie-catastrophe",
+   "cat": "frappes",
+   "name": "Cookie Catastrophe",
+   "desc": "Oreo white chocolate frappe.",
+   "price": 6.5,
+   "flags": [
+    "p"
+   ]
+  },
+  {
+   "id": "banana-cappuccino",
+   "cat": "frappes",
+   "name": "Banana cappuccino",
+   "desc": "Banana white chocolate frappe.",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "avalanche",
+   "cat": "frappes",
+   "name": "Avalanche frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "bomb-alaska",
+   "cat": "frappes",
+   "name": "Bomb Alaska",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "vanilla-bean-frappe",
+   "cat": "frappes",
+   "name": "Vanilla bean frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "vanilla-chai-frappe",
+   "cat": "frappes",
+   "name": "Vanilla chai frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "caramel-frappe",
+   "cat": "frappes",
+   "name": "Caramel frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "land-slide",
+   "cat": "frappes",
+   "name": "Land Slide",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "pistachio-frappe",
+   "cat": "frappes",
+   "name": "Pistachio frappe",
+   "desc": "",
+   "price": 6.5,
+   "flags": []
+  },
+  {
+   "id": "watermelon-sour",
+   "cat": "refreshers",
+   "name": "Watermelon sour refresher",
+   "desc": "Shaken lemonade, watermelon purée, fresh lime juice and mint.",
+   "price": 6.0,
+   "flags": [
+    "vg",
+    "gf",
+    "n"
+   ]
+  },
+  {
+   "id": "tropical-infusion",
+   "cat": "refreshers",
+   "name": "Tropical infusion",
+   "desc": "Fresh orange juice, lemonade and dragonfruit.",
+   "price": 5.25,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "blood-orange",
+   "cat": "refreshers",
+   "name": "Blood orange sunrise",
+   "desc": "Blood orange iced tea, fresh orange juice and mango.",
+   "price": 5.25,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "green-lantern",
+   "cat": "refreshers",
+   "name": "Green Lantern",
+   "desc": "Green tea, lemonade and mango.",
+   "price": 5.25,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "hibiscus",
+   "cat": "refreshers",
+   "name": "Hibiscus refresher",
+   "desc": "Fresh-brewed hibiscus tea with cardamom and cinnamon, topped with fresh orange juice and agave.",
+   "price": 5.5,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "oj",
+   "cat": "refreshers",
+   "name": "Fresh orange juice",
+   "desc": "",
+   "price": 6.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "pomegranate",
+   "cat": "refreshers",
+   "name": "Fresh pomegranate juice",
+   "desc": "",
+   "price": 7.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "lemonade",
+   "cat": "refreshers",
+   "name": "Iced lemonade",
+   "desc": "",
+   "price": 3.75,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "apple-juice",
+   "cat": "refreshers",
+   "name": "Apple juice",
+   "desc": "",
+   "price": 3.25,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "hawaiian-breeze",
+   "cat": "refreshers",
+   "name": "Hawaiian breeze",
+   "desc": "Blended strawberry lemonade.",
+   "price": 5.75,
+   "flags": [
+    "vg",
+    "gf",
+    "s"
+   ]
+  },
+  {
+   "id": "strawberry-banana",
+   "cat": "smoothies",
+   "name": "Strawberry banana smoothie",
+   "desc": "",
+   "price": 7.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "very-berry",
+   "cat": "smoothies",
+   "name": "Very berry smoothie",
+   "desc": "Strawberry, blackberry and raspberry. Recommended with apple juice.",
+   "price": 7.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "hawaiian-vacation",
+   "cat": "smoothies",
+   "name": "Hawaiian vacation smoothie",
+   "desc": "Passionfruit, mango and pineapple. Recommended with orange juice.",
+   "price": 7.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "green-machine",
+   "cat": "smoothies",
+   "name": "Green machine smoothie",
+   "desc": "Mango, spinach, broccoli, avocado, coconut, ginger and lime. Recommended with orange juice.",
+   "price": 7.0,
+   "flags": [
+    "vg",
+    "gf"
+   ]
+  },
+  {
+   "id": "italian-soda",
+   "cat": "non-coffee",
+   "name": "Italian soda",
+   "desc": "",
+   "price": 4.25,
+   "flags": []
+  },
+  {
+   "id": "redbull",
+   "cat": "non-coffee",
+   "name": "Flavored Red Bull",
+   "desc": "",
+   "price": 5.5,
+   "flags": []
+  },
+  {
+   "id": "hot-chocolate",
+   "cat": "non-coffee",
+   "name": "Hot chocolate",
+   "desc": "",
+   "price": 4.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "white-hot-chocolate",
+   "cat": "non-coffee",
+   "name": "White hot chocolate",
+   "desc": "",
+   "price": 4.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "mexican-hot-chocolate",
+   "cat": "non-coffee",
+   "name": "Mexican hot chocolate",
+   "desc": "",
+   "price": 4.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "tuxedo-hot-chocolate",
+   "cat": "non-coffee",
+   "name": "Tuxedo hot chocolate",
+   "desc": "",
+   "price": 4.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "chocolate-milk",
+   "cat": "non-coffee",
+   "name": "Chocolate milk",
+   "desc": "",
+   "price": 4.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "cold-milk",
+   "cat": "non-coffee",
+   "name": "Cold milk",
+   "desc": "",
+   "price": 3.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "steamer",
+   "cat": "non-coffee",
+   "name": "Steamer",
+   "desc": "Steamed milk with your favorite syrup.",
+   "price": 3.5,
+   "flags": [
+    "v",
+    "s"
+   ]
+  },
+  {
+   "id": "brownie",
+   "cat": "pastries",
+   "name": "Brownie",
+   "desc": "",
+   "price": 4.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "choc-chip-cookie",
+   "cat": "pastries",
+   "name": "Chocolate chip cookie",
+   "desc": "",
+   "price": 2.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "white-mac-cookie",
+   "cat": "pastries",
+   "name": "White chocolate macadamia cookie",
+   "desc": "",
+   "price": 2.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "oatmeal-cookie",
+   "cat": "pastries",
+   "name": "Oatmeal raisin cookie",
+   "desc": "",
+   "price": 2.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "sugar-cookie",
+   "cat": "pastries",
+   "name": "Sugar cookie",
+   "desc": "",
+   "price": 2.25,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "plain-croissant",
+   "cat": "pastries",
+   "name": "Plain croissant",
+   "desc": "",
+   "price": 3.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "blueberry-scone",
+   "cat": "pastries",
+   "name": "Blueberry scone",
+   "desc": "",
+   "price": 3.95,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "chocolate-scone",
+   "cat": "pastries",
+   "name": "Chocolate scone",
+   "desc": "",
+   "price": 3.95,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "muffin",
+   "cat": "pastries",
+   "name": "Muffin",
+   "desc": "An assortment of homemade muffins. Flavor depends on what's fresh today.",
+   "price": 3.75,
+   "flags": [
+    "v"
+   ]
+  },
+  {
+   "id": "pumpkin-muffin",
+   "cat": "pastries",
+   "name": "Pumpkin muffin",
+   "desc": "",
+   "price": 3.75,
+   "flags": [
+    "v",
+    "n"
+   ]
+  }
+ ]
+}

@@ -1,5 +1,6 @@
 import { useEffect, type ReactNode, type ButtonHTMLAttributes } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 import { create } from 'zustand';
 import {
   ChevronLeft, ChevronRight, Coffee, CupSoda, Leaf, Sparkles, Croissant, Donut, Egg, Sandwich, Soup, Salad, CakeSlice, Citrus, GlassWater, Check,
@@ -67,12 +68,14 @@ export function Sheet({ open, onClose, children }: { open: boolean; onClose: () 
     return () => window.removeEventListener('keydown', k);
   }, [open, onClose]);
   if (!open) return null;
-  return (
+  // Portal to <body> so a sheet opened from a floating bar isn't trapped under the tab bar.
+  return createPortal(
     <div className="sheet-backdrop" onClick={onClose}>
       <div className="sheet" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
         <div className="sheet-grabber" />{children}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
