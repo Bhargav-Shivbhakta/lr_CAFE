@@ -11,6 +11,10 @@ export function AppRouter() {
   return (
     <HashRouter>
       <div className="app-shell">
+        {/* Public demo: make it impossible to mistake for the café's real ordering app. */}
+        <div role="note" style={{ background: 'var(--walnut)', color: '#fff', fontSize: 12, textAlign: 'center', padding: '6px 12px', lineHeight: 1.4 }}>
+          Concept demo · not the official Living Room app · no real orders, texts or payments
+        </div>
         <Routes>
           {features.flatMap((f) => {
             const base = f.id === 'home' ? '' : `/${f.id}`;
