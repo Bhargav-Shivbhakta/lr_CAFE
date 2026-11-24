@@ -1104,7 +1104,7 @@
       }
     },
     "cafe-au-lait": {
-      "name": "Café au lait",
+      "name": "Caf\u00e9 au lait",
       "sq": "assets/menu/cafe-au-lait-sq.webp",
       "card": "assets/menu/cafe-au-lait-card.webp",
       "wide": "assets/menu/cafe-au-lait-wide.webp",
@@ -1121,7 +1121,7 @@
       }
     },
     "cafe-blondie": {
-      "name": "Café blondie",
+      "name": "Caf\u00e9 blondie",
       "sq": "assets/menu/cafe-blondie-sq.webp",
       "card": "assets/menu/cafe-blondie-card.webp",
       "wide": "assets/menu/cafe-blondie-wide.webp",
@@ -1138,7 +1138,7 @@
       }
     },
     "cafe-latte": {
-      "name": "Café latte",
+      "name": "Caf\u00e9 latte",
       "sq": "assets/menu/cafe-latte-sq.webp",
       "card": "assets/menu/cafe-latte-card.webp",
       "wide": "assets/menu/cafe-latte-wide.webp",
@@ -1155,7 +1155,7 @@
       }
     },
     "cafe-mocha": {
-      "name": "Café mocha",
+      "name": "Caf\u00e9 mocha",
       "sq": "assets/menu/cafe-mocha-sq.webp",
       "card": "assets/menu/cafe-mocha-card.webp",
       "wide": "assets/menu/cafe-mocha-wide.webp",
@@ -2209,7 +2209,7 @@
       }
     },
     "nutella-crepe": {
-      "name": "Nutella® crepe",
+      "name": "Nutella\u00ae crepe",
       "sq": "assets/menu/nutella-crepe-sq.webp",
       "card": "assets/menu/nutella-crepe-card.webp",
       "wide": "assets/menu/nutella-crepe-wide.webp",
@@ -3074,6 +3074,30 @@
         "y": 0.55,
         "zoom": 0.84
       }
+    },
+    "coffee-refill": {
+      "name": "Coffee refill",
+      "sameAs": "house-coffee",
+      "sq": "assets/menu/house-coffee-sq.webp",
+      "card": "assets/menu/house-coffee-card.webp",
+      "wide": "assets/menu/house-coffee-wide.webp",
+      "hero": "assets/menu/house-coffee-hero.webp",
+      "th": "assets/menu/house-coffee-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "note": "A refill of the same drink: uses the original item's picture (menu: \"For dine-in mugs\", House coffee)."
+    },
+    "iced-tea-refill": {
+      "name": "Iced tea refill",
+      "sameAs": "iced-tea",
+      "sq": "assets/menu/iced-tea-sq.webp",
+      "card": "assets/menu/iced-tea-card.webp",
+      "wide": "assets/menu/iced-tea-wide.webp",
+      "hero": "assets/menu/iced-tea-hero.webp",
+      "th": "assets/menu/iced-tea-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "note": "A refill of the same drink: uses the original item's picture (menu: Iced tea)."
     }
   },
   "new": {
@@ -3277,11 +3301,11 @@
   "checkWithCafe": {
     "homemade-granola": "Photo looks like a fruit bowl, nearly the same as Fresh fruit bowl.",
     "pistachio-blondie": "Photo shows a layered green drink, not a blondie.",
-    "cajun-shrimp-pasta": "Matched to the menu’s Spicy shrimp pasta; confirm it is the same dish."
+    "cajun-shrimp-pasta": "Matched to the menu\u2019s Spicy shrimp pasta; confirm it is the same dish."
   },
   "pack2": {
     "location": "college",
     "items": 135,
-    "note": "AI-generated illustrations, drafts for café review: check ingredients, portions, sides and garnishes, and the cup branding and wording, before publishing. Bomb Alaska was left out of the pack (recipe not confirmed)."
+    "note": "AI-generated illustrations, drafts for caf\u00e9 review: check ingredients, portions, sides and garnishes, and the cup branding and wording, before publishing. Bomb Alaska was left out of the pack (recipe not confirmed)."
   }
 }
