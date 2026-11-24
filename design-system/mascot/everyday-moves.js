@@ -25,10 +25,12 @@ function bind(box, cup = box.querySelector('.cup'), opts = {}) {
   };
   return s;
 }
-function reset(box, cup = box.querySelector('.cup')) { cup.gen = (cup.gen || 0) + 1; box.querySelectorAll('.fx').forEach((e) => e.remove()); cup.getAnimations?.({ subtree: true }).forEach((a) => a.cancel()); cup.style.transform = ''; }
+function reset(box, cup = box.querySelector('.cup')) { cup.gen = (cup.gen || 0) + 1; box.querySelectorAll('.fx').forEach((e) => e.remove()); cup.getAnimations?.({ subtree: true }).forEach((a) => a.cancel()); cup.style.transform = ''; cup.classList.remove('waddle'); }
 const SHAPE = {
   confetti: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><rect x="6" y="3" width="12" height="18" rx="2" fill="${c}"/></svg>`,
   bat: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 9c1-2 3-2 3-2s0 2-1 3c3-2 7-1 9 2c-2 0-3 1-3 3c-1-1-3-1-4 0c0-1-2-2-4-2s-4 1-4 2c-1-1-3-1-4 0c0-2-1-3-3-3c2-3 6-4 9-2c-1-1-1-3-1-3s2 0 3 2z" fill="${c}"/></svg>`,
+  snow: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><g stroke="${c}" stroke-width="2.4" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/></g></svg>`,
+  leaf: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M4 20C4 9 11 4 20 4c0 9-5 16-16 16z" fill="${c}"/></svg>`,
   petal: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 2c5 4 6 10 0 20C6 12 7 6 12 2z" fill="${c}"/></svg>`,
   star: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M12 1q2 9 11 11q-9 2-11 11q-2-9-11-11q9-2 11-11z" fill="${c}"/></svg>`,
   note: (c) => `<svg viewBox="0 0 24 24" width="100%" height="100%"><path d="M9 18a3 3 0 1 1-2-2.8V4l12-2v13a3 3 0 1 1-2-2.8V6.3L9 7.6z" fill="${c}"/></svg>`,
@@ -94,7 +96,7 @@ const MOVES = [
       await s.move([{ transform: `translateX(${W - cw + 20}px)` }, { transform: `translateX(${W / 2 - cw - 50}px)` }], 1500, { easing: 'ease-out' });
       s.pill(`Today's special<small>${s.opts.special || 'Short rib grilled cheese'}</small>`, 1500); await s.an(s.q('.tray'), [{ transform: 'none' }, { transform: 'translateY(-8px)' }, { transform: 'none' }], 700, { easing: SPR, fill: 'none' }); await s.wait(800);
       s.set('tray', ''); s.cup.firstElementChild.classList.add('waddle'); await s.move([{ transform: `translateX(${W / 2 - cw - 50}px)` }, { transform: `translateX(${-cw - 140}px)` }], 1200, { easing: 'ease-in' });
-      s.set('idle'); await s.move([{ transform: `translateX(${-cw - 140}px)` }, { transform: `translateX(${home}px)` }], 900, { easing: 'cubic-bezier(.2,.8,.2,1)' }); s.cup.getAnimations().forEach((a) => a.cancel()); s.set('idle', 'pip--squish'); await s.wait(700); } },
+      s.set('idle'); await s.move([{ transform: `translateX(${-cw - 140}px)` }, { transform: `translateX(${home}px)` }], 900, { easing: 'cubic-bezier(.2,.8,.2,1)' }); s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('idle', 'pip--squish'); await s.wait(700); } },
   { id: 'wipe', layer: 'moment', name: 'Wipes the counter', when: 'Evening', len: '3.5 s', desc: 'Polishes the counter with a towel until it shines, then a satisfied nod.',
     run: async (s) => { s.set('wipe', ''); await s.an(s.q('.wiper'), [{ transform: 'none' }, { transform: 'translate(-30px,2px)' }], 340, { iterations: 6, direction: 'alternate', fill: 'none', easing: 'ease-in-out' });
       s.part('star', '#FFFFFF', 100, 118, 14, [{ opacity: 0, transform: 'scale(.3)' }, { opacity: 1, transform: 'scale(1.2)' }, { opacity: 0, transform: 'scale(.6)' }], 700); s.set('happy', 'pip--thumb'); await s.wait(1400); } },
@@ -198,7 +200,7 @@ const HOLI = {
     await s.move([{ transform: 'none' }, { transform: `translate(${dx * 0.5}px,${dy - 6}px) scale(.74) rotate(-4deg)`, offset: .5 }, { transform: `translate(${dx}px,${dy}px) scale(.74)` }], 3000, { easing: 'ease-in-out' });
     await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.74)` }, { transform: `translate(${dx}px,${dy - 6}px) scale(.74)` }], 600, { iterations: 2, direction: 'alternate' });
     await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.74)` }, { transform: `translate(${dx * 0.5}px,${dy + 4}px) scale(.85) rotate(3deg)`, offset: .5 }, { transform: 'none' }], 2400, { easing: 'ease-in-out' });
-    s.cup.getAnimations().forEach((a) => a.cancel()); s.set('k_halloween', 'pip--squish'); an(moon, [{ opacity: .95 }, { opacity: 0 }], 800); s.pill('Happy Halloween!', 3000); await s.wait(3200); } },
+    s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('k_halloween', 'pip--squish'); an(moon, [{ opacity: .95 }, { opacity: 0 }], 800); s.pill('Happy Halloween!', 3000); await s.wait(3200); } },
   coffeeday: { name: 'Bean juggling', caption: 'Happy National Coffee Day!', run: async (s) => {
     s.set('cd_juggle', ''); const g = s.q('.beans'); g.style.cssText = 'transform-box:fill-box;transform-origin:50% 50%';
     await s.an(g, [{ transform: 'rotate(0)' }, { transform: 'rotate(720deg)' }], 4000, { easing: 'linear' });
@@ -222,12 +224,53 @@ const HOLI = {
     await s.wait(300); await s.an(s.q('.lid'), [{ transform: 'none', opacity: 1 }, { transform: 'translate(-10px,-46px) rotate(-25deg)', opacity: 0 }], 650, { easing: 'ease-out' });
     s.set('fd_tie', 'pip--thumb'); const t = s.q('.tieup'); t.style.cssText = 'transform-box:fill-box;transform-origin:50% 0%'; s.an(t, [{ transform: 'translateY(20px) scale(.4)', opacity: 0 }, { transform: 'none', opacity: 1 }], 600, { easing: SPR }); s.sparkle(5);
     s.pill("Happy Father's Day!", 3000); await s.wait(3200); } },
+  christmas: { name: 'The star on the tree', caption: 'Happy holidays!', run: async (s) => {
+    const B = HB(s), star = s.opts.treeStar, T = s.opts.tree; if (star) star.style.opacity = '0';
+    s.set('xm_star', ''); s.cup.classList.add('waddle'); await s.wait(500);
+    const c = cupBox(s), k = c.w / 140, hx = c.left + (116 + 10) * k, hy = c.top + (2 + 8) * k;
+    const tx = T ? T.left + T.width / 2 : B.left + B.width / 2, ty = T ? T.top + 2 : B.top + 10;
+    const dx = tx - hx, dy = Math.max(B.top - c.top, ty - hy);
+    await s.move([{ transform: 'none' }, { transform: `translate(${dx}px,${dy}px)` }], 2600, { easing: 'ease-in-out' });
+    s.cup.classList.remove('waddle'); s.set('xm_reach', ''); s.cup.style.transform = `translate(${dx}px,${dy}px)`;
+    if (star) { star.style.cssText = 'opacity:1;transform-box:fill-box;transform-origin:50% 50%'; an(star, [{ transform: 'scale(0) rotate(-90deg)' }, { transform: 'scale(1.5) rotate(10deg)' }, { transform: 'none' }], 700, { easing: SPR }); }
+    for (let i = 0; i < 10; i++) { const a = (i / 10) * Math.PI * 2; partXY(s, 'star', ['#E9C46A', '#FFFFFF'][i % 2], tx, ty + 6, 10, [{ opacity: 1, transform: 'scale(.4)' }, { opacity: 0, transform: `translate(${Math.cos(a) * 36}px,${Math.sin(a) * 30}px) scale(1)` }], 1100, 200); }
+    s.pill(s.opts.caption || 'Happy holidays!', 3400); await s.wait(1600);
+    s.set('xm_reach', ''); s.cup.classList.add('waddle'); s.set('k_christmas', ''); s.cup.style.transform = '';
+    await s.move([{ transform: `translate(${dx}px,${dy}px)` }, { transform: 'none' }], 2200, { easing: 'ease-in-out' }); s.cup.getAnimations?.().forEach((a) => a.cancel()); s.cup.classList.remove('waddle');
+    for (let i = 0; i < 14; i++) partXY(s, 'snow', '#FFFFFF', B.left + rnd(10, B.width - 10), B.top + rnd(0, 30), rnd(8, 12), [{ opacity: 0 }, { opacity: 1, offset: .2 }, { opacity: 0, transform: `translate(${rnd(-14, 14)}px,${rnd(60, (B.bottom - B.top) - 40)}px)` }], 2600, i * 120);
+    s.set('k_christmas', 'pip--squish'); await s.wait(1800); } },
+  christmas_sleigh: { name: 'The sleigh', caption: 'Happy holidays!', run: async (s) => {
+    const B = HB(s); s.set('xm_sleigh', 'pip--hop'); await s.wait(700);
+    const c = cupBox(s), W = B.right, dy = Math.max(B.top + 2 - c.top, -200), sc = 0.78;
+    // out to the right, then across the top of the banner from right to left, then back in from the left
+    await s.move([{ transform: 'none' }, { transform: `translate(${W - c.left + 20}px,0)` }], 700, { easing: 'ease-in' });
+    const from = W - c.left + 20, to = -c.left - c.w - 30, dur = 5200, t0 = performance.now();
+    const trail = setInterval(() => { if (!s.alive()) return clearInterval(trail); const cb = cupBox(s); if (cb.left < -20 || cb.left > W) return; partXY(s, 'star', ['#E9C46A', '#FFFFFF', '#F2D58A'][Math.floor(rnd(0, 3))], cb.left + cb.w * 0.95, cb.top + cb.h * 0.75, rnd(8, 12), [{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: `translate(${rnd(8, 24)}px,${rnd(8, 24)}px) scale(.4)` }], 1100); }, 180);
+    await s.move([{ transform: `translate(${from}px,${dy}px) scale(${sc})` }, { transform: `translate(${(from + to) * 0.5}px,${dy + 10}px) scale(${sc}) rotate(-3deg)`, offset: .5 }, { transform: `translate(${to}px,${dy}px) scale(${sc})` }], dur, { easing: 'linear' });
+    clearInterval(trail); if (!s.alive()) return;
+    s.set('k_christmas', ''); s.pill(s.opts.caption || 'Happy holidays!', 3200);
+    await s.move([{ transform: `translate(${-c.left - c.w - 10}px,${dy}px)` }, { transform: `translate(${-c.left * 0.4}px,${dy - 8}px)`, offset: .5 }, { transform: 'none' }], 1800, { easing: 'cubic-bezier(.2,.8,.2,1)' });
+    s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('k_christmas', 'pip--squish');
+    for (let i = 0; i < 12; i++) partXY(s, 'snow', '#FFFFFF', B.left + rnd(10, B.width - 10), B.top + rnd(0, 30), rnd(8, 12), [{ opacity: 0 }, { opacity: 1, offset: .2 }, { opacity: 0, transform: `translate(${rnd(-14, 14)}px,${rnd(60, (B.bottom - B.top) - 40)}px)` }], 2600, i * 120);
+    await s.wait(2000); } },
+  thanksgiving: { name: 'The pie parade', caption: 'Happy Thanksgiving!', run: async (s) => {
+    const B = HB(s); s.set('tg_pie', ''); s.cup.classList.add('waddle'); const c = cupBox(s), dx = Math.max(B.left + B.width * 0.40 - c.left, -150);
+    for (let i = 0; i < 6; i++) setTimeout(() => { if (!s.alive()) return; const cb = cupBox(s); partXY(s, 'leaf', ['#C46F1E', '#D9A35B', '#7D8B5A', '#A8521E'][i % 4], cb.cx + 30, cb.top + cb.h * 0.6, 13, [{ opacity: 1 }, { opacity: 0, transform: `translate(${rnd(10, 40)}px,${rnd(20, 40)}px) rotate(${rnd(-160, 160)}deg)` }], 1400); }, 300 + i * 400);
+    await s.move([{ transform: 'none' }, { transform: `translateX(${dx}px)` }], 2600, { easing: 'ease-in-out' });
+    s.cup.classList.remove('waddle'); s.cup.style.transform = `translateX(${dx}px)`; const pie = s.q('.pieup'); pie.style.cssText = 'transform-box:fill-box;transform-origin:50% 100%';
+    await s.an(pie, [{ transform: 'none' }, { transform: 'translateY(-16px) scale(1.08)' }], 600, { easing: SPR });
+    const cb = cupBox(s);
+    for (let i = 0; i < 3; i++) partXY(s, 'puff', 'rgba(255,248,238,.95)', cb.cx - 12 + i * 12, cb.top - 6, 10, [{ opacity: 0, transform: 'none' }, { opacity: 1, offset: .3 }, { opacity: 0, transform: 'translateY(-26px) scale(1.6)' }], 1400, i * 220);
+    for (let i = 0; i < 12; i++) { const a = (i / 12) * Math.PI * 2; partXY(s, 'leaf', ['#C46F1E', '#D9A35B', '#7D8B5A', '#A8521E'][i % 4], cb.cx, cb.top + 10, 13, [{ opacity: 1, transform: 'none' }, { opacity: 1, transform: `translate(${Math.cos(a) * 60}px,${Math.sin(a) * 26}px) rotate(${rnd(-180, 180)}deg)`, offset: .45 }, { opacity: 0, transform: `translate(${Math.cos(a) * 60}px,${Math.min(B.bottom - cb.top - 30, Math.sin(a) * 26 + 50)}px) rotate(${rnd(-360, 360)}deg)` }], 1800); }
+    s.pill('Happy Thanksgiving!', 3200); await s.wait(1500); await s.an(pie, [{ transform: 'translateY(-16px) scale(1.08)' }, { transform: 'none' }], 500);
+    s.cup.classList.add('waddle'); await s.move([{ transform: `translateX(${dx}px)` }, { transform: 'none' }], 2400, { easing: 'ease-in-out' }); s.cup.getAnimations?.().forEach((a) => a.cancel()); s.cup.style.transform = ''; s.cup.classList.remove('waddle');
+    s.set('k_thanksgiving', 'pip--squish'); await s.wait(1400); } },
   valentines: { name: 'The heart balloon', caption: "Happy Valentine's Day!", run: async (s) => {
     s.set('vd_float', ''); const B = HB(s), c = cupBox(s), up = Math.max(B.top + 34 - c.top, -46);
     for (let i = 0; i < 8; i++) partXY(s, 'heart', ['#E5485E', '#F4A3A8'][i % 2], c.left + rnd(0, c.w), c.top + c.h * 0.4, rnd(10, 14), [{ opacity: 0, transform: 'none' }, { opacity: 1, offset: .2 }, { opacity: 0, transform: `translate(${rnd(-24, 24)}px,${Math.max(B.top - c.top, -70)}px)` }], 2200, i * 260);
     await s.move([{ transform: 'none' }, { transform: `translate(-8px,${up}px) rotate(-4deg)`, offset: .5 }, { transform: `translate(6px,${up}px) rotate(4deg)` }], 2200, { easing: 'ease-in-out' });
     await s.wait(500); await s.move([{ transform: `translate(6px,${up}px)` }, { transform: 'none' }], 1800, { easing: 'ease-in-out' });
-    s.cup.getAnimations().forEach((a) => a.cancel()); s.set('k_valentines', 'pip--squish'); s.pill("Happy Valentine's Day!", 3000); await s.wait(3200); } },
+    s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('k_valentines', 'pip--squish'); s.pill("Happy Valentine's Day!", 3000); await s.wait(3200); } },
 };
 for (const [k, h] of Object.entries(HOLI)) BY['h_' + k] = { id: 'h_' + k, layer: 'holiday', ...h };
 
