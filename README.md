@@ -1,13 +1,16 @@
 # Living Room Coffeehouse app
 
+**A native iOS and Android app** (React Native with Expo, TypeScript), for the App Store and Google Play. Not a web app. The clickable mockup is a web page only for review. See `design-system/RULES.md` §19.
+
 A fresh start. The first version is saved on the `old-app-v1` branch.
 
 This rebuild goes in order, one decision at a time:
 
 1. **Navigation** (decided): four tabs, Home · Order · Rewards · Account, with a floating bag bar that appears when the bag has items. The member QR code lives at the top of Rewards, on the Account profile card, and opens with a long press on either tab.
 2. **Design system** (in progress): `design-system/`.
-3. Home page and the specials post creator.
-4. The rest of the app, screen by screen.
+3. Approved in the mockup: opening, location and map, café detail and scheduling, members going straight to Home, show-around tips. Built next in the Expo app.
+4. Home page and the specials post creator (to discuss).
+5. The rest of the app, screen by screen.
 
 ## Design system
 

@@ -159,15 +159,15 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
   - **How tips move:** one spotlight and one card stay on screen the whole time and are never redrawn. On Next, the words fade out (150 ms), then the spotlight changes shape and glides to the next button while the list scrolls in step with it, all on the sheet curve (460 ms). The card travels with the spotlight. If the card has to move to the other side of the button, it fades across instead of sliding over it. The cup, title and text come back in with a 40 ms stagger, and a brass ring pulses once on arrival. The progress dots stretch into a pill. Taps during a move are never dropped: they play right after. Back and the arrow keys go both ways. With reduced motion, everything moves instantly.
   - **The spotlight never guesses.** After every move it re-measures the real button and corrects itself, so it always lands on the button and the card never covers it. A redraw while tips are open keeps the scroll position.
   - **Tips are tied to anchors, never to layout.** Home changes every day: specials, Trending, holiday cards, nudges. So each tip points at a fixed `data-coach` anchor (`cafe`, `add`, `order`, `rewards`, `account`), which is put back after every Home redraw. `add` goes on the first special's Add button, or on any Add if there are no specials. If Home redraws while a tip is open, the spotlight glides to the button's new place. If today's Home has no button for a tip, that tip is left out and the count says so ("1 OF 4"). The tips never close because Home changed. Any new Home design must keep these anchors.
-  - Skip, tapping outside, Escape or leaving Home closes the tips right away. They show once, and "Show me around again" in Account replays them.
+  - Skip, tapping outside, the phone's back gesture or leaving Home closes the tips right away. They show once, and "Show me around again" in Account replays them.
 - After that, give one short tip the first time someone reaches a feature, in the same spotlight style. One tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
 ## 16. Navigation: nobody gets stuck
 
 - Every screen that isn't a tab's first screen has a visible back button that names where it goes ("‹ All cafés", "‹ Home"). Never a bare arrow.
-- The app keeps a real history: the phone's back gesture and the browser's back and forward buttons walk through exactly where the person has been.
-- Every sheet or pop-up closes four ways: the ✕, tapping outside it, swiping it down, and the phone's back gesture. Escape closes it on a keyboard.
+- The app keeps a real history: the iOS swipe-from-the-left-edge gesture and Android's back gesture or button walk back through exactly where the person has been.
+- Every sheet or pop-up closes four ways: the ✕, tapping outside it, swiping it down, and the phone's back gesture (Android back closes the sheet first, before leaving the screen).
 - Closing a sheet never loses what was typed or picked; going back never empties the bag.
 - Tapping the tab you're already on scrolls it to the top.
 - The café chosen and how to get the order (ASAP or a scheduled time) are always one tap away on Home, and tapping them returns to the map.
@@ -192,3 +192,20 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Every image has alt text; decorative ones use `alt=""`.
 - Focus ring: 2 pt brass with a 2 pt gap.
 - Contrast and touch-size rules above apply everywhere, including in seasonal skins.
+
+## 19. Platform: a native iOS and Android app
+
+- **The product is a native app for iPhone and Android phones**, published on the App Store and Google Play. It is not a website or a web app. The clickable mockup is a web page only so it can be reviewed in a browser.
+- **One codebase, both phones:** React Native with Expo, in TypeScript. The tokens, calendar, specials engine and Home engine are reused as they are. Screens are built from React Native components, never HTML or CSS.
+- The design-system components written for the web mockup (`Pip.tsx`, `Loader.tsx`, `Icon.tsx`, `motion.css`) are rebuilt for React Native: `react-native-svg` for drawings, Reanimated for motion, the same timings and curves from the tokens. The checker gains React Native versions of its rules.
+- **Opening:** the phone's own launch screen shows the logo on the cream background, then hands over without a jump to the animated letter-by-letter opening.
+- **Location:** our explainer screen comes first, then the system prompt. Ask only for "While using the app" (iOS) or approximate/precise while in use (Android). Never background location.
+- **Map:** the illustrated San Diego map is drawn in the app with `react-native-svg`, exactly as approved. Directions opens Apple Maps on iPhone and Google Maps on Android.
+- **Back:** iOS edge swipe and Android back. No browser history, no keyboard shortcuts needed. Hardware keyboards (iPad) are a bonus, not a requirement.
+- **Sheets:** native bottom sheets that follow the finger when swiped down.
+- **Touch feel:** light haptics on tip steps, Add to bag and confirmations, using the phone's haptic engine.
+- **Accessibility:** VoiceOver and TalkBack labels on every control; Dynamic Type and Android font scaling up to 200% without clipping; iOS Reduce Motion and Android Remove animations turn the motion off.
+- **Screens:** respect the notch, the Dynamic Island, the home indicator and Android edge-to-edge bars (safe areas).
+- **Storage:** the starred café, last order and "tips shown" are kept on the phone. Sign-in tokens go in the secure keychain/keystore.
+- **Testing:** on real phones with Expo during the build, then TestFlight (iPhone) and Google Play internal testing before release. The café owns the Apple and Google developer accounts the app is published under.
+
