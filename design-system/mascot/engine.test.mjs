@@ -1,6 +1,6 @@
 // node --experimental-strip-types design-system/mascot/engine.test.mjs
 import assert from 'node:assert/strict';
-import { MOTIONS, HOLIDAY_SET, nextMotion, restMs, react, timeOfDay } from './engine.ts';
+import { MOTIONS, HOLIDAY_SET, nextMotion, restMs, react, timeOfDay, STORIES, storyLength } from './engine.ts';
 let n = 0; const t = (name, fn) => { fn(); n++; console.log('ok', name); };
 const seq = (state, k = 300) => { const r = []; let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647); for (let i = 0; i < k; i++) r.push(nextMotion({ ...state, recent: r.slice(-3), random: rnd })); return r; };
 t('every motion in every set exists', () => { for (const set of Object.values(HOLIDAY_SET)) for (const m of Object.keys(set)) assert.ok(MOTIONS[m], m); });
@@ -11,4 +11,6 @@ t('night is quiet: only calm motions, and it dozes', () => { const s = seq({ hou
 t('Veterans Day stays calm, reactions too', () => { const s = seq({ hour: 12, kit: 'veterans' }); assert.ok(s.every((m) => MOTIONS[m].energy === 1)); assert.equal(react('ordered', 'veterans'), 'proud'); });
 t('the cup is never still for long: rests are short by day', () => { for (let i = 0; i < 50; i++) assert.ok(restMs({ hour: 12, kit: null, recent: [] }) <= 3600); assert.equal(timeOfDay(8), 'morning'); });
 t('reactions: added to bag, order placed, tapped', () => { assert.equal(react('added', null), 'gotit'); assert.equal(react('ordered', 'christmas'), 'cheer'); assert.equal(react('tapped', null), 'giggle'); });
+t('one cup: every story starts and ends in the stage', () => { for (const [k, st] of Object.entries(STORIES)) { assert.equal(st.beats[0].at, 'stage', k); assert.equal(st.beats.at(-1).at, 'stage', k); } });
+t('every holiday has a story, calm ones never travel, none is long', () => { for (const k of Object.keys(HOLIDAY_SET)) assert.ok(STORIES[k], k); assert.equal(STORIES.veterans.travels, false); for (const k of Object.keys(STORIES)) assert.ok(storyLength(k) <= 7500, k); });
 console.log(`\n${n} mascot tests passed`);

@@ -113,3 +113,26 @@ export const restMs = (s: DirectorState) => { const r = (s.random || Math.random
 
 /** A reaction to something the person did, or null. */
 export const react = (event: string, kit: string | null) => { const m = REACTIONS[event]; if (!m) return null; return kit && CALM_ONLY.has(kit) && MOTIONS[m].energy > 1 ? 'proud' : m; };
+
+// ---------- stories: one cup, always ----------
+// There is only ever ONE cup on screen. It lives in its stage on Home. A story takes it out of the stage
+// and brings it back: every story starts and ends at 'stage'. Other places never draw a second cup while
+// the stage is on screen; full-screen moments (tips, photo loading, order placed) borrow the cup and the
+// stage stays empty until it returns.
+export type Beat = { at: 'stage' | 'top-right' | 'top-left' | 'off-right' | 'off-left' | 'center' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'loop'; ms: number; do?: string; prop?: string; fx?: string };
+export const STORIES: Record<string, { name: string; travels: boolean; beats: Beat[] }> = {
+  arrival: { name: 'Peek and wave', travels: false, beats: [{ at: 'stage', ms: 1200, do: 'peek' }, { at: 'stage', ms: 1600, do: 'wave' }] },
+  christmas: { name: 'The sleigh', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'off-right', ms: 700 }, { at: 'off-left', ms: 5200, prop: 'sleigh', fx: 'sparks' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  valentines: { name: 'The heart balloon', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'loop', ms: 5200, prop: 'wings+balloon', fx: 'hearts' }, { at: 'stage', ms: 800, do: 'squish' }] },
+  thanksgiving: { name: 'Pie for the table', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-right', ms: 800 }, { at: 'bottom-left', ms: 2600, prop: 'pie', fx: 'leaves' }, { at: 'stage', ms: 1000, do: 'squish' }] },
+  newyear: { name: 'Countdown and popper', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'center', ms: 800, prop: 'party hat' }, { at: 'center', ms: 2700, do: 'countdown', fx: 'confetti' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  july4: { name: 'Sparkler and fireworks', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-center', ms: 900, prop: 'sparkler' }, { at: 'bottom-center', ms: 3000, fx: 'stars' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  halloween: { name: 'Broom across the moon', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'off-right', ms: 600 }, { at: 'off-left', ms: 4600, prop: 'broom', fx: 'bats' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  coffeeday: { name: 'Bean juggling', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-center', ms: 800 }, { at: 'bottom-center', ms: 3000, prop: 'beans', fx: 'beans' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  mothersday: { name: 'A bouquet', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-right', ms: 800 }, { at: 'bottom-left', ms: 2600, prop: 'bouquet', fx: 'petals' }, { at: 'stage', ms: 1000, do: 'squish' }] },
+  fathersday: { name: 'Tie and thumbs-up', travels: false, beats: [{ at: 'stage', ms: 3600, do: 'thumb', prop: 'tie' }] },
+  backtoschool: { name: 'Late for class', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-right', ms: 700 }, { at: 'off-left', ms: 2400, prop: 'backpack' }, { at: 'stage', ms: 900, do: 'squish' }] },
+  veterans: { name: 'A quiet flag', travels: false, beats: [{ at: 'stage', ms: 4200, do: 'proud', prop: 'flag' }] },
+};
+export const storyFor = (kit: string | null) => (kit && STORIES[kit]) || null;
+export const storyLength = (id: string) => STORIES[id].beats.reduce((a, b) => a + b.ms, 0);
