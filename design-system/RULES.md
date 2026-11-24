@@ -144,7 +144,13 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 
 - **Guests can order.** Nobody is forced to sign up. A phone number is asked for only when it is needed: to earn points, save favorites or get order texts.
 - Launch screen: plain cream in Home's exact colours, no text, so Home appears instantly.
-- First open of each day: only the café's logo, on its white card. Members also see "Welcome back, Bhargav" fade in beneath it. About 2 seconds, tap to skip, never on later opens that day. No mascot, no sign, nothing else.
+- First open of each day, about 2.5 seconds, tap to skip, never again that day. Built only from the café's own logo, split into three layers (`brand/layer-*.png`):
+  1. a warm pool of lamplight glows up behind a white card;
+  2. the couch scene settles in, the hand-lettered "Living Room" writes itself left to right, "COFFEEHOUSE" slides into place;
+  3. steam rises from the cup on the logo's table;
+  4. a line fades in: guests see "A European café with a Californian flair · San Diego · since 1991"; members see "Good evening, Bhargav" and "Your dirty chai latte is one tap away";
+  5. the logo glides up toward the header and Home appears.
+- No mascot and no other props in the opening.
 - No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
