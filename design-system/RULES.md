@@ -103,6 +103,9 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
   - a burst from the button when something goes into the bag;
   - **the cup's holiday act**, once a day when Home opens, and again whenever someone taps the cup: Valentine's, a winged cup floating across with a heart balloon; Christmas, the cup as Santa pulling a sleigh of gifts across the sky; Thanksgiving, the cup carrying a pumpkin pie with leaves swirling; New Year, a 3-2-1 countdown and a confetti popper; 4th of July, the cup with a sparkler and fireworks; Veterans Day, the cup quietly holding a small flag.
   - The other tabs show the cup in its holiday outfit.
+  - **A dark holiday tab bar** with light icons, a holiday band behind the top of Home, and a tinted background on every tab.
+  - **Holiday icons:** the tab icons, the bag and the bell are redrawn for the holiday (Christmas: a tree, a cup in a Santa hat, a gift box, Santa's hat; Valentine's: hearts; Thanksgiving: a leaf and a pumpkin; New Year: a glass and a popper; 4th of July: stars; Veterans Day: a medal). Section headings get a small holiday mark.
+  - Changing holiday or leaving Home stops any effect still running.
 - Holidays never change the layout, the fonts, the logo or where buttons are, so the show-around tips and people's habits keep working.
 - Effects never block a tap, never play in quiet hours on their own (9 PM to 8 AM), and are off with Reduce Motion.
 - **Veterans Day is respectful:** navy, a thin flag stripe, "Thank you to everyone who served", no falling effects, no bursts, no jokes.
@@ -177,6 +180,8 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
 ## 16. Navigation: nobody gets stuck
+
+- **The logo on Home:** tap it to go back to the top; double-tap it to refresh Home (the logo tilts, a thin line runs under it, and "Home is up to date" shows). The full logo (couch, people and lettering) is used everywhere the brand appears, never the lettering alone. On dark backgrounds it sits on a cream badge.
 
 - Every screen that isn't a tab's first screen has a visible back button that names where it goes ("‹ All cafés", "‹ Home"). Never a bare arrow.
 - The app keeps a real history: the iOS swipe-from-the-left-edge gesture and Android's back gesture or button walk back through exactly where the person has been.
