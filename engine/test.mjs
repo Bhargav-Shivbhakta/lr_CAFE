@@ -70,7 +70,7 @@ t('owner specials replace the automatic picks, max 5 in the carousel, the rest i
   assert.equal(h.skin, 'thanksgiving');
 });
 t('section order: greeting, tracker, countdown, join, hero, usual, popular', () => {
-  const g = composeHome({ ...base, now: at('2027-01-30', 9), user: null, activeOrder: { number: '214', step: 1, readyInMin: 6 } });
+  const g = composeHome({ ...base, location: 'lajolla', now: at('2027-01-30', 9), user: null, activeOrder: { number: '214', step: 1, readyInMin: 6 } });
   assert.deepEqual(g.sections.map((s) => s.type).slice(0, 5), ['greeting', 'tracker', 'countdown', 'join', 'hero']);
   assert.equal(g.sections[0].hello, 'Good morning');
   const m = composeHome({ ...base, now: at('2026-11-24'), user: { name: 'B', points: 1, tier: 'Guest', usualItemId: 'dirty-chai' } });
@@ -81,5 +81,12 @@ t('popular never repeats an item already in specials or the usual', () => {
   const h = composeHome({ ...base, specials, now: at('2026-11-24'), user: { name: 'B', points: 1, tier: 'Guest', usualItemId: 'breakfast-croissant' } });
   const pop = h.sections.find((s) => s.type === 'popular').itemIds;
   assert.ok(!pop.includes('breakfast-burrito') && !pop.includes('breakfast-croissant'));
+});
+t('Back to School shows only at College Area (SDSU), and only around the first week of classes', () => {
+  const college = composeHome({ ...base, location: 'college', now: at('2026-08-24') });
+  const lajolla = composeHome({ ...base, location: 'lajolla', now: at('2026-08-24') });
+  assert.equal(college.skin, 'backToSchool');
+  assert.notEqual(lajolla.skin, 'backToSchool');
+  assert.notEqual(composeHome({ ...base, location: 'college', now: at('2026-09-10') }).skin, 'backToSchool');
 });
 console.log(`\n${n} engine tests passed`);

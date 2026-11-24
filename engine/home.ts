@@ -33,7 +33,7 @@ export function hello(now: Date) {
 }
 
 export function composeHome(c: HomeContext): { skin: string; sections: Section[] } {
-  const theme = activeTheme(c.now, c.themes);
+  const theme = activeTheme(c.now, c.themes, c.location);
   const occasion = theme.phase === 'main' && theme.holiday ? c.skinNames[theme.holiday] : null;
   const live = rank(c.specials.filter((s) => isActive(s, c.now, c.location)));
   let cards = live.map((s) => cardFor(s, c.menu, c.now, occasion)).filter((k) => k.title);

@@ -106,6 +106,13 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
   - **A dark holiday tab bar** with light icons, a holiday band behind the top of Home, and a tinted background on every tab.
   - **Holiday icons:** the tab icons, the bag and the bell are redrawn for the holiday (Christmas: a tree, a cup in a Santa hat, a gift box, Santa's hat; Valentine's: hearts; Thanksgiving: a leaf and a pumpkin; New Year: a glass and a popper; 4th of July: stars; Veterans Day: a medal). Section headings get a small holiday mark.
   - Changing holiday or leaving Home stops any effect still running.
+- **Every holiday also gets:**
+  - **a holiday shelf** on Home: one section only that holiday has, with real menu items ("For the table", "Brunch for Mom", "Study fuel"…);
+  - **order moments:** "Order placed" and "Ready at the counter" screens in the holiday's colours with the cup in its outfit;
+  - **a collectible sticker:** the first order during a holiday earns that year's sticker, kept on the Rewards card;
+  - **a holiday app icon:** the home-screen icon gets the holiday's mark (iPhone and Android alternate icons). It can be turned off in Account, and because iPhone shows a short system message when the icon changes, it switches at most once per holiday;
+  - **a lead-up countdown** on Home during the runway ("Starts in 6 days · Remind me").
+- **Holidays with a full look:** Valentine's week, Mother's Day, Father's Day, 4th of July, Back to School (College Area only), National Coffee Day, Halloween, Veterans Day, Thanksgiving week, Christmas, New Year.
 - Holidays never change the layout, the fonts, the logo or where buttons are, so the show-around tips and people's habits keep working.
 - Effects never block a tap, never play in quiet hours on their own (9 PM to 8 AM), and are off with Reduce Motion.
 - **Veterans Day is respectful:** navy, a thin flag stripe, "Thank you to everyone who served", no falling effects, no bursts, no jokes.

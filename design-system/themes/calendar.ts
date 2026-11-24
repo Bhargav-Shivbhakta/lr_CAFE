@@ -8,7 +8,7 @@ export type Rule =
   | { type: 'easter'; before: number; after: number }
   | { type: 'nthWeekday'; month: number; weekday: number; n: number; before: number; after: number };
 
-export interface Holiday { id: string; enabled: boolean; priority: number; runway: number; rule: Rule; note?: string }
+export interface Holiday { id: string; enabled: boolean; priority: number; runway: number; rule: Rule; note?: string; /** only these cafés; absent = every café */ locations?: string[] }
 export interface ThemeConfig { seasons: Record<string, number[]>; holidays: Holiday[] }
 export type Phase = 'season' | 'runway' | 'main';
 export interface ActiveTheme {
@@ -83,10 +83,11 @@ export function seasonFor(date: Date, seasons: Record<string, number[]>): string
 }
 
 /** What the app should look like on a given day. */
-export function activeTheme(date: Date, cfg: ThemeConfig): ActiveTheme {
+/** Pass a café id to leave out holidays that run only at other cafés (Back to School is College Area only). */
+export function activeTheme(date: Date, cfg: ThemeConfig, locationId?: string): ActiveTheme {
   const t = dayOf(date), y = date.getFullYear();
   const season = seasonFor(date, cfg.seasons);
-  const on = cfg.holidays.filter((h) => h.enabled);
+  const on = cfg.holidays.filter((h) => h.enabled && (!h.locations || !locationId || h.locations.includes(locationId)));
   const byPriority = (a: { h: Holiday }, b: { h: Holiday }) => b.h.priority - a.h.priority;
 
   const mains = on.flatMap((h) => nearWindows(h, y - 1).filter(([a, b]) => t >= a && t <= b).map(([, b]) => ({ h, end: b }))).sort(byPriority);
