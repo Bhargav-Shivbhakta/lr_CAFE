@@ -255,11 +255,12 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - **Testing:** on real phones with Expo during the build, then TestFlight (iPhone) and Google Play internal testing before release. The café owns the Apple and Google developer accounts the app is published under.
 
 
-## 20. Order tab (draft, Nov 2026, waiting for approval)
-Built from food-ordering research (Baymard's takeout benchmark, Starbucks, Sweetgreen): reordering first, a pinned category bar, a photo and a price on every row, dietary filters, customization said up front, quick add.
-- **Top:** title, the Pickup / Dine in / Delivery switch, the context pill (café and time, table, or delivery address), search, and Vegan / Vegetarian / Gluten-free filters.
-- **Pinned bar:** section tabs (Drinks, Breakfast, Lunch, Sweets; Lunch first from 11 AM to 4 PM) and category chips that light up as you scroll and jump on tap.
-- **Body:** Order again (your usual and past orders, one-tap add), Popular at the café, New on the menu, then every category. Rows: photo, name, two lines of description, price, tags (Vegan, Vegetarian, Gluten-free, New) and what can be chosen ("Size, milk & sweetness", "Choose your eggs"). The + adds straight away; items that need a choice open the item sheet first. The menu's `s` flag is not shown until the café says what it means (it is on lattes and pastas, so it is not "spicy").
-- **Dine in** is only possible at the café: choosing it checks your location once (within 150 m, allowing for GPS accuracy up to 60 m). Far away: "Dine in opens at the café", with Pickup or another café. Location off: explains why it is needed, with Turn on location or Pickup. At the café: scan the table code or type the table number (1-60), and the order is marked for that table. Checkout checks once more; if you have left, it offers to switch to pickup. Dine in is never remembered between visits. If the café calls names at the counter instead of bringing food to tables, dine in becomes "we'll call you at the counter".
-- **Delivery:** address and an optional note for the driver; delivered by a DoorDash driver (Drive On-Demand, through Toast), $4.99, 25-35 min, up to 3.5 miles from the café; the fee shows in the bag.
-- **Pickup:** as before (ASAP or a time).
+## 20. Order tab (SDSU first, Nov 2026, waiting for approval)
+Nobody reads a 204-item menu top to bottom. The tab is short: reorder first, a few picks for the hour, then 8 photo groups.
+- **Top:** title, then one row: the location pill (café and time, table, or delivery address) and the one-button switch beside it. Tap the switch and it slides open across the row into Pickup / Dine in / Delivery; tap or drag the light thumb, it closes and the choice applies. Dine in always runs the "are you at the café?" check. The same row is on Home. Guests still choose on the café screen before entering.
+- **Location pill opens:** the café map (pickup), the table sheet (dine in), the address sheet (delivery).
+- **Landing:** search, Order again (your usual and recent items), a time-based row of 4–6 picks (Good this morning / Lunch picks / For tonight / Late-night breakfast), then the menu as 8 groups: Coffee & espresso, Lattes & mochas, Iced & blended, Tea matcha & more, Breakfast, Lunch & dinner, Pastries & sweets, Breakfast sides. Each tile shows its count and when it's served. A card shows today's app hours and meal times.
+- **Group page:** back, its own chips (Burritos, Omelettes…), Vegan / Vegetarian / Gluten-free filters (these apply only here), a short list. Tapping the Order tab again goes back to the groups.
+- **Search:** name, description or category; "vegan", "vegetarian", "gluten-free" and "new" filter by the menu's flags.
+- **SDSU hours** (`cafe.json` `mealPeriods`): app orders 7:00 AM–9:40 PM; breakfast and lunch/dinner all day. To confirm with the café (DoorDash lists a "Late Night Breakfast" section; no source gives lunch or dinner hours).
+- **Open questions for the café:** table service or name called at the counter; what the menu's "s" flag means; delivery radius and fee; meal hours; prices for the 14 new dishes.
