@@ -154,6 +154,7 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Text over a photo sits on a dark warm fade so it passes 4.5:1. No heavy filters, no stock photos of other cafés.
 
 - **Batch 1 is in** (64 photos from the café's own online menu, already enhanced: 52 matched to menu items, 12 new dishes waiting for a menu entry). App files: `assets/menu/<item id>-sq.webp` (600×600, cards), `-wide.webp` (800×500 smart crop, the hero), `-th.webp` (240, small rows). The list and the questions for the café are in `data/photos.json`. Import a pack with `node tools/photos/import-pack.mjs <pack> <map.json>`.
+- **The dish is the hero of every crop.** Each photo has a focus point and zoom in `tools/photos/focus.json` (set by looking at the photo), so cards show the burger, not the fries or the plate. Shapes: `-hero` 820×400 for the big special card, `-card` 600×450, `-sq` 600×600 for square tiles, `-th` 240×240. `node tools/photos/recrop.mjs <pack> <map.json>` rebuilds them. Product tiles are square so the dish has room; the special card's photo is 200 tall.
 - **One treatment, no second filter:** enhanced photos are used as they are. Angles stay consistent by type: overhead for flat dishes (pizza, salads, bowls, soup), three-quarter for burgers, sandwiches, wraps, wings and drinks. A photo's angle is never faked: a menu photo must show the real dish.
 - Items without a photo show a calm "Photo coming" tile, never a broken image.
 

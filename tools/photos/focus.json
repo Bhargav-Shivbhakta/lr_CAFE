@@ -1,0 +1,265 @@
+{
+ "_about": "Where the dish is in each square photo: x and y from 0 to 1 (left/top to right/bottom), and how tightly to crop (1 = the whole photo). Set by looking at each photo, so the main dish \u2014 not the fries or the plate \u2014 fills the card. An optional 4th number is a tighter zoom for the square crops.",
+ "stramatcha": [
+  0.32,
+  0.45,
+  0.7
+ ],
+ "wings": [
+  0.45,
+  0.5,
+  0.8
+ ],
+ "tenders": [
+  0.35,
+  0.38,
+  0.7
+ ],
+ "fries": [
+  0.5,
+  0.45,
+  0.85
+ ],
+ "truffle-fries": [
+  0.5,
+  0.45,
+  0.85
+ ],
+ "chips": [
+  0.55,
+  0.4,
+  0.8
+ ],
+ "quesadilla": [
+  0.45,
+  0.45,
+  0.8
+ ],
+ "hummus": [
+  0.42,
+  0.55,
+  0.8
+ ],
+ "pesto-pizza": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "veggie-hummus-pizza": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "cheese-pizza": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "pepperoni-pizza": [
+  0.58,
+  0.5,
+  0.85
+ ],
+ "diavola-pizza": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "soup-salad-combo": [
+  0.5,
+  0.48,
+  0.9
+ ],
+ "bowl-soup": [
+  0.45,
+  0.42,
+  0.8
+ ],
+ "cup-soup": [
+  0.42,
+  0.42,
+  0.8
+ ],
+ "chicken-apple-salad": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "blackened-chicken-salad": [
+  0.55,
+  0.5,
+  0.85
+ ],
+ "salmon-salad": [
+  0.45,
+  0.5,
+  0.85
+ ],
+ "greek-salad": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "caesar-salad": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "house-salad": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "cheeseburger": [
+  0.77,
+  0.38,
+  0.6
+ ],
+ "mushroom-swiss": [
+  0.47,
+  0.45,
+  0.65
+ ],
+ "sams-burger": [
+  0.55,
+  0.4,
+  0.6
+ ],
+ "garlic-bacon-burger": [
+  0.77,
+  0.4,
+  0.6
+ ],
+ "chipotle-chicken": [
+  0.68,
+  0.45,
+  0.6
+ ],
+ "buffalo-wrap": [
+  0.55,
+  0.55,
+  0.75
+ ],
+ "caesar-wrap": [
+  0.65,
+  0.42,
+  0.7
+ ],
+ "falafel-wrap": [
+  0.68,
+  0.37,
+  0.7
+ ],
+ "veggie-wrap": [
+  0.68,
+  0.45,
+  0.75
+ ],
+ "garlic-chicken-panini": [
+  0.52,
+  0.37,
+  0.75
+ ],
+ "pesto-panini": [
+  0.36,
+  0.47,
+  0.55
+ ],
+ "santa-fe-panini": [
+  0.5,
+  0.55,
+  0.75
+ ],
+ "godfather-sub": [
+  0.47,
+  0.3,
+  0.82,
+  0.6
+ ],
+ "tuna-melt": [
+  0.6,
+  0.5,
+  0.75
+ ],
+ "club-turkey": [
+  0.4,
+  0.37,
+  0.75,
+  0.62
+ ],
+ "ca-turkey": [
+  0.5,
+  0.55,
+  0.75
+ ],
+ "blt": [
+  0.55,
+  0.5,
+  0.75
+ ],
+ "steak-sandwich": [
+  0.55,
+  0.58,
+  0.75
+ ],
+ "short-rib-grilled-cheese": [
+  0.43,
+  0.5,
+  0.55
+ ],
+ "grilled-cheese": [
+  0.45,
+  0.42,
+  0.75
+ ],
+ "rigatoni-vodka": [
+  0.45,
+  0.45,
+  0.85
+ ],
+ "spicy-shrimp-pasta": [
+  0.45,
+  0.55,
+  0.85
+ ],
+ "acai-bowl": [
+  0.5,
+  0.5,
+  0.85
+ ],
+ "granola": [
+  0.5,
+  0.45,
+  0.85
+ ],
+ "fruit-bowl": [
+  0.45,
+  0.45,
+  0.85
+ ],
+ "cottage-avo-toast": [
+  0.55,
+  0.45,
+  0.85
+ ],
+ "ultimate-veggie-bagel": [
+  0.45,
+  0.55,
+  0.8
+ ],
+ "quiche": [
+  0.47,
+  0.6,
+  0.85
+ ],
+ "cinnamon-cold-brew": [
+  0.5,
+  0.5,
+  0.75
+ ],
+ "tropical-infusion": [
+  0.5,
+  0.5,
+  0.75
+ ]
+}
