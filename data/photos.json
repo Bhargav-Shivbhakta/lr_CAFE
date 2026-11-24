@@ -1,1 +1,511 @@
-{}
+{
+  "items": {
+    "stramatcha": {
+      "name": "Stramatcha",
+      "sq": "assets/menu/stramatcha-sq.webp",
+      "wide": "assets/menu/stramatcha-wide.webp",
+      "th": "assets/menu/stramatcha-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/izt2ZZbzxXj3BncGFy3ZMniVq7FfRz6NvnqgJsAGzoQ/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000153881993_1775431062.jpg",
+      "batch": 1
+    },
+    "wings": {
+      "name": "Buffalo Hot Wings",
+      "sq": "assets/menu/wings-sq.webp",
+      "wide": "assets/menu/wings-wide.webp",
+      "th": "assets/menu/wings-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/SThvlnkmmWhkFzTJ7mwwd7_PoSboHMqeUEBzZLpK-As/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000005190220973_1792225852.jpg",
+      "batch": 1
+    },
+    "tenders": {
+      "name": "Chicken Tenders & Fries",
+      "sq": "assets/menu/tenders-sq.webp",
+      "wide": "assets/menu/tenders-wide.webp",
+      "th": "assets/menu/tenders-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/CwEZbz716FUjUwJrVfX4unirk7ET9yvKIacZ1Md_sb0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095730016_1786403240.jpg",
+      "batch": 1
+    },
+    "fries": {
+      "name": "French Fries",
+      "sq": "assets/menu/fries-sq.webp",
+      "wide": "assets/menu/fries-wide.webp",
+      "th": "assets/menu/fries-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/EcAOy-lg6736xa06R36DwPxlHjV3euTMExf2bKVmfrk/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/8/item-1300000000095730018_1792225912.jpg",
+      "batch": 1
+    },
+    "truffle-fries": {
+      "name": "Truffle Parmesan Fries",
+      "sq": "assets/menu/truffle-fries-sq.webp",
+      "wide": "assets/menu/truffle-fries-wide.webp",
+      "th": "assets/menu/truffle-fries-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/L9eSXQ-4ex9qxSsV2gk0YcNI6oGUC04yasgfMH7ldC8/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095730020_1792225696.jpg",
+      "batch": 1
+    },
+    "chips": {
+      "name": "Homemade Chips Basket",
+      "sq": "assets/menu/chips-sq.webp",
+      "wide": "assets/menu/chips-wide.webp",
+      "th": "assets/menu/chips-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/CqgJjpt7j0t8iC3Vs3lE4Q1YAaweiEs2krrmHQc7xR0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000005190207134_1786425062.png",
+      "batch": 1
+    },
+    "quesadilla": {
+      "name": "Quesadilla",
+      "sq": "assets/menu/quesadilla-sq.webp",
+      "wide": "assets/menu/quesadilla-wide.webp",
+      "th": "assets/menu/quesadilla-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/GW3ZY5M96gYBiBp50cajadkULVPvAW9N5DueRsiCAI4/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000000095730014_1792225946.jpg",
+      "batch": 1
+    },
+    "hummus": {
+      "name": "Homemade Hummus",
+      "sq": "assets/menu/hummus-sq.webp",
+      "wide": "assets/menu/hummus-wide.webp",
+      "th": "assets/menu/hummus-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/z-fSFnaYnjKURdw23OMONKMBTmY5w37PAFP9zVUzwxo/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095730010_1792226264.jpg",
+      "batch": 1
+    },
+    "pesto-pizza": {
+      "name": "Pesto Chicken Pizza",
+      "sq": "assets/menu/pesto-pizza-sq.webp",
+      "wide": "assets/menu/pesto-pizza-wide.webp",
+      "th": "assets/menu/pesto-pizza-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/5avukZfDPy6MxioAYkOvTz82-cIJL6rY6dY_-fTFbtM/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/9/item-1300000000095730029_1792304364.jpg",
+      "batch": 1
+    },
+    "veggie-hummus-pizza": {
+      "name": "Artisan Veggie Hummus Pizza",
+      "sq": "assets/menu/veggie-hummus-pizza-sq.webp",
+      "wide": "assets/menu/veggie-hummus-pizza-wide.webp",
+      "th": "assets/menu/veggie-hummus-pizza-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/TW7uXAIuTwI7dBhxOsPWxXIXt_OsF8K6Ozx1mTTcgG4/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000095730033_1792304385.jpg",
+      "batch": 1
+    },
+    "cheese-pizza": {
+      "name": "Cheese Pizza",
+      "sq": "assets/menu/cheese-pizza-sq.webp",
+      "wide": "assets/menu/cheese-pizza-wide.webp",
+      "th": "assets/menu/cheese-pizza-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/CHmC34Zkf39o-RR3O-6O4MpNOZs3pPFW2NwRZp3CzBA/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730035_1792304401.jpg",
+      "batch": 1
+    },
+    "pepperoni-pizza": {
+      "name": "Pepperoni Pizza",
+      "sq": "assets/menu/pepperoni-pizza-sq.webp",
+      "wide": "assets/menu/pepperoni-pizza-wide.webp",
+      "th": "assets/menu/pepperoni-pizza-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/a24Iqmz4mmNOwsGMnrbxFKIAOrBq8GQEdgwSsb_FxBk/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000000095730037_1792304431.jpg",
+      "batch": 1
+    },
+    "diavola-pizza": {
+      "name": "Diavola Pizza",
+      "sq": "assets/menu/diavola-pizza-sq.webp",
+      "wide": "assets/menu/diavola-pizza-wide.webp",
+      "th": "assets/menu/diavola-pizza-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/m-Jn_s8k7PYc_VtoMUdTr9prXRXZ9ExVTsJ2EPvR8tQ/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000010472748462_1792304452.jpg",
+      "batch": 1
+    },
+    "soup-salad-combo": {
+      "name": "Cup of Soup, Salad, Fruit & Bread",
+      "sq": "assets/menu/soup-salad-combo-sq.webp",
+      "wide": "assets/menu/soup-salad-combo-wide.webp",
+      "th": "assets/menu/soup-salad-combo-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/_ct103bzR4QG5qVr6d6HonzD4fUyOBg7jH3SXA2YX3A/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095730006_1786425313.png",
+      "batch": 1
+    },
+    "bowl-soup": {
+      "name": "Homemade Bowl of Soup",
+      "sq": "assets/menu/bowl-soup-sq.webp",
+      "wide": "assets/menu/bowl-soup-wide.webp",
+      "th": "assets/menu/bowl-soup-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/030oC2xH-jAYxLvttpRIKtJil3rAsiNXtSg6xfLpnm0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000000095730004_1792303059.jpg",
+      "batch": 1
+    },
+    "cup-soup": {
+      "name": "Homemade Cup Of Soup",
+      "sq": "assets/menu/cup-soup-sq.webp",
+      "wide": "assets/menu/cup-soup-wide.webp",
+      "th": "assets/menu/cup-soup-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/dMtDV-Xkqr_-AvIrHRvMZUpP6yABE6HeUpJkQseFaiw/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/9/item-1300000000188623919_1792303093.jpg",
+      "batch": 1
+    },
+    "chicken-apple-salad": {
+      "name": "Chicken Apple Pecan Salad",
+      "sq": "assets/menu/chicken-apple-salad-sq.webp",
+      "wide": "assets/menu/chicken-apple-salad-wide.webp",
+      "th": "assets/menu/chicken-apple-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/tEtVzegMJnAkYGyWY2QdUaAnfOCIytmtl09mN6DLe5A/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730065_1792303482.jpg",
+      "batch": 1
+    },
+    "blackened-chicken-salad": {
+      "name": "Blackened Grilled Chicken Salad",
+      "sq": "assets/menu/blackened-chicken-salad-sq.webp",
+      "wide": "assets/menu/blackened-chicken-salad-wide.webp",
+      "th": "assets/menu/blackened-chicken-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/S_rh70NNeu_3Dgrj19YhFjx2EiAKR4I9kLOvP2nYeD0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000000095730067_1786403127.jpg",
+      "batch": 1
+    },
+    "salmon-salad": {
+      "name": "Blackened Grilled Salmon Salad",
+      "sq": "assets/menu/salmon-salad-sq.webp",
+      "wide": "assets/menu/salmon-salad-wide.webp",
+      "th": "assets/menu/salmon-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/gMg-TU6Jxyt3UQk5D6d7eJ7XDVkaqulwfvcY3E78q20/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/9/item-1300000000095730069_1775431247.jpg",
+      "batch": 1
+    },
+    "greek-salad": {
+      "name": "Greek Salad",
+      "sq": "assets/menu/greek-salad-sq.webp",
+      "wide": "assets/menu/greek-salad-wide.webp",
+      "th": "assets/menu/greek-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/RGirr1FSgYPP1kxQMGAt67yqeg_4wK5rWzL2T0joZ2o/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/1/item-1300000000095729721_1792304179.jpg",
+      "batch": 1
+    },
+    "caesar-salad": {
+      "name": "Caesar Salad",
+      "sq": "assets/menu/caesar-salad-sq.webp",
+      "wide": "assets/menu/caesar-salad-wide.webp",
+      "th": "assets/menu/caesar-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/G-CRSioo1aQ4R-9u-tfbfdnBXpIitP6RYFnpAFhud_k/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730075_1792304203.jpg",
+      "batch": 1
+    },
+    "house-salad": {
+      "name": "House Salad",
+      "sq": "assets/menu/house-salad-sq.webp",
+      "wide": "assets/menu/house-salad-wide.webp",
+      "th": "assets/menu/house-salad-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/Gov6za4hdkO6YGrTn5flhn-vQ8zgX6QmjRFyidUXr9k/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000000095730077_1792304254.jpg",
+      "batch": 1
+    },
+    "cheeseburger": {
+      "name": "Cheeseburger",
+      "sq": "assets/menu/cheeseburger-sq.webp",
+      "wide": "assets/menu/cheeseburger-wide.webp",
+      "th": "assets/menu/cheeseburger-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/IRzwYlCY6yhp6bx79s7FAx11d_GpoZxdrxwa-T6vtKg/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000095730093_1786403218.jpg",
+      "batch": 1
+    },
+    "mushroom-swiss": {
+      "name": "Mushroom Swiss Burger",
+      "sq": "assets/menu/mushroom-swiss-sq.webp",
+      "wide": "assets/menu/mushroom-swiss-wide.webp",
+      "th": "assets/menu/mushroom-swiss-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/wBBLFEczfo4Srfdt4mC25vU9hgqEqUMcUt5mKO2dk4k/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730095_1792304555.jpg",
+      "batch": 1
+    },
+    "sams-burger": {
+      "name": "Sams Burger",
+      "sq": "assets/menu/sams-burger-sq.webp",
+      "wide": "assets/menu/sams-burger-wide.webp",
+      "th": "assets/menu/sams-burger-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/hIEHGSugcSoh9w8JSKFOYVIZ5pmCCcwPXP5KIKEMRb8/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000005190278753_1792304620.jpg",
+      "batch": 1
+    },
+    "garlic-bacon-burger": {
+      "name": "Garlic Aioli Bacon Burger",
+      "sq": "assets/menu/garlic-bacon-burger-sq.webp",
+      "wide": "assets/menu/garlic-bacon-burger-wide.webp",
+      "th": "assets/menu/garlic-bacon-burger-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/KL5whte_UODIAvpRQM97EWQ1PnDTjgRHV1v5Syr0LtE/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/9/item-1300000000095730099_1786425114.png",
+      "batch": 1
+    },
+    "chipotle-chicken": {
+      "name": "Chipotle Chicken Sandwich",
+      "sq": "assets/menu/chipotle-chicken-sq.webp",
+      "wide": "assets/menu/chipotle-chicken-wide.webp",
+      "th": "assets/menu/chipotle-chicken-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/-WbwLUXZFTtC5cdfqWNiYlqeJz6bF7y2DwAAx-uPtY4/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000009358738374_1775431369.jpg",
+      "batch": 1
+    },
+    "buffalo-wrap": {
+      "name": "Spicy Buffalo Chicken Wrap",
+      "sq": "assets/menu/buffalo-wrap-sq.webp",
+      "wide": "assets/menu/buffalo-wrap-wide.webp",
+      "th": "assets/menu/buffalo-wrap-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/ItceRR79KYwIEL_wfoLvO1mh_jM4luXc9ULEQLaRJF4/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/1/item-1300000000095730041_1792304657.jpg",
+      "batch": 1
+    },
+    "caesar-wrap": {
+      "name": "Caesar Chicken Wrap",
+      "sq": "assets/menu/caesar-wrap-sq.webp",
+      "wide": "assets/menu/caesar-wrap-wide.webp",
+      "th": "assets/menu/caesar-wrap-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/F30NN9KkQqLU_0cgIC3urvi7miCrcRS3b67SMTN1Q3E/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000095730043_1786404497.png",
+      "batch": 1
+    },
+    "falafel-wrap": {
+      "name": "Falafel Hummus Wrap",
+      "sq": "assets/menu/falafel-wrap-sq.webp",
+      "wide": "assets/menu/falafel-wrap-wide.webp",
+      "th": "assets/menu/falafel-wrap-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/l7ABDc_pSwmenpXEMOp5soly3y0RVXYSvJvxJ-F81C8/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730045_1792304691.jpg",
+      "batch": 1
+    },
+    "veggie-wrap": {
+      "name": "Fresh Veggie Wrap",
+      "sq": "assets/menu/veggie-wrap-sq.webp",
+      "wide": "assets/menu/veggie-wrap-wide.webp",
+      "th": "assets/menu/veggie-wrap-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/uvD21LnQcilRSqoMLdulDIeBaPFcS6qs88B8eO8mb5o/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000000095730047_1786403618.jpg",
+      "batch": 1
+    },
+    "garlic-chicken-panini": {
+      "name": "Garlic Aioli Chicken Panini",
+      "sq": "assets/menu/garlic-chicken-panini-sq.webp",
+      "wide": "assets/menu/garlic-chicken-panini-wide.webp",
+      "th": "assets/menu/garlic-chicken-panini-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/kuduOSEMzzZCA07MTNROo7pLdWTd6-sRMM7mbWK37es/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000095730053_1786425174.png",
+      "batch": 1
+    },
+    "pesto-panini": {
+      "name": "Pesto Chicken Panini",
+      "sq": "assets/menu/pesto-panini-sq.webp",
+      "wide": "assets/menu/pesto-panini-wide.webp",
+      "th": "assets/menu/pesto-panini-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/wQuD18JWTjoXK132_cVaDllOk7Jaixa0CcY77scjYfw/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000000095730055_1775431308.jpg",
+      "batch": 1
+    },
+    "santa-fe-panini": {
+      "name": "Santa Fe Chicken Panini",
+      "sq": "assets/menu/santa-fe-panini-sq.webp",
+      "wide": "assets/menu/santa-fe-panini-wide.webp",
+      "th": "assets/menu/santa-fe-panini-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/M03bSeWlO3s_k5f9kLVkJLx_WnFjwkRFfDPjwKOTPGc/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000000095730057_1792304735.jpg",
+      "batch": 1
+    },
+    "godfather-sub": {
+      "name": "The God Father Sub",
+      "sq": "assets/menu/godfather-sub-sq.webp",
+      "wide": "assets/menu/godfather-sub-wide.webp",
+      "th": "assets/menu/godfather-sub-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/Z8YB_uDMKFgH3ajvaPcAZYYDzaF0G5VgBYUWOZjrvTE/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000095730172_1786403427.jpg",
+      "batch": 1
+    },
+    "tuna-melt": {
+      "name": "Grilled Sourdough Tuna Melt",
+      "sq": "assets/menu/tuna-melt-sq.webp",
+      "wide": "assets/menu/tuna-melt-wide.webp",
+      "th": "assets/menu/tuna-melt-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/-2DYbi4fRmFXkKrxSGkEPzMU5tTJz7PouADgAI6ZPjg/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095730176_1786425236.png",
+      "batch": 1
+    },
+    "club-turkey": {
+      "name": "Club Turkey",
+      "sq": "assets/menu/club-turkey-sq.webp",
+      "wide": "assets/menu/club-turkey-wide.webp",
+      "th": "assets/menu/club-turkey-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/cqCE-82SHfiZ9hMSu47AkiKqnXpgBYKYwCQXz_-e5mQ/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095730166_1786403399.jpg",
+      "batch": 1
+    },
+    "ca-turkey": {
+      "name": "CA Turkey",
+      "sq": "assets/menu/ca-turkey-sq.webp",
+      "wide": "assets/menu/ca-turkey-wide.webp",
+      "th": "assets/menu/ca-turkey-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/x6fOatTnlHCUz2PBljx4B0vZ-BHNJwmc-iQpUZR_UlI/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/8/item-1300000000095730168_1792304841.jpg",
+      "batch": 1
+    },
+    "blt": {
+      "name": "BLT",
+      "sq": "assets/menu/blt-sq.webp",
+      "wide": "assets/menu/blt-wide.webp",
+      "th": "assets/menu/blt-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/Qcrd0YMhry9TXbIeTpdbS1oWJjr7Nmny8kTOcvlQZKw/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095730170_1786404415.png",
+      "batch": 1
+    },
+    "steak-sandwich": {
+      "name": "Drew's Steak Sandwich & Fries",
+      "sq": "assets/menu/steak-sandwich-sq.webp",
+      "wide": "assets/menu/steak-sandwich-wide.webp",
+      "th": "assets/menu/steak-sandwich-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/MkVxWiFaPVswb98w23Q_2CXUNZAWls2SbJnMFZYTbWE/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000011300038044_1792301847.jpg",
+      "batch": 1
+    },
+    "short-rib-grilled-cheese": {
+      "name": "Short Rib Grilled Cheese",
+      "sq": "assets/menu/short-rib-grilled-cheese-sq.webp",
+      "wide": "assets/menu/short-rib-grilled-cheese-wide.webp",
+      "th": "assets/menu/short-rib-grilled-cheese-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/lFxJG935IrO6sTyIiUBmA9KpUdDdeRyG-VfG4deUAYc/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000917145992_1775428758.jpg",
+      "batch": 1
+    },
+    "grilled-cheese": {
+      "name": "Grilled Cheese Sandwich - the Best Ever",
+      "sq": "assets/menu/grilled-cheese-sq.webp",
+      "wide": "assets/menu/grilled-cheese-wide.webp",
+      "th": "assets/menu/grilled-cheese-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/0M5Os3zLV-L6PG_D0FssAySmzFQroyoN_yUV4lUe3WQ/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095730160_1792304902.jpg",
+      "batch": 1
+    },
+    "rigatoni-vodka": {
+      "name": "Vodka Pasta `",
+      "sq": "assets/menu/rigatoni-vodka-sq.webp",
+      "wide": "assets/menu/rigatoni-vodka-wide.webp",
+      "th": "assets/menu/rigatoni-vodka-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/DCk55DkkVwhqZ3Zt_mP9d3N6fbD6yP0RX0qv7qnhPFs/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/1/item-1300000016009399631_1792224856.jpg",
+      "batch": 1
+    },
+    "spicy-shrimp-pasta": {
+      "name": "Cajun Shrimp Pasta",
+      "sq": "assets/menu/spicy-shrimp-pasta-sq.webp",
+      "wide": "assets/menu/spicy-shrimp-pasta-wide.webp",
+      "th": "assets/menu/spicy-shrimp-pasta-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/VR0-A1ArBK8G7cyOAOEoxFuV5rneJhseYxvml7OajX8/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000095730182_1786403179.jpg",
+      "batch": 1
+    },
+    "acai-bowl": {
+      "name": "Acai Bowl",
+      "sq": "assets/menu/acai-bowl-sq.webp",
+      "wide": "assets/menu/acai-bowl-wide.webp",
+      "th": "assets/menu/acai-bowl-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/2GmZnBORHhQ1xeFWvKJZdYWRDt9Yi_jvT-DiiZxSXEg/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/8/item-1300000000095729868_1732475105.jpg",
+      "batch": 1
+    },
+    "granola": {
+      "name": "Homemade Granola",
+      "sq": "assets/menu/granola-sq.webp",
+      "wide": "assets/menu/granola-wide.webp",
+      "th": "assets/menu/granola-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/T2BEdcFsctC6Ou-DtfXlm6PgewAON0WCnkoCBOJx03o/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095729870_1776837997.jpg",
+      "batch": 1
+    },
+    "fruit-bowl": {
+      "name": "Fresh Fruit Bowl",
+      "sq": "assets/menu/fruit-bowl-sq.webp",
+      "wide": "assets/menu/fruit-bowl-wide.webp",
+      "th": "assets/menu/fruit-bowl-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/46lHkppk4T3q050OWp43yEmBGOzpzqIyT-CsQw0zlF0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000188688096_1786425768.jpg",
+      "batch": 1
+    },
+    "cottage-avo-toast": {
+      "name": "Cottage Avocado Toast",
+      "sq": "assets/menu/cottage-avo-toast-sq.webp",
+      "wide": "assets/menu/cottage-avo-toast-wide.webp",
+      "th": "assets/menu/cottage-avo-toast-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/HhrQJKXou0EQkoRVd5LId9uJWWwkXy27U8cvClSZx30/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000095729872_1732486527.jpg",
+      "batch": 1
+    },
+    "ultimate-veggie-bagel": {
+      "name": "Ultimate Veggie Bagel",
+      "sq": "assets/menu/ultimate-veggie-bagel-sq.webp",
+      "wide": "assets/menu/ultimate-veggie-bagel-wide.webp",
+      "th": "assets/menu/ultimate-veggie-bagel-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/ANS-psc6zCRxyi6DXzN1jfde338e1MImun0WVHCRNtc/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000000095729904_1732502855.jpg",
+      "batch": 1
+    },
+    "quiche": {
+      "name": "Quiche Lorraine & Side Salad",
+      "sq": "assets/menu/quiche-sq.webp",
+      "wide": "assets/menu/quiche-wide.webp",
+      "th": "assets/menu/quiche-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/9B8WWN4QqrDH01EIECu91fzO5u_D181QKEsA6pjbjsg/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095729946_1732489492.jpg",
+      "batch": 1
+    },
+    "cinnamon-cold-brew": {
+      "name": "Cinnamon Crunch Foam Cold Brew",
+      "sq": "assets/menu/cinnamon-cold-brew-sq.webp",
+      "wide": "assets/menu/cinnamon-cold-brew-wide.webp",
+      "th": "assets/menu/cinnamon-cold-brew-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/6JhEAFn3O10K0hrbwl5oiGNS4qCeQyd0Dci2Ef7AQmw/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/3/item-1300000000157445743_1775430871.jpg",
+      "batch": 1
+    },
+    "tropical-infusion": {
+      "name": "Tropical Infusion",
+      "sq": "assets/menu/tropical-infusion-sq.webp",
+      "wide": "assets/menu/tropical-infusion-wide.webp",
+      "th": "assets/menu/tropical-infusion-th.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/VJB6oRta77M5n9Rqds3EJ2XqIxzJoOW3s4UAQfVo2v4/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000157425950_1775431089.jpg",
+      "batch": 1
+    }
+  },
+  "new": {
+    "goat-cheese-pesto-dip": {
+      "name": "Goat Cheese & Pesto Dip",
+      "sq": "assets/menu/new/goat-cheese-pesto-dip-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/NWOg9ZKg0DVLURS3AruliTA7gnRz0QfSDNtAxTBGSrk/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000095730012_1792226315.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "steak-salad": {
+      "name": "Steak Salad",
+      "sq": "assets/menu/new/steak-salad-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/bxM2xNatkr-GEBqNnaxfzsYCDOHOnK_vAhvRdGbhxsA/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/5/item-1300000013710264705_1792301935.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "chicken-fajita-wrap": {
+      "name": "Chicken Fajita Wrap",
+      "sq": "assets/menu/new/chicken-fajita-wrap-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/z3KCoH7sP-YTiaC61Ewv5OmCf7kVUGohUxD_bfigxjw/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/7/item-1300000001778064767_1786404469.png",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "fresh-mozzarella-panini": {
+      "name": "Fresh Mozzarella Panini",
+      "sq": "assets/menu/new/fresh-mozzarella-panini-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/JYmojDQObV6iB8rr_kfnhL1spYMn7SxphkRMUifUr9g/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/9/item-1300000000095730059_1792304753.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "chipotle-club-turkey": {
+      "name": "Chipotle Club Turkey",
+      "sq": "assets/menu/new/chipotle-club-turkey-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/cBZ3pdICBHnJDzvrZ9THbWQRiCgjSZqHJvEHLmKL_xk/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000000312990204_1792304793.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "philly-cheese-steak-fries": {
+      "name": "Philly Cheese Steak & Fries",
+      "sq": "assets/menu/new/philly-cheese-steak-fries-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/umM22pQbRkARXRZn1mtQLE3inGIRJPmeEJHNBwhR5A0/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/8/item-1300000000095730158_1775431271.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "truffle-mac-cheese": {
+      "name": "Truffle Mac & Cheese",
+      "sq": "assets/menu/new/truffle-mac-cheese-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/PeXzNcbimKgn_J6nTTkgECz4NyX-nIdJlu3zkgb84zI/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/1/item-1300000010473076001_1786425139.png",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "pesto-tortellini": {
+      "name": "Pesto Tortellini",
+      "sq": "assets/menu/new/pesto-tortellini-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/mRhtyh8FPg21Y_qcsOxu2Z9NtdUYMq63WLhdYSDFqac/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/0/item-1300000000095730180_1792304951.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "gyro-plate": {
+      "name": "Gyro Plate",
+      "sq": "assets/menu/new/gyro-plate-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/jNoo0j7nSSNAmPbqndy55QiA-LcGNAcz5_YWhApwccQ/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/6/item-1300000000095730186_1792304981.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "pesto-avocado-toast": {
+      "name": "Pesto Avocado Toast",
+      "sq": "assets/menu/new/pesto-avocado-toast-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/HhrQJKXou0EQkoRVd5LId9uJWWwkXy27U8cvClSZx30/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/2/item-1300000000095729872_1732486527.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "hummus-avocado-toast-homemade": {
+      "name": "Hummus Avocado Toast Homemade",
+      "sq": "assets/menu/new/hummus-avocado-toast-homemade-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/hTdgQq-s1jfubtBudCR99hm4PYlu1gyfjvsO5iR9i8w/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000000095729874_1732486864.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "pistachio-blondie": {
+      "name": "Pistachio Blondie",
+      "sq": "assets/menu/new/pistachio-blondie-sq.webp",
+      "source": "https://d1w7312wesee68.cloudfront.net/hvhTLBipZ74xp1u0eX17eUTYX5CIJAbzwLcNsQMjP6s/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000001755029474_1775431113.jpg",
+      "batch": 1,
+      "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    }
+  },
+  "checkWithCafe": {
+    "homemade-granola": "Photo looks like a fruit bowl, nearly the same as Fresh fruit bowl.",
+    "pistachio-blondie": "Photo shows a layered green drink, not a blondie.",
+    "cajun-shrimp-pasta": "Matched to the menu’s Spicy shrimp pasta; confirm it is the same dish."
+  }
+}
