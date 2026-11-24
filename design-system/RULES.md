@@ -19,7 +19,15 @@ If a rule truly has to be broken, put `// design-allow: <reason>` on that line. 
 
 To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
-## 2. Colour
+## 2. Brand: the Living Room logo
+
+- `brand/logo.png` is the café's own logo (the red couch with two regulars at the table, the hand-lettered wordmark and COFFEEHOUSE). Source file: `brand/logo-original.png`, supplied for this project.
+- **Full logo:** on a white card only (its table and faces are white), at least 120 px wide. Used for the opening moment, the About page and the App Store icon artwork.
+- **Wordmark** (`brand/wordmark.png`, the lettering alone with a transparent background): the app header, at least 24 px tall, on cream or white.
+- Never recolour, stretch, redraw or crop the people out of the logo. Never put Pip on, over or inside the logo.
+- Where the logo is too small to read (map pins, tiny icons), use the plain white couch shape instead.
+
+## 3. Colour
 
 - Only token colours. No hex or rgb values in app code.
 - **Café red** (`--primary`) is for actions and the active tab. Never a large background, never body text.
@@ -29,14 +37,14 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - **Success green** always comes with a tick or words.
 - Every text colour meets 4.5:1 on its background (3:1 for 24 px and up). The checker measures every palette and every seasonal skin.
 
-## 3. Type
+## 4. Type
 
 - Two fonts only: `var(--font-display)` and `var(--font-text)`. Never a font name in app code.
 - Use the scale classes: `.t-display`, `.t-title`, `.t-heading`, `.t-body`, `.t-label`, `.t-caption`, `.t-eyebrow`.
 - Nothing under 11 px. Prices use tabular figures.
 - Text grows with the phone's text-size setting up to 200% without breaking layouts.
 
-## 4. Space and layout
+## 5. Space and layout
 
 - Gaps come from the 4-pt scale: 4, 8, 12, 16, 20, 24, 32, 40, 56.
 - Screen edges 20, between cards 12, between sections 32.
@@ -44,23 +52,23 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Nothing crosses the 20 pt margin except full-bleed photos and the specials carousel.
 - Every tap target is at least 44 × 44 pt.
 
-## 5. Corners and depth
+## 6. Corners and depth
 
 - Radius tokens only: xs 6 (tags), sm 12 (inputs, list photos, chips), md 20 (cards), lg 28 (sheets), pill (buttons, search, segmented controls).
 - Four depth levels: 0 page, 1 cards, 2 floating (bag bar, toasts, banners), 3 sheets and dialogs over a dimmed page. In dark mode, shadows become fine outlines.
 
-## 6. Buttons
+## 7. Buttons
 
 - Three levels, in order of importance: filled, tinted, outline or text. **One filled button per screen.**
 - Three sizes: large 52 (the bottom action, full width), medium 44 (in cards and sheets), small 32 (dense rows only; the tap area still reaches 44).
 - Four states on every button: default, pressed (darker, scales to 0.97), disabled (pale, with the reason nearby), loading (mini cup, words say what is happening).
 
-## 7. Icons
+## 8. Icons
 
 - Only the 20 icons in `icons/Icon.tsx`, one stroke weight.
 - An icon that acts alone needs a spoken label. Colour never carries meaning alone.
 
-## 8. Motion
+## 9. Motion
 
 - Durations and curves come from `--dur-*` and `--ease-*`. The checker rejects any other millisecond value.
 - Motion explains what happened. It is never decoration for its own sake.
@@ -71,7 +79,7 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Exits run at about 70% of the entrance time.
 - Reduced motion is respected everywhere; loaders show a still, full cup.
 
-## 9. Mascot (Pip)
+## 10. Mascot (Pip)
 
 - Use `<Pip/>` from `pip/Pip.tsx`. Never redraw, recolour, stretch or outline Pip.
 - **Never on checkout, payment or price screens.** The checker blocks it.
@@ -81,7 +89,7 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Pip stays quiet in quiet hours (9 PM to 8 AM). A setting in Account turns Pip's animations off.
 - Pip is for waiting, celebrating and gentle apologies. A serious problem, like a failed payment, gets plain words and no mascot.
 
-## 10. Seasonal and holiday themes
+## 11. Seasonal and holiday themes
 
 - The calendar in `themes/calendar.ts` decides the look of every day. Nobody switches themes by hand.
 - A skin changes **only** the hero and special card colours, the eyebrow, the accent, the tint and Pip's outfit. It never changes the café red, fonts, layout, buttons, prices or the tab bar.
@@ -106,13 +114,13 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
 - Ready but off: Lunar New Year, St. Patrick's, Easter, Father's Day, Día de los Muertos, Back to school (needs SDSU's first day each year).
 
-## 11. Opening hours
+## 12. Opening hours
 
 - Hours come from `data/cafe.json` until the app reads them live from Toast.
 - The café is treated as open every day. A closure or special hours only appear if a date is added to `closures`. No location publishes holiday closures.
 - The app never says "closed" from a guess. When unsure, it shows the regular hours.
 
-## 12. Photos
+## 13. Photos
 
 - Every food photo goes through `npm run photos`, which matches it to a menu item, crops to the food and applies the Living Room grade (a touch warmer, gentle contrast, soft vignette). No photo reaches the app unstyled.
 - Sources: the café's own photos (Toast menu, website, their own posts) or photos taken at the café. `data/photos.json` records where each one came from. No customer review photos or stock.
@@ -120,7 +128,7 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Warm daylight from the side, real wood and café mugs, food from above, drinks at 45°.
 - Text over a photo sits on a dark warm fade so it passes 4.5:1. No heavy filters, no stock photos of other cafés.
 
-## 13. Voice
+## 14. Voice
 
 | Say | Not |
 | --- | --- |
@@ -132,7 +140,7 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
 Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emoji in system messages.
 
-## 14. Arriving in the app
+## 15. Arriving in the app
 
 - **Guests can order.** Nobody is forced to sign up. A phone number is asked for only when it is needed: to earn points, save favorites or get order texts.
 - Launch screen: plain cream in Home's exact colours, no text, so Home appears instantly.
@@ -140,7 +148,7 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
-## 15. Navigation: nobody gets stuck
+## 16. Navigation: nobody gets stuck
 
 - Every screen that isn't a tab's first screen has a visible back button that names where it goes ("‹ All cafés", "‹ Home"). Never a bare arrow.
 - The app keeps a real history: the phone's back gesture and the browser's back and forward buttons walk through exactly where the person has been.
@@ -149,7 +157,7 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Tapping the tab you're already on scrolls it to the top.
 - The café chosen and how to get the order (ASAP or a scheduled time) are always one tap away on Home, and tapping them returns to the map.
 
-## 16. Accessibility
+## 17. Accessibility
 
 - Real `<button>` and `<a>` elements for anything tappable. The checker rejects click handlers on `div`, `span`, `li` and `p`.
 - Every image has alt text; decorative ones use `alt=""`.
