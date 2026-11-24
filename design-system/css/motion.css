@@ -1,0 +1,87 @@
+/* Living Room motion. Every duration and curve comes from tokens.css (--dur-*, --ease-*).
+   Rules: RULES.md § Motion. Exits are faster than entrances. Only loaders and steam loop. */
+
+/* ---------- Press: every button, card and tile ---------- */
+.m-press { transition: transform var(--dur-instant) var(--ease-standard), background-color var(--dur-instant) var(--ease-standard); }
+.m-press:active { transform: scale(0.97); }
+
+/* ---------- Screens ---------- */
+@keyframes m-tab-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.m-tab-in { animation: m-tab-in var(--dur-standard) var(--ease-standard) both; }
+
+@keyframes m-push-in { from { transform: translateX(100%); } to { transform: none; } }
+@keyframes m-push-out { from { transform: none; } to { transform: translateX(100%); } }
+.m-push-in { animation: m-push-in var(--dur-push) var(--ease-sheet) both; }
+.m-push-out { animation: m-push-out calc(var(--dur-push) * 0.7) var(--ease-exit) both; }
+
+@keyframes m-sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes m-sheet-out { from { transform: none; } to { transform: translateY(100%); } }
+@keyframes m-scrim-in { from { opacity: 0; } to { opacity: 1; } }
+.m-sheet-in { animation: m-sheet-in var(--dur-gentle) var(--ease-sheet) both; }
+.m-sheet-out { animation: m-sheet-out calc(var(--dur-gentle) * 0.7) var(--ease-exit) both; }
+.m-scrim-in { animation: m-scrim-in var(--dur-gentle) linear both; }
+
+/* ---------- Bag ---------- */
+@keyframes m-bar-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.m-bag-bar-in { animation: m-bar-in var(--dur-push) var(--ease-standard) both; }
+@keyframes m-bump { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.18); } }
+.m-bump { animation: m-bump var(--dur-quick) var(--ease-standard); }
+/* The dot that flies from an item to the bag: set --fly-x / --fly-y to the bag's offset. */
+@keyframes m-fly { 0% { opacity: 1; transform: translate(0, 0) scale(1); } 100% { opacity: 0; transform: translate(var(--fly-x), var(--fly-y)) scale(0.5); } }
+.m-fly { animation: m-fly 450ms cubic-bezier(.3,.7,.4,1) both; }
+@keyframes m-collapse { to { height: 0; margin: 0; opacity: 0; } }
+.m-remove { animation: m-collapse 260ms var(--ease-exit) both; overflow: hidden; }
+
+/* ---------- Controls ---------- */
+@keyframes m-roll-up { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes m-roll-down { from { transform: translateY(-100%); } to { transform: none; } }
+.m-roll-up { animation: m-roll-up var(--dur-quick) var(--ease-standard); }
+.m-roll-down { animation: m-roll-down var(--dur-quick) var(--ease-standard); }
+.m-toggle, .m-chip, .m-segment { transition: all var(--dur-quick) var(--ease-standard); }
+@keyframes m-shake { 0%, 100% { transform: none; } 20% { transform: translateX(-8px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(3px); } }
+.m-shake { animation: m-shake 360ms var(--ease-standard); }
+
+/* ---------- Feedback ---------- */
+@keyframes m-drop-in { from { opacity: 0; transform: translateY(-100%); } to { opacity: 1; transform: none; } }
+@keyframes m-rise-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.m-banner-in { animation: m-drop-in var(--dur-push) var(--ease-standard) both; }
+.m-toast-in { animation: m-rise-in var(--dur-standard) var(--ease-standard) both; }
+@keyframes m-draw { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
+@keyframes m-grow { from { transform: scale(0.6); opacity: 0; } to { transform: none; opacity: 1; } }
+.m-success { animation: m-grow 200ms var(--ease-standard) both; }
+.m-success path { stroke-dasharray: 60; animation: m-draw 350ms 150ms ease-out both; }
+
+/* ---------- Lists and photos ---------- */
+.m-stagger > * { animation: m-rise-in 240ms var(--ease-standard) both; }
+.m-stagger > *:nth-child(1) { animation-delay: 0ms; } .m-stagger > *:nth-child(2) { animation-delay: 40ms; }
+.m-stagger > *:nth-child(3) { animation-delay: 80ms; } .m-stagger > *:nth-child(4) { animation-delay: 120ms; }
+.m-stagger > *:nth-child(5) { animation-delay: 160ms; } .m-stagger > *:nth-child(n+6) { animation-delay: 200ms; }
+@keyframes m-photo-in { from { filter: blur(12px); opacity: 0.5; } to { filter: none; opacity: 1; } }
+.m-photo-in { animation: m-photo-in 400ms ease-out both; }
+
+/* ---------- Rewards (the only celebrations) ---------- */
+@keyframes m-ring { from { stroke-dashoffset: var(--ring-len, 176); } to { stroke-dashoffset: 0; } }
+.m-ring { stroke-dasharray: var(--ring-len, 176); animation: m-ring var(--dur-celebrate) ease-in-out both; }
+@keyframes m-pop { 0% { transform: scale(0); } 70% { transform: scale(1.08); } 100% { transform: scale(1); } }
+.m-pop { animation: m-pop 300ms var(--ease-bounce) both; }
+@keyframes m-glow { 0% { box-shadow: 0 0 0 0 rgba(176,138,62,0.3); } 100% { box-shadow: 0 0 0 18px rgba(176,138,62,0); } }
+.m-glow { animation: m-glow 900ms ease-out 1; }
+@keyframes m-flip-out { to { transform: rotateY(90deg); } }
+@keyframes m-flip-in { from { transform: rotateY(-90deg); } to { transform: none; } }
+.m-flip-out { animation: m-flip-out 250ms var(--ease-exit) both; }
+.m-flip-in { animation: m-flip-in 250ms var(--ease-standard) both; }
+@keyframes m-fill { from { width: var(--from, 0%); } to { width: var(--to, 100%); } }
+.m-points-fill { animation: m-fill var(--dur-story) ease-in-out both; }
+
+/* ---------- Loaders (allowed to loop) ---------- */
+@keyframes m-pour { 0% { transform: translateY(64px); } 70%, 88% { transform: translateY(8px); } 100% { transform: translateY(64px); } }
+@keyframes m-cup-steam { 0%, 62% { opacity: 0; transform: translateY(6px); } 75% { opacity: 0.8; } 100% { opacity: 0; transform: translateY(-18px); } }
+.m-cup-fill { animation: m-pour 3.6s infinite cubic-bezier(.4,0,.2,1); }
+.m-cup-steam { animation: m-cup-steam 3.6s infinite ease-out; }
+@keyframes m-steam { 0% { transform: translateY(8px) scaleX(1); opacity: 0; } 25% { opacity: 0.7; } 100% { transform: translateY(-34px) scaleX(1.4); opacity: 0; } }
+.m-steam { animation: m-steam 4s infinite ease-out; }
+@keyframes m-shimmer { from { background-position: -240px 0; } to { background-position: 240px 0; } }
+.m-shimmer { background: linear-gradient(90deg, var(--line) 0%, var(--surface) 50%, var(--line) 100%); background-size: 240px 100%; animation: m-shimmer 1.4s infinite linear; }
+
+/* Reduced motion: tokens.css shortens everything to 1 ms; loaders show a still full cup. */
+@media (prefers-reduced-motion: reduce) { .m-cup-fill { animation: none; transform: translateY(8px); } }

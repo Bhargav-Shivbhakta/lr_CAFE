@@ -20,10 +20,22 @@ design-system/tokens/tokens.ts     ← generated, typed values for the app
 design-system/themes/calendar.ts   ← picks today's seasonal or holiday skin
 ```
 
-After changing `tokens.json`, run:
+```
+design-system/RULES.md             ← the rules, in plain words
+design-system/css/motion.css       ← every animation, timed from the tokens
+design-system/pip/Pip.tsx          ← Pip the mascot: 17 poses, 14 outfits, 20 animations
+design-system/pip/Loader.tsx       ← CupLoader and PipLoader (no spinners anywhere)
+design-system/icons/Icon.tsx       ← the 20-icon set
+design-system/scripts/check-design.mjs ← fails the build when a rule is broken
+data/cafe.json                     ← locations, hours, sources, closures
+```
+
+Commands:
 
 ```
-npm run tokens
+npm run tokens      # regenerate css/tokens.css and tokens/tokens.ts after editing tokens.json
+npm run design      # check the app code against the rules
+npm run check       # tokens + checker self-test + design check
 ```
 
 ### Seasonal and holiday themes
@@ -31,5 +43,6 @@ npm run tokens
 The app always uses the café red, the same fonts and the same layout. What rotates is the "skin": the colours of the hero and special cards, small accents and the mascot's outfit.
 
 - **Four seasons** run all year: winter, spring, summer, autumn.
-- **Holidays** take over for a few days. Each one has an on/off switch and a date rule in `tokens.json`. Fixed dates, "2nd Sunday of May" and Easter are all calculated automatically.
-- Holidays that need a date from the café (the anniversary, the first day of SDSU's fall semester) stay off until a date is filled in.
+- **Holidays** have a lead-up (a countdown card on Home, 5 to 20 days) and a main window (the full holiday look). Each has an on/off switch and a date rule in `tokens.json`; fixed dates, "2nd Sunday of May", Thanksgiving and Easter are calculated automatically.
+- **The café's birthday** is Thanksgiving Day: the College Area café opened on Thanksgiving Day 1991.
+- The full calendar is in `design-system/RULES.md` § 10.

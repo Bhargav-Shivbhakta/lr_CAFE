@@ -1,9 +1,12 @@
 {
   "name": "living-room-app",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
-    "tokens": "node design-system/scripts/build-tokens.mjs"
+    "tokens": "node design-system/scripts/build-tokens.mjs",
+    "design": "node design-system/scripts/check-design.mjs",
+    "design:self-test": "node design-system/scripts/check-design.mjs --self-test",
+    "check": "npm run tokens && npm run design:self-test && npm run design"
   }
 }

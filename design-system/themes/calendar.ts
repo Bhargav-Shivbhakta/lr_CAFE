@@ -1,6 +1,6 @@
 // Seasonal and holiday theme calendar.
-// Pure functions, no imports, so the app AND the Node checker use the same code.
-// The rules themselves live in tokens.json → themes.holidays. Do not hard-code dates here.
+// Pure functions, no imports, so the app AND the Node checker run the same code.
+// All dates and rules live in tokens.json → themes. Never hard-code a date here.
 
 export type Rule =
   | { type: 'fixed'; start: string; end: string }
@@ -8,9 +8,21 @@ export type Rule =
   | { type: 'easter'; before: number; after: number }
   | { type: 'nthWeekday'; month: number; weekday: number; n: number; before: number; after: number };
 
-export interface Holiday { id: string; enabled: boolean; priority: number; rule: Rule; note?: string }
+export interface Holiday { id: string; enabled: boolean; priority: number; runway: number; rule: Rule; note?: string }
 export interface ThemeConfig { seasons: Record<string, number[]>; holidays: Holiday[] }
-export interface ActiveTheme { skin: string; season: string; holiday: string | null }
+export type Phase = 'season' | 'runway' | 'main';
+export interface ActiveTheme {
+  /** The skin to put on <html data-skin>. During a runway this is still the season. */
+  skin: string;
+  season: string;
+  phase: Phase;
+  /** The holiday in its main window, or the one being counted down to in a runway. */
+  holiday: string | null;
+  /** Days until the main window starts (runway only), e.g. 5 → "starts in 5 days". */
+  daysUntil: number | null;
+  /** Days left in the main window, counting today (main only). */
+  daysLeft: number | null;
+}
 
 const DAY = 86_400_000;
 const utc = (y: number, m: number, d: number) => Date.UTC(y, m - 1, d);
@@ -27,13 +39,13 @@ export function easter(y: number): number {
   return utc(y, month, day);
 }
 
-/** The n-th weekday (0 = Sunday) of a month, e.g. 4th Thursday of November. */
+/** The n-th weekday (0 = Sunday) of a month, e.g. the 4th Thursday of November. */
 export function nthWeekday(y: number, month: number, weekday: number, n: number): number {
   const first = new Date(utc(y, month, 1)).getUTCDay();
   return utc(y, month, 1 + ((weekday - first + 7) % 7) + (n - 1) * 7);
 }
 
-/** The [start, end] windows (inclusive, UTC day stamps) a rule covers around year y. */
+/** Main windows [start, end] (inclusive UTC day stamps) a rule produces for year y. */
 export function windows(rule: Rule, y: number): Array<[number, number]> {
   switch (rule.type) {
     case 'fixed': {
@@ -60,27 +72,67 @@ export function windows(rule: Rule, y: number): Array<[number, number]> {
   }
 }
 
+/** Main windows near a date: this year's and next year's, so runways crossing New Year work. */
+function nearWindows(h: Holiday, y: number) {
+  return [...windows(h.rule, y), ...windows(h.rule, y + 1)];
+}
+
 export function seasonFor(date: Date, seasons: Record<string, number[]>): string {
   const m = date.getMonth() + 1;
   return Object.keys(seasons).find((k) => seasons[k].includes(m)) ?? 'base';
 }
 
-/** Which skin to show on a given day. Holidays beat seasons; higher priority beats lower. */
+/** What the app should look like on a given day. */
 export function activeTheme(date: Date, cfg: ThemeConfig): ActiveTheme {
   const t = dayOf(date), y = date.getFullYear();
   const season = seasonFor(date, cfg.seasons);
-  const hits = cfg.holidays
-    .filter((h) => h.enabled && windows(h.rule, y).some(([a, b]) => t >= a && t <= b))
-    .sort((a, b) => b.priority - a.priority);
-  const holiday = hits[0]?.id ?? null;
-  return { skin: holiday ?? season, season, holiday };
+  const on = cfg.holidays.filter((h) => h.enabled);
+  const byPriority = (a: { h: Holiday }, b: { h: Holiday }) => b.h.priority - a.h.priority;
+
+  const mains = on.flatMap((h) => nearWindows(h, y - 1).filter(([a, b]) => t >= a && t <= b).map(([, b]) => ({ h, end: b }))).sort(byPriority);
+  if (mains.length) {
+    const { h, end } = mains[0];
+    return { skin: h.id, season, phase: 'main', holiday: h.id, daysUntil: null, daysLeft: Math.round((end - t) / DAY) + 1 };
+  }
+  const runways = on
+    .filter((h) => h.runway > 0)
+    .flatMap((h) => nearWindows(h, y - 1).filter(([a]) => t >= a - h.runway * DAY && t < a).map(([a]) => ({ h, start: a })))
+    .sort((p, q) => p.start - q.start || q.h.priority - p.h.priority);
+  if (runways.length) {
+    const { h, start } = runways[0];
+    return { skin: season, season, phase: 'runway', holiday: h.id, daysUntil: Math.round((start - t) / DAY), daysLeft: null };
+  }
+  return { skin: season, season, phase: 'season', holiday: null, daysUntil: null, daysLeft: null };
 }
 
-/** Every holiday window in a year, for the planning calendar and the checker. */
+/** Every holiday's runway and main window in a year, for planning and for the checker. */
 export function yearPlan(y: number, cfg: ThemeConfig) {
-  return cfg.holidays.flatMap((h) =>
-    windows(h.rule, y)
-      .filter(([a, b]) => new Date(a).getUTCFullYear() === y || new Date(b).getUTCFullYear() === y)
-      .map(([a, b]) => ({ id: h.id, enabled: h.enabled, priority: h.priority, start: new Date(a).toISOString().slice(0, 10), end: new Date(b).toISOString().slice(0, 10) })),
-  ).sort((p, q) => p.start.localeCompare(q.start));
+  const iso = (n: number) => new Date(n).toISOString().slice(0, 10);
+  return cfg.holidays
+    .flatMap((h) =>
+      windows(h.rule, y)
+        .filter(([a]) => new Date(a).getUTCFullYear() === y)
+        .map(([a, b]) => ({ id: h.id, enabled: h.enabled, priority: h.priority, runwayStart: iso(a - h.runway * DAY), start: iso(a), end: iso(b) })),
+    )
+    .sort((p, q) => p.start.localeCompare(q.start));
+}
+
+// ---------- Opening hours ----------
+export interface Location { id: string; name: string; hours: Record<string, [string, string]> }
+export interface Closure { date: string; locations: string[]; note: string; hours: [string, string] | null }
+const DAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+const mins = (s: string) => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
+
+/** Is a location open right now? Owner-set closures and holiday hours override the weekly hours. */
+export function openStatus(now: Date, loc: Location, closures: Closure[] = []) {
+  const ymd = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const special = closures.find((c) => c.date === ymd && (c.locations.length === 0 || c.locations.includes(loc.id)));
+  if (special && special.hours === null) return { open: false, closesAt: null, note: special.note };
+  const [o, c] = special?.hours ?? loc.hours[DAYS[now.getDay()]];
+  const n = now.getHours() * 60 + now.getMinutes();
+  // Closing times past midnight are written as 24:00, 25:00 and so on.
+  const yesterday = special ? null : loc.hours[DAYS[(now.getDay() + 6) % 7]];
+  if (yesterday && mins(yesterday[1]) > 1440 && n < mins(yesterday[1]) - 1440) return { open: true, closesAt: yesterday[1], note: special?.note ?? null };
+  const open = n >= mins(o) && n < mins(c);
+  return { open, closesAt: open ? c : null, opensAt: open ? null : o, note: special?.note ?? null };
 }
