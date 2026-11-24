@@ -7,8 +7,9 @@
     "tokens": "node design-system/scripts/build-tokens.mjs",
     "design": "node design-system/scripts/check-design.mjs",
     "design:self-test": "node design-system/scripts/check-design.mjs --self-test",
-    "check": "npm run tokens && npm run design:self-test && npm run design",
-    "photos": "node tools/photos/process.mjs"
+    "check": "npm run tokens && npm run design:self-test && npm run design && npm run test:engine",
+    "photos": "node tools/photos/process.mjs",
+    "test:engine": "node engine/test.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.5"
