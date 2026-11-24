@@ -254,3 +254,12 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - **Storage:** the starred café, last order and "tips shown" are kept on the phone. Sign-in tokens go in the secure keychain/keystore.
 - **Testing:** on real phones with Expo during the build, then TestFlight (iPhone) and Google Play internal testing before release. The café owns the Apple and Google developer accounts the app is published under.
 
+
+## 20. Order tab (draft, Nov 2026, waiting for approval)
+Built from food-ordering research (Baymard's takeout benchmark, Starbucks, Sweetgreen): reordering first, a pinned category bar, a photo and a price on every row, dietary filters, customization said up front, quick add.
+- **Top:** title, the Pickup / Dine in / Delivery switch, the context pill (café and time, table, or delivery address), search, and Vegan / Vegetarian / Gluten-free filters.
+- **Pinned bar:** section tabs (Drinks, Breakfast, Lunch, Sweets; Lunch first from 11 AM to 4 PM) and category chips that light up as you scroll and jump on tap.
+- **Body:** Order again (your usual and past orders, one-tap add), Popular at the café, New on the menu, then every category. Rows: photo, name, two lines of description, price, tags (Vegan, Vegetarian, Gluten-free, New) and what can be chosen ("Size, milk & sweetness", "Choose your eggs"). The + adds straight away; items that need a choice open the item sheet first. The menu's `s` flag is not shown until the café says what it means (it is on lattes and pastas, so it is not "spicy").
+- **Dine in** is only possible at the café: choosing it checks your location once (within 150 m, allowing for GPS accuracy up to 60 m). Far away: "Dine in opens at the café", with Pickup or another café. Location off: explains why it is needed, with Turn on location or Pickup. At the café: scan the table code or type the table number (1-60), and the order is marked for that table. Checkout checks once more; if you have left, it offers to switch to pickup. Dine in is never remembered between visits. If the café calls names at the counter instead of bringing food to tables, dine in becomes "we'll call you at the counter".
+- **Delivery:** address and an optional note for the driver; delivered by a DoorDash driver (Drive On-Demand, through Toast), $4.99, 25-35 min, up to 3.5 miles from the café; the fee shows in the bag.
+- **Pickup:** as before (ASAP or a time).
