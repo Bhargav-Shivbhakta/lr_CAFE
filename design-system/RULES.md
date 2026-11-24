@@ -144,7 +144,7 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 
 - **Guests can order.** Nobody is forced to sign up. A phone number is asked for only when it is needed: to earn points, save favorites or get order texts.
 - Launch screen: plain cream in Home's exact colours, no text, so Home appears instantly.
-- First open of each day: the "Living Room" sign lights up and Pip hops in, about 1.2 seconds, tap to skip. Never on later opens that day.
+- First open of each day: the café's logo appears and a small hanging sign swings and flips to "Come on in" ("Welcome back, Bhargav" for members). About 2 seconds, tap to skip, never on later opens that day. Pip does not appear in the opening.
 - No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
