@@ -114,6 +114,8 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
 ## 12. Photos
 
+- Every food photo goes through `npm run photos`, which matches it to a menu item, crops to the food and applies the Living Room grade (a touch warmer, gentle contrast, soft vignette). No photo reaches the app unstyled.
+- Sources: the café's own photos (Toast menu, website, their own posts) or photos taken at the café. `data/photos.json` records where each one came from. No customer review photos or stock.
 - Shapes: 1:1 for menu lists (radius 12), 4:3 for item pages, 4:5 for holiday specials, 16:10 for the Home hero and posts (radius 20).
 - Warm daylight from the side, real wood and café mugs, food from above, drinks at 45°.
 - Text over a photo sits on a dark warm fade so it passes 4.5:1. No heavy filters, no stock photos of other cafés.
@@ -130,7 +132,15 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
 Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emoji in system messages.
 
-## 14. Accessibility
+## 14. Arriving in the app
+
+- **Guests can order.** Nobody is forced to sign up. A phone number is asked for only when it is needed: to earn points, save favorites or get order texts.
+- Launch screen: plain cream in Home's exact colours, no text, so Home appears instantly.
+- First open of each day: the "Living Room" sign lights up and Pip hops in, about 1.2 seconds, tap to skip. Never on later opens that day.
+- No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
+- Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
+
+## 15. Accessibility
 
 - Real `<button>` and `<a>` elements for anything tappable. The checker rejects click handlers on `div`, `span`, `li` and `p`.
 - Every image has alt text; decorative ones use `alt=""`.
