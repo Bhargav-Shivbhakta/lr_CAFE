@@ -140,7 +140,16 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
-## 15. Accessibility
+## 15. Navigation: nobody gets stuck
+
+- Every screen that isn't a tab's first screen has a visible back button that names where it goes ("‹ All cafés", "‹ Home"). Never a bare arrow.
+- The app keeps a real history: the phone's back gesture and the browser's back and forward buttons walk through exactly where the person has been.
+- Every sheet or pop-up closes four ways: the ✕, tapping outside it, swiping it down, and the phone's back gesture. Escape closes it on a keyboard.
+- Closing a sheet never loses what was typed or picked; going back never empties the bag.
+- Tapping the tab you're already on scrolls it to the top.
+- The café chosen and how to get the order (ASAP or a scheduled time) are always one tap away on Home, and tapping them returns to the map.
+
+## 16. Accessibility
 
 - Real `<button>` and `<a>` elements for anything tappable. The checker rejects click handlers on `div`, `span`, `li` and `p`.
 - Every image has alt text; decorative ones use `alt=""`.
