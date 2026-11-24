@@ -1,0 +1,115 @@
+// The cup's animation engine.
+// One place that knows every motion the cup can do, and a director that decides what it does next.
+// Pure functions (no DOM), so the app, the mockup and the tests share it. The app's driver applies
+// the chosen motion's CSS class to the cup and plays its stage effect.
+//
+// Rules (RULES.md §10):
+// - The cup has its own stage on Home and is never frozen: it always breathes and blinks, and every
+//   few seconds does something small. Big moves are rare, so it stays calm, not hyperactive.
+// - It never repeats the same motion twice in a row, and at most 1 in 3 motions is "big".
+// - At night (9 PM to 7 AM) it only does quiet things and dozes off.
+// - On a holiday it dresses for it and the holiday's motions take over most of the loop.
+// - Veterans Day: calm only. Reduce Motion: a still pose, no loop.
+// - Events (added to bag, order placed, tapped) jump the queue with a reaction.
+
+export type Energy = 1 | 2 | 3; // 1 quiet, 2 lively, 3 big
+export interface Motion {
+  cls: string;        // CSS class on the cup (pip.css / motion.css)
+  ms: number;         // how long it lasts
+  energy: Energy;
+  fx?: string;        // optional stage effect: 'hearts' | 'snow' | 'leaves' | 'confetti' | 'sparks' | 'beans' | 'petals' | 'steam' | 'zzz' | 'bats' | 'stars'
+  say?: string;       // what a screen reader hears, if anything
+}
+
+/** Every motion the cup can do. */
+export const MOTIONS: Record<string, Motion> = {
+  // always on, underneath everything
+  idle: { cls: 'pip--idle', ms: 3000, energy: 1 },
+  // quiet
+  look: { cls: 'pip--search', ms: 2400, energy: 1 },
+  breathe: { cls: 'pip--idle', ms: 3200, energy: 1, fx: 'steam' },
+  peek: { cls: 'pip--peek', ms: 4000, energy: 1 },
+  stretch: { cls: 'pip--stretch', ms: 3600, energy: 1 },
+  doze: { cls: 'pip--sleep', ms: 6400, energy: 1, fx: 'zzz' },
+  // lively
+  wave: { cls: 'pip--wave', ms: 1600, energy: 2 },
+  squish: { cls: 'pip--squish', ms: 1800, energy: 2 },
+  hop: { cls: 'pip--hop', ms: 1600, energy: 2 },
+  love: { cls: 'pip--love', ms: 2400, energy: 2, fx: 'hearts' },
+  sneeze: { cls: 'pip--sneeze', ms: 3600, energy: 2 },
+  shiver: { cls: 'pip--shiver', ms: 1200, energy: 2, fx: 'snow' },
+  oops: { cls: 'pip--oops', ms: 2600, energy: 2 },
+  // big
+  dance: { cls: 'pip--dance', ms: 2000, energy: 3 },
+  twirl: { cls: 'pip--twirl', ms: 2600, energy: 3 },
+  // holiday moves (outfit comes from the holiday kit)
+  jingle: { cls: 'pip--dance', ms: 2000, energy: 2, fx: 'snow' },
+  snowfall: { cls: 'pip--idle', ms: 3200, energy: 1, fx: 'snow' },
+  heartbeat: { cls: 'pip--love', ms: 2400, energy: 2, fx: 'hearts' },
+  leafswirl: { cls: 'pip--twirl', ms: 2600, energy: 2, fx: 'leaves' },
+  cozy: { cls: 'pip--idle', ms: 3200, energy: 1, fx: 'leaves' },
+  pop: { cls: 'pip--hop', ms: 1600, energy: 3, fx: 'confetti' },
+  sparkle: { cls: 'pip--wave', ms: 1600, energy: 2, fx: 'sparks' },
+  fireworks: { cls: 'pip--hop', ms: 1600, energy: 3, fx: 'stars' },
+  spooky: { cls: 'pip--peek', ms: 4000, energy: 2, fx: 'bats' },
+  juggle: { cls: 'pip--squish', ms: 1800, energy: 2, fx: 'beans' },
+  bloom: { cls: 'pip--love', ms: 2400, energy: 2, fx: 'petals' },
+  proud: { cls: 'pip--wave', ms: 1600, energy: 1 },
+  study: { cls: 'pip--search', ms: 2400, energy: 1, fx: 'stars' },
+  // reactions to what the person does
+  cheer: { cls: 'pip--dance', ms: 2000, energy: 3, fx: 'sparks', say: 'The cup cheers' },
+  gotit: { cls: 'pip--hop', ms: 1600, energy: 2, fx: 'sparks' },
+  giggle: { cls: 'pip--squish', ms: 1800, energy: 2 },
+};
+
+// what the cup tends to do, by time of day (weights)
+const BY_TIME: Record<'morning' | 'day' | 'evening' | 'night', Record<string, number>> = {
+  morning: { stretch: 3, look: 3, breathe: 3, wave: 2, sneeze: 1, peek: 1 },
+  day: { look: 3, breathe: 2, wave: 2, squish: 2, hop: 2, peek: 1, love: 1, dance: 1, twirl: 1 },
+  evening: { breathe: 3, look: 2, love: 2, wave: 1, squish: 1, stretch: 1, peek: 1 },
+  night: { breathe: 3, doze: 4, look: 1 },
+};
+// holiday sets take most of the loop (weights added on top)
+export const HOLIDAY_SET: Record<string, Record<string, number>> = {
+  christmas: { jingle: 4, snowfall: 4, shiver: 2, wave: 1 },
+  valentines: { heartbeat: 5, love: 2, wave: 1 },
+  thanksgiving: { leafswirl: 3, cozy: 4, wave: 1 },
+  newyear: { pop: 3, dance: 2, sparkle: 3 },
+  july4: { fireworks: 3, sparkle: 4, wave: 1 },
+  halloween: { spooky: 5, peek: 2, shiver: 1 },
+  coffeeday: { juggle: 4, breathe: 3, dance: 1 },
+  mothersday: { bloom: 5, love: 2 },
+  fathersday: { proud: 4, wave: 2 },
+  backtoschool: { study: 4, look: 2, hop: 1 },
+  veterans: { proud: 3, breathe: 4 },
+};
+export const CALM_ONLY = new Set(['veterans']);
+export const REACTIONS: Record<string, string> = { added: 'gotit', ordered: 'cheer', tapped: 'giggle', refreshed: 'twirl' };
+
+export const timeOfDay = (h: number) => (h >= 21 || h < 7 ? 'night' : h < 11 ? 'morning' : h < 17 ? 'day' : 'evening');
+
+export interface DirectorState { hour: number; kit: string | null; recent: string[]; random?: () => number }
+
+/** Pick the next motion. Never the same twice in a row; at most one big motion in any three. */
+export function nextMotion(s: DirectorState): string {
+  const rnd = s.random || Math.random;
+  const tod = timeOfDay(s.hour), w: Record<string, number> = { ...BY_TIME[tod] };
+  if (s.kit && HOLIDAY_SET[s.kit] && tod !== 'night') for (const [k, v] of Object.entries(HOLIDAY_SET[s.kit])) w[k] = (w[k] || 0) + v * 2;
+  const last = s.recent[s.recent.length - 1], bigRecently = s.recent.slice(-2).some((m) => MOTIONS[m]?.energy === 3);
+  const allowed = Object.entries(w).filter(([m]) => {
+    const mo = MOTIONS[m]; if (!mo || m === last) return false;
+    if (s.kit && CALM_ONLY.has(s.kit) && mo.energy > 1) return false;
+    if (tod === 'night' && mo.energy > 1) return false;
+    if (bigRecently && mo.energy === 3) return false;
+    return true;
+  });
+  const total = allowed.reduce((a, [, v]) => a + v, 0); let r = rnd() * total;
+  for (const [m, v] of allowed) { r -= v; if (r <= 0) return m; }
+  return allowed.length ? allowed[0][0] : 'breathe';
+}
+
+/** Rest between motions (the cup keeps breathing and blinking while it rests). */
+export const restMs = (s: DirectorState) => { const r = (s.random || Math.random)(); const tod = timeOfDay(s.hour); return Math.round((tod === 'night' ? 4000 : 1400) + r * (tod === 'night' ? 3000 : 2200)); };
+
+/** A reaction to something the person did, or null. */
+export const react = (event: string, kit: string | null) => { const m = REACTIONS[event]; if (!m) return null; return kit && CALM_ONLY.has(kit) && MOTIONS[m].energy > 1 ? 'proud' : m; };

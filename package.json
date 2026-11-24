@@ -7,10 +7,11 @@
     "tokens": "node design-system/scripts/build-tokens.mjs",
     "design": "node design-system/scripts/check-design.mjs",
     "design:self-test": "node design-system/scripts/check-design.mjs --self-test",
-    "check": "npm run tokens && npm run design:self-test && npm run design && npm run test:engine && npm run test:notify",
+    "check": "npm run tokens && npm run design:self-test && npm run design && npm run test:engine && npm run test:notify && npm run test:mascot",
     "photos": "node tools/photos/process.mjs",
     "test:engine": "node engine/test.mjs",
-    "test:notify": "node --experimental-strip-types engine/notify.test.mjs"
+    "test:notify": "node --experimental-strip-types engine/notify.test.mjs",
+    "test:mascot": "node --experimental-strip-types design-system/mascot/engine.test.mjs"
   },
   "devDependencies": {
     "sharp": "^0.35.5"

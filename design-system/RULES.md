@@ -91,6 +91,13 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Pip stays quiet in quiet hours (9 PM to 8 AM). A setting in Account turns Pip's animations off.
 - Pip is for waiting, celebrating and gentle apologies. A serious problem, like a failed payment, gets plain words and no mascot.
 
+- **The animation engine** lives in `design-system/mascot/engine.ts` (tests in `engine.test.mjs`): the motion library (every motion the cup can do, its length and energy, its stage effect) and the director that picks what comes next.
+- **The cup has its own stage on Home** (76 px, next to the greeting) and is never frozen: it always breathes and blinks, and every 1.5 to 3.5 seconds does something: looks around, waves, hops, stretches, squishes, a little dance or twirl. Never the same motion twice in a row; at most one big motion in any three, so it feels alive, not hyperactive.
+- **Time of day:** stretches in the morning, livelier by day, softer in the evening; from 9 PM to 7 AM only quiet motions and it dozes (zzz).
+- **Holidays take over the stage** with their outfit and motion set: Christmas (Santa hat, snowfall, jingle), Valentine's (heartbeat, hearts), Thanksgiving (scarf, leaf swirl), New Year (party hat, confetti pop), 4th of July (sparkle, fireworks), Halloween (witch hat, bats), Coffee Day (beret, juggling beans), Mother's Day (flower, petals), Father's Day (tie, proud), Back to School (glasses, study), Veterans Day (calm only).
+- **Reactions jump the queue:** a hop when something goes into the bag, a cheer when an order is placed, a giggle when tapped.
+- The loop pauses when Home isn't on screen, while photos load, during tips and order moments. Reduce Motion: a still cup, no loop.
+
 ## 11. Seasonal and holiday themes
 
 - The calendar in `themes/calendar.ts` decides the look of every day. Nobody switches themes by hand.
@@ -193,6 +200,8 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 
 ## 16. Navigation: nobody gets stuck
 
+- **Tapping the tab you're on** takes you back to the top of it.
+- **Home waits for its photos:** it opens only when every photo on it has loaded, behind the cup filling with coffee and a count ("4 of 6 photos"); never longer than 8 seconds. On the phone the native launch screen stays up while they load.
 - **The logo on Home:** tap it to go back to the top; double-tap it to refresh Home (the logo tilts, a thin line runs under it, and "Home is up to date" shows). The full logo (couch, people and lettering) is used everywhere the brand appears, never the lettering alone. On dark backgrounds it sits on a cream badge.
 
 - Every screen that isn't a tab's first screen has a visible back button that names where it goes ("‹ All cafés", "‹ Home"). Never a bare arrow.
