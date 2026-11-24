@@ -1,6 +1,6 @@
 // node --experimental-strip-types design-system/mascot/engine.test.mjs
 import assert from 'node:assert/strict';
-import { MOTIONS, HOLIDAY_SET, nextMotion, restMs, react, timeOfDay, STORIES, storyLength } from './engine.ts';
+import { MOTIONS, HOLIDAY_SET, nextMotion, restMs, react, timeOfDay, STORIES, storyLength, EVERYDAY, nextEveryday, EVERYDAY_EVENTS } from './engine.ts';
 let n = 0; const t = (name, fn) => { fn(); n++; console.log('ok', name); };
 const seq = (state, k = 300) => { const r = []; let seed = 7; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647); for (let i = 0; i < k; i++) r.push(nextMotion({ ...state, recent: r.slice(-3), random: rnd })); return r; };
 t('every motion in every set exists', () => { for (const set of Object.values(HOLIDAY_SET)) for (const m of Object.keys(set)) assert.ok(MOTIONS[m], m); });
@@ -13,4 +13,9 @@ t('the cup is never still for long: rests are short by day', () => { for (let i 
 t('reactions: added to bag, order placed, tapped', () => { assert.equal(react('added', null), 'gotit'); assert.equal(react('ordered', 'christmas'), 'cheer'); assert.equal(react('tapped', null), 'giggle'); });
 t('one cup: every story starts and ends in the stage', () => { for (const [k, st] of Object.entries(STORIES)) { assert.equal(st.beats[0].at, 'stage', k); assert.equal(st.beats.at(-1).at, 'stage', k); } });
 t('every holiday has a story, calm ones never travel, none is long', () => { for (const k of Object.keys(HOLIDAY_SET)) assert.ok(STORIES[k], k); assert.equal(STORIES.veterans.travels, false); for (const k of Object.keys(STORIES)) assert.ok(storyLength(k) <= 7500, k); });
+const day = (st, k = 120) => { const r = []; let seed = 11; const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647); for (let i = 1; i <= k; i++) r.push(nextEveryday({ closed: false, hasUsual: true, nearReward: true, ...st, turn: i, recent: r.slice(-3), random: rnd })); return r; };
+t('everyday: only approved moves, dropped ones never play', () => { for (const h of [8, 13, 19]) for (const m of day({ hour: h })) assert.ok(EVERYDAY[m], m); for (const d of ['look', 'tilt', 'sniff', 'stretch']) assert.ok(!EVERYDAY[d], d); for (const v of Object.values(EVERYDAY_EVENTS)) assert.ok(EVERYDAY[v], v); });
+t('everyday: mostly fidgets, a moment every 4th turn, big moves rare and only by day', () => { const s = day({ hour: 14 }); const big = s.filter((m) => EVERYDAY[m].layer === 'big').length; assert.ok(big <= s.length / 12 + 1, String(big)); assert.ok(day({ hour: 8 }).every((m) => EVERYDAY[m].layer !== 'big')); assert.ok(s.filter((m) => EVERYDAY[m].layer === 'fidget').length > s.length / 2); });
+t('everyday: no repeat within three, personal moments only when they apply, night when closed', () => { const s = day({ hour: 13 }); for (let i = 1; i < s.length; i++) assert.ok(!s.slice(Math.max(0, i - 3), i).includes(s[i]) || EVERYDAY[s[i]].layer === 'fidget', s[i]);
+  assert.ok(day({ hour: 9 }).includes('usual')); assert.ok(!day({ hour: 9, hasUsual: false, nearReward: false }).some((m) => m === 'usual' || m === 'reward')); assert.ok(day({ hour: 23, closed: true }).every((m) => m === 'night')); });
 console.log(`\n${n} mascot tests passed`);

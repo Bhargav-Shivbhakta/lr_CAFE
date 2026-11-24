@@ -64,10 +64,10 @@ export const MOTIONS: Record<string, Motion> = {
 
 // what the cup tends to do, by time of day (weights)
 const BY_TIME: Record<'morning' | 'day' | 'evening' | 'night', Record<string, number>> = {
-  morning: { stretch: 3, look: 3, breathe: 3, wave: 2, sneeze: 1, peek: 1 },
-  day: { look: 3, breathe: 2, wave: 2, squish: 2, hop: 2, peek: 1, love: 1, dance: 1, twirl: 1 },
-  evening: { breathe: 3, look: 2, love: 2, wave: 1, squish: 1, stretch: 1, peek: 1 },
-  night: { breathe: 3, doze: 4, look: 1 },
+  morning: { breathe: 3, wave: 2, sneeze: 1, peek: 1 },
+  day: { breathe: 2, wave: 2, squish: 2, hop: 2, peek: 1, love: 1, dance: 1, twirl: 1 },
+  evening: { breathe: 3, love: 2, wave: 1, squish: 1, peek: 1 },
+  night: { breathe: 3, doze: 4 },
 };
 // holiday sets take most of the loop (weights added on top)
 export const HOLIDAY_SET: Record<string, Record<string, number>> = {
@@ -136,3 +136,53 @@ export const STORIES: Record<string, { name: string; travels: boolean; beats: Be
 };
 export const storyFor = (kit: string | null) => (kit && STORIES[kit]) || null;
 export const storyLength = (id: string) => STORIES[id].beats.reduce((a, b) => a + b.ms, 0);
+
+// ---------- everyday library (approved Nov 2026) ----------
+// On a normal day (no holiday) Home runs this library instead of the holiday loop. Every move is one
+// clear idea in 2-3 steps, with props big enough to read. Approved: the 19 below. Dropped: looks
+// around, head tilt, smells the coffee, stretch.
+export type Layer = 'always' | 'fidget' | 'moment' | 'big' | 'day' | 'app' | 'touch';
+export const EVERYDAY: Record<string, { name: string; layer: Layer; ms: number; steps: string[] }> = {
+  breathe: { name: 'Breathe and blink', layer: 'always', ms: 0, steps: ['Breathes slowly', 'Blinks', 'Eyes drift'] },
+  steam: { name: 'Steam curl', layer: 'always', ms: 0, steps: ['Steam puffs rise from the top'] },
+  glance: { name: 'Glances at you', layer: 'fidget', ms: 1700, steps: ['Leans in', 'Winks at you'] },
+  yawn: { name: 'Yawn', layer: 'fidget', ms: 1800, steps: ['Arms up', 'Big yawn'] },
+  latte: { name: 'Latte art', layer: 'moment', ms: 4300, steps: ['Stirs with a spoon', 'A heart appears in the foam', 'Smiles'] },
+  pour: { name: 'Barista pour', layer: 'moment', ms: 4300, steps: ['A milk pitcher pours in', 'A heart appears', 'Smiles'] },
+  paper: { name: 'Morning paper', layer: 'moment', ms: 4500, steps: ['Reads the LR Daily', 'Lowers it', 'Winks'] },
+  special: { name: "Today's special", layer: 'moment', ms: 5600, steps: ["Walks in with today's special", 'Shows it to you', 'Walks off'] },
+  music: { name: 'Headphones', layer: 'moment', ms: 3600, steps: ['Headphones on', 'Sways to the music'] },
+  dance: { name: 'Little shuffle dance', layer: 'big', ms: 3000, steps: ['Arms up', 'Little happy dance'] },
+  twirl: { name: 'Twirl', layer: 'big', ms: 2600, steps: ['Spins once', 'Sparkle'] },
+  open: { name: 'Opening up', layer: 'day', ms: 3300, steps: ['Holds CLOSED', 'Flips the sign', 'OPEN'] },
+  night: { name: 'Closed for the night', layer: 'day', ms: 5400, steps: ['Holds BACK AT 7', 'Falls asleep'] },
+  usual: { name: 'Your usual', layer: 'app', ms: 3100, steps: ['Holds up a card with your usual drink'] },
+  reward: { name: 'One drink from a reward', layer: 'app', ms: 3000, steps: ['4 gold stars over its head', 'The 5th one blinks'] },
+  brew: { name: 'Making your order', layer: 'app', ms: 4300, steps: ['Steam while your order is made', 'Rings a bell: ready!'] },
+  welcome: { name: 'Welcome back', layer: 'app', ms: 1800, steps: ['Big wave', 'Welcome back'] },
+  giggle: { name: 'Tap: giggle', layer: 'touch', ms: 1800, steps: ['You tap it', 'It giggles'] },
+  love: { name: 'Press and hold: love', layer: 'touch', ms: 2400, steps: ['You press and hold', 'Heart eyes'] },
+};
+const DAY_POOLS: Record<'morning' | 'day' | 'evening', { fidget: string[]; moment: string[]; big: string[] }> = {
+  morning: { fidget: ['glance', 'yawn'], moment: ['paper', 'latte', 'pour'], big: [] },
+  day: { fidget: ['glance'], moment: ['special', 'pour', 'music', 'latte'], big: ['dance', 'twirl'] },
+  evening: { fidget: ['glance', 'yawn'], moment: ['latte', 'pour', 'music'], big: [] },
+};
+export interface EverydayState { hour: number; turn: number; closed: boolean; hasUsual: boolean; nearReward: boolean; recent: string[]; random?: () => number }
+/** What the cup does next on a normal day. Every 4th turn is a café moment (one in three of those is
+ *  about you: your usual or your reward); a big move at most once every 12 turns, afternoons only; the
+ *  rest are fidgets. After closing it only does 'night'. Never repeats within the last three. */
+export function nextEveryday(s: EverydayState): string {
+  if (s.closed) return 'night';
+  const rnd = s.random || Math.random, tod = timeOfDay(s.hour), P = DAY_POOLS[tod === 'night' ? 'evening' : tod];
+  const pick = (a: string[]) => { const c = a.filter((x) => !s.recent.slice(-3).includes(x)); const from = c.length ? c : a; return from[Math.floor(rnd() * from.length)]; };
+  if (s.turn % 12 === 0 && P.big.length) return pick(P.big);
+  if (s.turn % 4 === 0) {
+    const mine = [s.hasUsual && tod !== 'evening' ? 'usual' : '', s.nearReward ? 'reward' : ''].filter(Boolean);
+    if (mine.length && s.turn % 12 === 4) return pick(mine);
+    return pick(P.moment);
+  }
+  return pick(P.fidget);
+}
+/** Events: tap -> giggle, press and hold -> love, order placed -> brew, back after 3+ days -> welcome, first open before 7:30 -> open. */
+export const EVERYDAY_EVENTS: Record<string, string> = { tapped: 'giggle', held: 'love', ordered: 'brew', returning: 'welcome', opening: 'open' };
