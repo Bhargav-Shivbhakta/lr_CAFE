@@ -3098,6 +3098,171 @@
       "kind": "illustration",
       "review": true,
       "note": "A refill of the same drink: uses the original item's picture (menu: Iced tea)."
+    },
+    "breakfast-croissant": {
+      "name": "Breakfast croissant",
+      "sq": "assets/menu/breakfast-croissant-sq.webp",
+      "card": "assets/menu/breakfast-croissant-card.webp",
+      "wide": "assets/menu/breakfast-croissant-wide.webp",
+      "hero": "assets/menu/breakfast-croissant-hero.webp",
+      "th": "assets/menu/breakfast-croissant-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "mexican-skillet": {
+      "name": "Mexican skillet",
+      "sq": "assets/menu/mexican-skillet-sq.webp",
+      "card": "assets/menu/mexican-skillet-card.webp",
+      "wide": "assets/menu/mexican-skillet-wide.webp",
+      "hero": "assets/menu/mexican-skillet-hero.webp",
+      "th": "assets/menu/mexican-skillet-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "sw-shrimp-salad": {
+      "name": "Southwest shrimp salad",
+      "sq": "assets/menu/sw-shrimp-salad-sq.webp",
+      "card": "assets/menu/sw-shrimp-salad-card.webp",
+      "wide": "assets/menu/sw-shrimp-salad-wide.webp",
+      "hero": "assets/menu/sw-shrimp-salad-hero.webp",
+      "th": "assets/menu/sw-shrimp-salad-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "ahi-sandwich": {
+      "name": "Ahi tuna steak sandwich",
+      "sq": "assets/menu/ahi-sandwich-sq.webp",
+      "card": "assets/menu/ahi-sandwich-card.webp",
+      "wide": "assets/menu/ahi-sandwich-wide.webp",
+      "hero": "assets/menu/ahi-sandwich-hero.webp",
+      "th": "assets/menu/ahi-sandwich-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "italian-sub": {
+      "name": "Italian sub",
+      "sq": "assets/menu/italian-sub-sq.webp",
+      "card": "assets/menu/italian-sub-card.webp",
+      "wide": "assets/menu/italian-sub-wide.webp",
+      "hero": "assets/menu/italian-sub-hero.webp",
+      "th": "assets/menu/italian-sub-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "tuna-sandwich": {
+      "name": "Tuna sandwich",
+      "sq": "assets/menu/tuna-sandwich-sq.webp",
+      "card": "assets/menu/tuna-sandwich-card.webp",
+      "wide": "assets/menu/tuna-sandwich-wide.webp",
+      "hero": "assets/menu/tuna-sandwich-hero.webp",
+      "th": "assets/menu/tuna-sandwich-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "muffuletta": {
+      "name": "Sicilian muffuletta",
+      "sq": "assets/menu/muffuletta-sq.webp",
+      "card": "assets/menu/muffuletta-card.webp",
+      "wide": "assets/menu/muffuletta-wide.webp",
+      "hero": "assets/menu/muffuletta-hero.webp",
+      "th": "assets/menu/muffuletta-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "chicken-alfredo": {
+      "name": "Chicken Alfredo",
+      "sq": "assets/menu/chicken-alfredo-sq.webp",
+      "card": "assets/menu/chicken-alfredo-card.webp",
+      "wide": "assets/menu/chicken-alfredo-wide.webp",
+      "hero": "assets/menu/chicken-alfredo-hero.webp",
+      "th": "assets/menu/chicken-alfredo-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "pesto-chicken-pasta": {
+      "name": "Pesto chicken pasta",
+      "sq": "assets/menu/pesto-chicken-pasta-sq.webp",
+      "card": "assets/menu/pesto-chicken-pasta-card.webp",
+      "wide": "assets/menu/pesto-chicken-pasta-wide.webp",
+      "hero": "assets/menu/pesto-chicken-pasta-hero.webp",
+      "th": "assets/menu/pesto-chicken-pasta-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "bolognese": {
+      "name": "Bolognese pasta",
+      "sq": "assets/menu/bolognese-sq.webp",
+      "card": "assets/menu/bolognese-card.webp",
+      "wide": "assets/menu/bolognese-wide.webp",
+      "hero": "assets/menu/bolognese-hero.webp",
+      "th": "assets/menu/bolognese-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "couch-blend": {
+      "name": "The Couch Blend",
+      "sq": "assets/menu/couch-blend-sq.webp",
+      "card": "assets/menu/couch-blend-card.webp",
+      "wide": "assets/menu/couch-blend-wide.webp",
+      "hero": "assets/menu/couch-blend-hero.webp",
+      "th": "assets/menu/couch-blend-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "sb-macchiato": {
+      "name": "SB macchiato",
+      "sq": "assets/menu/sb-macchiato-sq.webp",
+      "card": "assets/menu/sb-macchiato-card.webp",
+      "wide": "assets/menu/sb-macchiato-wide.webp",
+      "hero": "assets/menu/sb-macchiato-hero.webp",
+      "th": "assets/menu/sb-macchiato-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "maple-chai": {
+      "name": "Maple spice chai latte",
+      "sq": "assets/menu/maple-chai-sq.webp",
+      "card": "assets/menu/maple-chai-card.webp",
+      "wide": "assets/menu/maple-chai-wide.webp",
+      "hero": "assets/menu/maple-chai-hero.webp",
+      "th": "assets/menu/maple-chai-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "earl-grey-matcha": {
+      "name": "Earl Grey matcha",
+      "sq": "assets/menu/earl-grey-matcha-sq.webp",
+      "card": "assets/menu/earl-grey-matcha-card.webp",
+      "wide": "assets/menu/earl-grey-matcha-wide.webp",
+      "hero": "assets/menu/earl-grey-matcha-hero.webp",
+      "th": "assets/menu/earl-grey-matcha-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
+    },
+    "bomb-alaska": {
+      "name": "Bomb Alaska",
+      "sq": "assets/menu/bomb-alaska-sq.webp",
+      "card": "assets/menu/bomb-alaska-card.webp",
+      "wide": "assets/menu/bomb-alaska-wide.webp",
+      "hero": "assets/menu/bomb-alaska-hero.webp",
+      "th": "assets/menu/bomb-alaska-th.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 3
     }
   },
   "new": {
@@ -3307,5 +3472,11 @@
     "location": "college",
     "items": 135,
     "note": "AI-generated illustrations, drafts for caf\u00e9 review: check ingredients, portions, sides and garnishes, and the cup branding and wording, before publishing. Bomb Alaska was left out of the pack (recipe not confirmed)."
-  }
+  },
+  "pack3": {
+    "location": "college",
+    "items": 15,
+    "note": "AI-generated drafts from the SDSU 15-image pack (Nov 24, 2026). Check recipe, portion, sides and cup artwork with the caf\u00e9. The Couch Blend is a generic latte placeholder until its recipe is known."
+  },
+  "framing": "Every picture is framed by tools/photos/frame.py: the dish is found with a cut-out model and centred in each shape with even room around it; a mug is centred on its cup (the handle may run toward the edge); plated food is centred on the food. Only the blurred caf\u00e9 above a dish is ever extended, never the table or the food."
 }
