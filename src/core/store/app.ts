@@ -17,6 +17,7 @@ interface AppState {
   cart: CartLine[];
   orders: Order[];
   points: number;
+  lifetimePoints: number;
   streakWeeks: number;
   favorites: string[];
   usual?: CartLine;
@@ -42,12 +43,13 @@ export const useApp = create<AppState>()(
       orders: [],
       user: null,
       points: 0,
+      lifetimePoints: 0,
       streakWeeks: 0,
       favorites: [],
       usual: undefined,
       // Real perk from the café's program: 10 points just for signing up.
-      signUp: (user) => set((s) => ({ user, points: s.user ? s.points : s.points + appConfig.signUpBonus })),
-      signOut: () => set({ user: null, points: 0, streakWeeks: 0, orders: [], favorites: [], usual: undefined, cart: [] }),
+      signUp: (user) => set((s) => (s.user ? { user } : { user, points: s.points + appConfig.signUpBonus, lifetimePoints: s.lifetimePoints + appConfig.signUpBonus })),
+      signOut: () => set({ user: null, points: 0, lifetimePoints: 0, streakWeeks: 0, orders: [], favorites: [], usual: undefined, cart: [] }),
       setLocation: (locationId) => set({ locationId }),
       setMode: (mode) => set({ mode }),
       addToCart: (line) => set((s) => {
@@ -60,13 +62,14 @@ export const useApp = create<AppState>()(
       recordOrder: (o) => set((s) => ({
         orders: [o, ...s.orders].slice(0, 30),
         points: s.points + o.pointsEarned,
+        lifetimePoints: s.lifetimePoints + o.pointsEarned,
         streakWeeks: Math.max(1, s.streakWeeks),
         usual: o.lines[0] ? { ...o.lines[0], qty: 1, key: 'usual' } : s.usual,
       })),
       toggleFavorite: (id) => set((s) => ({ favorites: s.favorites.includes(id) ? s.favorites.filter((f) => f !== id) : [...s.favorites, id] })),
       redeem: (p) => set((s) => ({ points: Math.max(0, s.points - p) })),
     }),
-    { name: 'living-room-app', storage: safeJSONStorage, version: 2, migrate: () => ({}) as AppState },
+    { name: 'living-room-app', storage: safeJSONStorage, version: 3, migrate: () => ({}) as AppState },
   ),
 );
 
@@ -81,9 +84,13 @@ export function isHappyHour(d = new Date()) {
   const toMin = (t: string) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
   return days.includes(d.getDay()) && mins >= toMin(start) && mins <= toMin(end);
 }
-export const pointsFor = (amount: number) =>
-  Math.floor(amount * appConfig.pointsPerDollar * (isHappyHour() ? appConfig.happyHours.multiplier : 1));
+/** Points for an amount. Double points in happy hour are a Regular-and-up perk. */
+export const pointsFor = (amount: number, lifetime = useApp.getState().lifetimePoints) => {
+  const boosted = isHappyHour() && tierFor(lifetime).tier.id !== 'guest';
+  return Math.floor(amount * appConfig.pointsPerDollar * (boosted ? appConfig.happyHours.multiplier : 1));
+};
 
+/** Tier from LIFETIME points (never from the spendable balance). */
 export function tierFor(points: number) {
   const tiers = appConfig.tiers;
   let i = 0;

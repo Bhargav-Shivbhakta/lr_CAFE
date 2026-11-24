@@ -46,3 +46,18 @@
   --app-max: 440px;
   --ease: cubic-bezier(.2,.8,.2,1);
 }
+:root {
+  /* Added tokens: ink on reward badges, text on dark surfaces, motion */
+  --brass-ink: #7A5A17;
+  --on-dark: #FFFFFF;
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 350ms;
+  --ease-exit: cubic-bezier(.4, 0, 1, 1);
+}
+:root {
+  --success-tint: #E3EDD9;   /* "ready" badges */
+  --walnut-3: #5A4335;       /* inactive steps on dark cards */
+  --glass: rgba(255,255,255,.16);           /* panels on dark backgrounds */
+  --shadow-lift: 0 6px 20px rgba(35,26,21,.25); /* floating bars */
+}

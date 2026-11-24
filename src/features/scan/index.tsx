@@ -15,10 +15,10 @@ function ScanScreen() {
   return (
     <Screen title="Scan">
       <Segmented value={mode} onChange={setMode} options={[{ value: 'earn', label: 'Earn points' }, { value: 'pay', label: 'Scan and pay' }]} />
-      <div style={{ background: 'var(--walnut)', color: '#fff', borderRadius: 22, padding: 22, marginTop: 16, textAlign: 'center' }}>
+      <div style={{ background: 'var(--walnut)', color: 'var(--on-dark)', borderRadius: 22, padding: 22, marginTop: 16, textAlign: 'center' }}>
         <div className="row"><span className="wordmark" style={{ fontSize: 18 }}>{appConfig.brand}</span><span style={{ display: 'flex', alignItems: 'center', gap: 4, fontWeight: 700 }}>{points} <Star size={16} color="var(--brass)" fill="var(--brass)" /></span></div>
         {mode === 'earn' ? <>
-          <div style={{ background: '#fff', borderRadius: 16, padding: 14, display: 'inline-block', margin: '18px 0 12px' }}><QR seed={user.id} size={190} /></div>
+          <div style={{ background: 'var(--paper)', borderRadius: 16, padding: 14, display: 'inline-block', margin: '18px 0 12px' }}><QR seed={user.id} size={190} /></div>
           <div style={{ fontWeight: 600, fontSize: 17 }}>{user.firstName} {user.lastName}</div>
           <div style={{ opacity: 0.7, fontSize: 13, marginTop: 4 }}>Show this at the counter to earn points</div>
         </> : <div style={{ padding: '40px 10px' }}>

@@ -130,13 +130,13 @@ function ItemBody({ item, menu }: { item: MenuItem; menu: Menu }) {
 
   return (
     <main style={{ paddingBottom: 120, animation: 'fadeUp .3s' }}>
-      <div style={{ background: item.tint === '#2B1D16' ? 'var(--walnut)' : 'var(--warm)', padding: '14px 16px 28px', position: 'relative' }}>
+      <div style={{ background: item.tags?.includes('app-only') ? 'var(--walnut)' : 'var(--warm)', padding: '14px 16px 28px', position: 'relative' }}>
         <div className="row">
-          <button aria-label="Back" onClick={() => nav(-1)} style={{ width: 38, height: 38, borderRadius: 19, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)' }}><ChevronLeft size={22} /></button>
-          <button aria-label={fav ? 'Remove favorite' : 'Save as favorite'} onClick={() => { toggleFavorite(item.id); toast(fav ? 'Removed from favorites' : 'Saved to favorites'); }} style={{ width: 38, height: 38, borderRadius: 19, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)' }}>
+          <button aria-label="Back" onClick={() => nav(-1)} style={{ width: 38, height: 38, borderRadius: 19, background: 'var(--paper)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)' }}><ChevronLeft size={22} /></button>
+          <button aria-label={fav ? 'Remove favorite' : 'Save as favorite'} onClick={() => { toggleFavorite(item.id); toast(fav ? 'Removed from favorites' : 'Saved to favorites'); }} style={{ width: 38, height: 38, borderRadius: 19, background: 'var(--paper)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: 'var(--shadow)' }}>
             <Heart size={20} color="var(--velvet)" fill={fav ? 'var(--velvet)' : 'none'} /></button>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}><ItemArt image={item.image} art={item.art} tint={item.tint === '#2B1D16' ? '#3A2A21' : item.tint} size={210} alt={item.name} /></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 4 }}><ItemArt image={item.image} art={item.art} tint={item.tags?.includes('app-only') ? 'var(--walnut-2)' : item.tint} size={210} alt={item.name} /></div>
       </div>
       <div style={{ padding: '18px 16px' }}>
         <h1 className="display" style={{ fontSize: 26, margin: 0 }}>{item.name}</h1>

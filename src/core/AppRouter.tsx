@@ -1,5 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import { enabledFeatures, getOverlays } from './registry';
+import { enabledFeatures, getOverlays, getServices } from './registry';
+import { NotificationBanner } from './notifications/Banner';
 import { TabBar } from './nav/TabBar';
 import { Hub } from './nav/Hub';
 import { makeComingSoon } from './nav/ComingSoon';
@@ -12,7 +13,7 @@ export function AppRouter() {
     <HashRouter>
       <div className="app-shell">
         {/* Public demo: make it impossible to mistake for the café's real ordering app. */}
-        <div role="note" style={{ background: 'var(--walnut)', color: '#fff', fontSize: 12, textAlign: 'center', padding: '6px 12px', lineHeight: 1.4 }}>
+        <div role="note" style={{ background: 'var(--walnut)', color: 'var(--on-dark)', fontSize: 12, textAlign: 'center', padding: '6px 12px', lineHeight: 1.4 }}>
           Concept demo · not the official Living Room app · no real orders, texts or payments
         </div>
         <Routes>
@@ -32,6 +33,8 @@ export function AppRouter() {
           <Route path="*" element={<Screen title="Not found" back="/"><p className="muted">That page moved out of the living room.</p></Screen>} />
         </Routes>
         <div className="overlay-slot">{getOverlays().map((f) => { const O = f.Overlay!; return <O key={f.id} />; })}</div>
+        {getServices().map((f) => { const S = f.Service!; return <S key={f.id} />; })}
+        <NotificationBanner />
         <TabBar />
         <ToastHost />
       </div>

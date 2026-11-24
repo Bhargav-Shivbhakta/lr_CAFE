@@ -4,7 +4,7 @@ import { Gift, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { appConfig } from '@/core/config/flags';
 import { checkout, totals } from '@/core/commerce';
 import { useCurrentLocation } from '@/core/hooks';
-import { isHappyHour, money, useApp } from '@/core/store/app';
+import { isHappyHour, money, tierFor, useApp } from '@/core/store/app';
 import { Button, Screen, Segmented, toast } from '@/core/ui';
 
 export function BagScreen() {
@@ -69,7 +69,7 @@ export function BagScreen() {
 
       {reward && (
         <button className="card row" style={{ width: '100%', marginTop: 12, boxShadow: useReward ? 'inset 0 0 0 2px var(--brass)' : undefined }} onClick={() => setUseReward((u) => !u)}>
-          <span style={{ display: 'flex', gap: 10, alignItems: 'center' }}><span className="icon-tile" style={{ background: 'var(--brass-soft)', color: '#7A5A17' }}><Gift size={18} /></span>
+          <span style={{ display: 'flex', gap: 10, alignItems: 'center' }}><span className="icon-tile" style={{ background: 'var(--brass-soft)', color: 'var(--brass-ink)' }}><Gift size={18} /></span>
             <span style={{ textAlign: 'left' }}><div style={{ fontWeight: 600 }}>Use {reward.label}</div><div className="faint">{reward.points} House Key points</div></span></span>
           <span style={{ color: 'var(--velvet)', fontWeight: 600 }}>{useReward ? 'Applied' : 'Apply'}</span>
         </button>
@@ -80,7 +80,7 @@ export function BagScreen() {
         {t.discount > 0 && <div className="row muted" style={{ marginTop: 6 }}><span>House Key reward</span><span>−{money(t.discount)}</span></div>}
         <div className="row muted" style={{ marginTop: 6 }}><span>Tax</span><span>{money(t.tax)}</span></div>
         <div className="row" style={{ marginTop: 10, fontWeight: 700, fontSize: 17 }}><span>Total</span><span>{money(t.total)}</span></div>
-        <div className="faint" style={{ marginTop: 8 }}>You'll earn {t.points} points{isHappyHour() ? ' (double points right now)' : ''}</div>
+        <div className="faint" style={{ marginTop: 8 }}>You'll earn {t.points} points{isHappyHour() && tierFor(useApp.getState().lifetimePoints).tier.id !== 'guest' ? ' (double points right now)' : ''}</div>
       </div>
 
       <Button block style={{ marginTop: 16, height: 52 }} disabled={busy} onClick={place}>{busy ? 'Placing your order…' : user ? `Place order · ${money(t.total)}` : 'Join to place your order'}</Button>

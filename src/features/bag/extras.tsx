@@ -16,7 +16,7 @@ export function StoreBar() {
   if (!show) return null;
   return (
     <>
-      <div className="row" style={{ background: 'var(--walnut)', color: '#fff', borderRadius: 14, padding: '10px 10px 10px 16px', boxShadow: '0 6px 20px rgba(35,26,21,.25)' }}>
+      <div className="row" style={{ background: 'var(--walnut)', color: 'var(--on-dark)', borderRadius: 14, padding: '10px 10px 10px 16px', boxShadow: 'var(--shadow-lift)' }}>
         <button onClick={() => setPicker(true)} style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 11, opacity: 0.7 }}>Pickup store</div>
           <div style={{ fontSize: 15, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>{loc?.name ?? 'Choose a store'} <ChevronDown size={16} /></div>

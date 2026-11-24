@@ -13,6 +13,8 @@ import { joinFeature } from './join';
 import { ordersFeature } from './orders';
 import { locationsFeature } from './locations';
 import { eventsFeature } from './events';
+import { inboxFeature } from './inbox';
+import { studioFeature } from './studio';
 import { soonFeatures } from './soon';
 
 registerFeatures([
@@ -21,6 +23,6 @@ registerFeatures([
   // hidden flows
   bagFeature, joinFeature,
   // "More" hub inside Account
-  ordersFeature, locationsFeature, eventsFeature,
+  ordersFeature, locationsFeature, eventsFeature, inboxFeature, studioFeature,
   ...soonFeatures,
 ]);

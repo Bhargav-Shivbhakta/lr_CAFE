@@ -10,7 +10,7 @@ export type NavPlacement =
 /** Lifecycle — lets us ship navigation for features that aren't built yet. */
 export type FeatureStatus = 'live' | 'beta' | 'soon';
 
-export type HubSection = 'At the café' | 'Ordering' | 'Your account' | 'Help';
+export type HubSection = 'At the café' | 'Ordering' | 'Your account' | 'Café team' | 'Help';
 
 export interface FeatureRoute {
   path: string;                 // relative to the feature base path, '' = index
@@ -29,6 +29,10 @@ export interface FeatureModule {
   homeWidget?: { order: number; component: ComponentType };
   /** Badge on the tab icon, e.g. cart count. Must be a hook-safe component. */
   Badge?: ComponentType;
+  /** Small button the feature puts in the Home header (e.g. the notification bell). */
+  HeaderAction?: ComponentType;
+  /** Headless background process the feature owns (e.g. watching order status). Renders nothing. */
+  Service?: ComponentType;
   /** Global floating UI the feature owns (e.g. the cart bar). Rendered above the tab bar. */
   Overlay?: ComponentType;
   /** Locations where this feature is available; omit = all. */

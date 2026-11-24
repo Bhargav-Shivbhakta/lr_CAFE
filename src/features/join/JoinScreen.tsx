@@ -85,7 +85,7 @@ export function JoinScreen() {
           <h1 className="large-title" style={{ marginTop: 28 }}>Enter your code</h1>
           <p className="muted" style={{ fontSize: 15, marginTop: -6 }}>Sent to {phone}. <button style={{ color: 'var(--velvet)', fontWeight: 600 }} onClick={() => { setStep('details'); setCode(''); }}>Change</button></p>
           {demoCode && <div className="card row" style={{ background: 'var(--brass-soft)', boxShadow: 'none', justifyContent: 'flex-start', gap: 10, margin: '14px 0' }}>
-            <MessageSquareText size={20} color="#7A5A17" /><span style={{ fontSize: 14 }}>Demo mode, no real text sent. Your code is <b style={{ letterSpacing: 2 }}>{demoCode}</b></span></div>}
+            <MessageSquareText size={20} color="var(--brass-ink)" /><span style={{ fontSize: 14 }}>Demo mode, no real text sent. Your code is <b style={{ letterSpacing: 2 }}>{demoCode}</b></span></div>}
           <input className="input" inputMode="numeric" autoComplete="one-time-code" maxLength={6} placeholder="••••••" value={code}
             onChange={(e) => { setCode(e.target.value.replace(/\D/g, '')); setErrors({}); }}
             style={{ fontSize: 28, letterSpacing: 12, textAlign: 'center', padding: 16 }} />

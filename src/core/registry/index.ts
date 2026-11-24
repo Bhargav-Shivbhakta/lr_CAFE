@@ -23,7 +23,7 @@ export function getTabs(): { tabs: FeatureModule[]; overflow: FeatureModule[] } 
   return { tabs: wanted.slice(0, appConfig.maxTabs - 1), overflow: wanted.slice(appConfig.maxTabs - 1) };
 }
 
-const SECTION_ORDER: HubSection[] = ['At the café', 'Ordering', 'Your account', 'Help'];
+const SECTION_ORDER: HubSection[] = ['At the café', 'Ordering', 'Your account', 'Café team', 'Help'];
 
 /** Everything that lives in the "More" hub, grouped by section — includes tab overflow. */
 export function getHub(): { section: HubSection; items: FeatureModule[] }[] {
@@ -43,3 +43,5 @@ export const getHomeWidgets = () =>
     .sort((a, b) => a.homeWidget!.order - b.homeWidget!.order);
 
 export const getOverlays = () => enabledFeatures().filter((m) => m.Overlay);
+export const getServices = () => enabledFeatures().filter((m) => m.Service);
+export const getHeaderActions = () => enabledFeatures().filter((m) => m.HeaderAction);

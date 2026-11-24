@@ -1,5 +1,30 @@
 # Architecture, design rules and function rules
 
+> The full blueprint (data flow, system map, roadmap, design standards, human interaction guide,
+> security review and notifications) lives in the **Living Room app blueprint** doc. This file is the
+> short version for developers working in the code.
+
+## Everyday commands
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Run the app locally |
+| `npm run new-feature <id> -- --hub "At the café"` | Create a new feature folder, register it, add its flag |
+| `npm run check` | Type-check, build, security checker, design checker (GitHub runs this before every deploy) |
+| `npm run security` | Security checker only (needs a build first) |
+| `npm run design` | Design checker only (`-- --strict` makes warnings fail) |
+
+## Notifications
+- `notify({ kind, title, body, link })` in `src/core/notifications` is the only way to send one: inbox + banner + phone notification.
+- Kinds: `order` (always on), `rewards`, `cafe` (each can be switched off in Notification settings).
+- Automatic copy: `src/core/notifications/templates.ts`. Studio copy writer: `compose.ts` (pure function, server can reuse it).
+- Limits: title 40, body 110 characters, 1 café promo a day, quiet hours 9 PM–8 AM.
+
+## Rewards (House Key)
+- Tiers come from **lifetime** points: Guest 0+, Regular 150+, Family 600+ (`src/core/config/flags.ts`). Spending never lowers a tier.
+- Double points in happy hour (3–5:30 PM, Mon–Thu) are a Regular-and-up perk.
+
+
 ## 1. Big idea: everything is a feature module
 
 ```

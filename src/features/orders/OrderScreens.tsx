@@ -5,6 +5,8 @@ import type { Order, OrderStatus } from '@/core/services/types';
 import { useLocations, useNow } from '@/core/hooks';
 import { money, useApp } from '@/core/store/app';
 import { Button, ListRow, Screen, toast } from '@/core/ui';
+import { askSystemPermission, systemPermission } from '@/core/notifications';
+import { useState } from 'react';
 
 const STEPS: { id: OrderStatus; label: string; line: string }[] = [
   { id: 'received', label: 'Received', line: 'We got it — pull up a chair.' },
@@ -31,10 +33,10 @@ export function OrderTracker() {
         <div className="row"><span style={{ fontSize: 12, color: 'var(--lamp)' }}><Armchair size={13} style={{ verticalAlign: -2 }} /> {loc?.name ?? 'Living Room'} · #{order.id}</span>
           <span style={{ fontSize: 12, opacity: 0.7 }}>{status === 'ready' ? 'Ready' : `~${left} min`}</span></div>
         <div className="display" style={{ fontSize: 26, margin: '10px 0 16px' }}>{STEPS[idx].line}</div>
-        <div style={{ display: 'flex', gap: 6 }}>{STEPS.map((s, i) => <div key={s.id} style={{ flex: 1, height: 6, borderRadius: 3, background: i <= idx ? 'var(--brass)' : '#5A4335', transition: 'background .5s' }} />)}</div>
+        <div style={{ display: 'flex', gap: 6 }}>{STEPS.map((s, i) => <div key={s.id} style={{ flex: 1, height: 6, borderRadius: 3, background: i <= idx ? 'var(--brass)' : 'var(--walnut-3)', transition: 'background .5s' }} />)}</div>
         <div className="row" style={{ fontSize: 11, opacity: 0.7, marginTop: 6 }}>{STEPS.map((s) => <span key={s.id}>{s.label}</span>)}</div>
       </div>
-      <p className="faint" style={{ textAlign: 'center', margin: '10px 0 0' }}>In the native app this shows as a Live Activity on the lock screen.</p>
+      <NotifyPrompt />
 
       <h2 className="section-title">Your order</h2>
       <div className="list-group">
@@ -74,7 +76,19 @@ export function ActiveOrderWidget() {
     <button className="card row" style={{ width: '100%', marginTop: 12, textAlign: 'left' }} onClick={() => nav(`/orders/${order.id}`)}>
       <span style={{ display: 'flex', gap: 10, alignItems: 'center' }}><span className="icon-tile"><Coffee size={18} /></span>
         <span><div style={{ fontWeight: 600 }}>{status === 'ready' ? 'Ready on the shelf' : 'Your order is brewing'}</div><div className="faint">#{order.id} · tap to track</div></span></span>
-      <span className="badge-soon" style={{ background: status === 'ready' ? '#E3EDD9' : undefined, color: status === 'ready' ? 'var(--success)' : undefined }}>{status === 'ready' ? 'Ready' : 'Live'}</span>
+      <span className="badge-soon" style={{ background: status === 'ready' ? 'var(--success-tint)' : undefined, color: status === 'ready' ? 'var(--success)' : undefined }}>{status === 'ready' ? 'Ready' : 'Live'}</span>
     </button>
+  );
+}
+
+/** Ask for phone notifications at the moment they're clearly useful: right after the first order. */
+function NotifyPrompt() {
+  const [perm, setPerm] = useState(systemPermission());
+  if (perm !== 'default') return <p className="faint" style={{ textAlign: 'center', margin: '10px 0 0' }}>We'll notify you at each step.</p>;
+  return (
+    <div className="card row" style={{ marginTop: 12 }}>
+      <span><b style={{ fontSize: 15 }}>Get a notification when it's ready?</b><div className="faint">Even when the app is closed.</div></span>
+      <Button style={{ minHeight: 36, padding: '0 14px', fontSize: 14 }} onClick={async () => setPerm(await askSystemPermission())}>Yes</Button>
+    </div>
   );
 }

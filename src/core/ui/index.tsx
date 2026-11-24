@@ -41,7 +41,7 @@ export function ItemArt({ image, art = 'coffee', tint = '#F4F1EC', size = 72, he
   // If a photo link ever breaks, fall back to the illustration instead of a broken image.
   if (image && !failed) return <img src={image} alt={alt} loading="lazy" referrerPolicy="no-referrer" onError={() => setFailed(true)} style={{ ...style, objectFit: 'cover', background: tint }} />;
   const Icon = ART[art] ?? Coffee;
-  const dark = tint === '#2B1D16';
+  const dark = tint === '#2B1D16' || tint.includes('walnut');
   const px = iconSize ?? (typeof size === 'number' ? Math.round(size * 0.42) : 40);
   return <div className="art" role="img" aria-label={alt} style={{ ...style, background: tint, color: dark ? 'var(--lamp)' : undefined }}><Icon size={px} strokeWidth={1.5} /></div>;
 }

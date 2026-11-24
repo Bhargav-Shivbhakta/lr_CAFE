@@ -13,7 +13,7 @@ export function YouScreen() {
       {user ? (
         <div className="card row">
           <span style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-            <span style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--velvet)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 20 }}>{user.firstName[0]?.toUpperCase()}</span>
+            <span style={{ width: 52, height: 52, borderRadius: '50%', background: 'var(--velvet)', color: 'var(--on-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 20 }}>{user.firstName[0]?.toUpperCase()}</span>
             <span><div style={{ fontWeight: 600, fontSize: 17 }}>{user.firstName} {user.lastName}</div><div className="muted">{user.phone.replace(/^\+1(\d{3})(\d{3})(\d{4})$/, '($1) $2-$3')} · member since {user.since}</div><div className="faint">{orders} app {orders === 1 ? 'order' : 'orders'}</div></span>
           </span>
         </div>
