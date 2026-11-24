@@ -115,24 +115,26 @@ export const restMs = (s: DirectorState) => { const r = (s.random || Math.random
 export const react = (event: string, kit: string | null) => { const m = REACTIONS[event]; if (!m) return null; return kit && CALM_ONLY.has(kit) && MOTIONS[m].energy > 1 ? 'proud' : m; };
 
 // ---------- stories: one cup, always ----------
+// Every story plays INSIDE the Home banner (header, greeting, location pill); the cup never goes below it.
+// Slow and simple, one idea per holiday, ending on a caption anyone can read.
 // There is only ever ONE cup on screen. It lives in its stage on Home. A story takes it out of the stage
 // and brings it back: every story starts and ends at 'stage'. Other places never draw a second cup while
 // the stage is on screen; full-screen moments (tips, photo loading, order placed) borrow the cup and the
 // stage stays empty until it returns.
-export type Beat = { at: 'stage' | 'top-right' | 'top-left' | 'off-right' | 'off-left' | 'center' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'loop'; ms: number; do?: string; prop?: string; fx?: string };
+export type Beat = { at: 'stage' | 'banner-top' | 'top-center' | 'off-right' | 'off-left'; ms: number; do?: string; prop?: string; fx?: string };
 export const STORIES: Record<string, { name: string; travels: boolean; beats: Beat[] }> = {
   arrival: { name: 'Peek and wave', travels: false, beats: [{ at: 'stage', ms: 1200, do: 'peek' }, { at: 'stage', ms: 1600, do: 'wave' }] },
   christmas: { name: 'The sleigh', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'off-right', ms: 700 }, { at: 'off-left', ms: 5200, prop: 'sleigh', fx: 'sparks' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  valentines: { name: 'The heart balloon', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'loop', ms: 5200, prop: 'wings+balloon', fx: 'hearts' }, { at: 'stage', ms: 800, do: 'squish' }] },
+  valentines: { name: 'The heart balloon', travels: false, beats: [{ at: 'stage', ms: 2200, do: 'wings and a heart balloon, floats up inside the banner', prop: 'wings+balloon', fx: 'hearts' }, { at: 'stage', ms: 2300, do: 'floats back down' }, { at: 'stage', ms: 3200, do: "squish; caption: Happy Valentine's Day!" }] },
   thanksgiving: { name: 'The pie parade', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'off-right', ms: 600 }, { at: 'top-center', ms: 1800, do: 'walks in with the pie', prop: 'pie', fx: 'leaves' }, { at: 'top-center', ms: 1300, do: 'lifts the pie up; steam and a burst of leaves' }, { at: 'off-left', ms: 1700, prop: 'pie', fx: 'leaves' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  newyear: { name: 'Countdown and popper', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'center', ms: 800, prop: 'party hat' }, { at: 'center', ms: 2700, do: 'countdown', fx: 'confetti' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  july4: { name: 'Sparkler and fireworks', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-center', ms: 900, prop: 'sparkler' }, { at: 'bottom-center', ms: 3000, fx: 'stars' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  halloween: { name: 'Broom across the moon', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'off-right', ms: 600 }, { at: 'off-left', ms: 4600, prop: 'broom', fx: 'bats' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  coffeeday: { name: 'Bean juggling', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-center', ms: 800 }, { at: 'bottom-center', ms: 3000, prop: 'beans', fx: 'beans' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  mothersday: { name: 'A bouquet', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-right', ms: 800 }, { at: 'bottom-left', ms: 2600, prop: 'bouquet', fx: 'petals' }, { at: 'stage', ms: 1000, do: 'squish' }] },
-  fathersday: { name: 'Tie and thumbs-up', travels: false, beats: [{ at: 'stage', ms: 3600, do: 'thumb', prop: 'tie' }] },
-  backtoschool: { name: 'Late for class', travels: true, beats: [{ at: 'stage', ms: 300, do: 'hop' }, { at: 'bottom-right', ms: 700 }, { at: 'off-left', ms: 2400, prop: 'backpack' }, { at: 'stage', ms: 900, do: 'squish' }] },
-  veterans: { name: 'A quiet flag', travels: false, beats: [{ at: 'stage', ms: 4200, do: 'proud', prop: 'flag' }] },
+  newyear: { name: 'Countdown and popper', travels: false, beats: [{ at: 'stage', ms: 500, do: 'holds up a card', prop: 'party hat' }, { at: 'stage', ms: 3600, do: 'card shows 3, 2, 1' }, { at: 'stage', ms: 3200, do: 'pops a popper; confetti; caption: Happy New Year!', fx: 'confetti' }] },
+  july4: { name: 'Sparkler and fireworks', travels: false, beats: [{ at: 'stage', ms: 2300, do: 'sparkler', prop: 'sparkler' }, { at: 'stage', ms: 4400, do: 'looks up: three fireworks in the banner; caption: Happy 4th of July!', fx: 'stars' }, { at: 'stage', ms: 1600 }] },
+  halloween: { name: 'Broom past the moon', travels: true, beats: [{ at: 'stage', ms: 500, do: 'witch hat, broom; the moon appears', prop: 'broom' }, { at: 'banner-top', ms: 3000, do: 'flies up to the top of the banner past the moon', fx: 'bats' }, { at: 'banner-top', ms: 1200, do: 'hovers' }, { at: 'stage', ms: 2400, do: 'flies back' }, { at: 'stage', ms: 3200, do: 'squish; caption: Happy Halloween!' }] },
+  coffeeday: { name: 'Bean juggling', travels: false, beats: [{ at: 'stage', ms: 4000, do: 'juggles three beans', prop: 'beans', fx: 'beans' }, { at: 'stage', ms: 600, do: 'drops them into the cup' }, { at: 'stage', ms: 3200, do: 'happy steam; caption: Happy National Coffee Day!' }] },
+  mothersday: { name: 'A bouquet for Mom', travels: false, beats: [{ at: 'stage', ms: 1600, do: 'brings out a bouquet', prop: 'bouquet' }, { at: 'stage', ms: 600, do: 'holds it out, heart eyes' }, { at: 'stage', ms: 3200, do: "petals fall; caption: Happy Mother's Day!", fx: 'petals' }] },
+  fathersday: { name: 'A gift for Dad', travels: false, beats: [{ at: 'stage', ms: 2100, do: 'holds a gift and shakes it', prop: 'gift' }, { at: 'stage', ms: 650, do: 'the lid pops off' }, { at: 'stage', ms: 3200, do: "it's a tie: puts it on, thumbs up; caption: Happy Father's Day!", prop: 'tie' }] },
+  backtoschool: { name: 'Study time', travels: false, beats: [{ at: 'stage', ms: 3600, do: 'opens a book and reads', prop: 'book' }, { at: 'stage', ms: 3200, do: 'an A+ pops up; caption: Good luck this semester!' }] },
+  veterans: { name: 'Flag held high', travels: false, beats: [{ at: 'stage', ms: 2200, do: 'holds a small flag', prop: 'flag' }, { at: 'stage', ms: 3600, do: 'raises a big waving flag; caption: Thank you, veterans' }] },
 };
 export const storyFor = (kit: string | null) => (kit && STORIES[kit]) || null;
 export const storyLength = (id: string) => STORIES[id].beats.reduce((a, b) => a + b.ms, 0);
