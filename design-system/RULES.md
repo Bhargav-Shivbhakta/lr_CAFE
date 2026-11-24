@@ -163,7 +163,17 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Tapping the tab you're already on scrolls it to the top.
 - The café chosen and how to get the order (ASAP or a scheduled time) are always one tap away on Home, and tapping them returns to the map.
 
-## 17. Accessibility
+## 17. Choosing a café
+
+- **San Diego time, always.** Open, closed, "closing soon" and pickup times are worked out in America/Los_Angeles time, whatever the phone's own time zone.
+- **One status per café, in this order of truth:** closed for a special date (owner-set) → closed (with when it opens: "opens 7 AM" or "opens tomorrow 6:45 AM") → open but app orders closed for tonight (after the online cutoff) → closing soon (45 minutes or less) → open until… Colours: green open, brass closing soon or orders closed, error red closed.
+- **"Order now" only when the café can actually take it.** Otherwise the button says why ("App orders closed for tonight", "Closed now") and "Schedule a pickup" is offered.
+- **Distances are never invented.** With location: miles from the person, with walk time under 1.5 miles and drive time beyond. With location off or unknown: no distances, and a plain note plus "Locate me". Searching a neighborhood or ZIP measures from there and says so ("Closest to North Park"). More than 60 miles away: say how far ("You're 2,428 miles from San Diego") and let them order ahead.
+- **Search** takes café names, addresses, neighborhoods and ZIP codes. No match gets friendly help, never a blank list.
+- **The list:** your café first, then closest; badges "YOUR CAFÉ" and "CLOSEST"; an "Open now" filter; the sheet expands to a full list (and does so by itself while typing). If every café is closed, say which opens first and offer scheduling.
+- **The map's pins and list rows open the same café screen.** The location button re-centres on the person, or asks for location if it's not known.
+
+## 18. Accessibility
 
 - Real `<button>` and `<a>` elements for anything tappable. The checker rejects click handlers on `div`, `span`, `li` and `p`.
 - Every image has alt text; decorative ones use `alt=""`.
