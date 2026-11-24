@@ -171,6 +171,10 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - **Distances are never invented.** With location: miles from the person, with walk time under 1.5 miles and drive time beyond. With location off or unknown: no distances, and a plain note plus "Locate me". Searching a neighborhood or ZIP measures from there and says so ("Closest to North Park"). More than 60 miles away: say how far ("You're 2,428 miles from San Diego") and let them order ahead.
 - **Search** takes café names, addresses, neighborhoods and ZIP codes. No match gets friendly help, never a blank list.
 - **The list:** your café first, then closest; badges "YOUR CAFÉ" and "CLOSEST"; an "Open now" filter; the sheet expands to a full list (and does so by itself while typing). If every café is closed, say which opens first and offer scheduling.
+- **Members skip this screen.** They open straight onto Home at their usual café, chosen in this order: the café they starred → the café worked out from their orders (each order counts, weighted toward recent ones so it fades over about six weeks; at least 3 orders) → otherwise they are asked "Where are you today?". The Home chip says why: "Your café" or "Your usual café".
+- **Every order teaches it.** Ordering somewhere else enough times moves the usual café there; nobody has to change a setting.
+- **In the list**, members see "YOUR CAFÉ" or "YOU GO HERE MOST" first, then "You've ordered here 9 times · last 2 days ago" on cafés they've used, then CLOSEST.
+- **The nearby nudge.** If location is already allowed and a member is within 3 miles of a different café that is open (and more than 3 miles closer than their usual), Home offers "You're near La Jolla right now · order there instead?" with Switch and a dismiss. It never switches on its own and never asks for location to do this.
 - **The map's pins and list rows open the same café screen.** The location button re-centres on the person, or asks for location if it's not known.
 
 ## 18. Accessibility
