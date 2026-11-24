@@ -191,16 +191,15 @@ const HOLI = {
     s.set('vet_flag', ''); await s.wait(2200); s.set('vet_salute', ''); const fl = s.q('.bigflag'); fl.style.cssText = 'transform-box:fill-box;transform-origin:0% 50%'; s.an(fl, [{ transform: 'skewY(0) scaleX(1)' }, { transform: 'skewY(6deg) scaleX(.94)' }], 700, { iterations: 6, direction: 'alternate', fill: 'none', easing: 'ease-in-out' }); const c = cupBox(s);
     for (let i = 0; i < 3; i++) partXY(s, 'star', '#C9A24B', c.left + [10, c.w / 2, c.w - 10][i], c.top - 6, 11, [{ opacity: 0, transform: 'scale(.4)' }, { opacity: 1, transform: 'scale(1)', offset: .4 }, { opacity: 0 }], 2600, 400 + i * 300);
     s.pill('Thank you, veterans', 3200); await s.wait(3600); } },
-  halloween: { name: 'Broom past the moon', caption: 'Happy Halloween!', run: async (s) => {
-    const B = HB(s), c = cupBox(s), mx = B.left + B.width * 0.5, my = B.top + 8;
-    const moon = s.fx('<svg width="70" height="70" viewBox="0 0 70 70"><circle cx="35" cy="35" r="32" fill="#F7E7C6"/><circle cx="25" cy="26" r="5" fill="#EAD3A8"/><circle cx="44" cy="44" r="4" fill="#EAD3A8"/></svg>', `left:${mx - 35}px;top:${my}px;opacity:0`, 9000); an(moon, [{ opacity: 0 }, { opacity: .95 }], 700);
-    s.set('hw_broom', ''); await s.wait(500);
+  halloween: { name: 'Broom ride', caption: 'Happy Halloween!', run: async (s) => {
+    const B = HB(s), c = cupBox(s);
+    s.set('hw_broom', 'pip--hop'); await s.wait(700);
     const dx = B.left + B.width * 0.30 - c.left, dy = B.top + 4 - c.top - c.h * 0.14;
-    for (let i = 0; i < 4; i++) partXY(s, 'bat', '#2A2033', mx, my + 30, 18, [{ opacity: 0, transform: 'scale(.5)' }, { opacity: 1, offset: .2 }, { opacity: 0, transform: `translate(${[-90, 70, -40, 110][i]}px,${[14, 30, 46, 6][i]}px) scale(1.1)` }], 2200, 900 + i * 280);
-    await s.move([{ transform: 'none' }, { transform: `translate(${dx * 0.5}px,${dy - 6}px) scale(.74) rotate(-4deg)`, offset: .5 }, { transform: `translate(${dx}px,${dy}px) scale(.74)` }], 3000, { easing: 'ease-in-out' });
-    await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.74)` }, { transform: `translate(${dx}px,${dy - 6}px) scale(.74)` }], 600, { iterations: 2, direction: 'alternate' });
-    await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.74)` }, { transform: `translate(${dx * 0.5}px,${dy + 4}px) scale(.85) rotate(3deg)`, offset: .5 }, { transform: 'none' }], 2400, { easing: 'ease-in-out' });
-    s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('k_halloween', 'pip--squish'); an(moon, [{ opacity: .95 }, { opacity: 0 }], 800); s.pill('Happy Halloween!', 3000); await s.wait(3200); } },
+    for (let i = 0; i < 5; i++) setTimeout(() => { if (!s.alive()) return; const cb = cupBox(s); partXY(s, 'bat', '#2A2033', cb.cx, cb.cy, 20, [{ opacity: 0, transform: 'scale(.5)' }, { opacity: 1, offset: .2 }, { opacity: 0, transform: `translate(${[-70, 60, -30, 80, -90][i]}px,${[-10, 20, 30, -6, 16][i]}px) scale(1.1)` }], 1800); }, 600 + i * 700);
+    await s.move([{ transform: 'none' }, { transform: `translate(${dx * 0.5}px,${dy - 6}px) scale(.8) rotate(-4deg)`, offset: .5 }, { transform: `translate(${dx}px,${dy}px) scale(.8)` }], 3000, { easing: 'ease-in-out' });
+    await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.8)` }, { transform: `translate(${dx}px,${dy - 6}px) scale(.8)` }], 600, { iterations: 2, direction: 'alternate' });
+    await s.move([{ transform: `translate(${dx}px,${dy}px) scale(.8)` }, { transform: `translate(${dx * 0.5}px,${dy + 4}px) scale(.9) rotate(3deg)`, offset: .5 }, { transform: 'none' }], 2600, { easing: 'ease-in-out' });
+    s.cup.getAnimations?.().forEach((a) => a.cancel()); s.set('k_halloween', 'pip--squish'); s.pill('Happy Halloween!', 3000); await s.wait(3200); } },
   coffeeday: { name: 'Bean juggling', caption: 'Happy National Coffee Day!', run: async (s) => {
     s.set('cd_juggle', ''); const g = s.q('.beans'); g.style.cssText = 'transform-box:fill-box;transform-origin:50% 50%';
     await s.an(g, [{ transform: 'rotate(0)' }, { transform: 'rotate(720deg)' }], 4000, { easing: 'linear' });
@@ -213,8 +212,10 @@ const HOLI = {
     s.set('bts_aplus', 'pip--hop'); const a = s.q('.aplus'); a.style.cssText = 'transform-box:fill-box;transform-origin:50% 50%'; s.an(a, [{ transform: 'scale(0)' }, { transform: 'scale(1.25)' }, { transform: 'none' }], 600, { easing: SPR }); s.sparkle(6);
     s.pill('Good luck this semester!', 3000); await s.wait(3200); } },
   mothersday: { name: 'A bouquet for Mom', caption: "Happy Mother's Day!", run: async (s) => {
-    s.set('md_bouq', ''); const bq = s.q('.bouq'); await s.an(bq, [{ opacity: 0, transform: 'translateY(30px)' }, { opacity: 1, transform: 'none' }], 700, { easing: SPR }); await s.wait(900);
-    s.set('md_love', ''); await s.an(s.q('.pw'), [{ transform: 'none' }, { transform: 'translateY(-3px) scale(1.07)' }], 600, { easing: SPR });
+    s.set('md_bouq', ''); const bq = s.q('.bouq'); bq.style.cssText = 'transform-box:fill-box;transform-origin:70% 100%';
+    await s.an(bq, [{ opacity: 0, transform: 'translate(30px,20px) scale(.6)' }, { opacity: 1, transform: 'none' }], 800, { easing: SPR }); await s.wait(900);
+    s.set('md_love', ''); const b2 = s.q('.bouq'); b2.style.cssText = 'transform-box:fill-box;transform-origin:70% 100%';
+    s.an(b2, [{ transform: 'none' }, { transform: 'scale(1.25) rotate(8deg)' }], 700, { easing: SPR }); await s.an(s.q('.pw'), [{ transform: 'none' }, { transform: 'translateY(-3px) scale(1.05)' }], 600, { easing: SPR });
     const c = cupBox(s), B = HB(s);
     for (let i = 0; i < 12; i++) { const x = c.left + rnd(-40, c.w + 10), y0 = Math.max(B.top + 6, c.top - 30); partXY(s, 'petal', ['#F4B6C2', '#E88FA5', '#F9D3DB'][i % 3], x, y0, rnd(9, 13), [{ opacity: 0, transform: 'none' }, { opacity: 1, offset: .15 }, { opacity: 0, transform: `translate(${rnd(-20, 20)}px,${Math.min(B.bottom - y0 - 8, rnd(80, 130))}px) rotate(${rnd(-180, 180)}deg)` }], 2600, i * 150); }
     s.pill("Happy Mother's Day!", 3000); await s.wait(3200); } },
