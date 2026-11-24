@@ -1,5 +1,5 @@
 {
- "_about": "Where the dish is in each square photo: x and y from 0 to 1 (left/top to right/bottom), and how tightly to crop (1 = the whole photo). Set by looking at each photo, so the main dish \u2014 not the fries or the plate \u2014 fills the card. An optional 4th number is a tighter zoom for the square crops.",
+ "_about": "Where the dish is in each square photo: x and y from 0 to 1 (left/top to right/bottom), and how tightly to crop (1 = the whole photo). Set by looking at each photo, so the main dish — not the fries or the plate — fills the card. An optional 4th number is a tighter zoom for the square crops.",
  "stramatcha": [
   0.32,
   0.45,
@@ -261,5 +261,815 @@
   0.5,
   0.5,
   0.75
+ ],
+ "americano": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "apple-juice": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "arnold-palmer": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "avalanche": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "aztec-melt": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "bagel-cc": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "banana-bread-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "banana-cappuccino": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "banana-mocha-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "waffle": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "black-forest": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "blood-orange": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "blueberry-matcha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "blueberry-scone": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "breakfast-burrito": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "brownie": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "byo-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "butter-brew": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "ca-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "cafe-au-lait": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cafe-blondie": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cafe-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cafe-mocha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cappuccino": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "caramel-sea": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "caramel-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "caramel-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "matcha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "chai": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "chicken-sausage-burrito": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "choc-chip-cookie": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "chocolate-milk": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "chocolate-scone": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "chorizo-skillet": [
+  0.56,
+  0.56,
+  0.84,
+  0.88
+ ],
+ "cilantro-burrito": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "classic-benedict": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "club-bagel": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "cold-brew": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cold-milk": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cookie-butter-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cookie-butter-matcha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cookie-catastrophe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "cortado": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "denver-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "dirty-chai": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "espresso": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "falltastic": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "flat-white": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "redbull": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "french-toast": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "oj": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "pomegranate": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "garden-skillet": [
+  0.56,
+  0.56,
+  0.84,
+  0.88
+ ],
+ "green-lantern": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "green-machine": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hammerhead": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hashbrown-burrito": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "hawaiian-breeze": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hawaiian-vacation": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hibiscus": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hot-chocolate": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "hot-honey-bagel": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "hot-tea": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "house-coffee": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "iced-coffee": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "lemonade": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "iced-tea": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "iced-vietnamese": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "italian-skillet": [
+  0.56,
+  0.56,
+  0.84,
+  0.88
+ ],
+ "italian-soda": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "land-slide": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "latte-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "lr-special": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "london-fog": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "lox-benedict": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "macchiato": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "machaca-skillet": [
+  0.56,
+  0.56,
+  0.84,
+  0.88
+ ],
+ "medicine-ball": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "med-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "mexican-hot-chocolate": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "mexican-mocha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "milky-way": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "mocha-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "muffin": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "nutella-crepe": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "oatmeal-cookie": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "pancakes": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "pistachio-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "plain-croissant": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "pumpkin-chai": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "pumpkin-muffin": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "pumpkin-shaken": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "psl": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "ranchero-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "raspberry-white-mocha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "rocky-road": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "sdsu-croissant": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "shaken-espresso": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "shakshouka": [
+  0.56,
+  0.56,
+  0.84,
+  0.88
+ ],
+ "short-rib-benedict": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "side-avocado": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-bacon": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-bacon-sausage": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-ham": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-chicken-sausage": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-hashbrown": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-potato": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-sausage": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-veggie-patty": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "side-turkey-bacon": [
+  0.5,
+  0.56,
+  0.62,
+  0.66
+ ],
+ "smoked-salmon-bagel": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "sob-croissant": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "spanish-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "steamer": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "strawberry-banana": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "strawberry-mocha-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "sugar-cookie": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "sunrise-bagel": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "tea-au-lait": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "thai-tea": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "trembler": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "turkey-croissant": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "tuxedo-hot-chocolate": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "tuxedo-mocha": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "two-eggs": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "vanilla-bean-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "vanilla-chai-frappe": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "vanilla-latte": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "veggie-burrito": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
+ ],
+ "veggie-crepe": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "very-berry": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "watermelon-sour": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "white-mac-cookie": [
+  0.5,
+  0.55,
+  0.74,
+  0.78
+ ],
+ "white-hot-chocolate": [
+  0.47,
+  0.46,
+  0.96,
+  0.9
+ ],
+ "works-omelette": [
+  0.5,
+  0.55,
+  0.84,
+  0.88
  ]
 }

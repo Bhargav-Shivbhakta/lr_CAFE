@@ -779,6 +779,2301 @@
         "zoom": 0.75
       },
       "hero": "assets/menu/tropical-infusion-hero.webp"
+    },
+    "americano": {
+      "name": "Americano",
+      "sq": "assets/menu/americano-sq.webp",
+      "card": "assets/menu/americano-card.webp",
+      "wide": "assets/menu/americano-wide.webp",
+      "hero": "assets/menu/americano-hero.webp",
+      "th": "assets/menu/americano-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "apple-juice": {
+      "name": "Apple juice",
+      "sq": "assets/menu/apple-juice-sq.webp",
+      "card": "assets/menu/apple-juice-card.webp",
+      "wide": "assets/menu/apple-juice-wide.webp",
+      "hero": "assets/menu/apple-juice-hero.webp",
+      "th": "assets/menu/apple-juice-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "arnold-palmer": {
+      "name": "Arnold Palmer",
+      "sq": "assets/menu/arnold-palmer-sq.webp",
+      "card": "assets/menu/arnold-palmer-card.webp",
+      "wide": "assets/menu/arnold-palmer-wide.webp",
+      "hero": "assets/menu/arnold-palmer-hero.webp",
+      "th": "assets/menu/arnold-palmer-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "avalanche": {
+      "name": "Avalanche frappe",
+      "sq": "assets/menu/avalanche-sq.webp",
+      "card": "assets/menu/avalanche-card.webp",
+      "wide": "assets/menu/avalanche-wide.webp",
+      "hero": "assets/menu/avalanche-hero.webp",
+      "th": "assets/menu/avalanche-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "aztec-melt": {
+      "name": "The Aztec Melt",
+      "sq": "assets/menu/aztec-melt-sq.webp",
+      "card": "assets/menu/aztec-melt-card.webp",
+      "wide": "assets/menu/aztec-melt-wide.webp",
+      "hero": "assets/menu/aztec-melt-hero.webp",
+      "th": "assets/menu/aztec-melt-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "bagel-cc": {
+      "name": "Bagel & cream cheese",
+      "sq": "assets/menu/bagel-cc-sq.webp",
+      "card": "assets/menu/bagel-cc-card.webp",
+      "wide": "assets/menu/bagel-cc-wide.webp",
+      "hero": "assets/menu/bagel-cc-hero.webp",
+      "th": "assets/menu/bagel-cc-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "banana-bread-latte": {
+      "name": "Banana bread latte",
+      "sq": "assets/menu/banana-bread-latte-sq.webp",
+      "card": "assets/menu/banana-bread-latte-card.webp",
+      "wide": "assets/menu/banana-bread-latte-wide.webp",
+      "hero": "assets/menu/banana-bread-latte-hero.webp",
+      "th": "assets/menu/banana-bread-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "banana-cappuccino": {
+      "name": "Banana cappuccino",
+      "sq": "assets/menu/banana-cappuccino-sq.webp",
+      "card": "assets/menu/banana-cappuccino-card.webp",
+      "wide": "assets/menu/banana-cappuccino-wide.webp",
+      "hero": "assets/menu/banana-cappuccino-hero.webp",
+      "th": "assets/menu/banana-cappuccino-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "banana-mocha-frappe": {
+      "name": "Banana mocha frappe",
+      "sq": "assets/menu/banana-mocha-frappe-sq.webp",
+      "card": "assets/menu/banana-mocha-frappe-card.webp",
+      "wide": "assets/menu/banana-mocha-frappe-wide.webp",
+      "hero": "assets/menu/banana-mocha-frappe-hero.webp",
+      "th": "assets/menu/banana-mocha-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "waffle": {
+      "name": "Belgian waffle",
+      "sq": "assets/menu/waffle-sq.webp",
+      "card": "assets/menu/waffle-card.webp",
+      "wide": "assets/menu/waffle-wide.webp",
+      "hero": "assets/menu/waffle-hero.webp",
+      "th": "assets/menu/waffle-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "black-forest": {
+      "name": "Black Forest",
+      "sq": "assets/menu/black-forest-sq.webp",
+      "card": "assets/menu/black-forest-card.webp",
+      "wide": "assets/menu/black-forest-wide.webp",
+      "hero": "assets/menu/black-forest-hero.webp",
+      "th": "assets/menu/black-forest-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "blood-orange": {
+      "name": "Blood orange sunrise",
+      "sq": "assets/menu/blood-orange-sq.webp",
+      "card": "assets/menu/blood-orange-card.webp",
+      "wide": "assets/menu/blood-orange-wide.webp",
+      "hero": "assets/menu/blood-orange-hero.webp",
+      "th": "assets/menu/blood-orange-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "blueberry-matcha": {
+      "name": "Blueberry matcha",
+      "sq": "assets/menu/blueberry-matcha-sq.webp",
+      "card": "assets/menu/blueberry-matcha-card.webp",
+      "wide": "assets/menu/blueberry-matcha-wide.webp",
+      "hero": "assets/menu/blueberry-matcha-hero.webp",
+      "th": "assets/menu/blueberry-matcha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "blueberry-scone": {
+      "name": "Blueberry scone",
+      "sq": "assets/menu/blueberry-scone-sq.webp",
+      "card": "assets/menu/blueberry-scone-card.webp",
+      "wide": "assets/menu/blueberry-scone-wide.webp",
+      "hero": "assets/menu/blueberry-scone-hero.webp",
+      "th": "assets/menu/blueberry-scone-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "breakfast-burrito": {
+      "name": "Breakfast burrito",
+      "sq": "assets/menu/breakfast-burrito-sq.webp",
+      "card": "assets/menu/breakfast-burrito-card.webp",
+      "wide": "assets/menu/breakfast-burrito-wide.webp",
+      "hero": "assets/menu/breakfast-burrito-hero.webp",
+      "th": "assets/menu/breakfast-burrito-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "brownie": {
+      "name": "Brownie",
+      "sq": "assets/menu/brownie-sq.webp",
+      "card": "assets/menu/brownie-card.webp",
+      "wide": "assets/menu/brownie-wide.webp",
+      "hero": "assets/menu/brownie-hero.webp",
+      "th": "assets/menu/brownie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "byo-omelette": {
+      "name": "Build your own omelette",
+      "sq": "assets/menu/byo-omelette-sq.webp",
+      "card": "assets/menu/byo-omelette-card.webp",
+      "wide": "assets/menu/byo-omelette-wide.webp",
+      "hero": "assets/menu/byo-omelette-hero.webp",
+      "th": "assets/menu/byo-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "butter-brew": {
+      "name": "Butter brew",
+      "sq": "assets/menu/butter-brew-sq.webp",
+      "card": "assets/menu/butter-brew-card.webp",
+      "wide": "assets/menu/butter-brew-wide.webp",
+      "hero": "assets/menu/butter-brew-hero.webp",
+      "th": "assets/menu/butter-brew-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "ca-omelette": {
+      "name": "CA omelette",
+      "sq": "assets/menu/ca-omelette-sq.webp",
+      "card": "assets/menu/ca-omelette-card.webp",
+      "wide": "assets/menu/ca-omelette-wide.webp",
+      "hero": "assets/menu/ca-omelette-hero.webp",
+      "th": "assets/menu/ca-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "cafe-au-lait": {
+      "name": "Café au lait",
+      "sq": "assets/menu/cafe-au-lait-sq.webp",
+      "card": "assets/menu/cafe-au-lait-card.webp",
+      "wide": "assets/menu/cafe-au-lait-wide.webp",
+      "hero": "assets/menu/cafe-au-lait-hero.webp",
+      "th": "assets/menu/cafe-au-lait-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cafe-blondie": {
+      "name": "Café blondie",
+      "sq": "assets/menu/cafe-blondie-sq.webp",
+      "card": "assets/menu/cafe-blondie-card.webp",
+      "wide": "assets/menu/cafe-blondie-wide.webp",
+      "hero": "assets/menu/cafe-blondie-hero.webp",
+      "th": "assets/menu/cafe-blondie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cafe-latte": {
+      "name": "Café latte",
+      "sq": "assets/menu/cafe-latte-sq.webp",
+      "card": "assets/menu/cafe-latte-card.webp",
+      "wide": "assets/menu/cafe-latte-wide.webp",
+      "hero": "assets/menu/cafe-latte-hero.webp",
+      "th": "assets/menu/cafe-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cafe-mocha": {
+      "name": "Café mocha",
+      "sq": "assets/menu/cafe-mocha-sq.webp",
+      "card": "assets/menu/cafe-mocha-card.webp",
+      "wide": "assets/menu/cafe-mocha-wide.webp",
+      "hero": "assets/menu/cafe-mocha-hero.webp",
+      "th": "assets/menu/cafe-mocha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cappuccino": {
+      "name": "Cappuccino",
+      "sq": "assets/menu/cappuccino-sq.webp",
+      "card": "assets/menu/cappuccino-card.webp",
+      "wide": "assets/menu/cappuccino-wide.webp",
+      "hero": "assets/menu/cappuccino-hero.webp",
+      "th": "assets/menu/cappuccino-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "caramel-sea": {
+      "name": "Caramel by the Sea",
+      "sq": "assets/menu/caramel-sea-sq.webp",
+      "card": "assets/menu/caramel-sea-card.webp",
+      "wide": "assets/menu/caramel-sea-wide.webp",
+      "hero": "assets/menu/caramel-sea-hero.webp",
+      "th": "assets/menu/caramel-sea-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "caramel-frappe": {
+      "name": "Caramel frappe",
+      "sq": "assets/menu/caramel-frappe-sq.webp",
+      "card": "assets/menu/caramel-frappe-card.webp",
+      "wide": "assets/menu/caramel-frappe-wide.webp",
+      "hero": "assets/menu/caramel-frappe-hero.webp",
+      "th": "assets/menu/caramel-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "caramel-latte": {
+      "name": "Caramel latte",
+      "sq": "assets/menu/caramel-latte-sq.webp",
+      "card": "assets/menu/caramel-latte-card.webp",
+      "wide": "assets/menu/caramel-latte-wide.webp",
+      "hero": "assets/menu/caramel-latte-hero.webp",
+      "th": "assets/menu/caramel-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "matcha": {
+      "name": "Ceremonial matcha latte",
+      "sq": "assets/menu/matcha-sq.webp",
+      "card": "assets/menu/matcha-card.webp",
+      "wide": "assets/menu/matcha-wide.webp",
+      "hero": "assets/menu/matcha-hero.webp",
+      "th": "assets/menu/matcha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "chai": {
+      "name": "Chai latte",
+      "sq": "assets/menu/chai-sq.webp",
+      "card": "assets/menu/chai-card.webp",
+      "wide": "assets/menu/chai-wide.webp",
+      "hero": "assets/menu/chai-hero.webp",
+      "th": "assets/menu/chai-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "chicken-sausage-burrito": {
+      "name": "Chicken sausage burrito",
+      "sq": "assets/menu/chicken-sausage-burrito-sq.webp",
+      "card": "assets/menu/chicken-sausage-burrito-card.webp",
+      "wide": "assets/menu/chicken-sausage-burrito-wide.webp",
+      "hero": "assets/menu/chicken-sausage-burrito-hero.webp",
+      "th": "assets/menu/chicken-sausage-burrito-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "choc-chip-cookie": {
+      "name": "Chocolate chip cookie",
+      "sq": "assets/menu/choc-chip-cookie-sq.webp",
+      "card": "assets/menu/choc-chip-cookie-card.webp",
+      "wide": "assets/menu/choc-chip-cookie-wide.webp",
+      "hero": "assets/menu/choc-chip-cookie-hero.webp",
+      "th": "assets/menu/choc-chip-cookie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "chocolate-milk": {
+      "name": "Chocolate milk",
+      "sq": "assets/menu/chocolate-milk-sq.webp",
+      "card": "assets/menu/chocolate-milk-card.webp",
+      "wide": "assets/menu/chocolate-milk-wide.webp",
+      "hero": "assets/menu/chocolate-milk-hero.webp",
+      "th": "assets/menu/chocolate-milk-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "chocolate-scone": {
+      "name": "Chocolate scone",
+      "sq": "assets/menu/chocolate-scone-sq.webp",
+      "card": "assets/menu/chocolate-scone-card.webp",
+      "wide": "assets/menu/chocolate-scone-wide.webp",
+      "hero": "assets/menu/chocolate-scone-hero.webp",
+      "th": "assets/menu/chocolate-scone-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "chorizo-skillet": {
+      "name": "Chorizo skillet",
+      "sq": "assets/menu/chorizo-skillet-sq.webp",
+      "card": "assets/menu/chorizo-skillet-card.webp",
+      "wide": "assets/menu/chorizo-skillet-wide.webp",
+      "hero": "assets/menu/chorizo-skillet-hero.webp",
+      "th": "assets/menu/chorizo-skillet-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.56,
+        "y": 0.56,
+        "zoom": 0.84
+      }
+    },
+    "cilantro-burrito": {
+      "name": "Cilantro burrito",
+      "sq": "assets/menu/cilantro-burrito-sq.webp",
+      "card": "assets/menu/cilantro-burrito-card.webp",
+      "wide": "assets/menu/cilantro-burrito-wide.webp",
+      "hero": "assets/menu/cilantro-burrito-hero.webp",
+      "th": "assets/menu/cilantro-burrito-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "classic-benedict": {
+      "name": "Classic eggs Benedict",
+      "sq": "assets/menu/classic-benedict-sq.webp",
+      "card": "assets/menu/classic-benedict-card.webp",
+      "wide": "assets/menu/classic-benedict-wide.webp",
+      "hero": "assets/menu/classic-benedict-hero.webp",
+      "th": "assets/menu/classic-benedict-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "club-bagel": {
+      "name": "Club bagel",
+      "sq": "assets/menu/club-bagel-sq.webp",
+      "card": "assets/menu/club-bagel-card.webp",
+      "wide": "assets/menu/club-bagel-wide.webp",
+      "hero": "assets/menu/club-bagel-hero.webp",
+      "th": "assets/menu/club-bagel-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "cold-brew": {
+      "name": "Cold brew",
+      "sq": "assets/menu/cold-brew-sq.webp",
+      "card": "assets/menu/cold-brew-card.webp",
+      "wide": "assets/menu/cold-brew-wide.webp",
+      "hero": "assets/menu/cold-brew-hero.webp",
+      "th": "assets/menu/cold-brew-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cold-milk": {
+      "name": "Cold milk",
+      "sq": "assets/menu/cold-milk-sq.webp",
+      "card": "assets/menu/cold-milk-card.webp",
+      "wide": "assets/menu/cold-milk-wide.webp",
+      "hero": "assets/menu/cold-milk-hero.webp",
+      "th": "assets/menu/cold-milk-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cookie-butter-latte": {
+      "name": "Cookie butter latte",
+      "sq": "assets/menu/cookie-butter-latte-sq.webp",
+      "card": "assets/menu/cookie-butter-latte-card.webp",
+      "wide": "assets/menu/cookie-butter-latte-wide.webp",
+      "hero": "assets/menu/cookie-butter-latte-hero.webp",
+      "th": "assets/menu/cookie-butter-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cookie-butter-matcha": {
+      "name": "Cookie butter matcha",
+      "sq": "assets/menu/cookie-butter-matcha-sq.webp",
+      "card": "assets/menu/cookie-butter-matcha-card.webp",
+      "wide": "assets/menu/cookie-butter-matcha-wide.webp",
+      "hero": "assets/menu/cookie-butter-matcha-hero.webp",
+      "th": "assets/menu/cookie-butter-matcha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cookie-catastrophe": {
+      "name": "Cookie Catastrophe",
+      "sq": "assets/menu/cookie-catastrophe-sq.webp",
+      "card": "assets/menu/cookie-catastrophe-card.webp",
+      "wide": "assets/menu/cookie-catastrophe-wide.webp",
+      "hero": "assets/menu/cookie-catastrophe-hero.webp",
+      "th": "assets/menu/cookie-catastrophe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "cortado": {
+      "name": "Cortado",
+      "sq": "assets/menu/cortado-sq.webp",
+      "card": "assets/menu/cortado-card.webp",
+      "wide": "assets/menu/cortado-wide.webp",
+      "hero": "assets/menu/cortado-hero.webp",
+      "th": "assets/menu/cortado-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "denver-omelette": {
+      "name": "Denver omelette",
+      "sq": "assets/menu/denver-omelette-sq.webp",
+      "card": "assets/menu/denver-omelette-card.webp",
+      "wide": "assets/menu/denver-omelette-wide.webp",
+      "hero": "assets/menu/denver-omelette-hero.webp",
+      "th": "assets/menu/denver-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "dirty-chai": {
+      "name": "Dirty chai latte",
+      "sq": "assets/menu/dirty-chai-sq.webp",
+      "card": "assets/menu/dirty-chai-card.webp",
+      "wide": "assets/menu/dirty-chai-wide.webp",
+      "hero": "assets/menu/dirty-chai-hero.webp",
+      "th": "assets/menu/dirty-chai-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "espresso": {
+      "name": "Espresso",
+      "sq": "assets/menu/espresso-sq.webp",
+      "card": "assets/menu/espresso-card.webp",
+      "wide": "assets/menu/espresso-wide.webp",
+      "hero": "assets/menu/espresso-hero.webp",
+      "th": "assets/menu/espresso-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "falltastic": {
+      "name": "Falltastic white mocha",
+      "sq": "assets/menu/falltastic-sq.webp",
+      "card": "assets/menu/falltastic-card.webp",
+      "wide": "assets/menu/falltastic-wide.webp",
+      "hero": "assets/menu/falltastic-hero.webp",
+      "th": "assets/menu/falltastic-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "flat-white": {
+      "name": "Flat white",
+      "sq": "assets/menu/flat-white-sq.webp",
+      "card": "assets/menu/flat-white-card.webp",
+      "wide": "assets/menu/flat-white-wide.webp",
+      "hero": "assets/menu/flat-white-hero.webp",
+      "th": "assets/menu/flat-white-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "redbull": {
+      "name": "Flavored Red Bull",
+      "sq": "assets/menu/redbull-sq.webp",
+      "card": "assets/menu/redbull-card.webp",
+      "wide": "assets/menu/redbull-wide.webp",
+      "hero": "assets/menu/redbull-hero.webp",
+      "th": "assets/menu/redbull-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "french-toast": {
+      "name": "French toast",
+      "sq": "assets/menu/french-toast-sq.webp",
+      "card": "assets/menu/french-toast-card.webp",
+      "wide": "assets/menu/french-toast-wide.webp",
+      "hero": "assets/menu/french-toast-hero.webp",
+      "th": "assets/menu/french-toast-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "oj": {
+      "name": "Fresh orange juice",
+      "sq": "assets/menu/oj-sq.webp",
+      "card": "assets/menu/oj-card.webp",
+      "wide": "assets/menu/oj-wide.webp",
+      "hero": "assets/menu/oj-hero.webp",
+      "th": "assets/menu/oj-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "pomegranate": {
+      "name": "Fresh pomegranate juice",
+      "sq": "assets/menu/pomegranate-sq.webp",
+      "card": "assets/menu/pomegranate-card.webp",
+      "wide": "assets/menu/pomegranate-wide.webp",
+      "hero": "assets/menu/pomegranate-hero.webp",
+      "th": "assets/menu/pomegranate-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "garden-skillet": {
+      "name": "Garden skillet",
+      "sq": "assets/menu/garden-skillet-sq.webp",
+      "card": "assets/menu/garden-skillet-card.webp",
+      "wide": "assets/menu/garden-skillet-wide.webp",
+      "hero": "assets/menu/garden-skillet-hero.webp",
+      "th": "assets/menu/garden-skillet-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.56,
+        "y": 0.56,
+        "zoom": 0.84
+      }
+    },
+    "green-lantern": {
+      "name": "Green Lantern",
+      "sq": "assets/menu/green-lantern-sq.webp",
+      "card": "assets/menu/green-lantern-card.webp",
+      "wide": "assets/menu/green-lantern-wide.webp",
+      "hero": "assets/menu/green-lantern-hero.webp",
+      "th": "assets/menu/green-lantern-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "green-machine": {
+      "name": "Green machine smoothie",
+      "sq": "assets/menu/green-machine-sq.webp",
+      "card": "assets/menu/green-machine-card.webp",
+      "wide": "assets/menu/green-machine-wide.webp",
+      "hero": "assets/menu/green-machine-hero.webp",
+      "th": "assets/menu/green-machine-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hammerhead": {
+      "name": "Hammerhead",
+      "sq": "assets/menu/hammerhead-sq.webp",
+      "card": "assets/menu/hammerhead-card.webp",
+      "wide": "assets/menu/hammerhead-wide.webp",
+      "hero": "assets/menu/hammerhead-hero.webp",
+      "th": "assets/menu/hammerhead-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hashbrown-burrito": {
+      "name": "Hashbrown burrito",
+      "sq": "assets/menu/hashbrown-burrito-sq.webp",
+      "card": "assets/menu/hashbrown-burrito-card.webp",
+      "wide": "assets/menu/hashbrown-burrito-wide.webp",
+      "hero": "assets/menu/hashbrown-burrito-hero.webp",
+      "th": "assets/menu/hashbrown-burrito-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "hawaiian-breeze": {
+      "name": "Hawaiian breeze",
+      "sq": "assets/menu/hawaiian-breeze-sq.webp",
+      "card": "assets/menu/hawaiian-breeze-card.webp",
+      "wide": "assets/menu/hawaiian-breeze-wide.webp",
+      "hero": "assets/menu/hawaiian-breeze-hero.webp",
+      "th": "assets/menu/hawaiian-breeze-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hawaiian-vacation": {
+      "name": "Hawaiian vacation smoothie",
+      "sq": "assets/menu/hawaiian-vacation-sq.webp",
+      "card": "assets/menu/hawaiian-vacation-card.webp",
+      "wide": "assets/menu/hawaiian-vacation-wide.webp",
+      "hero": "assets/menu/hawaiian-vacation-hero.webp",
+      "th": "assets/menu/hawaiian-vacation-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hibiscus": {
+      "name": "Hibiscus refresher",
+      "sq": "assets/menu/hibiscus-sq.webp",
+      "card": "assets/menu/hibiscus-card.webp",
+      "wide": "assets/menu/hibiscus-wide.webp",
+      "hero": "assets/menu/hibiscus-hero.webp",
+      "th": "assets/menu/hibiscus-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hot-chocolate": {
+      "name": "Hot chocolate",
+      "sq": "assets/menu/hot-chocolate-sq.webp",
+      "card": "assets/menu/hot-chocolate-card.webp",
+      "wide": "assets/menu/hot-chocolate-wide.webp",
+      "hero": "assets/menu/hot-chocolate-hero.webp",
+      "th": "assets/menu/hot-chocolate-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "hot-honey-bagel": {
+      "name": "Hot honey bagel",
+      "sq": "assets/menu/hot-honey-bagel-sq.webp",
+      "card": "assets/menu/hot-honey-bagel-card.webp",
+      "wide": "assets/menu/hot-honey-bagel-wide.webp",
+      "hero": "assets/menu/hot-honey-bagel-hero.webp",
+      "th": "assets/menu/hot-honey-bagel-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "hot-tea": {
+      "name": "Hot tea",
+      "sq": "assets/menu/hot-tea-sq.webp",
+      "card": "assets/menu/hot-tea-card.webp",
+      "wide": "assets/menu/hot-tea-wide.webp",
+      "hero": "assets/menu/hot-tea-hero.webp",
+      "th": "assets/menu/hot-tea-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "house-coffee": {
+      "name": "House coffee",
+      "sq": "assets/menu/house-coffee-sq.webp",
+      "card": "assets/menu/house-coffee-card.webp",
+      "wide": "assets/menu/house-coffee-wide.webp",
+      "hero": "assets/menu/house-coffee-hero.webp",
+      "th": "assets/menu/house-coffee-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "iced-coffee": {
+      "name": "Iced coffee",
+      "sq": "assets/menu/iced-coffee-sq.webp",
+      "card": "assets/menu/iced-coffee-card.webp",
+      "wide": "assets/menu/iced-coffee-wide.webp",
+      "hero": "assets/menu/iced-coffee-hero.webp",
+      "th": "assets/menu/iced-coffee-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "lemonade": {
+      "name": "Iced lemonade",
+      "sq": "assets/menu/lemonade-sq.webp",
+      "card": "assets/menu/lemonade-card.webp",
+      "wide": "assets/menu/lemonade-wide.webp",
+      "hero": "assets/menu/lemonade-hero.webp",
+      "th": "assets/menu/lemonade-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "iced-tea": {
+      "name": "Iced tea",
+      "sq": "assets/menu/iced-tea-sq.webp",
+      "card": "assets/menu/iced-tea-card.webp",
+      "wide": "assets/menu/iced-tea-wide.webp",
+      "hero": "assets/menu/iced-tea-hero.webp",
+      "th": "assets/menu/iced-tea-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "iced-vietnamese": {
+      "name": "Iced Vietnamese",
+      "sq": "assets/menu/iced-vietnamese-sq.webp",
+      "card": "assets/menu/iced-vietnamese-card.webp",
+      "wide": "assets/menu/iced-vietnamese-wide.webp",
+      "hero": "assets/menu/iced-vietnamese-hero.webp",
+      "th": "assets/menu/iced-vietnamese-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "italian-skillet": {
+      "name": "Italian sausage skillet",
+      "sq": "assets/menu/italian-skillet-sq.webp",
+      "card": "assets/menu/italian-skillet-card.webp",
+      "wide": "assets/menu/italian-skillet-wide.webp",
+      "hero": "assets/menu/italian-skillet-hero.webp",
+      "th": "assets/menu/italian-skillet-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.56,
+        "y": 0.56,
+        "zoom": 0.84
+      }
+    },
+    "italian-soda": {
+      "name": "Italian soda",
+      "sq": "assets/menu/italian-soda-sq.webp",
+      "card": "assets/menu/italian-soda-card.webp",
+      "wide": "assets/menu/italian-soda-wide.webp",
+      "hero": "assets/menu/italian-soda-hero.webp",
+      "th": "assets/menu/italian-soda-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "land-slide": {
+      "name": "Land Slide",
+      "sq": "assets/menu/land-slide-sq.webp",
+      "card": "assets/menu/land-slide-card.webp",
+      "wide": "assets/menu/land-slide-wide.webp",
+      "hero": "assets/menu/land-slide-hero.webp",
+      "th": "assets/menu/land-slide-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "latte-frappe": {
+      "name": "Latte frappe",
+      "sq": "assets/menu/latte-frappe-sq.webp",
+      "card": "assets/menu/latte-frappe-card.webp",
+      "wide": "assets/menu/latte-frappe-wide.webp",
+      "hero": "assets/menu/latte-frappe-hero.webp",
+      "th": "assets/menu/latte-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "lr-special": {
+      "name": "Living Room Special",
+      "sq": "assets/menu/lr-special-sq.webp",
+      "card": "assets/menu/lr-special-card.webp",
+      "wide": "assets/menu/lr-special-wide.webp",
+      "hero": "assets/menu/lr-special-hero.webp",
+      "th": "assets/menu/lr-special-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "london-fog": {
+      "name": "London fog",
+      "sq": "assets/menu/london-fog-sq.webp",
+      "card": "assets/menu/london-fog-card.webp",
+      "wide": "assets/menu/london-fog-wide.webp",
+      "hero": "assets/menu/london-fog-hero.webp",
+      "th": "assets/menu/london-fog-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "lox-benedict": {
+      "name": "Lox Benedict",
+      "sq": "assets/menu/lox-benedict-sq.webp",
+      "card": "assets/menu/lox-benedict-card.webp",
+      "wide": "assets/menu/lox-benedict-wide.webp",
+      "hero": "assets/menu/lox-benedict-hero.webp",
+      "th": "assets/menu/lox-benedict-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "macchiato": {
+      "name": "Macchiato",
+      "sq": "assets/menu/macchiato-sq.webp",
+      "card": "assets/menu/macchiato-card.webp",
+      "wide": "assets/menu/macchiato-wide.webp",
+      "hero": "assets/menu/macchiato-hero.webp",
+      "th": "assets/menu/macchiato-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "machaca-skillet": {
+      "name": "Machaca skillet",
+      "sq": "assets/menu/machaca-skillet-sq.webp",
+      "card": "assets/menu/machaca-skillet-card.webp",
+      "wide": "assets/menu/machaca-skillet-wide.webp",
+      "hero": "assets/menu/machaca-skillet-hero.webp",
+      "th": "assets/menu/machaca-skillet-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.56,
+        "y": 0.56,
+        "zoom": 0.84
+      }
+    },
+    "medicine-ball": {
+      "name": "Medicine ball",
+      "sq": "assets/menu/medicine-ball-sq.webp",
+      "card": "assets/menu/medicine-ball-card.webp",
+      "wide": "assets/menu/medicine-ball-wide.webp",
+      "hero": "assets/menu/medicine-ball-hero.webp",
+      "th": "assets/menu/medicine-ball-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "med-omelette": {
+      "name": "Mediterranean omelette",
+      "sq": "assets/menu/med-omelette-sq.webp",
+      "card": "assets/menu/med-omelette-card.webp",
+      "wide": "assets/menu/med-omelette-wide.webp",
+      "hero": "assets/menu/med-omelette-hero.webp",
+      "th": "assets/menu/med-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "mexican-hot-chocolate": {
+      "name": "Mexican hot chocolate",
+      "sq": "assets/menu/mexican-hot-chocolate-sq.webp",
+      "card": "assets/menu/mexican-hot-chocolate-card.webp",
+      "wide": "assets/menu/mexican-hot-chocolate-wide.webp",
+      "hero": "assets/menu/mexican-hot-chocolate-hero.webp",
+      "th": "assets/menu/mexican-hot-chocolate-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "mexican-mocha": {
+      "name": "Mexican mocha",
+      "sq": "assets/menu/mexican-mocha-sq.webp",
+      "card": "assets/menu/mexican-mocha-card.webp",
+      "wide": "assets/menu/mexican-mocha-wide.webp",
+      "hero": "assets/menu/mexican-mocha-hero.webp",
+      "th": "assets/menu/mexican-mocha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "milky-way": {
+      "name": "Milky Way",
+      "sq": "assets/menu/milky-way-sq.webp",
+      "card": "assets/menu/milky-way-card.webp",
+      "wide": "assets/menu/milky-way-wide.webp",
+      "hero": "assets/menu/milky-way-hero.webp",
+      "th": "assets/menu/milky-way-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "mocha-frappe": {
+      "name": "Mocha frappe",
+      "sq": "assets/menu/mocha-frappe-sq.webp",
+      "card": "assets/menu/mocha-frappe-card.webp",
+      "wide": "assets/menu/mocha-frappe-wide.webp",
+      "hero": "assets/menu/mocha-frappe-hero.webp",
+      "th": "assets/menu/mocha-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "muffin": {
+      "name": "Muffin",
+      "sq": "assets/menu/muffin-sq.webp",
+      "card": "assets/menu/muffin-card.webp",
+      "wide": "assets/menu/muffin-wide.webp",
+      "hero": "assets/menu/muffin-hero.webp",
+      "th": "assets/menu/muffin-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "nutella-crepe": {
+      "name": "Nutella® crepe",
+      "sq": "assets/menu/nutella-crepe-sq.webp",
+      "card": "assets/menu/nutella-crepe-card.webp",
+      "wide": "assets/menu/nutella-crepe-wide.webp",
+      "hero": "assets/menu/nutella-crepe-hero.webp",
+      "th": "assets/menu/nutella-crepe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "oatmeal-cookie": {
+      "name": "Oatmeal raisin cookie",
+      "sq": "assets/menu/oatmeal-cookie-sq.webp",
+      "card": "assets/menu/oatmeal-cookie-card.webp",
+      "wide": "assets/menu/oatmeal-cookie-wide.webp",
+      "hero": "assets/menu/oatmeal-cookie-hero.webp",
+      "th": "assets/menu/oatmeal-cookie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "pancakes": {
+      "name": "Pancakes",
+      "sq": "assets/menu/pancakes-sq.webp",
+      "card": "assets/menu/pancakes-card.webp",
+      "wide": "assets/menu/pancakes-wide.webp",
+      "hero": "assets/menu/pancakes-hero.webp",
+      "th": "assets/menu/pancakes-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "pistachio-frappe": {
+      "name": "Pistachio frappe",
+      "sq": "assets/menu/pistachio-frappe-sq.webp",
+      "card": "assets/menu/pistachio-frappe-card.webp",
+      "wide": "assets/menu/pistachio-frappe-wide.webp",
+      "hero": "assets/menu/pistachio-frappe-hero.webp",
+      "th": "assets/menu/pistachio-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "plain-croissant": {
+      "name": "Plain croissant",
+      "sq": "assets/menu/plain-croissant-sq.webp",
+      "card": "assets/menu/plain-croissant-card.webp",
+      "wide": "assets/menu/plain-croissant-wide.webp",
+      "hero": "assets/menu/plain-croissant-hero.webp",
+      "th": "assets/menu/plain-croissant-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "pumpkin-chai": {
+      "name": "Pumpkin chai latte",
+      "sq": "assets/menu/pumpkin-chai-sq.webp",
+      "card": "assets/menu/pumpkin-chai-card.webp",
+      "wide": "assets/menu/pumpkin-chai-wide.webp",
+      "hero": "assets/menu/pumpkin-chai-hero.webp",
+      "th": "assets/menu/pumpkin-chai-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "pumpkin-muffin": {
+      "name": "Pumpkin muffin",
+      "sq": "assets/menu/pumpkin-muffin-sq.webp",
+      "card": "assets/menu/pumpkin-muffin-card.webp",
+      "wide": "assets/menu/pumpkin-muffin-wide.webp",
+      "hero": "assets/menu/pumpkin-muffin-hero.webp",
+      "th": "assets/menu/pumpkin-muffin-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "pumpkin-shaken": {
+      "name": "Pumpkin shaken espresso",
+      "sq": "assets/menu/pumpkin-shaken-sq.webp",
+      "card": "assets/menu/pumpkin-shaken-card.webp",
+      "wide": "assets/menu/pumpkin-shaken-wide.webp",
+      "hero": "assets/menu/pumpkin-shaken-hero.webp",
+      "th": "assets/menu/pumpkin-shaken-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "psl": {
+      "name": "Pumpkin spice latte",
+      "sq": "assets/menu/psl-sq.webp",
+      "card": "assets/menu/psl-card.webp",
+      "wide": "assets/menu/psl-wide.webp",
+      "hero": "assets/menu/psl-hero.webp",
+      "th": "assets/menu/psl-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "ranchero-omelette": {
+      "name": "Ranchero omelette",
+      "sq": "assets/menu/ranchero-omelette-sq.webp",
+      "card": "assets/menu/ranchero-omelette-card.webp",
+      "wide": "assets/menu/ranchero-omelette-wide.webp",
+      "hero": "assets/menu/ranchero-omelette-hero.webp",
+      "th": "assets/menu/ranchero-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "raspberry-white-mocha": {
+      "name": "Raspberry white mocha",
+      "sq": "assets/menu/raspberry-white-mocha-sq.webp",
+      "card": "assets/menu/raspberry-white-mocha-card.webp",
+      "wide": "assets/menu/raspberry-white-mocha-wide.webp",
+      "hero": "assets/menu/raspberry-white-mocha-hero.webp",
+      "th": "assets/menu/raspberry-white-mocha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "rocky-road": {
+      "name": "Rocky Road",
+      "sq": "assets/menu/rocky-road-sq.webp",
+      "card": "assets/menu/rocky-road-card.webp",
+      "wide": "assets/menu/rocky-road-wide.webp",
+      "hero": "assets/menu/rocky-road-hero.webp",
+      "th": "assets/menu/rocky-road-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "sdsu-croissant": {
+      "name": "SDSU croissant",
+      "sq": "assets/menu/sdsu-croissant-sq.webp",
+      "card": "assets/menu/sdsu-croissant-card.webp",
+      "wide": "assets/menu/sdsu-croissant-wide.webp",
+      "hero": "assets/menu/sdsu-croissant-hero.webp",
+      "th": "assets/menu/sdsu-croissant-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "shaken-espresso": {
+      "name": "Shaken espresso",
+      "sq": "assets/menu/shaken-espresso-sq.webp",
+      "card": "assets/menu/shaken-espresso-card.webp",
+      "wide": "assets/menu/shaken-espresso-wide.webp",
+      "hero": "assets/menu/shaken-espresso-hero.webp",
+      "th": "assets/menu/shaken-espresso-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "shakshouka": {
+      "name": "Shakshouka",
+      "sq": "assets/menu/shakshouka-sq.webp",
+      "card": "assets/menu/shakshouka-card.webp",
+      "wide": "assets/menu/shakshouka-wide.webp",
+      "hero": "assets/menu/shakshouka-hero.webp",
+      "th": "assets/menu/shakshouka-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.56,
+        "y": 0.56,
+        "zoom": 0.84
+      }
+    },
+    "short-rib-benedict": {
+      "name": "Short rib eggs Benedict",
+      "sq": "assets/menu/short-rib-benedict-sq.webp",
+      "card": "assets/menu/short-rib-benedict-card.webp",
+      "wide": "assets/menu/short-rib-benedict-wide.webp",
+      "hero": "assets/menu/short-rib-benedict-hero.webp",
+      "th": "assets/menu/short-rib-benedict-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "side-avocado": {
+      "name": "Side of avocado",
+      "sq": "assets/menu/side-avocado-sq.webp",
+      "card": "assets/menu/side-avocado-card.webp",
+      "wide": "assets/menu/side-avocado-wide.webp",
+      "hero": "assets/menu/side-avocado-hero.webp",
+      "th": "assets/menu/side-avocado-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-bacon": {
+      "name": "Side of bacon",
+      "sq": "assets/menu/side-bacon-sq.webp",
+      "card": "assets/menu/side-bacon-card.webp",
+      "wide": "assets/menu/side-bacon-wide.webp",
+      "hero": "assets/menu/side-bacon-hero.webp",
+      "th": "assets/menu/side-bacon-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-bacon-sausage": {
+      "name": "Side of bacon & sausage",
+      "sq": "assets/menu/side-bacon-sausage-sq.webp",
+      "card": "assets/menu/side-bacon-sausage-card.webp",
+      "wide": "assets/menu/side-bacon-sausage-wide.webp",
+      "hero": "assets/menu/side-bacon-sausage-hero.webp",
+      "th": "assets/menu/side-bacon-sausage-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-ham": {
+      "name": "Side of Canadian bacon (ham)",
+      "sq": "assets/menu/side-ham-sq.webp",
+      "card": "assets/menu/side-ham-card.webp",
+      "wide": "assets/menu/side-ham-wide.webp",
+      "hero": "assets/menu/side-ham-hero.webp",
+      "th": "assets/menu/side-ham-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-chicken-sausage": {
+      "name": "Side of chicken sausage",
+      "sq": "assets/menu/side-chicken-sausage-sq.webp",
+      "card": "assets/menu/side-chicken-sausage-card.webp",
+      "wide": "assets/menu/side-chicken-sausage-wide.webp",
+      "hero": "assets/menu/side-chicken-sausage-hero.webp",
+      "th": "assets/menu/side-chicken-sausage-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-hashbrown": {
+      "name": "Side of hash brown",
+      "sq": "assets/menu/side-hashbrown-sq.webp",
+      "card": "assets/menu/side-hashbrown-card.webp",
+      "wide": "assets/menu/side-hashbrown-wide.webp",
+      "hero": "assets/menu/side-hashbrown-hero.webp",
+      "th": "assets/menu/side-hashbrown-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-potato": {
+      "name": "Side of potato",
+      "sq": "assets/menu/side-potato-sq.webp",
+      "card": "assets/menu/side-potato-card.webp",
+      "wide": "assets/menu/side-potato-wide.webp",
+      "hero": "assets/menu/side-potato-hero.webp",
+      "th": "assets/menu/side-potato-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-sausage": {
+      "name": "Side of sausage",
+      "sq": "assets/menu/side-sausage-sq.webp",
+      "card": "assets/menu/side-sausage-card.webp",
+      "wide": "assets/menu/side-sausage-wide.webp",
+      "hero": "assets/menu/side-sausage-hero.webp",
+      "th": "assets/menu/side-sausage-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-veggie-patty": {
+      "name": "Side of veggie patty",
+      "sq": "assets/menu/side-veggie-patty-sq.webp",
+      "card": "assets/menu/side-veggie-patty-card.webp",
+      "wide": "assets/menu/side-veggie-patty-wide.webp",
+      "hero": "assets/menu/side-veggie-patty-hero.webp",
+      "th": "assets/menu/side-veggie-patty-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "side-turkey-bacon": {
+      "name": "Side of turkey bacon",
+      "sq": "assets/menu/side-turkey-bacon-sq.webp",
+      "card": "assets/menu/side-turkey-bacon-card.webp",
+      "wide": "assets/menu/side-turkey-bacon-wide.webp",
+      "hero": "assets/menu/side-turkey-bacon-hero.webp",
+      "th": "assets/menu/side-turkey-bacon-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.56,
+        "zoom": 0.62
+      }
+    },
+    "smoked-salmon-bagel": {
+      "name": "Smoked salmon bagel",
+      "sq": "assets/menu/smoked-salmon-bagel-sq.webp",
+      "card": "assets/menu/smoked-salmon-bagel-card.webp",
+      "wide": "assets/menu/smoked-salmon-bagel-wide.webp",
+      "hero": "assets/menu/smoked-salmon-bagel-hero.webp",
+      "th": "assets/menu/smoked-salmon-bagel-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "sob-croissant": {
+      "name": "SOB croissant",
+      "sq": "assets/menu/sob-croissant-sq.webp",
+      "card": "assets/menu/sob-croissant-card.webp",
+      "wide": "assets/menu/sob-croissant-wide.webp",
+      "hero": "assets/menu/sob-croissant-hero.webp",
+      "th": "assets/menu/sob-croissant-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "spanish-latte": {
+      "name": "Spanish latte",
+      "sq": "assets/menu/spanish-latte-sq.webp",
+      "card": "assets/menu/spanish-latte-card.webp",
+      "wide": "assets/menu/spanish-latte-wide.webp",
+      "hero": "assets/menu/spanish-latte-hero.webp",
+      "th": "assets/menu/spanish-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "steamer": {
+      "name": "Steamer",
+      "sq": "assets/menu/steamer-sq.webp",
+      "card": "assets/menu/steamer-card.webp",
+      "wide": "assets/menu/steamer-wide.webp",
+      "hero": "assets/menu/steamer-hero.webp",
+      "th": "assets/menu/steamer-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "strawberry-banana": {
+      "name": "Strawberry banana smoothie",
+      "sq": "assets/menu/strawberry-banana-sq.webp",
+      "card": "assets/menu/strawberry-banana-card.webp",
+      "wide": "assets/menu/strawberry-banana-wide.webp",
+      "hero": "assets/menu/strawberry-banana-hero.webp",
+      "th": "assets/menu/strawberry-banana-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "strawberry-mocha-frappe": {
+      "name": "Strawberry mocha frappe",
+      "sq": "assets/menu/strawberry-mocha-frappe-sq.webp",
+      "card": "assets/menu/strawberry-mocha-frappe-card.webp",
+      "wide": "assets/menu/strawberry-mocha-frappe-wide.webp",
+      "hero": "assets/menu/strawberry-mocha-frappe-hero.webp",
+      "th": "assets/menu/strawberry-mocha-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "sugar-cookie": {
+      "name": "Sugar cookie",
+      "sq": "assets/menu/sugar-cookie-sq.webp",
+      "card": "assets/menu/sugar-cookie-card.webp",
+      "wide": "assets/menu/sugar-cookie-wide.webp",
+      "hero": "assets/menu/sugar-cookie-hero.webp",
+      "th": "assets/menu/sugar-cookie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "sunrise-bagel": {
+      "name": "Sunrise bagel",
+      "sq": "assets/menu/sunrise-bagel-sq.webp",
+      "card": "assets/menu/sunrise-bagel-card.webp",
+      "wide": "assets/menu/sunrise-bagel-wide.webp",
+      "hero": "assets/menu/sunrise-bagel-hero.webp",
+      "th": "assets/menu/sunrise-bagel-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "tea-au-lait": {
+      "name": "Tea au lait",
+      "sq": "assets/menu/tea-au-lait-sq.webp",
+      "card": "assets/menu/tea-au-lait-card.webp",
+      "wide": "assets/menu/tea-au-lait-wide.webp",
+      "hero": "assets/menu/tea-au-lait-hero.webp",
+      "th": "assets/menu/tea-au-lait-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "thai-tea": {
+      "name": "Traditional Thai tea",
+      "sq": "assets/menu/thai-tea-sq.webp",
+      "card": "assets/menu/thai-tea-card.webp",
+      "wide": "assets/menu/thai-tea-wide.webp",
+      "hero": "assets/menu/thai-tea-hero.webp",
+      "th": "assets/menu/thai-tea-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "trembler": {
+      "name": "Trembler",
+      "sq": "assets/menu/trembler-sq.webp",
+      "card": "assets/menu/trembler-card.webp",
+      "wide": "assets/menu/trembler-wide.webp",
+      "hero": "assets/menu/trembler-hero.webp",
+      "th": "assets/menu/trembler-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "turkey-croissant": {
+      "name": "Turkey & cheese croissant",
+      "sq": "assets/menu/turkey-croissant-sq.webp",
+      "card": "assets/menu/turkey-croissant-card.webp",
+      "wide": "assets/menu/turkey-croissant-wide.webp",
+      "hero": "assets/menu/turkey-croissant-hero.webp",
+      "th": "assets/menu/turkey-croissant-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "tuxedo-hot-chocolate": {
+      "name": "Tuxedo hot chocolate",
+      "sq": "assets/menu/tuxedo-hot-chocolate-sq.webp",
+      "card": "assets/menu/tuxedo-hot-chocolate-card.webp",
+      "wide": "assets/menu/tuxedo-hot-chocolate-wide.webp",
+      "hero": "assets/menu/tuxedo-hot-chocolate-hero.webp",
+      "th": "assets/menu/tuxedo-hot-chocolate-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "tuxedo-mocha": {
+      "name": "Tuxedo mocha",
+      "sq": "assets/menu/tuxedo-mocha-sq.webp",
+      "card": "assets/menu/tuxedo-mocha-card.webp",
+      "wide": "assets/menu/tuxedo-mocha-wide.webp",
+      "hero": "assets/menu/tuxedo-mocha-hero.webp",
+      "th": "assets/menu/tuxedo-mocha-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "two-eggs": {
+      "name": "2 eggs any style",
+      "sq": "assets/menu/two-eggs-sq.webp",
+      "card": "assets/menu/two-eggs-card.webp",
+      "wide": "assets/menu/two-eggs-wide.webp",
+      "hero": "assets/menu/two-eggs-hero.webp",
+      "th": "assets/menu/two-eggs-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "vanilla-bean-frappe": {
+      "name": "Vanilla bean frappe",
+      "sq": "assets/menu/vanilla-bean-frappe-sq.webp",
+      "card": "assets/menu/vanilla-bean-frappe-card.webp",
+      "wide": "assets/menu/vanilla-bean-frappe-wide.webp",
+      "hero": "assets/menu/vanilla-bean-frappe-hero.webp",
+      "th": "assets/menu/vanilla-bean-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "vanilla-chai-frappe": {
+      "name": "Vanilla chai frappe",
+      "sq": "assets/menu/vanilla-chai-frappe-sq.webp",
+      "card": "assets/menu/vanilla-chai-frappe-card.webp",
+      "wide": "assets/menu/vanilla-chai-frappe-wide.webp",
+      "hero": "assets/menu/vanilla-chai-frappe-hero.webp",
+      "th": "assets/menu/vanilla-chai-frappe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "vanilla-latte": {
+      "name": "Vanilla latte",
+      "sq": "assets/menu/vanilla-latte-sq.webp",
+      "card": "assets/menu/vanilla-latte-card.webp",
+      "wide": "assets/menu/vanilla-latte-wide.webp",
+      "hero": "assets/menu/vanilla-latte-hero.webp",
+      "th": "assets/menu/vanilla-latte-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "veggie-burrito": {
+      "name": "Veggie breakfast burrito",
+      "sq": "assets/menu/veggie-burrito-sq.webp",
+      "card": "assets/menu/veggie-burrito-card.webp",
+      "wide": "assets/menu/veggie-burrito-wide.webp",
+      "hero": "assets/menu/veggie-burrito-hero.webp",
+      "th": "assets/menu/veggie-burrito-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
+    },
+    "veggie-crepe": {
+      "name": "Veggie breakfast crepe",
+      "sq": "assets/menu/veggie-crepe-sq.webp",
+      "card": "assets/menu/veggie-crepe-card.webp",
+      "wide": "assets/menu/veggie-crepe-wide.webp",
+      "hero": "assets/menu/veggie-crepe-hero.webp",
+      "th": "assets/menu/veggie-crepe-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "very-berry": {
+      "name": "Very berry smoothie",
+      "sq": "assets/menu/very-berry-sq.webp",
+      "card": "assets/menu/very-berry-card.webp",
+      "wide": "assets/menu/very-berry-wide.webp",
+      "hero": "assets/menu/very-berry-hero.webp",
+      "th": "assets/menu/very-berry-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "watermelon-sour": {
+      "name": "Watermelon sour refresher",
+      "sq": "assets/menu/watermelon-sour-sq.webp",
+      "card": "assets/menu/watermelon-sour-card.webp",
+      "wide": "assets/menu/watermelon-sour-wide.webp",
+      "hero": "assets/menu/watermelon-sour-hero.webp",
+      "th": "assets/menu/watermelon-sour-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "white-mac-cookie": {
+      "name": "White chocolate macadamia cookie",
+      "sq": "assets/menu/white-mac-cookie-sq.webp",
+      "card": "assets/menu/white-mac-cookie-card.webp",
+      "wide": "assets/menu/white-mac-cookie-wide.webp",
+      "hero": "assets/menu/white-mac-cookie-hero.webp",
+      "th": "assets/menu/white-mac-cookie-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.74
+      }
+    },
+    "white-hot-chocolate": {
+      "name": "White hot chocolate",
+      "sq": "assets/menu/white-hot-chocolate-sq.webp",
+      "card": "assets/menu/white-hot-chocolate-card.webp",
+      "wide": "assets/menu/white-hot-chocolate-wide.webp",
+      "hero": "assets/menu/white-hot-chocolate-hero.webp",
+      "th": "assets/menu/white-hot-chocolate-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.47,
+        "y": 0.46,
+        "zoom": 0.96
+      }
+    },
+    "works-omelette": {
+      "name": "Works omelette",
+      "sq": "assets/menu/works-omelette-sq.webp",
+      "card": "assets/menu/works-omelette-card.webp",
+      "wide": "assets/menu/works-omelette-wide.webp",
+      "hero": "assets/menu/works-omelette-hero.webp",
+      "th": "assets/menu/works-omelette-th.webp",
+      "source": "Photo pack 2 (SDSU), AI-generated illustration",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "focus": {
+        "x": 0.5,
+        "y": 0.55,
+        "zoom": 0.84
+      }
     }
   },
   "new": {
@@ -865,11 +3160,128 @@
       "source": "https://d1w7312wesee68.cloudfront.net/hvhTLBipZ74xp1u0eX17eUTYX5CIJAbzwLcNsQMjP6s/resize:fit:720:720/plain/s3://toasttab/restaurants/restaurant-240923000000000000/menu/items/4/item-1300000001755029474_1775431113.jpg",
       "batch": 1,
       "note": "Not on the app menu yet: add the item (name, price, category) and move the photo."
+    },
+    "cafe-ca": {
+      "name": "Cafe ca",
+      "sq": "assets/menu/new/cafe-ca-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "cafe-suizzera": {
+      "name": "Cafe suizzera",
+      "sq": "assets/menu/new/cafe-suizzera-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "chicken-pie-fruit-salad": {
+      "name": "Chicken pie fruit salad",
+      "sq": "assets/menu/new/chicken-pie-fruit-salad-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "one-slice-bread": {
+      "name": "One slice bread",
+      "sq": "assets/menu/new/one-slice-bread-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "open-faced-toast": {
+      "name": "Open faced toast",
+      "sq": "assets/menu/new/open-faced-toast-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "peppermint-mocha": {
+      "name": "Peppermint mocha",
+      "sq": "assets/menu/new/peppermint-mocha-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "ranchero-steak-burrito": {
+      "name": "Ranchero steak burrito",
+      "sq": "assets/menu/new/ranchero-steak-burrito-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "side-cottage-cheese": {
+      "name": "Side cottage cheese",
+      "sq": "assets/menu/new/side-cottage-cheese-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "side-one-egg": {
+      "name": "Side one egg",
+      "sq": "assets/menu/new/side-one-egg-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "side-two-eggs": {
+      "name": "Side two eggs",
+      "sq": "assets/menu/new/side-two-eggs-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "spinach-quiche": {
+      "name": "Spinach quiche",
+      "sq": "assets/menu/new/spinach-quiche-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "toasted-coconut-matcha": {
+      "name": "Toasted coconut matcha",
+      "sq": "assets/menu/new/toasted-coconut-matcha-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "turkey-lasagna-fruit-salad-bread": {
+      "name": "Turkey lasagna fruit salad bread",
+      "sq": "assets/menu/new/turkey-lasagna-fruit-salad-bread-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
+    },
+    "two-slices-bread": {
+      "name": "Two slices bread",
+      "sq": "assets/menu/new/two-slices-bread-sq.webp",
+      "kind": "illustration",
+      "review": true,
+      "batch": 2,
+      "note": "In the SDSU photo pack but not on the app menu yet: add it (name, price, category) and move the photo."
     }
   },
   "checkWithCafe": {
     "homemade-granola": "Photo looks like a fruit bowl, nearly the same as Fresh fruit bowl.",
     "pistachio-blondie": "Photo shows a layered green drink, not a blondie.",
     "cajun-shrimp-pasta": "Matched to the menu’s Spicy shrimp pasta; confirm it is the same dish."
+  },
+  "pack2": {
+    "location": "college",
+    "items": 135,
+    "note": "AI-generated illustrations, drafts for café review: check ingredients, portions, sides and garnishes, and the cup branding and wording, before publishing. Bomb Alaska was left out of the pack (recipe not confirmed)."
   }
 }

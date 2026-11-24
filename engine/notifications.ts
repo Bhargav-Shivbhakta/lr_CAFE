@@ -72,8 +72,8 @@ const HOLIDAY_SOON: Record<string, string> = {
   july4: 'The 4th is {when}. Iced drinks for the parade.',
   halloween: 'Halloween week starts {when}. Pumpkin everything.',
   coffeeday: 'National Coffee Day is {when}.',
-  mothersday: 'Mother’s Day is {when}. Brunch, sorted.',
-  fathersday: 'Father’s Day is {when}.',
+  mothersday: 'Mother’s Day is {when}. Celebrate with us: brunch at the Living Room.',
+  fathersday: 'Father’s Day is {when}. Celebrate with us: a breakfast burrito or a short rib grilled cheese.',
 };
 
 /** Every notification that could go out right now, best first, before limits. */
