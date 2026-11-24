@@ -144,9 +144,9 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 
 - **Guests can order.** Nobody is forced to sign up. A phone number is asked for only when it is needed: to earn points, save favorites or get order texts.
 - Launch screen: plain cream in Home's exact colours, no text, so Home appears instantly.
-- First open of each day, about 2.5 seconds, tap to skip, never again that day. Built only from the café's own logo, split into three layers (`brand/layer-*.png`):
+- First open of each day, about 6.5 seconds (the greeting stays long enough to read), tap to skip, never again that day. Built only from the café's own logo, split into three layers (`brand/layer-*.png`):
   1. a warm pool of lamplight glows up behind a white card;
-  2. the couch scene settles in, the hand-lettered "Living Room" writes itself left to right, "COFFEEHOUSE" slides into place;
+  2. the couch scene settles in; then "Living Room" appears one whole letter at a time (`brand/letter-0…9.png`, positions in `brand/letters.json`), slowly enough to read; then "COFFEEHOUSE" slides into place. Never wipe across the letters: a cut-off letter is unreadable;
   3. steam rises from the cup on the logo's table;
   4. a line fades in: guests see "A European café with a Californian flair · San Diego · since 1991"; members see "Good evening, Bhargav" and "Your dirty chai latte is one tap away";
   5. the logo glides up toward the header and Home appears.
