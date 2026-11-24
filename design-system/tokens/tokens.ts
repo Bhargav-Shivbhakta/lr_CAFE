@@ -684,6 +684,15 @@ export const tokens = {
           "beanie",
           "sparkles"
         ]
+      },
+      "veterans": {
+        "name": "Veterans Day",
+        "heroBg": "#1F2A44",
+        "heroInk": "#F6F3EC",
+        "eyebrow": "#D9B97A",
+        "accent": "#1F2A44",
+        "tint": "#E9EBF1",
+        "pip": []
       }
     },
     "seasons": {
@@ -854,6 +863,18 @@ export const tokens = {
           "end": "11-02"
         },
         "runway": 5
+      },
+      {
+        "id": "veterans",
+        "enabled": true,
+        "priority": 85,
+        "runway": 3,
+        "rule": {
+          "type": "fixed",
+          "start": "11-11",
+          "end": "11-11"
+        },
+        "note": "Veterans Day. Respectful: no party effects, no jokes, the cup stays quiet."
       },
       {
         "id": "thanksgiving",

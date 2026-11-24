@@ -94,7 +94,20 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 ## 11. Seasonal and holiday themes
 
 - The calendar in `themes/calendar.ts` decides the look of every day. Nobody switches themes by hand.
-- A skin changes **only** the hero and special card colours, the eyebrow, the accent, the tint and Pip's outfit. It never changes the café red, fonts, layout, buttons, prices or the tab bar.
+- **Seasons** (no holiday running) change only the hero and special card colours, the eyebrow, the accent, the tint and the cup's outfit.
+- **Holidays dress the whole app from Home onward** (the holiday's main days; the lead-up stays a seasonal skin with a countdown). The opening, the location screen, the map and the café pages never change. A holiday kit changes:
+  - the colours of the whole app: buttons, links, tints, background, bag bar, sheets and messages (contrast still checked);
+  - the greeting ("Happy Valentine’s, Bhargav") and one line under it;
+  - a decoration along the top of the tab bar, and a small mark on the active tab;
+  - a gentle fall across Home when it opens (hearts, snow, leaves, confetti or stars) that stops by itself;
+  - a burst from the button when something goes into the bag;
+  - **the cup's holiday act**, once a day when Home opens, and again whenever someone taps the cup: Valentine's, a winged cup floating across with a heart balloon; Christmas, the cup as Santa pulling a sleigh of gifts across the sky; Thanksgiving, the cup carrying a pumpkin pie with leaves swirling; New Year, a 3-2-1 countdown and a confetti popper; 4th of July, the cup with a sparkler and fireworks; Veterans Day, the cup quietly holding a small flag.
+  - The other tabs show the cup in its holiday outfit.
+- Holidays never change the layout, the fonts, the logo or where buttons are, so the show-around tips and people's habits keep working.
+- Effects never block a tap, never play in quiet hours on their own (9 PM to 8 AM), and are off with Reduce Motion.
+- **Veterans Day is respectful:** navy, a thin flag stripe, "Thank you to everyone who served", no falling effects, no bursts, no jokes.
+- **Per-café holidays:** a holiday can be limited to some cafés. Back to School runs only at College Area (SDSU).
+- **Food and drink days** (National Pancake Day and so on) never change the theme. Home just suggests the matching item that day.
 - Each holiday has three phases:
   - **Lead-up (runway):** the season's skin stays; Home shows a countdown card in the holiday's colours and Pip holds the outfit. Specials and pre-orders can be announced.
   - **Main:** the full holiday skin, Pip wears the outfit.
