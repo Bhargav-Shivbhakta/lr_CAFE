@@ -148,10 +148,13 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
   1. a warm pool of lamplight glows up behind a white card;
   2. the couch scene settles in; then "Living Room" appears one whole letter at a time (`brand/letter-0…9.png`, positions in `brand/letters.json`), slowly enough to read; then "COFFEEHOUSE" slides into place. Never wipe across the letters: a cut-off letter is unreadable;
   3. steam rises from the cup on the logo's table;
-  4. a line fades in: guests see "A European café with a Californian flair · San Diego · since 1991"; members see "Good evening, Bhargav" and "Your dirty chai latte is one tap away";
+  4. a line fades in. Guests: "A European café" on one line, "with a *Californian flair*" in italic beneath it (the flair in café red), then a small spaced "SAN DIEGO · SINCE 1991" between two brass rules. Members: "Good evening, Bhargav" and "Your dirty chai latte is one tap away";
   5. the logo glides up toward the header and Home appears.
 - No mascot and no other props in the opening.
-- No slideshow tour. Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
+- **After the café is decided:**
+  - **Members** see a welcome screen once a day: their name, their café (with "Your usual" or "Your café" and its status), their points and how far to the next reward, and their usual drink with "Add". "Take me in" goes to Home; tapping the café changes it.
+  - **Newcomers** get Pip's tour once: Pip introduces himself, then three steps (Home and switching café, ordering and the bag bar, points and the press-and-hold code) and "You're all set". Skip is always on screen, Back and swipe work, and it can be replayed from Account. No more than five screens, ever.
+- Beyond the tour, Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
 ## 16. Navigation: nobody gets stuck
