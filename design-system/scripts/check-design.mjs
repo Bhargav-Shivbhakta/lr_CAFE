@@ -70,6 +70,7 @@ const RULES = [
   { re: /<(div|span|li|p)\b[^>]*\bonClick=/g, msg: 'click handler on a non-button: use <button> or <a> so keyboards and screen readers can reach it', level: 'error' },
   { re: /<img\b(?![^>]*\balt=)[^>]*>/g, msg: 'image without alt text', level: 'error' },
   { re: /spinner|Spinner|ActivityIndicator/g, msg: 'no spinners: use <CupLoader/> or <PipLoader/>', level: 'error' },
+  { re: /['"`>][^'"`<>\n]*(?<![\/\w.])Pip\b(?![\w\/.])/g, msg: 'the cup has no name people can see: say "the cup" or "the Living Room cup" (Pip is only the code name)', level: 'error' },
   { re: /animation[^;\n]*infinite/g, check: (m, file, src) => !/CupLoader|PipLoader|m-shimmer|m-steam/.test(src), msg: 'looping animation outside a loader: one-shot only', level: 'error' },
 ];
 function scanFile(file, rel) {
@@ -103,14 +104,14 @@ checkTokens();
 if (args[0] === '--self-test') {
   const dir = mkdtempSync(join(tmpdir(), 'lr-design-'));
   mkdirSync(join(dir, 'checkout'));
-  writeFileSync(join(dir, 'a.tsx'), `const s = { color: '#ff0000', fontSize: '9px', borderRadius: '7px', transition: 'all 333ms', padding: '13px' };\nexport const A = () => <div onClick={() => 1}><img src="x.png" /><Spinner /></div>;`);
+  writeFileSync(join(dir, 'a.tsx'), `const s = { color: '#ff0000', fontSize: '9px', borderRadius: '7px', transition: 'all 333ms', padding: '13px' };\nexport const A = () => <div onClick={() => 1}><img src="x.png" /><Spinner /><p aria-label="Pip says hi">Hi</p></div>;`);
   writeFileSync(join(dir, 'b.css'), `.x { font-family: 'Comic Sans MS'; animation: spin 1s infinite; }`);
   writeFileSync(join(dir, 'checkout/Pay.tsx'), `import { Pip } from '../design-system/pip/Pip';`);
   const before = errors.length, wb = warnings.length;
   for (const f of ['a.tsx', 'b.css', 'checkout/Pay.tsx']) scanFile(join(dir, f), f);
   const found = errors.slice(before).join('\n') + '\n' + warnings.slice(wb).join('\n');
   rmSync(dir, { recursive: true, force: true });
-  const expect = ['raw colour', 'text under', 'corner not', 'duration not', 'spacing not', 'non-button', 'without alt', 'no spinners', 'font not from tokens', 'looping animation', 'Pip is not allowed'];
+  const expect = ['raw colour', 'text under', 'corner not', 'duration not', 'spacing not', 'non-button', 'without alt', 'no spinners', 'font not from tokens', 'looping animation', 'Pip is not allowed', 'has no name'];
   const missed = expect.filter((e) => !found.includes(e));
   errors.splice(before); warnings.splice(wb);
   if (missed.length) { console.error('SELF-TEST FAILED, rules that did not fire:', missed); process.exit(1); }

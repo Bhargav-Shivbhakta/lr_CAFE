@@ -15,7 +15,7 @@ If a rule truly has to be broken, put `// design-allow: <reason>` on that line. 
 | Shadows | Soft warm |
 | Icons | Line, 1.8 pt stroke, 20-icon set |
 | Motion | Balanced |
-| Mascot | Pip (working name) |
+| Mascot | The Living Room cup. Never named in the app (`Pip` is only the code name) |
 
 To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 
@@ -79,7 +79,9 @@ To change one, edit `choice` in `tokens.json` and run `npm run tokens`.
 - Exits run at about 70% of the entrance time.
 - Reduced motion is respected everywhere; loaders show a still, full cup.
 
-## 10. Mascot (Pip)
+## 10. Mascot (the Living Room cup)
+
+- The cup has **no name people can see**. `Pip` is only the code name for files and components. Never write it in on-screen text, aria-labels, notifications, emails or posts; say "the cup" or "the Living Room cup". `npm run design` checks this.
 
 - Use `<Pip/>` from `pip/Pip.tsx`. Never redraw, recolour, stretch or outline Pip.
 - **Never on checkout, payment or price screens.** The checker blocks it.
@@ -153,8 +155,9 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - No mascot and no other props in the opening.
 - **After the café is decided:**
   - **Members** see a welcome screen once a day: their name, their café (with "Your usual" or "Your café" and its status), their points and how far to the next reward, and their usual drink with "Add". "Take me in" goes to Home; tapping the café changes it.
-  - **Newcomers** get Pip's tour once: Pip introduces himself, then three steps (Home and switching café, ordering and the bag bar, points and the press-and-hold code) and "You're all set". Skip is always on screen, Back and swipe work, and it can be replayed from Account. No more than five screens, ever.
-- Beyond the tour, Pip gives one short tip the first time someone reaches a feature; one tip per visit, each shown once.
+  - **Newcomers** are shown around the real Home screen, not a tour. There are no extra screens, no slideshow and no introduction speech. Five tips at most, one at a time: each dims the screen, puts a soft spotlight on the real button and shows a small card with the cup, "N OF 5", a short title and one or two sentences. In order: the café chip (switch café or pickup time), a special's Add button (the bag appears at the bottom), Order, Rewards (press and hold for the member code) and Account.
+  - Skip, tapping outside, Escape or leaving Home closes the tips right away. They show once, and "Show me around again" in Account replays them.
+- After that, give one short tip the first time someone reaches a feature, in the same spotlight style. One tip per visit, each shown once.
 - Notification permission is asked right after the first order ("Want a text when it's ready?"), never on first launch.
 
 ## 16. Navigation: nobody gets stuck
