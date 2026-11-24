@@ -94,6 +94,20 @@ def render(path, box, W, H, fill=0.80, cup=False):
     room_top = (y0 - top) / ch
     return crop.resize((W, H), Image.LANCZOS), {'pad': pad > 2 and round(pad / cw, 3), 'top': round(room_top, 3), 'fill': round(bh / ch, 2)}
 
+def banner(path, box, W=880, H=440, cup=False):
+    """A wide card. If the photo has room, a real wide crop; if not (a tall cup), the square framing in the middle
+    over a soft blur of the same café, faded at its sides, so the whole dish shows at the same size every time."""
+    sq, info = render(path, box, H, H, 0.72, cup=cup)
+    real, rinfo = render(path, box, W, H, 0.78, cup=cup)
+    if not rinfo['pad'] and rinfo['fill'] <= 0.84: return real
+    # behind it: the same square, enlarged to the banner's width and blurred until only its colours are left
+    big = sq.resize((W, W), Image.LANCZOS).crop((0, (W - H) // 2, W, (W - H) // 2 + H))
+    bg = big.filter(ImageFilter.GaussianBlur(48))
+    a = np.ones((H, H), np.float32); f = int(H * 0.2); ramp = np.linspace(0, 1, f)[None, :]
+    a[:, :f] *= ramp; a[:, -f:] *= ramp[:, ::-1]
+    bg.paste(sq, ((W - H) // 2, 0), Image.fromarray((a * 255).astype(np.uint8)))
+    return bg
+
 SHAPES = {'sq': (600, 600, 0.80), 'th': (240, 240, 0.80), 'card': (600, 450, 0.80), 'wide': (800, 500, 0.82), 'hero': (820, 400, 0.84)}
 MENU = {i['id']: i['cat'] for i in json.load(open('/home/claude/lr_cafe/data/menu.json'))['items']}
 DRINKS = {'coffee-espresso', 'lattes', 'mochas', 'frappes', 'matcha', 'non-coffee', 'refreshers', 'smoothies', 'teas', 'fall'}
@@ -109,6 +123,7 @@ if __name__ == '__main__':
         for k, (W, H, f) in SHAPES.items():
             img, info = render(path, b, W, H, f, cup=MENU.get(id) in DRINKS); img.save(f'{out}/{id}-{k}.webp', quality=82, method=6)
             r[k] = info
+        banner(path, b, cup=MENU.get(id) in DRINKS).save(f'{out}/{id}-wide.webp', quality=80, method=6)
         report[id] = r
     for slug, path in src['new'].items():
         if only and slug not in only: continue
