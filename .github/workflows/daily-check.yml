@@ -36,6 +36,9 @@ jobs:
       - name: Known-vulnerable packages
         if: always()
         run: npm audit --audit-level=high
+      - name: Holiday calendar (every theme switches on by itself, next years too)
+        if: always()
+        run: npm run qa:calendar
       - name: Screens (cut-off text, layout, pictures, errors, search)
         if: always()
         run: npm run qa:ui

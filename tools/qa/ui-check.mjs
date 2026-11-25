@@ -40,7 +40,7 @@ async function start(when = '2027-03-10T09:30:00') {
 async function scan(label) {
   await wait(450);
   const r = await p.evaluate(() => {
-    const screen = document.querySelector('.screen'), S0 = screen.getBoundingClientRect(), out = { cut: [], dots: [], spill: [], img: [], bad: [], small: [] };
+    const screen = document.querySelector('.screen'), S0 = screen.getBoundingClientRect(), out = { cut: [], dots: [], spill: [], img: [], bad: [], small: [], tight: [] };
     const shown = (el) => { for (let e = el; e && e !== screen; e = e.parentElement) { const cs = getComputedStyle(e); if (cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) return false; } return true; };
     const clipOf = (el) => { for (let e = el.parentElement; e && e !== screen; e = e.parentElement) { const cs = getComputedStyle(e); if (cs.overflowX !== 'visible' || cs.overflowY !== 'visible') return e; } return screen; };
     const scrolls = (e) => { const cs = getComputedStyle(e); return /auto|scroll/.test(cs.overflowX) || /auto|scroll/.test(cs.overflowY); };
@@ -55,6 +55,13 @@ async function scan(label) {
       if (/undefined|NaN|\[object Object\]|null\b/.test(t) && !/null and void/.test(t)) out.bad.push(t.slice(0, 60));
       if (cs.textOverflow === 'ellipsis' && el.scrollWidth > el.clientWidth + 1) { if (!seen.has(el)) out.dots.push(t.slice(0, 50)); seen.add(el); continue; }
       if (cs.webkitLineClamp && cs.webkitLineClamp !== 'none' && el.scrollHeight > el.clientHeight + 2) { if (!seen.has(el)) out.dots.push(t.slice(0, 50) + ' (lines)'); seen.add(el); continue; }
+      // text wider (or taller) than its own button/label, even when nothing hides the extra
+      { const own = el.getBoundingClientRect(), pl = parseFloat(cs.paddingLeft) || 0, pr = parseFloat(cs.paddingRight) || 0;
+        const tl = Math.min(...rects.map((x) => x.left)), tr = Math.max(...rects.map((x) => x.right));
+        if (tr > own.right + 0.5 || tl < own.left - 0.5) { out.cut.push(t.slice(0, 50) + ' (runs out of its box)'); continue; }
+        const btn = el.closest('button, a, [role="tab"]');
+        const boxed = (e) => { const c = getComputedStyle(e); return (c.backgroundColor && !/rgba\(0, 0, 0, 0\)|transparent/.test(c.backgroundColor)) || (c.boxShadow && c.boxShadow !== 'none') || parseFloat(c.borderLeftWidth) > 0; };
+        if (btn && boxed(btn)) { const bb = btn.getBoundingClientRect(), room = Math.min(tl - bb.left, bb.right - tr); if (room < 4 && cs.textOverflow !== 'ellipsis') out.tight.push(`${t.slice(0, 40)} (${room.toFixed(1)} px from the edge)`); } }
       const clip = clipOf(el); if (scrolls(clip)) {
         // inside a scrolling area: only the screen edge counts, and only along the way it does not scroll
         const cr = clip.getBoundingClientRect(), csx = getComputedStyle(clip);
@@ -68,6 +75,9 @@ async function scan(label) {
     for (const el of screen.querySelectorAll('button, a, input, img, [role="img"], h1, h2, h3, p, b, span')) {
       if (!shown(el)) continue; const r2 = el.getBoundingClientRect(); if (!r2.width || r2.bottom < S0.top || r2.top > S0.bottom) continue;
       let inScroll = false; for (let e = el.parentElement; e && e !== screen; e = e.parentElement) if (/auto|scroll/.test(getComputedStyle(e).overflowX)) { inScroll = true; break; }
+      // holiday animations fly across the screen on purpose (the sleigh, the broom); skip anything moving or decorative
+      let moving = !!el.closest('[aria-hidden="true"], #fx, .actor'); for (let e = el; !moving && e && e !== screen; e = e.parentElement) if (e.getAnimations().some((a) => a.playState === 'running' && (a.effect?.getKeyframes() || []).some((k) => k.transform || k.left || k.translate))) moving = true;
+      if (moving) continue;
       if (!inScroll && (r2.right > S0.right + 2 || r2.left < S0.left - 2)) out.spill.push((el.getAttribute('aria-label') || el.textContent || el.tagName).trim().slice(0, 40));
       if (el.tagName === 'IMG' && el.complete && !el.naturalWidth) out.img.push(el.getAttribute('src'));
       if ((el.tagName === 'BUTTON' || el.tagName === 'A') && !inScroll && (r2.width < 30 || r2.height < 30) && !el.closest('[data-demo], .panel')) out.small.push(`${(el.getAttribute('aria-label') || el.textContent).trim().slice(0, 30)} ${Math.round(r2.width)}×${Math.round(r2.height)}`);
@@ -84,12 +94,23 @@ async function scan(label) {
   u(r.bad).forEach((t) => problems.push(`[${label}] broken value on screen: “${t}”`));
   u(r.dots).forEach((t) => warnings.push(`[${label}] shortened with …: “${t}”`));
   u(r.small).forEach((t) => warnings.push(`[${label}] small tap target: ${t}`));
+  u(r.tight).forEach((t) => problems.push(`[${label}] text touches the edge of its button: “${t}”`));
 }
 const click = (sel) => p.evaluate((s) => { const e = document.querySelector(s); if (!e) return false; e.click(); return true; }, sel);
 const scrollAll = async (sel, label) => { const h = await p.evaluate((s) => { const e = document.querySelector(s); return e ? e.scrollHeight : 0; }, sel); for (let y = 0; y < h; y += 600) { await p.evaluate((s, y) => { const e = document.querySelector(s); if (e) e.scrollTo(0, y); }, sel, y); await scan(`${label} @${y}`); } };
 
 await start();
 await scrollAll('#home-scroll', 'Home');
+// every holiday's Home (its look, greeting and its food row), dates from the calendar check
+const HOLIDAY_DAYS = [['2026-12-31T20:00:00', 'New Year'], ['2027-02-12T10:00:00', 'Valentine’s'], ['2027-05-08T10:00:00', 'Mother’s Day'], ['2027-06-19T10:00:00', 'Father’s Day'], ['2027-07-03T10:00:00', '4th of July'], ['2026-08-21T10:00:00', 'Back to School'], ['2027-09-29T10:00:00', 'Coffee Day'], ['2027-10-28T10:00:00', 'Halloween'], ['2027-11-11T10:00:00', 'Veterans Day'], ['2026-11-25T10:00:00', 'Thanksgiving'], ['2026-12-18T10:00:00', 'Christmas']];
+for (const [d, name] of HOLIDAY_DAYS) {
+  await start(d);
+  const hello = await p.evaluate(() => { const h = document.querySelector('#home-body h1'); return h ? h.innerText : ''; });
+  if (name === 'New Year' && !/2027/.test(hello)) problems.push(`[holiday] New Year's Eve 2026 greeting should say 2027, says "${hello}"`);
+  if (name === 'Christmas' && !(await p.evaluate(() => /Hot cocoa season/.test(document.querySelector('#home-body').innerText)))) problems.push('[holiday] Christmas Home is missing the hot cocoa row');
+  await scrollAll('#home-scroll', `Home · ${name}`);
+}
+await start();
 await p.evaluate(() => go('order')); await wait(1200);
 for (const meal of ['drinks', 'breakfast', 'lunch', 'sweets']) {
   await click(`[data-meal="${meal}"]`); await wait(600); await p.evaluate(() => document.querySelector('#order-scroll').scrollTo(0, 0));

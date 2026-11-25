@@ -16,8 +16,9 @@
     "qa:copy": "python3 tools/qa/copy-check.py && python3 tools/qa/copy-check.py --self-test",
     "qa:security": "node tools/qa/security-check.mjs",
     "qa:ai": "node tools/qa/ai-review.mjs",
-    "qa": "npm run qa:security && npm run qa:ui && npm run qa:copy && npm run qa:ai; node tools/qa/report.mjs",
-    "daily": "npm run check && npm run qa"
+    "qa": "npm run qa:security && npm run qa:calendar && npm run qa:ui && npm run qa:copy && npm run qa:ai; node tools/qa/report.mjs",
+    "daily": "npm run check && npm run qa",
+    "qa:calendar": "node tools/qa/calendar-check.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.18.1",

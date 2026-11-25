@@ -263,10 +263,29 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - **Search:** understands typos, plain words ("something cold", "healthy"), diet and budget ("vegan under $12"). It says "We don't have …" with similar picks (sushi → salmon, ahi tuna, shrimp). Empty field shows starting points.
 - **Dish sheet:** opens with the photo. Order of the page: name, price, description, "Goes great with it" (real menu items at menu price, e.g. fries $6.00, side of bacon $4.00, cookie $2.25, added as their own bag lines), then the customize card ("Make it yours" / "Your choices · Edit" / "Required: choose your eggs"). Scrolling pulls the sheet to full screen; pulling down at the top steps back, then closes.
 - **Customize:** full screen, photo scrolls away with the options, floating back button, "Done · $price". Drinks use the café's own SDSU Toast options: milk (whole, 2%, half & half, oat/almond/soy/coconut +$1.00, heavy cream +$1.25), espresso (+$0.50 single, +$1.00 double, half caff), flavor (vanilla, caramel, hazelnut, cinnamon, spiced brown sugar +$0.75). No cup sizes. Food extras priced from the café's sides (avocado $3.00, bacon $4.00, an egg $2.25, hash brown $4.00); eggs/protein/cheese required where the menu says "choice of"; free "Leave something out". Not yet known: fries upgrade price, salad protein prices, cold foam.
-- **Meal times:** each café's `mealPeriods` in `data/cafe.json` (SDSU: breakfast and lunch & dinner all day, to confirm). Outside a meal's hours its dishes stay visible but greyed with "From 7 AM", the meal page says when it's back ("Breakfast is served 7 AM – 3 PM. It's back tomorrow at 7 AM.") and offers lunch & dinner; nothing outside its hours can be added.
+- **Meal times:** each café's `mealPeriods` in `data/cafe.json` (SDSU: breakfast 7 AM – 3 PM, as the owner's side told us Nov 24, 2026; lunch & dinner all day until confirmed). Outside a meal's hours its dishes stay visible but greyed with "From 7 AM", the meal page says when it's back ("Breakfast is served 7 AM – 3 PM. It's back tomorrow at 7 AM.") and offers lunch & dinner; nothing outside its hours can be added.
 - **Sold out:** greyed card with a "Sold out" label and no + button. The dish page says "Sold out today", when it's usually back, and offers three close dishes you can order now (same kind first, popular first). In search, sold-out dishes drop to the end; if the dish you named is sold out, the close ones come first. In the real app this comes from the café's Toast stock (Toast already marks items OUT OF STOCK).
 - **Removed dishes:** `retired` in `data/order-groups.json` lists dishes people may still search for (from other Living Room menus or taken off this one) with where to point them ("Philly cheesesteak is no longer on the menu. These are the closest: Steak sandwich & fries…"). When the café removes a dish, it goes here.
 - **Search ranking for an ingredient:** every dish that really has the word shows. Dishes come first ("Dishes with bacon": the burger, BLT, club, omelettes…), sides after ("On the side").
 - **Bag:** each line is a dish with its choices and its own price.
 - **Tapping Order again:** closes search, or leaves a kind, or scrolls back to the top. The app's bottom bar (Home, Order, Rewards, Account) stays; the dish sheet sits above it.
 - **Open questions for the café:** table service; delivery radius and fee; meal hours; prices for the 14 new dishes; SDSU protein list (La Jolla's used); which add-ons should be pushed as upsells.
+- **Meal bar labels wrap:** tabs are 62px tall and "Lunch & dinner" sits on two lines, so no label ever touches its tab's edges.
+
+## 21. Text never overflows (checked every day)
+
+- No text may be cut, end in "…", run past its own button or label, sit closer than 4px to a boxed button's edge, or stick out past the screen. Names wrap instead.
+- `tools/qa/ui-check.mjs` walks every screen, meal, kind, dish, customize view, search, after-hours and sold-out state, and every holiday's Home, and fails on any of these. Holiday animations that fly across on purpose (sleigh, broom) are skipped.
+
+## 22. Holidays run themselves
+
+- Every theme switches on from its date rule in `tokens.json → themes.holidays`: fixed days, "nth weekday" (Thanksgiving, Mother's and Father's Day) and Easter work out every year with no edits.
+- Date tables (Back to School at SDSU) need each year's dates; a year can list several (spring and fall). `tools/qa/calendar-check.mjs` works out the next five years daily and lists any missing dates.
+- New Year's Eve says the year that is starting (Dec 31, 2026 → "Happy New Year 2027").
+- **Holiday food on Home:** each holiday puts its own row above Specials (Christmas: "Hot cocoa season" with the hot chocolates, sugar cookie and chocolate scone; Thanksgiving, Valentine's, Halloween and the rest have their own). Items are matched by name to the live menu and skipped if missing or sold out.
+
+## 23. Demo frame
+
+- On a computer the demo shows a phone-sized frame, scaled to fit the window and kept fully on screen. On a real phone it fills the screen.
+- US spelling throughout (favorites, not favourites).
+

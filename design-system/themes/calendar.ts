@@ -4,7 +4,7 @@
 
 export type Rule =
   | { type: 'fixed'; start: string; end: string }
-  | { type: 'table'; dates: Record<string, string>; before: number; after: number }
+  | { type: 'table'; dates: Record<string, string | string[]>; before: number; after: number; perYear?: number }
   | { type: 'easter'; before: number; after: number }
   | { type: 'nthWeekday'; month: number; weekday: number; n: number; before: number; after: number };
 
@@ -56,10 +56,13 @@ export function windows(rule: Rule, y: number): Array<[number, number]> {
         : [[utc(y, sm, sd), utc(y, em, ed)]];
     }
     case 'table': {
-      const s = rule.dates[String(y)];
-      if (!s) return [];
-      const [m, d] = md(s), t = utc(y, m, d);
-      return [[t - rule.before * DAY, t + rule.after * DAY]];
+      // A year can list one date or several (a school has a spring and a fall start).
+      const v = rule.dates[String(y)];
+      const list = !v ? [] : Array.isArray(v) ? v : [v];
+      return list.map((s) => {
+        const [m, d] = md(s), t = utc(y, m, d);
+        return [t - rule.before * DAY, t + rule.after * DAY] as [number, number];
+      });
     }
     case 'easter': {
       const t = easter(y);

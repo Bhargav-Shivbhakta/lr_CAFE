@@ -1,198 +1,198 @@
 {
- "$about": "Café facts the app relies on. Collected from public listings on 2026-11-23; confirm with the owner. Once the app is connected to Toast, Toast's live hours replace these.",
- "founded": {
-  "date": "Thanksgiving Day 1991",
-  "location": "college",
-  "source": "https://www.sandiegoville.com/2024/01/the-living-room-coffee-house-reopens-in.html"
- },
- "assumeOpen": true,
- "assumeOpenNote": "No location publishes holiday closures. The app treats every café as open every day unless a date is added to 'closures' below.",
- "locations": [
-  {
-   "id": "college",
-   "name": "College Area (SDSU)",
-   "address": "5900 El Cajon Blvd, San Diego, CA 92115",
-   "phone": "(619) 286-8434",
-   "hours": {
-    "sun": [
-     "07:00",
-     "22:00"
-    ],
-    "mon": [
-     "07:00",
-     "22:00"
-    ],
-    "tue": [
-     "07:00",
-     "22:00"
-    ],
-    "wed": [
-     "07:00",
-     "22:00"
-    ],
-    "thu": [
-     "07:00",
-     "22:00"
-    ],
-    "fri": [
-     "07:00",
-     "22:00"
-    ],
-    "sat": [
-     "07:00",
-     "22:00"
-    ]
-   },
-   "confidence": "Sunday to Wednesday from the café's Toast page; Thursday to Saturday assumed the same. Older listings say 11 PM.",
-   "onlineOrderingCutoff": "21:40",
-   "sources": [
-    "https://www.toasttab.com/local/order/thelivingroomsdsu",
-    "https://order.online/store/living-room-cafe-sdsu-106263"
-   ],
-   "mealPeriods": {
-    "breakfast": {
-     "from": "07:00",
-     "until": "21:40",
-     "label": "All day"
-    },
-    "lunch": {
-     "from": "07:00",
-     "until": "21:40",
-     "label": "All day"
-    },
-    "confidence": "To confirm with the café. The SDSU DoorDash storefront lists a 'Late Night Breakfast' section and online ordering 7:00 AM-9:40 PM; no source gives separate lunch or dinner hours. (Rancho San Diego's Toast menu has a 'Breakfast After 3' section, so other cafés may differ.)",
-    "sources": [
-     "https://order.online/en-US/store/living-room-cafe-sdsu-106263"
-    ]
-   }
+  "$about": "Café facts the app relies on. Collected from public listings on 2026-11-23; confirm with the owner. Once the app is connected to Toast, Toast's live hours replace these.",
+  "founded": {
+    "date": "Thanksgiving Day 1991",
+    "location": "college",
+    "source": "https://www.sandiegoville.com/2024/01/the-living-room-coffee-house-reopens-in.html"
   },
-  {
-   "id": "lajolla",
-   "name": "La Jolla",
-   "address": "1205 Prospect St, La Jolla, CA 92037",
-   "phone": "(858) 459-1187",
-   "hours": {
-    "sun": [
-     "07:00",
-     "24:00"
-    ],
-    "mon": [
-     "07:00",
-     "24:00"
-    ],
-    "tue": [
-     "07:00",
-     "24:00"
-    ],
-    "wed": [
-     "07:00",
-     "24:00"
-    ],
-    "thu": [
-     "07:00",
-     "24:00"
-    ],
-    "fri": [
-     "07:00",
-     "25:00"
-    ],
-    "sat": [
-     "07:00",
-     "25:00"
-    ]
-   },
-   "confidence": "From a January 2024 news article after the move; confirm.",
-   "sources": [
-    "https://sdnews.com/?p=337298"
-   ]
-  },
-  {
-   "id": "rancho",
-   "name": "Rancho San Diego",
-   "address": "2512 Jamacha Rd, Rancho San Diego, CA 92019",
-   "hours": {
-    "sun": [
-     "06:45",
-     "22:15"
-    ],
-    "mon": [
-     "06:45",
-     "22:15"
-    ],
-    "tue": [
-     "06:45",
-     "22:15"
-    ],
-    "wed": [
-     "06:45",
-     "22:15"
-    ],
-    "thu": [
-     "06:45",
-     "22:15"
-    ],
-    "fri": [
-     "06:45",
-     "22:15"
-    ],
-    "sat": [
-     "06:45",
-     "22:15"
-    ]
-   },
-   "confidence": "From the café's Toast page.",
-   "sources": [
-    "https://www.toasttab.com/local/order/livingroomrsd"
-   ]
-  },
-  {
-   "id": "oldtown",
-   "name": "Old Town",
-   "address": "2541 San Diego Ave, San Diego, CA 92110",
-   "hours": {
-    "sun": [
-     "07:00",
-     "22:00"
-    ],
-    "mon": [
-     "07:00",
-     "22:00"
-    ],
-    "tue": [
-     "07:00",
-     "22:00"
-    ],
-    "wed": [
-     "07:00",
-     "22:00"
-    ],
-    "thu": [
-     "07:00",
-     "22:00"
-    ],
-    "fri": [
-     "07:00",
-     "22:00"
-    ],
-    "sat": [
-     "07:00",
-     "22:00"
-    ]
-   },
-   "confidence": "Older San Diego Reader listing; confirm the location is still open.",
-   "sources": [
-    "https://www.sandiegoreader.com/places/living-room-coffee-house/"
-   ]
-  }
- ],
- "closures": [],
- "holidayHours": [],
- "closuresFormat": {
-  "date": "2026-12-25",
+  "assumeOpen": true,
+  "assumeOpenNote": "No location publishes holiday closures. The app treats every café as open every day unless a date is added to 'closures' below.",
   "locations": [
-   "college"
+    {
+      "id": "college",
+      "name": "College Area (SDSU)",
+      "address": "5900 El Cajon Blvd, San Diego, CA 92115",
+      "phone": "(619) 286-8434",
+      "hours": {
+        "sun": [
+          "07:00",
+          "22:00"
+        ],
+        "mon": [
+          "07:00",
+          "22:00"
+        ],
+        "tue": [
+          "07:00",
+          "22:00"
+        ],
+        "wed": [
+          "07:00",
+          "22:00"
+        ],
+        "thu": [
+          "07:00",
+          "22:00"
+        ],
+        "fri": [
+          "07:00",
+          "22:00"
+        ],
+        "sat": [
+          "07:00",
+          "22:00"
+        ]
+      },
+      "confidence": "Sunday to Wednesday from the café's Toast page; Thursday to Saturday assumed the same. Older listings say 11 PM.",
+      "onlineOrderingCutoff": "21:40",
+      "sources": [
+        "https://www.toasttab.com/local/order/thelivingroomsdsu",
+        "https://order.online/store/living-room-cafe-sdsu-106263"
+      ],
+      "mealPeriods": {
+        "breakfast": {
+          "from": "07:00",
+          "until": "15:00",
+          "label": "Until 3 PM"
+        },
+        "lunch": {
+          "from": "07:00",
+          "until": "21:40",
+          "label": "All day"
+        },
+        "confidence": "Breakfast until 3 PM at SDSU: stated by the project owner on Nov 24, 2026 (online menus showed no cut-off). Lunch & dinner: no separate hours found; treated as all day until the café confirms.",
+        "sources": [
+          "https://order.online/en-US/store/living-room-cafe-sdsu-106263"
+        ]
+      }
+    },
+    {
+      "id": "lajolla",
+      "name": "La Jolla",
+      "address": "1205 Prospect St, La Jolla, CA 92037",
+      "phone": "(858) 459-1187",
+      "hours": {
+        "sun": [
+          "07:00",
+          "24:00"
+        ],
+        "mon": [
+          "07:00",
+          "24:00"
+        ],
+        "tue": [
+          "07:00",
+          "24:00"
+        ],
+        "wed": [
+          "07:00",
+          "24:00"
+        ],
+        "thu": [
+          "07:00",
+          "24:00"
+        ],
+        "fri": [
+          "07:00",
+          "25:00"
+        ],
+        "sat": [
+          "07:00",
+          "25:00"
+        ]
+      },
+      "confidence": "From a January 2024 news article after the move; confirm.",
+      "sources": [
+        "https://sdnews.com/?p=337298"
+      ]
+    },
+    {
+      "id": "rancho",
+      "name": "Rancho San Diego",
+      "address": "2512 Jamacha Rd, Rancho San Diego, CA 92019",
+      "hours": {
+        "sun": [
+          "06:45",
+          "22:15"
+        ],
+        "mon": [
+          "06:45",
+          "22:15"
+        ],
+        "tue": [
+          "06:45",
+          "22:15"
+        ],
+        "wed": [
+          "06:45",
+          "22:15"
+        ],
+        "thu": [
+          "06:45",
+          "22:15"
+        ],
+        "fri": [
+          "06:45",
+          "22:15"
+        ],
+        "sat": [
+          "06:45",
+          "22:15"
+        ]
+      },
+      "confidence": "From the café's Toast page.",
+      "sources": [
+        "https://www.toasttab.com/local/order/livingroomrsd"
+      ]
+    },
+    {
+      "id": "oldtown",
+      "name": "Old Town",
+      "address": "2541 San Diego Ave, San Diego, CA 92110",
+      "hours": {
+        "sun": [
+          "07:00",
+          "22:00"
+        ],
+        "mon": [
+          "07:00",
+          "22:00"
+        ],
+        "tue": [
+          "07:00",
+          "22:00"
+        ],
+        "wed": [
+          "07:00",
+          "22:00"
+        ],
+        "thu": [
+          "07:00",
+          "22:00"
+        ],
+        "fri": [
+          "07:00",
+          "22:00"
+        ],
+        "sat": [
+          "07:00",
+          "22:00"
+        ]
+      },
+      "confidence": "Older San Diego Reader listing; confirm the location is still open.",
+      "sources": [
+        "https://www.sandiegoreader.com/places/living-room-coffee-house/"
+      ]
+    }
   ],
-  "note": "Closed for Christmas",
-  "hours": null
- }
+  "closures": [],
+  "holidayHours": [],
+  "closuresFormat": {
+    "date": "2026-12-25",
+    "locations": [
+      "college"
+    ],
+    "note": "Closed for Christmas",
+    "hours": null
+  }
 }

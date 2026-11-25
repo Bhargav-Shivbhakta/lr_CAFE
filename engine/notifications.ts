@@ -59,7 +59,7 @@ const HOLIDAY_TODAY: Record<string, [string, string]> = {
   july4: ['Happy 4th', 'Iced and ready for the parade at {cafe}.'],
   veterans: ['Thank you for your service', 'Today we honor everyone who served.'],
   halloween: ['Pumpkin everything', 'Spooky-cozy week at {cafe}. Pumpkin chai is back.'],
-  coffeeday: ['It’s National Coffee Day', 'Thank you for every cup. Our baristas picked their favourites.'],
+  coffeeday: ['It’s National Coffee Day', 'Thank you for every cup. Our baristas picked their favorites.'],
   mothersday: ['Brunch for Mom?', 'Order ahead for Sunday at {cafe}, and skip the line.'],
   fathersday: ['Dad’s order is ready to go', 'Big breakfast, strong coffee at {cafe}.'],
   backtoschool: ['Welcome back to campus', 'Study fuel for the first weeks of classes, from your SDSU café.'],
