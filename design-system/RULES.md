@@ -302,3 +302,10 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Tapping a tab while a dish page or sheet is open closes it and goes to that tab.
 - Every dish page has a visible close (✕) button at the top right, in every state. Pulling down and tapping outside also close it.
 - The daily screen check fails if the bar is covered or the ✕ is missing.
+
+## 26. Cards open when tapped anywhere
+
+- Every food card (big specials, What's new, Trending, holiday rows, Order lists) opens the dish page when tapped anywhere on it, including the photo, name or price.
+- Big cards: price and dates on the left, **Add to bag** pill on the right. When the dish can't be ordered right now, the pill becomes a short note (e.g. "Sold out", "From 7 AM").
+- The Add to bag pill goes through the bag engine like every other add button (§24).
+- The daily screen check taps every card on Home and fails if one doesn't open or if Add to bag isn't on the right.

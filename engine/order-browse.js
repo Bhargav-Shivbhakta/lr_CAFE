@@ -226,8 +226,8 @@ function dishSheet(id) {
       <button class="press" id="dish-x" aria-label="Close" style="display:flex;position:absolute;right:14px;top:14px;z-index:3;width:42px;height:42px;border-radius:21px;border:0;background:rgba(255,253,248,.95);box-shadow:0 2px 10px rgba(43,29,22,.25);align-items:center;justify-content:center;transition:top 460ms cubic-bezier(.32,.72,0,1)">${oi('x', 18, C.INK, 2.4)}</button>
       <div id="dish-bar" style="display:flex;gap:12px;align-items:center;padding:12px 20px ${navH ? 12 : 26}px;background:${C.G};box-shadow:0 -8px 16px -12px rgba(43,29,22,.3)"></div></div></div>`);
   host = $('#dish'); const panel = $('#dish-panel'), sc = $('#dish-sc');
-  requestAnimationFrame(() => { panel.style.transform = 'translateY(0)'; $('#dish-scrim').style.background = 'rgba(43,29,22,.45)'; });
-  const close = () => { panel.style.transform = 'translateY(100%)'; $('#dish-scrim').style.background = 'rgba(43,29,22,0)'; setTimeout(() => host.remove(), 380); S.dish = null; };
+  requestAnimationFrame(() => { if (!host.isConnected) return; panel.style.transform = 'translateY(0)'; $('#dish-scrim').style.background = 'rgba(43,29,22,.45)'; });
+  const close = () => { if (!host.isConnected) { S.dish = null; return; } panel.style.transform = 'translateY(100%)'; $('#dish-scrim').style.background = 'rgba(43,29,22,0)'; setTimeout(() => host.remove(), 380); S.dish = null; };
   const size = () => { const big = S.dish.custom || S.dish.full; panel.style.height = big ? '100%' : 'calc(100% - 92px)'; $('#dish-x').style.top = $('#dish-back').style.top = big ? '54px' : '14px'; panel.style.borderRadius = big ? '0' : '26px 26px 0 0'; $('#dish-back').style.display = S.dish.custom ? 'flex' : 'none'; };
   $('#dish-scrim').onclick = close; $('#dish-x').onclick = close;
   sc.addEventListener('scroll', () => { if (sc.scrollTop > 6 && !S.dish.full) { S.dish.full = true; size(); } }, { passive: true });

@@ -118,6 +118,21 @@ async function checkChrome(label) {
     return out; });
   bad.forEach((t) => problems.push(`[${label}] ${t}`));
 }
+// big cards: tapping anywhere opens the dish page; Add to bag sits on the right of the price row
+async function checkCards(label) {
+  const bad = await p.evaluate(() => { const out = [];
+    for (const a of document.querySelectorAll('#home-body article')) {
+      const it = a.dataset.card, add = a.querySelector(':scope [data-add]'), name = (a.querySelector('h3') || {}).innerText || '?';
+      if (!it && add) { out.push(`${name}: has Add to bag but tapping the card does nothing`); continue; }
+      if (!it) continue;
+      const h = a.querySelector('h3') || a.querySelector('[role="img"]') || a; h.click(); const opened = !!$('#dish'); const d = $('#dish'); if (d) d.remove(); S.dish = null;
+      if (!opened) out.push(`${name}: tapping the card does not open the dish page`);
+      if (add && a.getBoundingClientRect().width > 250) { const row = add.parentElement, first = [...row.children].find((c) => c !== add);
+        if (first && first.getBoundingClientRect().left > add.getBoundingClientRect().left) out.push(`${name}: Add to bag should be on the right, price on the left`); }
+    }
+    return out; });
+  bad.forEach((t) => problems.push(`[${label}] ${t}`));
+}
 const scrollAll = async (sel, label) => { const h = await p.evaluate((s) => { const e = document.querySelector(s); return e ? e.scrollHeight : 0; }, sel); for (let y = 0; y < h; y += 600) { await p.evaluate((s, y) => { const e = document.querySelector(s); if (e) e.scrollTo(0, y); }, sel, y); await scan(`${label} @${y}`); } };
 
 await start();
@@ -130,7 +145,7 @@ for (const [d, name] of HOLIDAY_DAYS) {
   if (name === 'New Year' && !/2027/.test(hello)) problems.push(`[holiday] New Year's Eve 2026 greeting should say 2027, says "${hello}"`);
   if (name === 'Christmas' && !(await p.evaluate(() => /Hot cocoa season/.test(document.querySelector('#home-body').innerText)))) problems.push('[holiday] Christmas Home is missing the hot cocoa row');
   await scrollAll('#home-scroll', `Home · ${name}`);
-  await checkAdds(`Home · ${name}`);
+  await checkAdds(`Home · ${name}`); await checkCards(`Home · ${name}`);
 }
 await start();
 await p.evaluate(() => go('order')); await wait(1200);
