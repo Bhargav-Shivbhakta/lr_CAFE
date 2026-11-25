@@ -314,3 +314,10 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 
 - The logo sits at the top left of every main tab, at the same size and place as on Home (54 × 51). The title is centered, and the tab's action (search on Order) sits on the right. Tapping the logo scrolls back to the top.
 - The loading screen says only "Brewing your Home…". It never says what it is waiting for (no "2 of 4 photos").
+
+## 28. Loading is a little game, never a wait
+
+- The loading screen says "Brewing for you…". Beans fall, and the cup follows your finger and gulps them, with a bean count. The cup's face changes when it catches one.
+- Loading never waits for the game. If nobody is playing, Home opens the moment it's ready. If someone is playing, a "You're all set · Let's go" pill appears instead of yanking it away, and Home opens on their tap or after 5 quiet seconds.
+- With Reduce Motion on, no beans fall; it's just the cup.
+- It never says what it's loading (no photo counts).
