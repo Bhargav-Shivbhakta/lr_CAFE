@@ -209,7 +209,7 @@ function priced(id, opt) {
 }
 // every add button calls toBag; the bag engine decides (see bag-engine.js)
 function toBag(id, from) {
-  const it = OB[id], p = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(it), pairs: ENG.PAIR(it) || [], saved: from === 'usual' && S.user && S.user.usualChoices ? S.user.usualChoices : null });
+  const it = OB[id], p = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(it), pairs: ENG.PAIR(it) || [], saved: from === 'usual' && S.user && S.user.usualChoices ? S.user.usualChoices : from === 'addon' ? {} : null });
   if (p.do === 'sheet') return dishSheet(id);
   const pz = priced(id, p.choices); const line = { id, unit: pz.unit, summary: pz.summary, key: Bag.lineKey(id, pz.full) };
   bagPush(id, line); toast(`Added ${MENU[id].name}${pz.summary ? ' · ' + pz.summary : ''}`, () => { S.bag.splice(S.bag.lastIndexOf(line), 1); syncChrome(); });

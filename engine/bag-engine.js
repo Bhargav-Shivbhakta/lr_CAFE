@@ -5,7 +5,7 @@
 //
 // The rule:
 //   1. Not available right now (sold out, outside its meal hours)  → open the dish page (it says why, offers similar)
-//   2. "My usual" with saved choices                                 → add exactly that, no questions
+//   2. "My usual" with saved choices, or an add-on from a "goes great" row → add exactly that, no questions
 //   3. Something must be picked (eggs, protein…)                     → open the dish page
 //   4. Anything to offer (Goes great with it, customize)             → open the dish page
 //   5. Plain item, nothing to choose and nothing to pair             → add straight away

@@ -10,6 +10,7 @@ ok(Bag.plan({ available: true, groups: eggs, pairs: [] }).why === 'choose', 'egg
 ok(Bag.plan({ available: false, groups: [], pairs: [] }).why === 'unavailable', 'sold out or after hours opens the page that says why');
 ok(Bag.plan({ available: true, groups: [], pairs: [{ id: 'fries' }] }).do === 'sheet', 'something to pair → offer it');
 ok(Bag.plan({ available: true, groups: [], pairs: [] }).do === 'add', 'a plain item with nothing to choose adds straight away');
+ok(Bag.plan({ available: true, groups: [{ key: 'x', req: false }], pairs: [{ id: 'y' }], saved: {} }).do === 'add', 'an add-on picked at checkout goes in as is');
 const u = Bag.plan({ available: true, groups: latte, pairs: [{ id: 'x' }], saved: { temp: 'Iced', milk: 'Oat milk' } });
 ok(u.do === 'add' && u.choices.milk === 'Oat milk', 'Order again repeats the usual exactly');
 ok(Bag.plan({ available: false, groups: [], pairs: [], saved: { a: 1 } }).do === 'sheet', 'even the usual is not added when sold out');

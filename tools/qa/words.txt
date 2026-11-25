@@ -49,3 +49,4 @@ doordash
 toast
 cheesesteak
 baristas
+barista

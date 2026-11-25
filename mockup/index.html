@@ -2314,7 +2314,7 @@ function orderMoment() {
   const cup = (big) => (k ? PIPS[POSE[k.act]] : PIPS.brew64).replace(/width="\d+" height="\d+"/, `width="${big}" height="${big}"`);
   const m = document.createElement('div'); m.id = 'moment'; m.setAttribute('role', 'dialog'); m.setAttribute('aria-label', 'Order placed');
   m.style.cssText = `position:absolute;inset:0;z-index:75;background:${bg};color:${ink};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px;text-align:center;opacity:0`;
-  const step = (title, sub, extra = '') => { m.innerHTML = `<div class="bob">${cup(150)}</div><span style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:${acc}">${k ? k.name.toUpperCase() : 'LIVING ROOM'} · ${cafe.toUpperCase()}</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:34px;line-height:1.1">${title}</h2><p style="margin:0;font-size:15px;line-height:1.5;opacity:.85">${sub}</p>${extra}`; };
+  const step = (title, sub, extra = '') => { m.innerHTML = `<div class="bob">${cup(150)}</div><span style="font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:${acc}">${k ? k.name : 'Living Room'} · ${cafe}</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:34px;line-height:1.1">${title}</h2><p style="margin:0;font-size:15px;line-height:1.5;opacity:.85">${sub}</p>${extra}`; };
   step('Order placed', `We’re making it now. Ready in about ${a}–${b} min.`);
   $('.screen').appendChild(m); anim(m, [{ opacity: 0 }, { opacity: 1 }], { duration: 260 }); if (!m.animate) m.style.opacity = 1;
   if (k && !k.quiet) fall(k, 8);
@@ -2678,7 +2678,7 @@ function hscroll(title, sub, list) { return list.length ? `<section style="margi
 //
 // The rule:
 //   1. Not available right now (sold out, outside its meal hours)  → open the dish page (it says why, offers similar)
-//   2. "My usual" with saved choices                                 → add exactly that, no questions
+//   2. "My usual" with saved choices, or an add-on from a "goes great" row → add exactly that, no questions
 //   3. Something must be picked (eggs, protein…)                     → open the dish page
 //   4. Anything to offer (Goes great with it, customize)             → open the dish page
 //   5. Plain item, nothing to choose and nothing to pair             → add straight away
@@ -3003,7 +3003,7 @@ function priced(id, opt) {
 }
 // every add button calls toBag; the bag engine decides (see bag-engine.js)
 function toBag(id, from) {
-  const it = OB[id], p = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(it), pairs: ENG.PAIR(it) || [], saved: from === 'usual' && S.user && S.user.usualChoices ? S.user.usualChoices : null });
+  const it = OB[id], p = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(it), pairs: ENG.PAIR(it) || [], saved: from === 'usual' && S.user && S.user.usualChoices ? S.user.usualChoices : from === 'addon' ? {} : null });
   if (p.do === 'sheet') return dishSheet(id);
   const pz = priced(id, p.choices); const line = { id, unit: pz.unit, summary: pz.summary, key: Bag.lineKey(id, pz.full) };
   bagPush(id, line); toast(`Added ${MENU[id].name}${pz.summary ? ' · ' + pz.summary : ''}`, () => { S.bag.splice(S.bag.lastIndexOf(line), 1); syncChrome(); });
@@ -3385,7 +3385,7 @@ function wireCheckout(block) {
   $$('#co [data-qm]').forEach((b) => (b.onclick = () => { const k = S.bag.findIndex((y) => lineKey(y) === b.dataset.qm); if (k < 0) return; const [gone] = S.bag.splice(k, 1); syncChrome(); toast(`Removed ${MENU[lineId(gone)].name}`, () => { S.bag.push(gone); syncChrome(); if (!$('#co')) openCheckout(); else re(); }); re(); }));
   $$('#co [data-prm]').forEach((b) => (b.onclick = () => { S.bag = S.bag.filter((y) => lineId(y) !== b.dataset.prm); syncChrome(); re(); }));
   $$('#co [data-pswap]').forEach((b) => (b.onclick = () => { const id = b.dataset.pswap, alt = similar(id, 1)[0]; S.bag = S.bag.filter((y) => lineId(y) !== id); syncChrome(); closeCheckout(); dishSheet(alt); }));
-  $$('#co [data-up]').forEach((b) => (b.onclick = () => { const id = b.dataset.up; bagPush(id, { id, unit: MENU[id].price, summary: '', key: id + '|' }, true); syncChrome(); toast(`Added ${MENU[id].name}`); re(); }));
+  $$('#co [data-up]').forEach((b) => (b.onclick = () => { toBag(b.dataset.up, 'addon'); re(); })); // through the bag engine, like every add button
   const more = $('#co-more'); if (more) more.onclick = () => { closeCheckout(); go('order'); };
   const keep = (id, k) => { const e = $(id); if (e) e.oninput = () => { c[k] = e.value; if (k === 'name') drawBar(); }; };
   keep('#co-name', 'name'); keep('#co-phone', 'phone'); keep('#co-note', 'note');
@@ -3438,7 +3438,7 @@ function drawStatus() {
   const at = new Date(o.at), ready = o.step >= 2, dine = o.ful === 'dine', del = o.ful === 'delivery';
   const head = ready ? (dine ? 'On its way to your table' : del ? 'Out for delivery' : 'Ready for pickup') : o.asap ? `Ready around ${fmtT(at)}` : `Ready ${dayWord(at).toLowerCase()} at ${fmtT(at)}`;
   sc.innerHTML = `<div style="display:flex;flex-direction:column;gap:14px">
-    ${coCard(`<span style="font-size:12.5px;font-weight:700;letter-spacing:1px;color:${C.MUT}">ORDER #${o.no} · ${o.cafe.toUpperCase()}</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:26px;line-height:1.15">${head}</h2>${o.name && !dine ? `<span style="font-size:14px;color:${C.MUT}">We’ll call <b style="color:${C.INK}">${o.name}</b> at the counter.</span>` : dine ? `<span style="font-size:14px;color:${C.MUT}">Table ${o.table}</span>` : ''}
+    ${coCard(`<span style="font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${C.MUT}">Order #${o.no} · ${o.cafe}</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:26px;line-height:1.15">${head}</h2>${o.name && !dine ? `<span style="font-size:14px;color:${C.MUT}">We’ll call <b style="color:${C.INK}">${o.name}</b> at the counter.</span>` : dine ? `<span style="font-size:14px;color:${C.MUT}">Table ${o.table}</span>` : ''}
       <ol aria-label="Order progress" style="list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:0">${OSTEPS.map(([t, d], i) => { const done = i <= o.step, now_ = i === o.step; return `<li style="display:flex;gap:12px;min-height:${i < 2 ? 58 : 40}px"><span style="flex:none;display:flex;flex-direction:column;align-items:center"><span style="width:24px;height:24px;border-radius:12px;background:${done ? C.RED : C.SURF};box-shadow:inset 0 0 0 2px ${done ? C.RED : C.LINE};display:flex;align-items:center;justify-content:center;${now_ && !ready ? 'animation:m-pulse 1.4s ease-in-out infinite' : ''}">${done ? oi('check', 14, '#fff', 3) : ''}</span>${i < 2 ? `<span style="flex:1;width:2px;background:${i < o.step ? C.RED : C.LINE}"></span>` : ''}</span><span style="display:flex;flex-direction:column;gap:2px;padding-top:2px"><b style="font-size:15px;color:${done ? C.INK : C.MUT}">${t}</b><span style="font-size:13px;color:${C.MUT}">${d}</span></span></li>`; }).join('')}</ol>`)}
     ${coCard(`${coH('What you ordered')}${o.lines.map((l) => `<div style="display:flex;justify-content:space-between;gap:12px;font-size:14px"><span style="white-space:normal">${l.qty} × ${l.name}${l.summary ? `<br><span style="font-size:12.5px;color:${C.MUT}">${l.summary}</span>` : ''}</span><span style="font-variant-numeric:tabular-nums">${money(l.unit * l.qty)}</span></div>`).join('')}<div style="height:1px;background:${C.LINE}"></div>${coRow('Total paid', money(o.q.total), true)}${o.q.earn && S.user ? `<span style="font-size:13px;color:#2E7D4F;font-weight:600">+${o.q.earn} points earned</span>` : ''}`)}
     ${S.user && o.lines[0] && !(S.user.usualItemId === o.lines[0].id && (S.user.usualNote || '').toLowerCase() === (o.lines[0].summary || '').toLowerCase()) ? `<button class="press" id="os-usual" style="min-height:52px;border-radius:999px;border:0;background:${C.TINT};font-size:15px;font-weight:700;color:${C.INK}">Make ${o.lines[0].name} my usual</button>` : ''}
