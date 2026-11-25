@@ -1,0 +1,60 @@
+name: Daily check
+
+# Every morning (about 6:50 AM in San Diego), on every push, and by hand from the Actions tab.
+on:
+  schedule:
+    - cron: '50 13 * * *'
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: pip install pyspellchecker
+
+      - name: Engine, design and mascot tests
+        run: npm run check
+      - name: Security (secrets, http, unknown sites, risky code)
+        if: always()
+        run: npm run qa:security
+      - name: Known-vulnerable packages
+        if: always()
+        run: npm audit --audit-level=high
+      - name: Screens (cut-off text, layout, pictures, errors, search)
+        if: always()
+        run: npm run qa:ui
+        env:
+          CHROME: /usr/bin/google-chrome
+      - name: Words (spelling and grammar)
+        if: always()
+        run: npm run qa:copy
+      - name: Makes sense (AI read of every sentence)
+        if: always()
+        continue-on-error: true
+        run: npm run qa:ai
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Report
+        if: always()
+        run: node tools/qa/report.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: daily-check
+          path: tools/qa/out/
