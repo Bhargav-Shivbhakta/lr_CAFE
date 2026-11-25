@@ -194,5 +194,49 @@
     ],
     "note": "Closed for Christmas",
     "hours": null
+  },
+  "checkout": {
+    "$about": "Checkout settings. Prices and tax are confirmed by Toast when the real order is placed; these drive the app and the demo.",
+    "taxRate": 0.0775,
+    "taxNote": "San Diego combined sales tax, 7.75% (2026). California taxes some to-go items differently (e.g. cold food to go); in the real app Toast sets tax per item.",
+    "tipPresets": [
+      0.15,
+      0.18,
+      0.2
+    ],
+    "tipNote": "No tip is chosen for you. Tips go to the team.",
+    "pointsPerDollar": 1,
+    "rewards": [
+      {
+        "id": "r100",
+        "points": 100,
+        "off": 5.0,
+        "label": "$5 off your order"
+      },
+      {
+        "id": "r200",
+        "points": 200,
+        "off": 10.0,
+        "label": "$10 off your order"
+      }
+    ],
+    "rewardsNote": "Point values are placeholders until the café sets its rewards program.",
+    "promos": {
+      "WELCOME3": {
+        "off": 3.0,
+        "min": 10.0,
+        "firstOrder": true,
+        "label": "$3 off your first app order"
+      },
+      "STUDY10": {
+        "pct": 0.1,
+        "min": 8.0,
+        "label": "10% off with your SDSU ID (demo)"
+      }
+    },
+    "promosNote": "Demo codes only; the café will set real ones.",
+    "deliveryFee": 4.99,
+    "deliveryNote": "DoorDash Drive fee placeholder until the café confirms.",
+    "slotStepMinutes": 15
   }
 }

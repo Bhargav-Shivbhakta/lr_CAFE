@@ -302,6 +302,7 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Tapping a tab while a dish page or sheet is open closes it and goes to that tab.
 - Every dish page has a visible close (✕) button at the top right, in every state. Pulling down and tapping outside also close it.
 - The daily screen check fails if the bar is covered or the ✕ is missing.
+- **The one exception: full-screen moments.** "You're all set" after ordering, holiday celebrations, the splash and the loading screen briefly cover the whole phone, bar included. Pages and sheets never do.
 
 ## 26. Cards open when tapped anywhere
 
@@ -327,4 +328,14 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 ## 29. Nothing covers the logo
 
 - The logo sits in front of every holiday decoration on a soft, feathered backing in that holiday's band color. The garland stays whole and passes behind it, the same way on every holiday.
+
+## 30. Checkout
+
+- Bag → **Checkout** (the bag shows the subtotal; tax, tip and rewards come on the checkout page). The page lives above the bottom bar, with back (to the bag) and ✕.
+- Top to bottom: how and when → anything stopping the order → your order (− / + / remove with Undo, "Add more") → one "Goes great with your order" row → name for the order, optional text-when-ready phone, note, utensils (off by default) → rewards (members) or "Join and earn N points" (guests) → promo code (folded away until tapped) → tip (members and guests; nothing chosen for you; % shows its dollar amount) → pay with → totals → Place order, pinned.
+- **When:** as soon as it's ready (shows the wait), or a scheduled time, every 15 minutes, today and tomorrow, inside opening hours.
+- **Never let a bad order through:** sold out, breakfast after 3 PM, or a closed time shows a red card naming the dish with a fix (remove it, try something similar, get it now instead). The button itself says what's missing ("Fix the problem above", "Add a name for the order").
+- **Money (checkout engine):** discounts before tax; tax 7.75% (San Diego) on what you pay for food; tip % on the subtotal before discounts; points on food after discounts. One reward and one promo per order; never below $0. Values live in `data/cafe.json → checkout`. The real app takes tax from Toast per item.
+- **After ordering:** a short full-screen "You're all set" → "Follow your order" opens the live order page (Received → Making it → Ready, the name we'll call, what you ordered, points earned, "Make it my usual"). A small order pill stays above the tabs until it's picked up.
+- Demo only: no real order or charge; payment methods are placeholders.
 

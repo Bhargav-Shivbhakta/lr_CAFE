@@ -32,11 +32,11 @@ function mealWindow(meal) {
   if (meal === 'breakfast' && S.avail.brkEnds) return { from: '07:00', until: S.avail.brkEnds };
   const L = (D.cafe.locations || []).find((l) => l.id === S.cafe), mp = L && L.mealPeriods; return mp && mp[meal] ? mp[meal] : null;
 }
-function avail(id) {
+function avail(id, at) { // at: a Date (checkout asks about the pickup time); defaults to now
   if (S.avail.soldOut.has(id)) return { ok: false, why: 'soldout', short: 'Sold out', text: 'Sold out today', back: 'tomorrow' };
   const meal = { Breakfast: 'breakfast', 'Lunch & dinner': 'lunch' }[(D.og.where[id] || [])[0]], w = meal && mealWindow(meal);
   if (!w) return { ok: true };
-  const t = now(), hm = t.getHours() * 60 + t.getMinutes(), mins = (x) => +x.split(':')[0] * 60 + +x.split(':')[1];
+  const t = at || now(), hm = t.getHours() * 60 + t.getMinutes(), mins = (x) => +x.split(':')[0] * 60 + +x.split(':')[1];
   if (hm >= mins(w.from) && hm < mins(w.until)) return { ok: true };
   const name = meal === 'breakfast' ? 'Breakfast' : 'Lunch & dinner';
   return { ok: false, why: 'time', short: `From ${hhmm(w.from)}`, text: `${name} is served ${hhmm(w.from)} – ${hhmm(w.until)}`, back: hm < mins(w.from) ? `today at ${hhmm(w.from)}` : `tomorrow at ${hhmm(w.from)}` };

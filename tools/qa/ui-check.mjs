@@ -187,6 +187,41 @@ if (!(await p.evaluate(() => /Sold out today/.test(document.querySelector('#dish
 await p.evaluate(() => { const d = document.querySelector('#dish'); if (d) d.remove(); S.avail.brkEnds = null; S.avail.soldOut = new Set(); });
 await p.evaluate(() => { S.o.sOpen = false; S.o.q = ''; go('rewards'); }); await wait(900); await scrollAll('#v-rewards .scroll', 'Rewards');
 await p.evaluate(() => go('account')); await wait(900); await scrollAll('#v-account .scroll', 'Account');
+// checkout: every state is readable, the Place order button is never covered, and it blocks what it should
+{
+  await start('2026-11-24T14:02:00');
+  const co = async (setup) => { await p.evaluate(setup); await wait(200); await p.evaluate(() => { document.querySelectorAll('#co,#os,#moment').forEach((e) => e.remove()); S.co = null; openCheckout(); }); await wait(700); };
+  const btnText = () => p.evaluate(() => $('#b-place').textContent);
+  const reach = async (label) => { const ok = await p.evaluate(() => { const b = $('#b-place').getBoundingClientRect(), h = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return !!(h && h.closest('#b-place')); }); if (!ok) problems.push(`[${label}] the Place order button is covered`); };
+  await p.evaluate(() => { window.__fill = () => { bagPush('dirty-chai', { id: 'dirty-chai', unit: 8.25, summary: 'Iced · Oat milk', key: 'dirty-chai|x' }, true); bagPush('breakfast-burrito', { id: 'breakfast-burrito', unit: MENU['breakfast-burrito'].price, summary: '', key: 'breakfast-burrito|' }, true); syncChrome(); }; });
+  await co(() => window.__fill()); await scrollAll('#co-sc', 'Checkout'); await reach('Checkout');
+  if (!/^Place order · \$\d+\.\d\d$/.test(await btnText())) problems.push(`[Checkout] button should say Place order with the total, says "${await btnText()}"`);
+  // totals add up, from what the screen shows
+  const sums = await p.evaluate(() => { const rows = [...document.querySelectorAll('#co-sc section')].at(-1).innerText.split('\n'); const v = (k) => { const i = rows.findIndex((r) => r.startsWith(k)); return i < 0 ? 0 : parseFloat(rows[i + 1].replace(/[^\d.]/g, '')) * (rows[i + 1].includes('−') ? -1 : 1); }; return { sub: v('Subtotal'), disc: v('Rewards') || v('Promo'), fee: v('Delivery fee'), tax: v('Tax'), tip: v('Tip'), total: v('Total') }; });
+  if (Math.abs(sums.sub + sums.disc + sums.fee + sums.tax + sums.tip - sums.total) > 0.005) problems.push(`[Checkout] the totals don't add up: ${JSON.stringify(sums)}`);
+  // breakfast scheduled after 3 PM is blocked
+  await p.evaluate(() => { S.co.when = new Date(2026, 10, 24, 15, 30).toISOString(); drawCheckout(); }); await wait(200);
+  if ((await btnText()) !== 'Fix the problem above') problems.push('[Checkout] breakfast scheduled after 3 PM should block the order');
+  await scan('Checkout · problem');
+  // a sold-out dish is blocked and offers a swap
+  await co(() => { S.bag = []; window.__fill(); S.avail.soldOut = new Set(['breakfast-burrito']); });
+  if (!(await p.evaluate(() => !!document.querySelector('#co [data-pswap]')))) problems.push('[Checkout] a sold-out dish should offer something similar');
+  await p.evaluate(() => { S.avail.soldOut = new Set(); });
+  // a guest has to give a name, and is offered points
+  await co(() => { S.user = null; S.bag = []; window.__fill(); });
+  if ((await btnText()) !== 'Add a name for the order') problems.push('[Checkout] a guest without a name should be asked for one');
+  if (!(await p.evaluate(() => !!$('#co-join')))) problems.push('[Checkout] guests should be offered to join and earn points');
+  await scrollAll('#co-sc', 'Checkout · guest');
+  // place it and follow it
+  await p.evaluate(() => { const n = $('#co-name'); n.value = 'Sam'; n.dispatchEvent(new Event('input')); }); await wait(100);
+  await click('#b-place'); await wait(3800); await scan('Order placed');
+  await click('#m-done'); await wait(800);
+  if (!(await p.evaluate(() => !!$('#os')))) problems.push('[Order status] "Follow your order" should open the order page');
+  await scan('Order status'); await checkChrome('Order status');
+  await click('#os-x'); await wait(700);
+  if (!(await p.evaluate(() => !!$('#orderpill')))) problems.push('[Order status] the order pill should show after closing the order page');
+  await p.evaluate(() => { clearInterval(S.orderTick); S.order = null; syncOrderPill(); });
+}
 jsErr.forEach((e) => problems.push(`[JavaScript] ${e}`));
 await b.close(); srv.close();
 

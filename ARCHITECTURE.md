@@ -26,6 +26,7 @@ flowchart TB
     opts[Options<br/>engine/options.js<br/>customize choices, prices, pairings]
     search[Search<br/>engine/search-engine.js<br/>typos, diets, budget, 'we don't have X']
     bag[Bag<br/>engine/bag-engine.js<br/>THE ONE DOOR INTO THE BAG]
+    co[Checkout<br/>engine/checkout-engine.js<br/>totals, tax, tip, rewards, promo, pickup times, order checks]
     notify[Notifications<br/>engine/notifications.ts]
     mascot[Cup<br/>design-system/mascot/engine.ts]
   end
@@ -35,6 +36,7 @@ flowchart TB
     sorder[Order: meals, kinds, search]
     sdish[Dish page: photo, goes great with it, customize]
     sbag[Bag]
+    scheck[Checkout → order status]
     sacct[Rewards, Account]
   end
 
@@ -56,6 +58,10 @@ flowchart TB
   bag -- "anything to choose or offer" --> sdish
   bag -- "plain item or saved usual" --> sbag
   sdish -- "Add to bag (with choices + pairings)" --> sbag
+  sbag --> scheck
+  co --> scheck
+  avail --> co
+  cafe --> co
 ```
 
 ## The bag engine: the one door
@@ -76,6 +82,8 @@ Only two places may put a line in the bag: `toBag()` and the dish page's Add but
 
 - `engine/bag.test.mjs`: the rule above, plus a check of the built app. If any screen calls `bagPush` directly, the test fails.
 - `tools/qa/ui-check.mjs`: clicks every + on Home (every holiday) and in every meal on Order. It fails if a + skips the dish page.
+- `engine/checkout.test.mjs`: totals, tax, tip, rewards, promo codes, pickup times, and that late breakfast or a closed time is caught.
+- The daily screen check also walks checkout: every state readable, Place order never covered, totals add up, sold out / late breakfast / missing name block the order, and the order page and pill appear.
 - `tools/qa/calendar-check.mjs`: every holiday's dates for five years. It also checks each holiday has a food row whose items are on the menu.
 - Text overflow, spelling and grammar, and security checks: see `tools/qa/README.md`.
 
