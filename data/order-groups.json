@@ -1,0 +1,2063 @@
+{
+ "groups": {
+  "breakfast": [
+   {
+    "id": "breakfast-0",
+    "name": "Handhelds",
+    "sub": "Burritos, bagels, croissants",
+    "ids": [
+     "breakfast-croissant",
+     "breakfast-burrito",
+     "hot-honey-bagel",
+     "turkey-croissant",
+     "sdsu-croissant",
+     "sob-croissant",
+     "aztec-melt",
+     "hashbrown-burrito",
+     "chicken-sausage-burrito",
+     "cilantro-burrito",
+     "veggie-burrito",
+     "bagel-cc",
+     "sunrise-bagel",
+     "ultimate-veggie-bagel",
+     "smoked-salmon-bagel",
+     "club-bagel"
+    ],
+    "subs": [
+     [
+      "Burritos",
+      [
+       "breakfast-burrito",
+       "hashbrown-burrito",
+       "chicken-sausage-burrito",
+       "cilantro-burrito",
+       "veggie-burrito"
+      ]
+     ],
+     [
+      "Bagels",
+      [
+       "hot-honey-bagel",
+       "bagel-cc",
+       "sunrise-bagel",
+       "ultimate-veggie-bagel",
+       "smoked-salmon-bagel",
+       "club-bagel"
+      ]
+     ],
+     [
+      "Croissants",
+      [
+       "breakfast-croissant",
+       "turkey-croissant",
+       "sdsu-croissant",
+       "sob-croissant",
+       "aztec-melt"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "breakfast-1",
+    "name": "Egg plates",
+    "sub": "Omelettes, Benedicts, skillets",
+    "ids": [
+     "quiche",
+     "ca-omelette",
+     "chorizo-skillet",
+     "med-omelette",
+     "denver-omelette",
+     "works-omelette",
+     "ranchero-omelette",
+     "byo-omelette",
+     "two-eggs",
+     "classic-benedict",
+     "lox-benedict",
+     "short-rib-benedict",
+     "garden-skillet",
+     "mexican-skillet",
+     "italian-skillet",
+     "machaca-skillet",
+     "shakshouka"
+    ],
+    "subs": [
+     [
+      "Omelettes",
+      [
+       "quiche",
+       "ca-omelette",
+       "med-omelette",
+       "denver-omelette",
+       "works-omelette",
+       "ranchero-omelette",
+       "byo-omelette",
+       "two-eggs"
+      ]
+     ],
+     [
+      "Benedicts",
+      [
+       "classic-benedict",
+       "lox-benedict",
+       "short-rib-benedict"
+      ]
+     ],
+     [
+      "Skillets",
+      [
+       "chorizo-skillet",
+       "garden-skillet",
+       "mexican-skillet",
+       "italian-skillet",
+       "machaca-skillet",
+       "shakshouka"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "breakfast-2",
+    "name": "Pancakes & crepes",
+    "sub": "Pancakes, waffles, French toast",
+    "ids": [
+     "lr-special",
+     "pancakes",
+     "french-toast",
+     "waffle",
+     "nutella-crepe",
+     "veggie-crepe"
+    ],
+    "subs": [
+     [
+      "Crepes",
+      [
+       "nutella-crepe",
+       "veggie-crepe"
+      ]
+     ],
+     [
+      "Pancakes & waffles",
+      [
+       "lr-special",
+       "pancakes",
+       "french-toast",
+       "waffle"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "breakfast-3",
+    "name": "Light & fresh",
+    "sub": "Bowls, granola, toast",
+    "ids": [
+     "acai-bowl",
+     "granola",
+     "fruit-bowl",
+     "cottage-avo-toast"
+    ],
+    "subs": [
+     [
+      "Light & fresh",
+      [
+       "acai-bowl",
+       "granola",
+       "fruit-bowl",
+       "cottage-avo-toast"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "breakfast-4",
+    "name": "Sides",
+    "sub": "Bacon, potatoes, avocado…",
+    "ids": [
+     "side-hashbrown",
+     "side-potato",
+     "side-bacon",
+     "side-sausage",
+     "side-bacon-sausage",
+     "side-ham",
+     "side-veggie-patty",
+     "side-chicken-sausage",
+     "side-turkey-bacon",
+     "side-avocado"
+    ],
+    "subs": [
+     [
+      "Potatoes",
+      [
+       "side-hashbrown",
+       "side-potato"
+      ]
+     ],
+     [
+      "Veggie",
+      [
+       "side-veggie-patty",
+       "side-avocado"
+      ]
+     ],
+     [
+      "Meat",
+      [
+       "side-bacon",
+       "side-sausage",
+       "side-bacon-sausage",
+       "side-ham",
+       "side-chicken-sausage",
+       "side-turkey-bacon"
+      ]
+     ]
+    ]
+   }
+  ],
+  "lunch": [
+   {
+    "id": "lunch-0",
+    "name": "Sandwiches",
+    "sub": "Signature, classic, paninis",
+    "ids": [
+     "garlic-chicken-panini",
+     "club-turkey",
+     "grilled-cheese",
+     "santa-fe-panini",
+     "pesto-panini",
+     "ahi-sandwich",
+     "ca-turkey",
+     "blt",
+     "italian-sub",
+     "godfather-sub",
+     "tuna-sandwich",
+     "steak-sandwich",
+     "short-rib-grilled-cheese",
+     "tuna-melt",
+     "muffuletta"
+    ],
+    "subs": [
+     [
+      "Signature",
+      [
+       "grilled-cheese",
+       "steak-sandwich",
+       "short-rib-grilled-cheese",
+       "tuna-melt",
+       "muffuletta"
+      ]
+     ],
+     [
+      "Classic",
+      [
+       "club-turkey",
+       "ca-turkey",
+       "blt",
+       "italian-sub",
+       "godfather-sub",
+       "tuna-sandwich"
+      ]
+     ],
+     [
+      "Paninis",
+      [
+       "garlic-chicken-panini",
+       "santa-fe-panini",
+       "pesto-panini",
+       "ahi-sandwich"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "lunch-1",
+    "name": "Burgers & wraps",
+    "sub": "Burgers and wraps",
+    "ids": [
+     "sams-burger",
+     "caesar-wrap",
+     "cheeseburger",
+     "mushroom-swiss",
+     "garlic-bacon-burger",
+     "chipotle-chicken",
+     "falafel-wrap",
+     "veggie-wrap",
+     "buffalo-wrap"
+    ],
+    "subs": [
+     [
+      "Burgers",
+      [
+       "sams-burger",
+       "cheeseburger",
+       "mushroom-swiss",
+       "garlic-bacon-burger",
+       "chipotle-chicken"
+      ]
+     ],
+     [
+      "Wraps",
+      [
+       "caesar-wrap",
+       "falafel-wrap",
+       "veggie-wrap",
+       "buffalo-wrap"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "lunch-2",
+    "name": "Salads & soups",
+    "sub": "Salads and soups",
+    "ids": [
+     "salmon-salad",
+     "soup-salad-combo",
+     "bowl-soup",
+     "cup-soup",
+     "chicken-apple-salad",
+     "blackened-chicken-salad",
+     "sw-shrimp-salad",
+     "caesar-salad",
+     "house-salad",
+     "greek-salad"
+    ],
+    "subs": [
+     [
+      "Soups",
+      [
+       "soup-salad-combo",
+       "bowl-soup",
+       "cup-soup"
+      ]
+     ],
+     [
+      "Salads",
+      [
+       "salmon-salad",
+       "chicken-apple-salad",
+       "blackened-chicken-salad",
+       "sw-shrimp-salad",
+       "caesar-salad",
+       "house-salad",
+       "greek-salad"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "lunch-3",
+    "name": "Pizza & pasta",
+    "sub": "7\" pizzas and pastas",
+    "ids": [
+     "veggie-hummus-pizza",
+     "rigatoni-vodka",
+     "pesto-pizza",
+     "cheese-pizza",
+     "pepperoni-pizza",
+     "diavola-pizza",
+     "spicy-shrimp-pasta",
+     "chicken-alfredo",
+     "pesto-chicken-pasta",
+     "bolognese"
+    ],
+    "subs": [
+     [
+      "Pizza",
+      [
+       "veggie-hummus-pizza",
+       "pesto-pizza",
+       "cheese-pizza",
+       "pepperoni-pizza",
+       "diavola-pizza"
+      ]
+     ],
+     [
+      "Pasta",
+      [
+       "rigatoni-vodka",
+       "spicy-shrimp-pasta",
+       "chicken-alfredo",
+       "pesto-chicken-pasta",
+       "bolognese"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "lunch-4",
+    "name": "Bites",
+    "sub": "Wings, fries, small plates",
+    "ids": [
+     "wings",
+     "tenders",
+     "fries",
+     "truffle-fries",
+     "chips",
+     "quesadilla",
+     "hummus"
+    ],
+    "subs": [
+     [
+      "Wings",
+      [
+       "wings",
+       "tenders"
+      ]
+     ],
+     [
+      "Fries",
+      [
+       "fries",
+       "truffle-fries",
+       "chips"
+      ]
+     ],
+     [
+      "Dips",
+      [
+       "quesadilla",
+       "hummus"
+      ]
+     ]
+    ]
+   }
+  ],
+  "drinks": [
+   {
+    "id": "drinks-0",
+    "name": "Coffee & espresso",
+    "sub": "Drip, americano, cappuccino",
+    "ids": [
+     "house-coffee",
+     "iced-coffee",
+     "coffee-refill",
+     "espresso",
+     "cafe-au-lait",
+     "americano",
+     "macchiato",
+     "cappuccino",
+     "hammerhead",
+     "flat-white",
+     "cortado",
+     "cold-brew"
+    ],
+    "subs": [
+     [
+      "Iced",
+      [
+       "iced-coffee",
+       "cold-brew"
+      ]
+     ],
+     [
+      "Hot",
+      [
+       "house-coffee",
+       "coffee-refill",
+       "espresso",
+       "cafe-au-lait",
+       "americano",
+       "macchiato",
+       "cappuccino",
+       "hammerhead",
+       "flat-white",
+       "cortado"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "drinks-1",
+    "name": "Lattes & mochas",
+    "sub": "Including seasonal",
+    "ids": [
+     "pumpkin-chai",
+     "chai",
+     "dirty-chai",
+     "spanish-latte",
+     "trembler",
+     "pumpkin-shaken",
+     "psl",
+     "falltastic",
+     "cinnamon-cold-brew",
+     "cookie-butter-latte",
+     "couch-blend",
+     "cafe-latte",
+     "vanilla-latte",
+     "caramel-latte",
+     "sb-macchiato",
+     "maple-chai",
+     "butter-brew",
+     "shaken-espresso",
+     "banana-bread-latte",
+     "iced-vietnamese",
+     "cafe-mocha",
+     "milky-way",
+     "rocky-road",
+     "caramel-sea",
+     "black-forest",
+     "tuxedo-mocha",
+     "mexican-mocha",
+     "cafe-blondie",
+     "raspberry-white-mocha"
+    ],
+    "subs": [
+     [
+      "Seasonal",
+      [
+       "pumpkin-chai",
+       "pumpkin-shaken",
+       "psl",
+       "falltastic",
+       "cinnamon-cold-brew",
+       "cookie-butter-latte"
+      ]
+     ],
+     [
+      "Mochas",
+      [
+       "trembler",
+       "cafe-mocha",
+       "milky-way",
+       "rocky-road",
+       "caramel-sea",
+       "black-forest",
+       "tuxedo-mocha",
+       "mexican-mocha",
+       "cafe-blondie",
+       "raspberry-white-mocha"
+      ]
+     ],
+     [
+      "Lattes",
+      [
+       "chai",
+       "dirty-chai",
+       "spanish-latte",
+       "couch-blend",
+       "cafe-latte",
+       "vanilla-latte",
+       "caramel-latte",
+       "sb-macchiato",
+       "maple-chai",
+       "butter-brew",
+       "shaken-espresso",
+       "banana-bread-latte",
+       "iced-vietnamese"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "drinks-2",
+    "name": "Iced & blended",
+    "sub": "Frappes",
+    "ids": [
+     "cookie-catastrophe",
+     "latte-frappe",
+     "mocha-frappe",
+     "strawberry-mocha-frappe",
+     "banana-mocha-frappe",
+     "banana-cappuccino",
+     "avalanche",
+     "bomb-alaska",
+     "vanilla-bean-frappe",
+     "vanilla-chai-frappe",
+     "caramel-frappe",
+     "land-slide",
+     "pistachio-frappe"
+    ],
+    "subs": [
+     [
+      "Iced & blended",
+      [
+       "cookie-catastrophe",
+       "latte-frappe",
+       "mocha-frappe",
+       "strawberry-mocha-frappe",
+       "banana-mocha-frappe",
+       "banana-cappuccino",
+       "avalanche",
+       "bomb-alaska",
+       "vanilla-bean-frappe",
+       "vanilla-chai-frappe",
+       "caramel-frappe",
+       "land-slide",
+       "pistachio-frappe"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "drinks-3",
+    "name": "Tea & matcha",
+    "sub": "Hot and iced",
+    "ids": [
+     "medicine-ball",
+     "matcha",
+     "hot-tea",
+     "tea-au-lait",
+     "london-fog",
+     "thai-tea",
+     "arnold-palmer",
+     "iced-tea",
+     "iced-tea-refill",
+     "stramatcha",
+     "cookie-butter-matcha",
+     "earl-grey-matcha",
+     "blueberry-matcha"
+    ],
+    "subs": [
+     [
+      "Matcha",
+      [
+       "matcha",
+       "stramatcha",
+       "cookie-butter-matcha",
+       "earl-grey-matcha",
+       "blueberry-matcha"
+      ]
+     ],
+     [
+      "Iced tea",
+      [
+       "thai-tea",
+       "arnold-palmer",
+       "iced-tea",
+       "iced-tea-refill"
+      ]
+     ],
+     [
+      "Hot tea",
+      [
+       "medicine-ball",
+       "hot-tea",
+       "tea-au-lait",
+       "london-fog"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "drinks-4",
+    "name": "Fresh & fruity",
+    "sub": "Refreshers, juices, smoothies",
+    "ids": [
+     "watermelon-sour",
+     "tropical-infusion",
+     "blood-orange",
+     "green-lantern",
+     "hibiscus",
+     "oj",
+     "pomegranate",
+     "lemonade",
+     "apple-juice",
+     "hawaiian-breeze",
+     "strawberry-banana",
+     "very-berry",
+     "hawaiian-vacation",
+     "green-machine"
+    ],
+    "subs": [
+     [
+      "Smoothies",
+      [
+       "strawberry-banana",
+       "very-berry",
+       "hawaiian-vacation",
+       "green-machine"
+      ]
+     ],
+     [
+      "Juices",
+      [
+       "oj",
+       "pomegranate",
+       "lemonade",
+       "apple-juice"
+      ]
+     ],
+     [
+      "Refreshers",
+      [
+       "watermelon-sour",
+       "tropical-infusion",
+       "blood-orange",
+       "green-lantern",
+       "hibiscus",
+       "hawaiian-breeze"
+      ]
+     ]
+    ]
+   },
+   {
+    "id": "drinks-5",
+    "name": "Not coffee",
+    "sub": "Hot chocolate, chai…",
+    "ids": [
+     "italian-soda",
+     "redbull",
+     "hot-chocolate",
+     "white-hot-chocolate",
+     "mexican-hot-chocolate",
+     "tuxedo-hot-chocolate",
+     "chocolate-milk",
+     "cold-milk",
+     "steamer"
+    ],
+    "subs": [
+     [
+      "Hot chocolate",
+      [
+       "hot-chocolate",
+       "white-hot-chocolate",
+       "mexican-hot-chocolate",
+       "tuxedo-hot-chocolate",
+       "steamer"
+      ]
+     ],
+     [
+      "Cold",
+      [
+       "italian-soda",
+       "redbull",
+       "chocolate-milk",
+       "cold-milk"
+      ]
+     ]
+    ]
+   }
+  ],
+  "sweets": [
+   {
+    "id": "sweets-0",
+    "name": "Pastries",
+    "sub": "Baked daily",
+    "ids": [
+     "brownie",
+     "choc-chip-cookie",
+     "white-mac-cookie",
+     "oatmeal-cookie",
+     "sugar-cookie",
+     "plain-croissant",
+     "blueberry-scone",
+     "chocolate-scone",
+     "muffin",
+     "pumpkin-muffin"
+    ],
+    "subs": [
+     [
+      "Cookies",
+      [
+       "brownie",
+       "choc-chip-cookie",
+       "white-mac-cookie",
+       "oatmeal-cookie",
+       "sugar-cookie"
+      ]
+     ],
+     [
+      "Muffins",
+      [
+       "muffin",
+       "pumpkin-muffin"
+      ]
+     ],
+     [
+      "Croissants",
+      [
+       "plain-croissant",
+       "blueberry-scone",
+       "chocolate-scone"
+      ]
+     ]
+    ]
+   }
+  ]
+ },
+ "pop": {
+  "breakfast": [
+   "quiche",
+   "breakfast-croissant",
+   "breakfast-burrito",
+   "hot-honey-bagel",
+   "lr-special",
+   "ca-omelette",
+   "chorizo-skillet"
+  ],
+  "lunch": [
+   "wings",
+   "veggie-hummus-pizza",
+   "salmon-salad",
+   "sams-burger",
+   "caesar-wrap",
+   "garlic-chicken-panini",
+   "club-turkey",
+   "grilled-cheese",
+   "rigatoni-vodka"
+  ],
+  "drinks": [
+   "medicine-ball",
+   "pumpkin-chai",
+   "chai",
+   "dirty-chai",
+   "spanish-latte",
+   "trembler",
+   "matcha",
+   "cookie-catastrophe"
+  ],
+  "sweets": [
+   "brownie"
+  ]
+ },
+ "where": {
+  "breakfast-burrito": [
+   "Breakfast",
+   "Handhelds",
+   "Burritos"
+  ],
+  "hashbrown-burrito": [
+   "Breakfast",
+   "Handhelds",
+   "Burritos"
+  ],
+  "chicken-sausage-burrito": [
+   "Breakfast",
+   "Handhelds",
+   "Burritos"
+  ],
+  "cilantro-burrito": [
+   "Breakfast",
+   "Handhelds",
+   "Burritos"
+  ],
+  "veggie-burrito": [
+   "Breakfast",
+   "Handhelds",
+   "Burritos"
+  ],
+  "hot-honey-bagel": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "bagel-cc": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "sunrise-bagel": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "ultimate-veggie-bagel": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "smoked-salmon-bagel": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "club-bagel": [
+   "Breakfast",
+   "Handhelds",
+   "Bagels"
+  ],
+  "breakfast-croissant": [
+   "Breakfast",
+   "Handhelds",
+   "Croissants"
+  ],
+  "turkey-croissant": [
+   "Breakfast",
+   "Handhelds",
+   "Croissants"
+  ],
+  "sdsu-croissant": [
+   "Breakfast",
+   "Handhelds",
+   "Croissants"
+  ],
+  "sob-croissant": [
+   "Breakfast",
+   "Handhelds",
+   "Croissants"
+  ],
+  "aztec-melt": [
+   "Breakfast",
+   "Handhelds",
+   "Croissants"
+  ],
+  "quiche": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "ca-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "med-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "denver-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "works-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "ranchero-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "byo-omelette": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "two-eggs": [
+   "Breakfast",
+   "Egg plates",
+   "Omelettes"
+  ],
+  "classic-benedict": [
+   "Breakfast",
+   "Egg plates",
+   "Benedicts"
+  ],
+  "lox-benedict": [
+   "Breakfast",
+   "Egg plates",
+   "Benedicts"
+  ],
+  "short-rib-benedict": [
+   "Breakfast",
+   "Egg plates",
+   "Benedicts"
+  ],
+  "chorizo-skillet": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "garden-skillet": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "mexican-skillet": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "italian-skillet": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "machaca-skillet": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "shakshouka": [
+   "Breakfast",
+   "Egg plates",
+   "Skillets"
+  ],
+  "nutella-crepe": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Crepes"
+  ],
+  "veggie-crepe": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Crepes"
+  ],
+  "lr-special": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Pancakes & waffles"
+  ],
+  "pancakes": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Pancakes & waffles"
+  ],
+  "french-toast": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Pancakes & waffles"
+  ],
+  "waffle": [
+   "Breakfast",
+   "Pancakes & crepes",
+   "Pancakes & waffles"
+  ],
+  "acai-bowl": [
+   "Breakfast",
+   "Light & fresh",
+   "Light & fresh"
+  ],
+  "granola": [
+   "Breakfast",
+   "Light & fresh",
+   "Light & fresh"
+  ],
+  "fruit-bowl": [
+   "Breakfast",
+   "Light & fresh",
+   "Light & fresh"
+  ],
+  "cottage-avo-toast": [
+   "Breakfast",
+   "Light & fresh",
+   "Light & fresh"
+  ],
+  "side-hashbrown": [
+   "Breakfast",
+   "Sides",
+   "Potatoes"
+  ],
+  "side-potato": [
+   "Breakfast",
+   "Sides",
+   "Potatoes"
+  ],
+  "side-veggie-patty": [
+   "Breakfast",
+   "Sides",
+   "Veggie"
+  ],
+  "side-avocado": [
+   "Breakfast",
+   "Sides",
+   "Veggie"
+  ],
+  "side-bacon": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "side-sausage": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "side-bacon-sausage": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "side-ham": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "side-chicken-sausage": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "side-turkey-bacon": [
+   "Breakfast",
+   "Sides",
+   "Meat"
+  ],
+  "grilled-cheese": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Signature"
+  ],
+  "steak-sandwich": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Signature"
+  ],
+  "short-rib-grilled-cheese": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Signature"
+  ],
+  "tuna-melt": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Signature"
+  ],
+  "muffuletta": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Signature"
+  ],
+  "club-turkey": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "ca-turkey": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "blt": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "italian-sub": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "godfather-sub": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "tuna-sandwich": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Classic"
+  ],
+  "garlic-chicken-panini": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Paninis"
+  ],
+  "santa-fe-panini": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Paninis"
+  ],
+  "pesto-panini": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Paninis"
+  ],
+  "ahi-sandwich": [
+   "Lunch & dinner",
+   "Sandwiches",
+   "Paninis"
+  ],
+  "sams-burger": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Burgers"
+  ],
+  "cheeseburger": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Burgers"
+  ],
+  "mushroom-swiss": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Burgers"
+  ],
+  "garlic-bacon-burger": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Burgers"
+  ],
+  "chipotle-chicken": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Burgers"
+  ],
+  "caesar-wrap": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Wraps"
+  ],
+  "falafel-wrap": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Wraps"
+  ],
+  "veggie-wrap": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Wraps"
+  ],
+  "buffalo-wrap": [
+   "Lunch & dinner",
+   "Burgers & wraps",
+   "Wraps"
+  ],
+  "soup-salad-combo": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Soups"
+  ],
+  "bowl-soup": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Soups"
+  ],
+  "cup-soup": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Soups"
+  ],
+  "salmon-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "chicken-apple-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "blackened-chicken-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "sw-shrimp-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "caesar-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "house-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "greek-salad": [
+   "Lunch & dinner",
+   "Salads & soups",
+   "Salads"
+  ],
+  "veggie-hummus-pizza": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pizza"
+  ],
+  "pesto-pizza": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pizza"
+  ],
+  "cheese-pizza": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pizza"
+  ],
+  "pepperoni-pizza": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pizza"
+  ],
+  "diavola-pizza": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pizza"
+  ],
+  "rigatoni-vodka": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pasta"
+  ],
+  "spicy-shrimp-pasta": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pasta"
+  ],
+  "chicken-alfredo": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pasta"
+  ],
+  "pesto-chicken-pasta": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pasta"
+  ],
+  "bolognese": [
+   "Lunch & dinner",
+   "Pizza & pasta",
+   "Pasta"
+  ],
+  "wings": [
+   "Lunch & dinner",
+   "Bites",
+   "Wings"
+  ],
+  "tenders": [
+   "Lunch & dinner",
+   "Bites",
+   "Wings"
+  ],
+  "fries": [
+   "Lunch & dinner",
+   "Bites",
+   "Fries"
+  ],
+  "truffle-fries": [
+   "Lunch & dinner",
+   "Bites",
+   "Fries"
+  ],
+  "chips": [
+   "Lunch & dinner",
+   "Bites",
+   "Fries"
+  ],
+  "quesadilla": [
+   "Lunch & dinner",
+   "Bites",
+   "Dips"
+  ],
+  "hummus": [
+   "Lunch & dinner",
+   "Bites",
+   "Dips"
+  ],
+  "iced-coffee": [
+   "Drinks",
+   "Coffee & espresso",
+   "Iced"
+  ],
+  "cold-brew": [
+   "Drinks",
+   "Coffee & espresso",
+   "Iced"
+  ],
+  "house-coffee": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "coffee-refill": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "espresso": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "cafe-au-lait": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "americano": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "macchiato": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "cappuccino": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "hammerhead": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "flat-white": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "cortado": [
+   "Drinks",
+   "Coffee & espresso",
+   "Hot"
+  ],
+  "pumpkin-chai": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "pumpkin-shaken": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "psl": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "falltastic": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "cinnamon-cold-brew": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "cookie-butter-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Seasonal"
+  ],
+  "trembler": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "cafe-mocha": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "milky-way": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "rocky-road": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "caramel-sea": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "black-forest": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "tuxedo-mocha": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "mexican-mocha": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "cafe-blondie": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "raspberry-white-mocha": [
+   "Drinks",
+   "Lattes & mochas",
+   "Mochas"
+  ],
+  "chai": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "dirty-chai": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "spanish-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "couch-blend": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "cafe-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "vanilla-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "caramel-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "sb-macchiato": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "maple-chai": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "butter-brew": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "shaken-espresso": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "banana-bread-latte": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "iced-vietnamese": [
+   "Drinks",
+   "Lattes & mochas",
+   "Lattes"
+  ],
+  "cookie-catastrophe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "latte-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "mocha-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "strawberry-mocha-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "banana-mocha-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "banana-cappuccino": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "avalanche": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "bomb-alaska": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "vanilla-bean-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "vanilla-chai-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "caramel-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "land-slide": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "pistachio-frappe": [
+   "Drinks",
+   "Iced & blended",
+   "Iced & blended"
+  ],
+  "matcha": [
+   "Drinks",
+   "Tea & matcha",
+   "Matcha"
+  ],
+  "stramatcha": [
+   "Drinks",
+   "Tea & matcha",
+   "Matcha"
+  ],
+  "cookie-butter-matcha": [
+   "Drinks",
+   "Tea & matcha",
+   "Matcha"
+  ],
+  "earl-grey-matcha": [
+   "Drinks",
+   "Tea & matcha",
+   "Matcha"
+  ],
+  "blueberry-matcha": [
+   "Drinks",
+   "Tea & matcha",
+   "Matcha"
+  ],
+  "thai-tea": [
+   "Drinks",
+   "Tea & matcha",
+   "Iced tea"
+  ],
+  "arnold-palmer": [
+   "Drinks",
+   "Tea & matcha",
+   "Iced tea"
+  ],
+  "iced-tea": [
+   "Drinks",
+   "Tea & matcha",
+   "Iced tea"
+  ],
+  "iced-tea-refill": [
+   "Drinks",
+   "Tea & matcha",
+   "Iced tea"
+  ],
+  "medicine-ball": [
+   "Drinks",
+   "Tea & matcha",
+   "Hot tea"
+  ],
+  "hot-tea": [
+   "Drinks",
+   "Tea & matcha",
+   "Hot tea"
+  ],
+  "tea-au-lait": [
+   "Drinks",
+   "Tea & matcha",
+   "Hot tea"
+  ],
+  "london-fog": [
+   "Drinks",
+   "Tea & matcha",
+   "Hot tea"
+  ],
+  "strawberry-banana": [
+   "Drinks",
+   "Fresh & fruity",
+   "Smoothies"
+  ],
+  "very-berry": [
+   "Drinks",
+   "Fresh & fruity",
+   "Smoothies"
+  ],
+  "hawaiian-vacation": [
+   "Drinks",
+   "Fresh & fruity",
+   "Smoothies"
+  ],
+  "green-machine": [
+   "Drinks",
+   "Fresh & fruity",
+   "Smoothies"
+  ],
+  "oj": [
+   "Drinks",
+   "Fresh & fruity",
+   "Juices"
+  ],
+  "pomegranate": [
+   "Drinks",
+   "Fresh & fruity",
+   "Juices"
+  ],
+  "lemonade": [
+   "Drinks",
+   "Fresh & fruity",
+   "Juices"
+  ],
+  "apple-juice": [
+   "Drinks",
+   "Fresh & fruity",
+   "Juices"
+  ],
+  "watermelon-sour": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "tropical-infusion": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "blood-orange": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "green-lantern": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "hibiscus": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "hawaiian-breeze": [
+   "Drinks",
+   "Fresh & fruity",
+   "Refreshers"
+  ],
+  "hot-chocolate": [
+   "Drinks",
+   "Not coffee",
+   "Hot chocolate"
+  ],
+  "white-hot-chocolate": [
+   "Drinks",
+   "Not coffee",
+   "Hot chocolate"
+  ],
+  "mexican-hot-chocolate": [
+   "Drinks",
+   "Not coffee",
+   "Hot chocolate"
+  ],
+  "tuxedo-hot-chocolate": [
+   "Drinks",
+   "Not coffee",
+   "Hot chocolate"
+  ],
+  "steamer": [
+   "Drinks",
+   "Not coffee",
+   "Hot chocolate"
+  ],
+  "italian-soda": [
+   "Drinks",
+   "Not coffee",
+   "Cold"
+  ],
+  "redbull": [
+   "Drinks",
+   "Not coffee",
+   "Cold"
+  ],
+  "chocolate-milk": [
+   "Drinks",
+   "Not coffee",
+   "Cold"
+  ],
+  "cold-milk": [
+   "Drinks",
+   "Not coffee",
+   "Cold"
+  ],
+  "brownie": [
+   "Sweets",
+   "Pastries",
+   "Cookies"
+  ],
+  "choc-chip-cookie": [
+   "Sweets",
+   "Pastries",
+   "Cookies"
+  ],
+  "white-mac-cookie": [
+   "Sweets",
+   "Pastries",
+   "Cookies"
+  ],
+  "oatmeal-cookie": [
+   "Sweets",
+   "Pastries",
+   "Cookies"
+  ],
+  "sugar-cookie": [
+   "Sweets",
+   "Pastries",
+   "Cookies"
+  ],
+  "muffin": [
+   "Sweets",
+   "Pastries",
+   "Muffins"
+  ],
+  "pumpkin-muffin": [
+   "Sweets",
+   "Pastries",
+   "Muffins"
+  ],
+  "plain-croissant": [
+   "Sweets",
+   "Pastries",
+   "Croissants"
+  ],
+  "blueberry-scone": [
+   "Sweets",
+   "Pastries",
+   "Croissants"
+  ],
+  "chocolate-scone": [
+   "Sweets",
+   "Pastries",
+   "Croissants"
+  ]
+ },
+ "keys": {
+  "acai-bowl": "healthy light",
+  "granola": "healthy light",
+  "fruit-bowl": "healthy light",
+  "cottage-avo-toast": "healthy light",
+  "quiche": "healthy light",
+  "turkey-croissant": "healthy light",
+  "breakfast-croissant": "croissant sandwich",
+  "sdsu-croissant": "croissant sandwich",
+  "sob-croissant": "croissant sandwich",
+  "aztec-melt": "croissant sandwich",
+  "breakfast-burrito": "burrito wrap tortilla",
+  "hashbrown-burrito": "burrito wrap tortilla",
+  "chicken-sausage-burrito": "burrito wrap tortilla",
+  "cilantro-burrito": "burrito wrap tortilla",
+  "veggie-burrito": "burrito wrap tortilla",
+  "bagel-cc": "bagel",
+  "sunrise-bagel": "bagel",
+  "hot-honey-bagel": "bagel",
+  "ultimate-veggie-bagel": "bagel",
+  "smoked-salmon-bagel": "bagel",
+  "club-bagel": "bagel",
+  "lr-special": "sweet pancake waffle crepe toast syrup",
+  "pancakes": "sweet pancake waffle crepe toast syrup",
+  "french-toast": "sweet pancake waffle crepe toast syrup",
+  "waffle": "sweet pancake waffle crepe toast syrup",
+  "nutella-crepe": "sweet pancake waffle crepe toast syrup",
+  "veggie-crepe": "sweet pancake waffle crepe toast syrup",
+  "ca-omelette": "egg omelet omelette",
+  "med-omelette": "egg omelet omelette",
+  "denver-omelette": "egg omelet omelette",
+  "works-omelette": "egg omelet omelette",
+  "ranchero-omelette": "egg omelet omelette",
+  "byo-omelette": "egg omelet omelette",
+  "two-eggs": "egg omelet omelette",
+  "classic-benedict": "benedict egg hollandaise",
+  "lox-benedict": "benedict egg hollandaise",
+  "short-rib-benedict": "benedict egg hollandaise",
+  "chorizo-skillet": "skillet egg potato hash",
+  "garden-skillet": "skillet egg potato hash",
+  "mexican-skillet": "skillet egg potato hash",
+  "italian-skillet": "skillet egg potato hash",
+  "machaca-skillet": "skillet egg potato hash",
+  "shakshouka": "skillet egg potato hash",
+  "side-hashbrown": "side extra",
+  "side-potato": "side extra",
+  "side-bacon": "side extra",
+  "side-sausage": "side extra",
+  "side-bacon-sausage": "side extra",
+  "side-ham": "side extra",
+  "side-veggie-patty": "side extra",
+  "side-chicken-sausage": "side extra",
+  "side-turkey-bacon": "side extra",
+  "side-avocado": "side extra",
+  "wings": "snack appetizer side starter share",
+  "tenders": "snack appetizer side starter share",
+  "fries": "snack appetizer side starter share",
+  "truffle-fries": "snack appetizer side starter share",
+  "chips": "snack appetizer side starter share",
+  "quesadilla": "snack appetizer side starter share",
+  "hummus": "snack appetizer side starter share",
+  "pesto-pizza": "pizza",
+  "veggie-hummus-pizza": "pizza",
+  "cheese-pizza": "pizza",
+  "pepperoni-pizza": "pizza",
+  "diavola-pizza": "pizza",
+  "soup-salad-combo": "salad soup healthy green",
+  "bowl-soup": "salad soup healthy green",
+  "cup-soup": "salad soup healthy green",
+  "chicken-apple-salad": "salad soup healthy green",
+  "blackened-chicken-salad": "salad soup healthy green",
+  "salmon-salad": "salad soup healthy green",
+  "sw-shrimp-salad": "salad soup healthy green",
+  "caesar-salad": "salad soup healthy green",
+  "house-salad": "salad soup healthy green",
+  "greek-salad": "salad soup healthy green",
+  "cheeseburger": "burger beef",
+  "mushroom-swiss": "burger beef",
+  "sams-burger": "burger beef",
+  "garlic-bacon-burger": "burger beef",
+  "chipotle-chicken": "burger beef",
+  "caesar-wrap": "wrap tortilla",
+  "falafel-wrap": "wrap tortilla",
+  "veggie-wrap": "wrap tortilla",
+  "buffalo-wrap": "wrap tortilla",
+  "garlic-chicken-panini": "panini sandwich pressed",
+  "santa-fe-panini": "panini sandwich pressed",
+  "pesto-panini": "panini sandwich pressed",
+  "ahi-sandwich": "panini sandwich pressed",
+  "ca-turkey": "sandwich sub",
+  "blt": "sandwich sub",
+  "club-turkey": "sandwich sub",
+  "italian-sub": "sandwich sub",
+  "godfather-sub": "sandwich sub",
+  "tuna-sandwich": "sandwich sub",
+  "steak-sandwich": "sandwich sub",
+  "grilled-cheese": "sandwich sub",
+  "short-rib-grilled-cheese": "sandwich sub",
+  "tuna-melt": "sandwich sub",
+  "muffuletta": "sandwich sub",
+  "rigatoni-vodka": "pasta noodle italian",
+  "spicy-shrimp-pasta": "pasta noodle italian",
+  "chicken-alfredo": "pasta noodle italian",
+  "pesto-chicken-pasta": "pasta noodle italian",
+  "bolognese": "pasta noodle italian",
+  "house-coffee": "coffee espresso caffeine",
+  "iced-coffee": "coffee espresso caffeine",
+  "coffee-refill": "coffee espresso caffeine",
+  "espresso": "coffee espresso caffeine",
+  "cafe-au-lait": "coffee espresso caffeine",
+  "americano": "coffee espresso caffeine",
+  "macchiato": "coffee espresso caffeine",
+  "cappuccino": "coffee espresso caffeine",
+  "hammerhead": "coffee espresso caffeine",
+  "flat-white": "coffee espresso caffeine",
+  "cortado": "coffee espresso caffeine",
+  "cold-brew": "coffee espresso caffeine",
+  "hot-tea": "tea",
+  "tea-au-lait": "tea",
+  "medicine-ball": "tea",
+  "london-fog": "tea",
+  "thai-tea": "tea",
+  "arnold-palmer": "tea",
+  "iced-tea": "tea",
+  "iced-tea-refill": "tea",
+  "pumpkin-shaken": "pumpkin seasonal fall autumn spice",
+  "pumpkin-chai": "pumpkin seasonal fall autumn spice",
+  "psl": "pumpkin seasonal fall autumn spice",
+  "falltastic": "pumpkin seasonal fall autumn spice",
+  "cinnamon-cold-brew": "pumpkin seasonal fall autumn spice",
+  "cookie-butter-latte": "pumpkin seasonal fall autumn spice",
+  "couch-blend": "latte coffee espresso milk",
+  "cafe-latte": "latte coffee espresso milk",
+  "vanilla-latte": "latte coffee espresso milk",
+  "caramel-latte": "latte coffee espresso milk",
+  "sb-macchiato": "latte coffee espresso milk",
+  "chai": "latte coffee espresso milk",
+  "dirty-chai": "latte coffee espresso milk",
+  "maple-chai": "latte coffee espresso milk",
+  "spanish-latte": "latte coffee espresso milk",
+  "butter-brew": "latte coffee espresso milk",
+  "shaken-espresso": "latte coffee espresso milk",
+  "banana-bread-latte": "latte coffee espresso milk",
+  "iced-vietnamese": "latte coffee espresso milk",
+  "cafe-mocha": "mocha chocolate coffee",
+  "trembler": "mocha chocolate coffee",
+  "milky-way": "mocha chocolate coffee",
+  "rocky-road": "mocha chocolate coffee",
+  "caramel-sea": "mocha chocolate coffee",
+  "black-forest": "mocha chocolate coffee",
+  "tuxedo-mocha": "mocha chocolate coffee",
+  "mexican-mocha": "mocha chocolate coffee",
+  "cafe-blondie": "mocha chocolate coffee",
+  "raspberry-white-mocha": "mocha chocolate coffee",
+  "matcha": "matcha green tea latte",
+  "stramatcha": "matcha green tea latte",
+  "cookie-butter-matcha": "matcha green tea latte",
+  "earl-grey-matcha": "matcha green tea latte",
+  "blueberry-matcha": "matcha green tea latte",
+  "latte-frappe": "frappe blended frozen iced shake",
+  "mocha-frappe": "frappe blended frozen iced shake",
+  "strawberry-mocha-frappe": "frappe blended frozen iced shake",
+  "banana-mocha-frappe": "frappe blended frozen iced shake",
+  "cookie-catastrophe": "frappe blended frozen iced shake",
+  "banana-cappuccino": "frappe blended frozen iced shake",
+  "avalanche": "frappe blended frozen iced shake",
+  "bomb-alaska": "frappe blended frozen iced shake",
+  "vanilla-bean-frappe": "frappe blended frozen iced shake",
+  "vanilla-chai-frappe": "frappe blended frozen iced shake",
+  "caramel-frappe": "frappe blended frozen iced shake",
+  "land-slide": "frappe blended frozen iced shake",
+  "pistachio-frappe": "frappe blended frozen iced shake",
+  "watermelon-sour": "refresher juice fruity fruit cold",
+  "tropical-infusion": "refresher juice fruity fruit cold",
+  "blood-orange": "refresher juice fruity fruit cold",
+  "green-lantern": "refresher juice fruity fruit cold",
+  "hibiscus": "refresher juice fruity fruit cold",
+  "oj": "refresher juice fruity fruit cold",
+  "pomegranate": "refresher juice fruity fruit cold",
+  "lemonade": "refresher juice fruity fruit cold",
+  "apple-juice": "refresher juice fruity fruit cold",
+  "hawaiian-breeze": "refresher juice fruity fruit cold",
+  "strawberry-banana": "smoothie fruit blended",
+  "very-berry": "smoothie fruit blended",
+  "hawaiian-vacation": "smoothie fruit blended",
+  "green-machine": "smoothie fruit blended",
+  "italian-soda": "caffeine free",
+  "redbull": "caffeine free",
+  "hot-chocolate": "caffeine free",
+  "white-hot-chocolate": "caffeine free",
+  "mexican-hot-chocolate": "caffeine free",
+  "tuxedo-hot-chocolate": "caffeine free",
+  "chocolate-milk": "caffeine free",
+  "cold-milk": "caffeine free",
+  "steamer": "caffeine free",
+  "brownie": "pastry dessert sweet bakery snack treat",
+  "choc-chip-cookie": "pastry dessert sweet bakery snack treat",
+  "white-mac-cookie": "pastry dessert sweet bakery snack treat",
+  "oatmeal-cookie": "pastry dessert sweet bakery snack treat",
+  "sugar-cookie": "pastry dessert sweet bakery snack treat",
+  "plain-croissant": "pastry dessert sweet bakery snack treat",
+  "blueberry-scone": "pastry dessert sweet bakery snack treat",
+  "chocolate-scone": "pastry dessert sweet bakery snack treat",
+  "muffin": "pastry dessert sweet bakery snack treat",
+  "pumpkin-muffin": "pastry dessert sweet bakery snack treat"
+ },
+ "meals": [
+  {
+   "id": "drinks",
+   "name": "Drinks",
+   "note": "Hot, iced and blended · all day"
+  },
+  {
+   "id": "breakfast",
+   "name": "Breakfast",
+   "note": "Served all day"
+  },
+  {
+   "id": "lunch",
+   "name": "Lunch & dinner",
+   "note": "Served all day"
+  },
+  {
+   "id": "sweets",
+   "name": "Sweets",
+   "note": "Pastries & cookies · all day"
+  }
+ ]
+}
