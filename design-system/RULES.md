@@ -295,3 +295,10 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Anything with choices or "Goes great with it" opens the dish page first, from Home, Order, search and holiday rows alike. Only plain items add straight away; "Order again" repeats the saved usual exactly.
 - Guarded by engine/bag.test.mjs and the daily screen check, which clicks every + on screen.
 
+
+## 25. The bottom bar never goes away
+
+- Home, Order, Rewards and Account stay on screen and tappable at all times: over dish pages, full screen, customize, the bag and every sheet. Sheets open in the space above the bar.
+- Tapping a tab while a dish page or sheet is open closes it and goes to that tab.
+- Every dish page has a visible close (✕) button at the top right, in every state. Pulling down and tapping outside also close it.
+- The daily screen check fails if the bar is covered or the ✕ is missing.

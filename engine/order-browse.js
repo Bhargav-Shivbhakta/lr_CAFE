@@ -1,5 +1,5 @@
-/*BAG*/
 // ---------- the Order flow (approved on the design canvas, Nov 24): search icon, meal bar, popular, "what kind?", sorted kinds, the dish sheet ----------
+/*BAG*/
 const OITEMS = D.menu.map((m) => ({ id: m.id, n: m.name, d: m.desc || '', p: m.price, c: m.cat, f: m.flags }));
 const ENG = (() => {
   const ITEMS = OITEMS, BYID = Object.fromEntries(OITEMS.map((i) => [i.id, i]));
@@ -216,17 +216,20 @@ function toBag(id, from) {
 function dishSheet(id) {
   const D0 = { id, opt: {}, note: '', qty: 1, pairs: {}, custom: false, full: false, tried: false }; S.dish = D0;
   let host = $('#dish'); if (host) host.remove();
-  $('.screen').insertAdjacentHTML('beforeend', `<div id="dish" style="position:absolute;inset:0;z-index:60">
+  // the app's bottom bar always stays: the dish page lives in the space above it
+  const navH = $('#tabs') && $('#tabs').style.display !== 'none' ? 83 : 0;
+  $('.screen').insertAdjacentHTML('beforeend', `<div id="dish" style="position:absolute;left:0;right:0;top:0;bottom:${navH}px;z-index:60">
     <button class="press" id="dish-scrim" aria-label="Close" style="position:absolute;inset:0;border:0;background:rgba(43,29,22,0);transition:background-color 260ms"></button>
-    <div id="dish-panel" role="dialog" aria-label="${MENU[id].name}" style="position:absolute;left:0;right:0;bottom:0;height:752px;transform:translateY(100%);background:${C.G};border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;transition:transform 380ms cubic-bezier(.32,.72,0,1),height 460ms cubic-bezier(.32,.72,0,1),border-radius 460ms cubic-bezier(.32,.72,0,1)">
+    <div id="dish-panel" role="dialog" aria-label="${MENU[id].name}" style="position:absolute;left:0;right:0;bottom:0;height:calc(100% - 92px);transform:translateY(100%);background:${C.G};border-radius:26px 26px 0 0;overflow:hidden;display:flex;flex-direction:column;transition:transform 380ms cubic-bezier(.32,.72,0,1),height 460ms cubic-bezier(.32,.72,0,1),border-radius 460ms cubic-bezier(.32,.72,0,1)">
       <div id="dish-sc" class="scroll" style="flex:1;overflow-y:auto"></div>
       <button class="press" id="dish-back" aria-label="Back to the dish" style="display:none;position:absolute;left:14px;top:${14}px;z-index:3;width:42px;height:42px;border-radius:21px;border:0;background:rgba(255,253,248,.95);box-shadow:0 2px 10px rgba(43,29,22,.25);align-items:center;justify-content:center">${oi('back', 20, C.INK, 2.2)}</button>
-      <div id="dish-bar" style="display:flex;gap:12px;align-items:center;padding:12px 20px 26px;background:${C.G};box-shadow:0 -8px 16px -12px rgba(43,29,22,.3)"></div></div></div>`);
+      <button class="press" id="dish-x" aria-label="Close" style="display:flex;position:absolute;right:14px;top:14px;z-index:3;width:42px;height:42px;border-radius:21px;border:0;background:rgba(255,253,248,.95);box-shadow:0 2px 10px rgba(43,29,22,.25);align-items:center;justify-content:center;transition:top 460ms cubic-bezier(.32,.72,0,1)">${oi('x', 18, C.INK, 2.4)}</button>
+      <div id="dish-bar" style="display:flex;gap:12px;align-items:center;padding:12px 20px ${navH ? 12 : 26}px;background:${C.G};box-shadow:0 -8px 16px -12px rgba(43,29,22,.3)"></div></div></div>`);
   host = $('#dish'); const panel = $('#dish-panel'), sc = $('#dish-sc');
   requestAnimationFrame(() => { panel.style.transform = 'translateY(0)'; $('#dish-scrim').style.background = 'rgba(43,29,22,.45)'; });
   const close = () => { panel.style.transform = 'translateY(100%)'; $('#dish-scrim').style.background = 'rgba(43,29,22,0)'; setTimeout(() => host.remove(), 380); S.dish = null; };
-  const size = () => { const big = S.dish.custom || S.dish.full; panel.style.height = big ? '844px' : '752px'; panel.style.borderRadius = big ? '0' : '26px 26px 0 0'; $('#dish-back').style.display = S.dish.custom ? 'flex' : 'none'; };
-  $('#dish-scrim').onclick = close;
+  const size = () => { const big = S.dish.custom || S.dish.full; panel.style.height = big ? '100%' : 'calc(100% - 92px)'; $('#dish-x').style.top = $('#dish-back').style.top = big ? '54px' : '14px'; panel.style.borderRadius = big ? '0' : '26px 26px 0 0'; $('#dish-back').style.display = S.dish.custom ? 'flex' : 'none'; };
+  $('#dish-scrim').onclick = close; $('#dish-x').onclick = close;
   sc.addEventListener('scroll', () => { if (sc.scrollTop > 6 && !S.dish.full) { S.dish.full = true; size(); } }, { passive: true });
   // pull down past a limit at the top: full screen steps back to the sheet; on the sheet it closes
   let y0 = null, dy = 0, wheel = 0, wt;
@@ -253,7 +256,7 @@ function dishSheet(id) {
           return `<button class="press" data-pair="${x}" aria-pressed="${on}" style="display:flex;align-items:center;gap:12px;padding:8px 12px 8px 8px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${on ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};text-align:left;color:inherit">${photo('52px', 52, MENU[x].name, tone(MENU[x].cat), 12, false)}<span style="flex:1;min-width:0;display:flex;flex-direction:column;white-space:normal"><b style="font-size:14px">${MENU[x].name}</b><span style="font-size:12.5px;color:${C.MUT}">+${money(MENU[x].price)}</span></span><span style="width:26px;height:26px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;${on ? `background:${C.RED}` : 'box-shadow:inset 0 0 0 2px #C9BBA8'};color:#fff;font-size:15px;font-weight:800">${on ? '✓' : ''}</span></button>`; }).join('')}</div></div>` : ''}
         ${av.ok && gs.length ? `<button class="press" id="dish-cust" style="margin:18px 20px 0;width:calc(100% - 40px);min-height:58px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${missing && d.tried ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};display:flex;align-items:center;gap:12px;padding:10px 14px;text-align:left;color:inherit">
             <span style="width:34px;height:34px;border-radius:17px;background:${C.TINT};display:flex;align-items:center;justify-content:center;flex:none">${mIcon('sliders', 17, C.INK, 2)}</span>
-            <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;white-space:normal"><b style="font-size:15px">${pz.summary ? 'Your choices' : 'Make it yours'}</b><span style="font-size:12.5px;line-height:1.35;color:${missing ? C.RED : C.MUT}">${missing ? 'Required: ' + miss.replace('Choose ', 'choose ') : pz.summary ? pz.summary + ' · Edit' : 'Customize ' + gs.map((g) => g.name.toLowerCase().replace('your ', '')).slice(0, 3).join(', ')}</span></span>${oi('chev', 18, C.MUT, 2.2).replace('<path d="m6 9 6 6 6-6"/>', '<path d="m9 6 6 6-6 6"/>')}</button>` : ''}
+            <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;white-space:normal"><b style="font-size:15px">${pz.summary ? 'Your choices' : 'Make it yours'}</b><span style="font-size:12.5px;line-height:1.35;color:${missing ? C.RED : C.MUT}">${missing ? 'Required: ' + miss.replace('Choose ', 'choose ') : pz.summary ? pz.summary + ' · Edit' : gs.map((g) => { const n = g.name.replace(/^your /i, ''); return n[0].toUpperCase() + n.slice(1); }).slice(0, 3).join(' · ')}</span></span>${oi('chev', 18, C.MUT, 2.2).replace('<path d="m6 9 6 6 6-6"/>', '<path d="m9 6 6 6-6 6"/>')}</button>` : ''}
         <div style="height:22px"></div>`;
     } else {
       sc.innerHTML = head + `<div style="padding:16px 20px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${C.RED}">Customize</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:24px;line-height:1.15">${m.name}</h2><span style="font-size:13px;color:${C.MUT}">${missing ? 'Pick the required choices, then add extras if you like.' : 'Change anything you like. Extras show their price.'}</span></div>

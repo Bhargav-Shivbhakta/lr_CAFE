@@ -109,6 +109,15 @@ async function checkAdds(label) {
     syncChrome(); return out; });
   bad.forEach((t) => problems.push(`[${label}] ${t}`));
 }
+// the bottom bar never goes away, and every dish page can be closed with a visible X
+async function checkChrome(label) {
+  const bad = await p.evaluate(() => { const out = [], t = $('#tabs'); if (!t || getComputedStyle(t).display === 'none') return out;
+    const r = t.getBoundingClientRect(), hit = document.elementFromPoint(r.x + r.width / 2, r.y + 30);
+    if (!hit || !hit.closest('#tabs')) out.push('the bottom bar is covered');
+    const d = $('#dish'); if (d) { const x = $('#dish-x'); if (!x || !x.offsetParent || x.getBoundingClientRect().width < 40) out.push('the dish page has no visible close (X) button'); }
+    return out; });
+  bad.forEach((t) => problems.push(`[${label}] ${t}`));
+}
 const scrollAll = async (sel, label) => { const h = await p.evaluate((s) => { const e = document.querySelector(s); return e ? e.scrollHeight : 0; }, sel); for (let y = 0; y < h; y += 600) { await p.evaluate((s, y) => { const e = document.querySelector(s); if (e) e.scrollTo(0, y); }, sel, y); await scan(`${label} @${y}`); } };
 
 await start();
@@ -128,15 +137,16 @@ await p.evaluate(() => go('order')); await wait(1200);
 for (const meal of ['drinks', 'breakfast', 'lunch', 'sweets']) {
   await click(`[data-meal="${meal}"]`); await wait(600); await p.evaluate(() => document.querySelector('#order-scroll').scrollTo(0, 0));
   await scrollAll('#order-scroll', `Order · ${meal}`);
-  await checkAdds(`Order · ${meal}`);
+  await checkAdds(`Order · ${meal}`); await checkChrome(`Order · ${meal}`);
   const grps = await p.evaluate(() => [...document.querySelectorAll('[data-grp]')].map((b) => b.dataset.grp));
   for (const g of grps) {
     await click(`[data-grp="${g}"]`); await wait(700);
     await scrollAll('#order-scroll', `Order · ${g}`);
     const first = await p.evaluate(() => { const b = document.querySelector('#v-order [data-open]'); return b && b.dataset.open; });
     if (first) {
-      await click(`#v-order [data-open="${first}"]`); await wait(900); await scan(`Dish · ${first}`);
-      if (await click('#dish-cust')) { await wait(800); await scrollAll('#dish-sc', `Customize · ${first}`); }
+      await click(`#v-order [data-open="${first}"]`); await wait(900); await scan(`Dish · ${first}`); await checkChrome(`Dish · ${first}`);
+      await p.evaluate(() => $('#dish-sc').scrollTo(0, 200)); await wait(700); await checkChrome(`Dish full screen · ${first}`);
+      if (await click('#dish-cust')) { await wait(800); await scrollAll('#dish-sc', `Customize · ${first}`); await checkChrome(`Customize · ${first}`); }
       await p.evaluate(() => { const d = document.querySelector('#dish'); if (d) d.remove(); S.dish = null; });
     }
     await click('#o-back'); await wait(500);
