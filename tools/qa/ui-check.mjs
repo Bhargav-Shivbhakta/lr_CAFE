@@ -111,15 +111,20 @@ for (const meal of ['drinks', 'breakfast', 'lunch', 'sweets']) {
 const ids = await p.evaluate(() => D.menu.map((m) => m.id));
 for (const id of ids) { await p.evaluate((i) => dishSheet(i), id); await wait(30); await p.evaluate(() => { const d = document.querySelector('#dish'); if (d) d.remove(); S.dish = null; }); }
 // search: people's words find the right dish
-const SEARCH = [['burito', 'Breakfast burrito'], ['iced latte', null], ['vegan under 12', null], ['chiken sandwich', 'Chipotle chicken sandwich'], ['capuccino', 'Cappuccino'], ['sushi', 'We don’t have'], ['pumkin', 'Pumpkin']];
+const SEARCH = [['bacon', 'Dishes with bacon'], ['philly cheesesteak', 'no longer on the menu'], ['burito', 'Breakfast burrito'], ['iced latte', null], ['vegan under 12', null], ['chiken sandwich', 'Chipotle chicken sandwich'], ['capuccino', 'Cappuccino'], ['sushi', 'We don’t have'], ['pumkin', 'Pumpkin']];
 await p.evaluate(() => { S.o.sOpen = true; rOrder(); }); await wait(500);
 for (const [q, expect] of SEARCH) {
   await p.evaluate((q) => { S.o.q = q; document.querySelector('#o-sres').innerHTML = oSearch(); }, q); await wait(150);
   const txt = await p.evaluate(() => document.querySelector('#o-sres').innerText);
   if (expect && !txt.includes(expect)) problems.push(`[Search] “${q}” should show “${expect}”`);
   if (!expect && /We don’t have/.test(txt)) problems.push(`[Search] “${q}” found nothing`);
+  if (q === 'bacon' && txt.indexOf('Garlic aioli bacon burger') > txt.indexOf('Side of bacon')) problems.push('[Search] “bacon” should show dishes with bacon before the sides');
   await scan(`Search · ${q}`);
 }
+await p.evaluate(() => { S.o.sOpen = false; S.o.q = ''; S.avail.brkEnds = '15:00'; S.avail.soldOut = new Set(['breakfast-burrito', 'cold-brew']); S.now = '2027-03-10T16:30:00'; S.o.meal = 'breakfast'; S.o.grp = null; rOrder(); }); await wait(600); await scan('Order · breakfast after hours');
+await p.evaluate(() => dishSheet('breakfast-burrito')); await wait(800); await scan('Dish · sold out');
+if (!(await p.evaluate(() => /Sold out today/.test(document.querySelector('#dish-go').textContent)))) problems.push('[Sold out] the dish page should say “Sold out today”');
+await p.evaluate(() => { const d = document.querySelector('#dish'); if (d) d.remove(); S.avail.brkEnds = null; S.avail.soldOut = new Set(); });
 await p.evaluate(() => { S.o.sOpen = false; S.o.q = ''; go('rewards'); }); await wait(900); await scrollAll('#v-rewards .scroll', 'Rewards');
 await p.evaluate(() => go('account')); await wait(900); await scrollAll('#v-account .scroll', 'Account');
 jsErr.forEach((e) => problems.push(`[JavaScript] ${e}`));

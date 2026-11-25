@@ -23,20 +23,47 @@ const isPop = (id) => OB[id] && OB[id].f.includes('p');
 const popBadge = (id) => (isPop(id) ? `<span style="font-size:11px;font-weight:700;color:${C.RED};background:${C.RED}1A;border-radius:999px;padding:2px 7px">Popular</span>` : '');
 const SEL = (on) => (on ? `background:${C.INK};color:${C.G}` : `background:${C.SURF};box-shadow:inset 0 0 0 1px ${C.LINE};color:${C.INK}`);
 
+
+// ---------- what can be ordered right now: meal times, sold out, and dishes the café has removed ----------
+S.avail = S.avail || { brkEnds: null, soldOut: new Set() };
+const SIDE_CATS = new Set(['breakfast-sides']);
+function mealWindow(meal) {
+  if (meal === 'breakfast' && S.avail.brkEnds) return { from: '07:00', until: S.avail.brkEnds };
+  const L = (D.cafe.locations || []).find((l) => l.id === S.cafe), mp = L && L.mealPeriods; return mp && mp[meal] ? mp[meal] : null;
+}
+function avail(id) {
+  if (S.avail.soldOut.has(id)) return { ok: false, why: 'soldout', short: 'Sold out', text: 'Sold out today', back: 'tomorrow' };
+  const meal = { Breakfast: 'breakfast', 'Lunch & dinner': 'lunch' }[(D.og.where[id] || [])[0]], w = meal && mealWindow(meal);
+  if (!w) return { ok: true };
+  const t = now(), hm = t.getHours() * 60 + t.getMinutes(), mins = (x) => +x.split(':')[0] * 60 + +x.split(':')[1];
+  if (hm >= mins(w.from) && hm < mins(w.until)) return { ok: true };
+  const name = meal === 'breakfast' ? 'Breakfast' : 'Lunch & dinner';
+  return { ok: false, why: 'time', short: `From ${hhmm(w.from)}`, text: `${name} is served ${hhmm(w.from)} – ${hhmm(w.until)}`, back: hm < mins(w.from) ? `today at ${hhmm(w.from)}` : `tomorrow at ${hhmm(w.from)}` };
+}
+// the closest things you can order instead: same kind first, then the same group, popular first
+function similar(id, n = 3) {
+  const w = D.og.where[id] || [], g = Object.values(OG).flat().find((x) => x.ids.includes(id)); if (!g) return [];
+  const sub = (g.subs.find(([, ids]) => ids.includes(id)) || [null, []])[1];
+  return [...new Set(sub.concat(g.ids))].filter((x) => x !== id && avail(x).ok).slice(0, n);
+}
+const dim = (id) => (avail(id).ok ? '' : 'opacity:.55;filter:grayscale(.85);');
+const availTag = (id) => { const a = avail(id); return a.ok ? '' : `<span style="position:absolute;left:8px;top:8px;z-index:1;font-size:11.5px;font-weight:800;padding:4px 9px;border-radius:999px;background:${a.why === 'soldout' ? C.INK : C.SURF};color:${a.why === 'soldout' ? C.G : C.INK};box-shadow:0 1px 4px rgba(43,29,22,.2)">${a.short}</span>`; };
+
 // a photo card: square photo, name and price under it, + in the corner
 function gcard(id) {
   const m = MENU[id];
-  return `<div style="position:relative"><button class="press" data-open="${id}" aria-label="${m.name}, ${money(m.price)}" style="width:100%;border:0;padding:0;border-radius:20px;overflow:hidden;background:${C.SURF};box-shadow:${C.EL1};text-align:left;color:inherit;display:flex;flex-direction:column">
+  const ok = avail(id).ok;
+  return `<div style="position:relative">${availTag(id)}<button class="press" data-open="${id}" aria-label="${m.name}, ${money(m.price)}${ok ? '' : ', ' + avail(id).text}" style="${dim(id)}width:100%;border:0;padding:0;border-radius:20px;overflow:hidden;background:${C.SURF};box-shadow:${C.EL1};text-align:left;color:inherit;display:flex;flex-direction:column">
     ${lazy(photo('100%', 'sq', m.name, tone(m.cat), 0, false))}
-    <span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px 12px"><b style="font-size:14px;font-weight:650;line-height:1.25;min-height:35px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${m.name}</b><span style="display:flex;gap:6px;align-items:center"><b style="font-size:13.5px">${money(m.price)}</b>${popBadge(id)}</span></span></button>
-    <button class="press" data-qadd="${id}" aria-label="Add ${m.name}" style="position:absolute;right:8px;top:8px;width:40px;height:40px;border-radius:20px;border:0;background:${C.RED};color:#fff;font-size:22px;line-height:1;box-shadow:0 2px 8px rgba(43,29,22,.3)">+</button></div>`;
+    <span style="display:flex;flex-direction:column;gap:3px;padding:10px 12px 12px;white-space:normal"><b style="font-size:14px;font-weight:650;line-height:1.25;min-height:35px">${m.name}</b><span style="display:flex;gap:6px;align-items:center"><b style="font-size:13.5px">${money(m.price)}</b>${popBadge(id)}</span></span></button>
+    ${ok ? `<button class="press" data-qadd="${id}" aria-label="Add ${m.name}" style="position:absolute;right:8px;top:8px;width:40px;height:40px;border-radius:20px;border:0;background:${C.RED};color:#fff;font-size:22px;line-height:1;box-shadow:0 2px 8px rgba(43,29,22,.3)">+</button>` : ''}</div>`;
 }
 function srow(id) {
-  const m = MENU[id], w = (D.og.where[id] || []).join(' · ');
-  return `<div style="display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid ${C.LINE}">
+  const m = MENU[id], a = avail(id), w = a.ok ? (D.og.where[id] || []).join(' · ') : a.text;
+  return `<div style="display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid ${C.LINE};${dim(id)}">
     <button class="press" data-open="${id}" aria-label="${m.name}, ${money(m.price)}" style="flex:1;min-width:0;display:flex;gap:12px;align-items:center;border:0;background:none;padding:0;text-align:left;color:inherit">${lazy(photo('72px', 72, m.name, tone(m.cat), 14, false))}
-      <span style="display:flex;flex-direction:column;gap:3px;min-width:0"><b style="font-size:15px;font-weight:650;line-height:1.25">${m.name}</b><span style="font-size:12px;font-weight:600;color:${C.RED}">${w}</span><span style="display:flex;gap:6px;align-items:center"><b style="font-size:13.5px">${money(m.price)}</b>${popBadge(id)}</span></span></button>
-    <button class="press" data-qadd="${id}" aria-label="Add ${m.name}" style="flex:none;width:44px;height:44px;border-radius:22px;border:0;background:${C.RED};color:#fff;font-size:24px;line-height:1">+</button></div>`;
+      <span style="display:flex;flex-direction:column;gap:3px;min-width:0;white-space:normal"><b style="font-size:15px;font-weight:650;line-height:1.25">${m.name}</b><span style="font-size:12px;font-weight:600;color:${C.RED}">${w}</span><span style="display:flex;gap:6px;align-items:center"><b style="font-size:13.5px">${money(m.price)}</b>${popBadge(id)}</span></span></button>
+    ${a.ok ? `<button class="press" data-qadd="${id}" aria-label="Add ${m.name}" style="flex:none;width:44px;height:44px;border-radius:22px;border:0;background:${C.RED};color:#fff;font-size:24px;line-height:1">+</button>` : `<span style="flex:none;font-size:12px;font-weight:800;color:${C.MUT}">${a.short}</span>`}</div>`;
 }
 
 // the top: "Order", and a round search button that grows into the search bar
@@ -58,11 +85,13 @@ function oTiles() {
   const id = oMeal(), m = mealOf(id), gs = OG[id], n = gs.reduce((a, g) => a + g.ids.length, 0);
   const kind = { drinks: 'drink', breakfast: 'breakfast', lunch: 'lunch or dinner', sweets: 'sweet' }[id];
   return `<div style="display:flex;justify-content:space-between;align-items:baseline;margin:18px 0 4px"><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:22px">${m.name}</h2><span style="font-size:12.5px;color:${C.MUT}">${m.note} · ${n} items</span></div>
+    ${(() => { const any = gs[0] && gs[0].ids[0], a = any && avail(any); if (!a || a.ok || a.why !== 'time') return '';
+      return `<div role="status" style="margin-top:12px;padding:12px 14px;border-radius:16px;background:${C.TINT};display:flex;gap:10px;align-items:flex-start">${oi('clock', 20, C.RED)}<span style="font-size:13.5px;line-height:1.45"><b>${a.text}.</b> It’s back ${a.back}. You can look around now; ordering opens then.${id === 'breakfast' ? ` <button class="press" data-meal="lunch" style="border:0;background:none;padding:0;font-size:13.5px;font-weight:700;color:${C.RED};text-decoration:underline">See lunch & dinner</button>` : ''}</span></div>`; })()}
     <h3 style="margin:14px 0 0;font-size:15px;font-weight:700">Most popular</h3>
     <div class="hscroll" style="display:flex;gap:12px;overflow-x:auto;margin:10px -20px 0;padding:2px 20px 8px;scrollbar-width:none">${OPOP[id].map((x) => `<div style="flex:none;width:150px">${gcard(x)}</div>`).join('')}</div>
     <h3 style="margin:16px 0 10px;font-size:15px;font-weight:700">What kind of ${kind}?</h3>
     <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:12px">${gs.map((g) => { const h = g.ids.find((x) => (D.photos || {})[x]) || g.ids[0];
-      return `<button class="press" data-grp="${g.id}" aria-label="${g.name}, ${g.ids.length} items" style="border:0;padding:0;border-radius:18px;overflow:hidden;background:${C.SURF};box-shadow:${C.EL1};text-align:left;color:inherit;display:flex;flex-direction:column">${lazy(photo('100%', 'sq', MENU[h].name, tone(MENU[h].cat), 0, false))}<span style="padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px"><b style="font-size:14.5px;line-height:1.2">${g.name}</b><span style="font-size:12px;color:${C.MUT};line-height:1.35">${g.sub}</span><span style="font-size:12px;font-weight:700;color:${C.RED};margin-top:2px">${g.ids.length} items</span></span></button>`; }).join('')}</div>`;
+      return `<button class="press" data-grp="${g.id}" aria-label="${g.name}, ${g.ids.length} items" style="border:0;padding:0;border-radius:18px;overflow:hidden;background:${C.SURF};box-shadow:${C.EL1};text-align:left;color:inherit;display:flex;flex-direction:column">${lazy(photo('100%', 'sq', MENU[h].name, tone(MENU[h].cat), 0, false))}<span style="padding:10px 12px 12px;display:flex;flex-direction:column;gap:2px;white-space:normal"><b style="font-size:14.5px;line-height:1.2">${g.name}</b><span style="font-size:12px;color:${C.MUT};line-height:1.35">${g.sub}</span><span style="font-size:12px;font-weight:700;color:${C.RED};margin-top:2px">${g.ids.length} items</span></span></button>`; }).join('')}</div>`;
 }
 const DT = { v: (x) => OB[x].f.includes('v') || OB[x].f.includes('vg'), vg: (x) => OB[x].f.includes('vg'), gf: (x) => OB[x].f.includes('gf') };
 const DN = { v: 'Vegetarian', vg: 'Vegan', gf: 'Gluten-free' }, SN = { pop: 'Popular first', low: 'Price: low to high', high: 'Price: high to low' };
@@ -91,12 +120,21 @@ function oSearch() {
   if (!q) return `<div style="margin:16px 0 4px;display:flex;flex-direction:column;gap:4px"><b style="font-size:16px">What are you craving?</b><span style="font-size:13px;color:${C.MUT}">Type a dish, a taste or a budget. Or start with one of these:</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">${['Iced latte', 'Breakfast burrito', 'Something sweet', 'Vegan', 'Under $10', 'Spicy', 'Salad', 'Cold brew'].map(chip).join('')}</div>`;
   const r = ENG.search(q), extra = r.notes.length ? ' · ' + r.notes.join(' · ') : '';
+  const gone = (D.og.retired || []).find((x) => { const a = x.name.toLowerCase(), b = q.toLowerCase(); return a.includes(b) || b.includes(a) || ENG.search(x.name).toks.join(' ') === r.toks.join(' '); });
+  if (gone && !r.list.some((it) => it.n.toLowerCase().includes(q.toLowerCase()))) return `<div style="margin:16px 0 4px;display:flex;flex-direction:column;gap:4px"><b style="font-size:16px">${gone.name} is no longer on the menu</b><span style="font-size:13px;color:${C.MUT}">${gone.note || 'The café took it off the menu.'} These are the closest:</span></div>${gone.similar.filter((x) => MENU[x]).map(srow).join('')}`;
   if (!r.list.length) { const near = [...new Set(r.near)].slice(0, 3).map((w) => w.charAt(0).toUpperCase() + w.slice(1));
     const fall = ['Iced latte', 'Breakfast burrito', 'Salad', 'Vegan', 'Cookie', 'Under $10'].filter((f) => !near.some((n) => n.toLowerCase() === f.toLowerCase()));
     return `<div style="margin:16px 0 4px;display:flex;flex-direction:column;gap:4px"><b style="font-size:16px">We don’t have “${q}”</b><span style="font-size:13px;color:${C.MUT}">${r.notes.length ? 'Nothing matches ' + r.notes.join(' and ') + '. ' : ''}Try something similar:</span></div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">${near.concat(fall).slice(0, 6).map(chip).join('')}</div>`; }
+  const ids = r.list.slice(0, 40).map((it) => it.id), okFirst = (a) => a.filter((x) => avail(x).ok).concat(a.filter((x) => !avail(x).ok));
+  const mains = okFirst(ids.filter((x) => !SIDE_CATS.has(MENU[x].cat))), sides = okFirst(ids.filter((x) => SIDE_CATS.has(MENU[x].cat)));
+  const top = ids[0] && !avail(ids[0]).ok && MENU[ids[0]].name.toLowerCase().includes(q.toLowerCase()) ? ids[0] : null, alt = top ? similar(top) : [];
+  const head = (t) => `<h3 style="margin:18px 0 2px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:18px">${t}</h3>`;
+  const word = r.toks.join(' ');
   return `<div style="margin:16px 0 4px;display:flex;flex-direction:column;gap:4px"><b style="font-size:15px">${r.list.length} ${r.list.length === 1 ? 'dish' : 'dishes'}${r.partial ? ' that match part of' : ' for'} “${q}”</b><span style="font-size:13px;color:${C.MUT}">${r.partial ? 'We don’t have everything you asked for in one dish. These are the closest.' : 'Best matches first'}${extra}</span></div>
-    ${r.list.slice(0, 40).map((it) => srow(it.id)).join('')}`;
+    ${top ? `<div role="status" style="margin-top:10px;padding:12px 14px;border-radius:16px;background:${C.TINT};font-size:13.5px;line-height:1.45"><b>${MENU[top].name}: ${avail(top).text.toLowerCase()}.</b> Back ${avail(top).back}. These are close:</div>${alt.map(srow).join('')}${head('Everything else for “' + q + '”')}` : ''}
+    ${mains.length && sides.length ? head(`Dishes with ${word}`) : ''}${mains.filter((x) => !alt.includes(x)).map(srow).join('')}
+    ${sides.length ? (mains.length ? head('On the side') : '') + sides.filter((x) => !alt.includes(x)).map(srow).join('') : ''}`;
 }
 function rOrder() {
   const v = $('#v-order'), g = S.o.grp && OG[oMeal()].find((x) => x.id === S.o.grp), searching = S.o.sOpen, old = $('#order-scroll');
@@ -165,7 +203,7 @@ function priced(id, opt) {
     else { const ch = g.choices.find((x) => x.label === v); if (ch && (v !== g.def || (g.req && !g.def) || ch.price)) { extra += ch.price; bits.push(v); } } });
   return { full, unit: MENU[id].price + extra, summary: bits.join(' · ') };
 }
-function quickAdd(id) { if (ENG.OPTS(OB[id]).some((g) => g.req && !g.def)) return dishSheet(id); const p = priced(id, {}); add(id, { id, unit: p.unit, summary: '', key: id + '|' + JSON.stringify(p.full) + '|' }); }
+function quickAdd(id) { if (!avail(id).ok) return dishSheet(id); if (ENG.OPTS(OB[id]).some((g) => g.req && !g.def)) return dishSheet(id); const p = priced(id, {}); add(id, { id, unit: p.unit, summary: '', key: id + '|' + JSON.stringify(p.full) + '|' }); }
 
 // ---------- the dish: photo first, "goes great with it", then customize. Scroll and it goes full screen; pull down at the top and it steps back ----------
 function dishSheet(id) {
@@ -191,7 +229,7 @@ function dishSheet(id) {
   sc.addEventListener('touchend', () => { if (dy > 90) pull(); y0 = null; dy = 0; });
   sc.addEventListener('wheel', (e) => { if (sc.scrollTop > 0 || e.deltaY >= 0) { wheel = 0; return; } wheel -= e.deltaY; clearTimeout(wt); wt = setTimeout(() => (wheel = 0), 260); if (wheel > 140) { wheel = 0; pull(); } }, { passive: true });
   const draw = (toTop) => {
-    const d = S.dish, m = MENU[id], it = OB[id], gs = ENG.OPTS(it), val = (g) => (g.key in d.opt ? d.opt[g.key] : g.type === 'many' ? {} : g.def);
+    const av = avail(id), d = S.dish, m = MENU[id], it = OB[id], gs = ENG.OPTS(it), val = (g) => (g.key in d.opt ? d.opt[g.key] : g.type === 'many' ? {} : g.def);
     const missing = gs.find((g) => g.req && !val(g)), pz = priced(id, d.opt), pairIds = ENG.PAIR(it).filter((x) => MENU[x]);
     const pairsTotal = pairIds.filter((x) => d.pairs[x]).reduce((a, x) => a + MENU[x].price, 0), grand = pz.unit * d.qty + pairsTotal;
     const miss = missing ? 'Choose ' + missing.name.replace('Your ', 'your ').replace('Hot or iced', 'hot or iced').replace('Milk', 'your milk') : '';
@@ -202,11 +240,13 @@ function dishSheet(id) {
           <span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${C.RED}">${(D.og.where[id] || [''])[0]}</span>
           <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:26px;line-height:1.15">${m.name}</h2><b style="font-size:17px;white-space:nowrap">${money(m.price)}</b></div>
           ${m.desc ? `<p style="margin:0;font-size:14.5px;line-height:1.5;color:${C.MUT}">${m.desc}</p>` : ''}${tags ? `<div style="display:flex;gap:6px;flex-wrap:wrap">${tags}</div>` : ''}</div>
-        ${pairIds.length ? `<div style="margin:18px 20px 0"><b style="font-size:15px">Goes great with it</b><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">${pairIds.map((x) => { const on = !!d.pairs[x];
-          return `<button class="press" data-pair="${x}" aria-pressed="${on}" style="display:flex;align-items:center;gap:12px;padding:8px 12px 8px 8px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${on ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};text-align:left;color:inherit">${photo('52px', 52, MENU[x].name, tone(MENU[x].cat), 12, false)}<span style="flex:1;min-width:0;display:flex;flex-direction:column"><b style="font-size:14px">${MENU[x].name}</b><span style="font-size:12.5px;color:${C.MUT}">+${money(MENU[x].price)}</span></span><span style="width:26px;height:26px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;${on ? `background:${C.RED}` : 'box-shadow:inset 0 0 0 2px #C9BBA8'};color:#fff;font-size:15px;font-weight:800">${on ? '✓' : ''}</span></button>`; }).join('')}</div></div>` : ''}
-        ${gs.length ? `<button class="press" id="dish-cust" style="margin:18px 20px 0;width:calc(100% - 40px);min-height:58px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${missing && d.tried ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};display:flex;align-items:center;gap:12px;padding:10px 14px;text-align:left;color:inherit">
+        ${av.ok ? '' : `<div role="status" style="margin:16px 20px 0;padding:14px 16px;border-radius:18px;background:${C.TINT}"><b style="font-size:15px">${av.text}</b><div style="font-size:13.5px;color:${C.MUT};margin-top:2px">${av.why === 'soldout' ? 'The café has run out for today. It’s usually back ' + av.back + '.' : 'It’s back ' + av.back + '.'} These are close and you can order them now:</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">${similar(id).map((x) => `<button class="press" data-swap="${x}" style="display:flex;align-items:center;gap:12px;padding:8px 12px 8px 8px;border:0;border-radius:16px;background:${C.SURF};box-shadow:inset 0 0 0 1px ${C.LINE};text-align:left;color:inherit">${photo('52px', 52, MENU[x].name, tone(MENU[x].cat), 12, false)}<span style="flex:1;min-width:0;display:flex;flex-direction:column;white-space:normal"><b style="font-size:14px">${MENU[x].name}</b><span style="font-size:12.5px;color:${C.MUT}">${money(MENU[x].price)}</span></span>${oi('chev', 18, C.MUT, 2.2).replace('<path d="m6 9 6 6 6-6"/>', '<path d="m9 6 6 6-6 6"/>')}</button>`).join('')}</div></div>`}
+        ${av.ok && pairIds.length ? `<div style="margin:18px 20px 0"><b style="font-size:15px">Goes great with it</b><div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">${pairIds.map((x) => { const on = !!d.pairs[x];
+          return `<button class="press" data-pair="${x}" aria-pressed="${on}" style="display:flex;align-items:center;gap:12px;padding:8px 12px 8px 8px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${on ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};text-align:left;color:inherit">${photo('52px', 52, MENU[x].name, tone(MENU[x].cat), 12, false)}<span style="flex:1;min-width:0;display:flex;flex-direction:column;white-space:normal"><b style="font-size:14px">${MENU[x].name}</b><span style="font-size:12.5px;color:${C.MUT}">+${money(MENU[x].price)}</span></span><span style="width:26px;height:26px;border-radius:13px;flex:none;display:flex;align-items:center;justify-content:center;${on ? `background:${C.RED}` : 'box-shadow:inset 0 0 0 2px #C9BBA8'};color:#fff;font-size:15px;font-weight:800">${on ? '✓' : ''}</span></button>`; }).join('')}</div></div>` : ''}
+        ${av.ok && gs.length ? `<button class="press" id="dish-cust" style="margin:18px 20px 0;width:calc(100% - 40px);min-height:58px;border:0;border-radius:16px;background:${C.SURF};box-shadow:${missing && d.tried ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`};display:flex;align-items:center;gap:12px;padding:10px 14px;text-align:left;color:inherit">
             <span style="width:34px;height:34px;border-radius:17px;background:${C.TINT};display:flex;align-items:center;justify-content:center;flex:none">${mIcon('sliders', 17, C.INK, 2)}</span>
-            <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><b style="font-size:15px">${pz.summary ? 'Your choices' : 'Make it yours'}</b><span style="font-size:12.5px;line-height:1.35;color:${missing ? C.RED : C.MUT}">${missing ? 'Required: ' + miss.replace('Choose ', 'choose ') : pz.summary ? pz.summary + ' · Edit' : 'Customize ' + gs.map((g) => g.name.toLowerCase().replace('your ', '')).slice(0, 3).join(', ')}</span></span>${oi('chev', 18, C.MUT, 2.2).replace('<path d="m6 9 6 6 6-6"/>', '<path d="m9 6 6 6-6 6"/>')}</button>` : ''}
+            <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;white-space:normal"><b style="font-size:15px">${pz.summary ? 'Your choices' : 'Make it yours'}</b><span style="font-size:12.5px;line-height:1.35;color:${missing ? C.RED : C.MUT}">${missing ? 'Required: ' + miss.replace('Choose ', 'choose ') : pz.summary ? pz.summary + ' · Edit' : 'Customize ' + gs.map((g) => g.name.toLowerCase().replace('your ', '')).slice(0, 3).join(', ')}</span></span>${oi('chev', 18, C.MUT, 2.2).replace('<path d="m6 9 6 6 6-6"/>', '<path d="m9 6 6 6-6 6"/>')}</button>` : ''}
         <div style="height:22px"></div>`;
     } else {
       sc.innerHTML = head + `<div style="padding:16px 20px 2px;display:flex;flex-direction:column;gap:4px"><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${C.RED}">Customize</span><h2 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:24px;line-height:1.15">${m.name}</h2><span style="font-size:13px;color:${C.MUT}">${missing ? 'Pick the required choices, then add extras if you like.' : 'Change anything you like. Extras show their price.'}</span></div>
@@ -214,13 +254,13 @@ function dishSheet(id) {
           return `<section style="margin:12px 20px 0;padding:14px 16px;border-radius:18px;background:${C.SURF};box-shadow:${g.req && !done && d.tried ? `inset 0 0 0 2px ${C.RED}` : `inset 0 0 0 1px ${C.LINE}`}">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><b style="font-size:15px">${g.name}</b><span style="font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:${g.req && !done ? '#F3DADC' : g.req ? '#E4EEE6' : C.TINT};color:${g.req && !done ? '#8A1324' : g.req ? '#2F6B4A' : C.MUT}">${tag}</span></div>
             <div style="display:flex;flex-direction:column;margin-top:6px">${g.choices.map((ch) => { const on = g.type === 'many' ? !!(v || {})[ch.label] : v === ch.label;
-              return `<button class="press" data-g="${g.key}" data-c="${ch.label.replace(/"/g, '&quot;')}" aria-pressed="${on}" style="display:flex;align-items:center;gap:12px;min-height:46px;padding:0 2px;border:0;border-bottom:1px solid ${C.LINE};background:none;text-align:left;color:inherit"><span style="width:22px;height:22px;flex:none;border-radius:${g.type === 'many' ? '6px' : '11px'};box-sizing:border-box;${on ? (g.type === 'many' ? `background:${C.RED}` : `border:6px solid ${C.RED}`) : 'border:2px solid #C9BBA8'};display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900">${on && g.type === 'many' ? '✓' : ''}</span><span style="flex:1;font-size:14.5px;font-weight:${on ? 700 : 500}">${ch.label}</span><span style="font-size:13.5px;color:${C.MUT};font-weight:600">${ch.price ? '+' + money(ch.price) : ''}</span></button>`; }).join('')}</div></section>`; }).join('')}
+              return `<button class="press" data-g="${g.key}" data-c="${ch.label.replace(/"/g, '&quot;')}" aria-pressed="${on}" style="display:flex;align-items:center;gap:12px;min-height:46px;padding:0 2px;border:0;border-bottom:1px solid ${C.LINE};background:none;text-align:left;color:inherit"><span style="width:22px;height:22px;flex:none;border-radius:${g.type === 'many' ? '6px' : '11px'};box-sizing:border-box;${on ? (g.type === 'many' ? `background:${C.RED}` : `border:6px solid ${C.RED}`) : 'border:2px solid #C9BBA8'};display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900">${on && g.type === 'many' ? '✓' : ''}</span><span style="flex:1;font-size:14.5px;white-space:normal;font-weight:${on ? 700 : 500}">${ch.label}</span><span style="font-size:13.5px;color:${C.MUT};font-weight:600">${ch.price ? '+' + money(ch.price) : ''}</span></button>`; }).join('')}</div></section>`; }).join('')}
         <section style="margin:12px 20px 0;padding:14px 16px;border-radius:18px;background:${C.SURF};box-shadow:inset 0 0 0 1px ${C.LINE}"><label style="display:flex;flex-direction:column;gap:8px"><b style="font-size:15px">Anything else?</b><textarea id="dish-note" rows="2" aria-label="Note for the kitchen" placeholder="Example: cut in half, extra napkins" style="resize:none;border:0;border-radius:12px;background:${C.G};padding:10px 12px;font:inherit;font-size:14px;color:${C.INK};outline:none">${d.note}</textarea></label></section>
         <p style="margin:12px 20px 24px;font-size:12px;color:${C.MUT};line-height:1.45">Drink options and prices are the café’s own online-order options at SDSU. Food extras are priced from the café’s sides.</p></div>`;
     }
-    const label = d.custom ? (missing ? miss : 'Done · ' + money(pz.unit * d.qty)) : missing ? miss : 'Add to bag · ' + money(grand);
+    const label = !av.ok ? (av.why === 'soldout' ? 'Sold out today' : 'Back ' + av.back) : d.custom ? (missing ? miss : 'Done · ' + money(pz.unit * d.qty)) : missing ? miss : 'Add to bag · ' + money(grand);
     $('#dish-bar').innerHTML = `<div style="display:flex;align-items:center;gap:4px;height:52px;padding:0 6px;border-radius:26px;background:${C.SURF};box-shadow:inset 0 0 0 1px ${C.LINE}"><button class="press" id="dq-minus" aria-label="One less" style="width:40px;height:40px;border-radius:20px;border:0;background:none;font-size:22px;color:${C.INK}">−</button><b style="min-width:20px;text-align:center;font-size:16px">${d.qty}</b><button class="press" id="dq-plus" aria-label="One more" style="width:40px;height:40px;border-radius:20px;border:0;background:none;font-size:22px;color:${C.INK}">+</button></div>
-      <button class="press" id="dish-go" style="flex:1;height:52px;border-radius:26px;border:0;background:${missing ? '#8C7F74' : C.RED};color:#fff;font-size:15px;font-weight:700;transition:background-color 200ms">${label}</button>`;
+      <button class="press" id="dish-go" ${av.ok ? '' : 'aria-disabled="true"'} style="flex:1;height:52px;border-radius:26px;border:0;background:${missing || !av.ok ? '#8C7F74' : C.RED};color:#fff;font-size:15px;font-weight:700;transition:background-color 200ms">${label}</button>`;
     sc.scrollTop = keep; size();
     // wiring
     const x = $('#dish-x'); if (x) x.onclick = close;
@@ -233,7 +273,9 @@ function dishSheet(id) {
       if (g.type !== 'many') d.opt = { ...d.opt, [g.key]: lab };
       else { const nv = { ...(v || {}), [lab]: !(v || {})[lab] }; if (g.only1 && g.only1.includes(lab) && nv[lab]) g.only1.forEach((o) => { if (o !== lab) nv[o] = false; }); d.opt = { ...d.opt, [g.key]: nv }; }
       draw(); }));
+    $$('#dish [data-swap]').forEach((b) => (b.onclick = () => { const x = b.dataset.swap; host.remove(); dishSheet(x); }));
     $('#dish-go').onclick = () => {
+      if (!av.ok) return;
       if (missing) { d.tried = true; if (!d.custom) d.custom = true; return draw(!d.custom); }
       if (d.custom) { d.custom = false; return draw(true); }
       const note = (d.note || '').trim(), summary = [pz.summary, note ? '“' + note + '”' : ''].filter(Boolean).join(' · '), key = id + '|' + JSON.stringify(pz.full) + '|' + note;

@@ -2059,5 +2059,43 @@
    "name": "Sweets",
    "note": "Pastries & cookies · all day"
   }
+ ],
+ "retired": [
+  {
+   "name": "Philly cheesesteak",
+   "similar": [
+    "steak-sandwich",
+    "short-rib-grilled-cheese",
+    "sams-burger"
+   ],
+   "note": "Not on the SDSU menu (it’s on the Rancho San Diego menu)."
+  },
+  {
+   "name": "Spinach quiche",
+   "similar": [
+    "quiche",
+    "veggie-crepe",
+    "garden-skillet"
+   ],
+   "note": "Not on the SDSU menu."
+  },
+  {
+   "name": "Tiramisu",
+   "similar": [
+    "brownie",
+    "choc-chip-cookie",
+    "nutella-crepe"
+   ],
+   "note": "Not on the SDSU menu (it’s at La Jolla)."
+  },
+  {
+   "name": "Truffle mac n cheese",
+   "similar": [
+    "chicken-alfredo",
+    "grilled-cheese",
+    "truffle-fries"
+   ],
+   "note": "Not on the SDSU menu (it’s on the Rancho San Diego dinner menu)."
+  }
  ]
 }

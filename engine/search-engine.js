@@ -45,9 +45,11 @@ function search(raw) {
       if (s > 0) { total += s; n++; } else if (mode === 'all') return 0; }
     return mode === 'all' ? total : (n ? total * n / toks.length : 0); };
   const pool = INDEX.filter((x) => okDiet(x.it));
-  const rankS = (mode) => pool.map((x) => ({ it: x.it, s: toks.length ? score(x, mode) : 1 })).filter((r) => r.s > 0)
+  const rankS = (mode) => pool.map((x) => ({ it: x.it, x, s: toks.length ? score(x, mode) : 1 })).filter((r) => r.s > 0)
     .sort((a, b) => b.s - a.s || (b.it.f.includes('p') - a.it.f.includes('p')) || a.it.p - b.it.p);
-  const cut = (l) => { if (!l.length || !toks.length) return l.map((r) => r.it); const top = l[0].s; return l.filter((r) => r.s >= top * 0.55).map((r) => r.it); };
+  // a dish that really has every word you typed (in its name or what's in it) always shows; looser matches only when they're close to the best
+  const exact = (x) => toks.every((t) => x.fields.some(([ws]) => ws.some((w) => w === t || (t.length >= 4 && w.startsWith(t)))));
+  const cut = (l) => { if (!l.length || !toks.length) return l.map((r) => r.it); const top = l[0].s; return l.filter((r) => r.s >= top * 0.55 || exact(r.x)).map((r) => r.it); };
   let list = cut(rankS('all')), partial = false;
   const joined = toks.join(' '), flat = toks.join('');
   const sim = SIMILAR[joined] || SIMILAR[flat] || toks.map((t) => SIMILAR[t]).find(Boolean) || null;
