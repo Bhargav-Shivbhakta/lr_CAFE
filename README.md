@@ -1,5 +1,7 @@
 # Living Room Coffeehouse app
 
+**How it fits together:** see [ARCHITECTURE.md](ARCHITECTURE.md), the system map with every engine, data file and screen.
+
 **A native iOS and Android app** (React Native with Expo, TypeScript), for the App Store and Google Play. Not a web app. The clickable mockup is a web page only for review. See `design-system/RULES.md` §19.
 
 A fresh start. The first version is saved on the `old-app-v1` branch.

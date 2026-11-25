@@ -7,7 +7,7 @@
     "tokens": "node design-system/scripts/build-tokens.mjs",
     "design": "node design-system/scripts/check-design.mjs",
     "design:self-test": "node design-system/scripts/check-design.mjs --self-test",
-    "check": "npm run tokens && npm run design:self-test && npm run design && npm run test:engine && npm run test:notify && npm run test:mascot",
+    "check": "npm run tokens && npm run design:self-test && npm run design && npm run test:engine && npm run test:notify && npm run test:mascot && npm run test:bag",
     "photos": "node tools/photos/process.mjs",
     "test:engine": "node engine/test.mjs",
     "test:notify": "node --experimental-strip-types engine/notify.test.mjs",
@@ -18,7 +18,8 @@
     "qa:ai": "node tools/qa/ai-review.mjs",
     "qa": "npm run qa:security && npm run qa:calendar && npm run qa:ui && npm run qa:copy && npm run qa:ai; node tools/qa/report.mjs",
     "daily": "npm run check && npm run qa",
-    "qa:calendar": "node tools/qa/calendar-check.mjs"
+    "qa:calendar": "node tools/qa/calendar-check.mjs",
+    "test:bag": "node engine/bag.test.mjs"
   },
   "devDependencies": {
     "puppeteer-core": "^25.18.1",

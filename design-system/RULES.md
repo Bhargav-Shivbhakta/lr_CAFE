@@ -289,3 +289,9 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - On a computer the demo shows a phone-sized frame, scaled to fit the window and kept fully on screen. On a real phone it fills the screen.
 - US spelling throughout (favorites, not favourites).
 
+## 24. One door into the bag (see ARCHITECTURE.md)
+
+- Every "+", "Add" and "Order again" calls `toBag(id)` → `Bag.plan()` (engine/bag-engine.js). No screen adds to the bag on its own.
+- Anything with choices or "Goes great with it" opens the dish page first, from Home, Order, search and holiday rows alike. Only plain items add straight away; "Order again" repeats the saved usual exactly.
+- Guarded by engine/bag.test.mjs and the daily screen check, which clicks every + on screen.
+

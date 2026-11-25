@@ -1,3 +1,4 @@
+/*BAG*/
 // ---------- the Order flow (approved on the design canvas, Nov 24): search icon, meal bar, popular, "what kind?", sorted kinds, the dish sheet ----------
 const OITEMS = D.menu.map((m) => ({ id: m.id, n: m.name, d: m.desc || '', p: m.price, c: m.cat, f: m.flags }));
 const ENG = (() => {
@@ -167,7 +168,7 @@ function wireOrder() {
   const fc = $('#o-fclear'); if (fc) fc.onclick = () => { S.o.sort = 'pop'; S.o.diets = {}; rOrder(); };
   $$('[data-try]', v).forEach((b) => (b.onclick = () => { S.o.q = b.dataset.try; rOrder(); const i = $('#o-q'); if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }));
   $$('#v-order [data-open]').forEach((b) => (b.onclick = () => dishSheet(b.dataset.open)));
-  $$('#v-order [data-qadd]').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); S.tap = [e.clientX - $('.screen').getBoundingClientRect().left, e.clientY - $('.screen').getBoundingClientRect().top]; quickAdd(b.dataset.qadd); }));
+  $$('#v-order [data-qadd]').forEach((b) => (b.onclick = (e) => { e.stopPropagation(); S.tap = [e.clientX - $('.screen').getBoundingClientRect().left, e.clientY - $('.screen').getBoundingClientRect().top]; toBag(b.dataset.qadd); }));
 }
 // typing re-draws only the results, so the field keeps its focus and cursor
 function rOrderSearchOnly() {
@@ -203,7 +204,13 @@ function priced(id, opt) {
     else { const ch = g.choices.find((x) => x.label === v); if (ch && (v !== g.def || (g.req && !g.def) || ch.price)) { extra += ch.price; bits.push(v); } } });
   return { full, unit: MENU[id].price + extra, summary: bits.join(' · ') };
 }
-function quickAdd(id) { if (!avail(id).ok) return dishSheet(id); if (ENG.OPTS(OB[id]).some((g) => g.req && !g.def)) return dishSheet(id); const p = priced(id, {}); add(id, { id, unit: p.unit, summary: '', key: id + '|' + JSON.stringify(p.full) + '|' }); }
+// every add button calls toBag; the bag engine decides (see bag-engine.js)
+function toBag(id, from) {
+  const it = OB[id], p = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(it), pairs: ENG.PAIR(it) || [], saved: from === 'usual' && S.user && S.user.usualChoices ? S.user.usualChoices : null });
+  if (p.do === 'sheet') return dishSheet(id);
+  const pz = priced(id, p.choices); const line = { id, unit: pz.unit, summary: pz.summary, key: Bag.lineKey(id, pz.full) };
+  bagPush(id, line); toast(`Added ${MENU[id].name}${pz.summary ? ' · ' + pz.summary : ''}`, () => { S.bag.splice(S.bag.lastIndexOf(line), 1); syncChrome(); });
+}
 
 // ---------- the dish: photo first, "goes great with it", then customize. Scroll and it goes full screen; pull down at the top and it steps back ----------
 function dishSheet(id) {
@@ -279,8 +286,8 @@ function dishSheet(id) {
       if (missing) { d.tried = true; if (!d.custom) d.custom = true; return draw(!d.custom); }
       if (d.custom) { d.custom = false; return draw(true); }
       const note = (d.note || '').trim(), summary = [pz.summary, note ? '“' + note + '”' : ''].filter(Boolean).join(' · '), key = id + '|' + JSON.stringify(pz.full) + '|' + note;
-      for (let k = 0; k < d.qty; k++) add(id, { id, unit: pz.unit, summary, key }, k < d.qty - 1);
-      pairIds.filter((x) => d.pairs[x]).forEach((x) => add(x, { id: x, unit: MENU[x].price, summary: '', key: x + '|' }, true));
+      for (let k = 0; k < d.qty; k++) bagPush(id, { id, unit: pz.unit, summary, key }, k < d.qty - 1);
+      pairIds.filter((x) => d.pairs[x]).forEach((x) => bagPush(x, { id: x, unit: MENU[x].price, summary: '', key: x + '|' }, true));
       const more = pairIds.filter((x) => d.pairs[x]).length; close();
       toast(`Added ${m.name}${d.qty > 1 ? ' ×' + d.qty : ''}${more ? ' + ' + more + ' more' : ''}`);
     };

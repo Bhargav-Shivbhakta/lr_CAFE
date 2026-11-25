@@ -67,6 +67,17 @@ for (const h of holidays) {
   }
 }
 
+// Every holiday that is on has its own food row, and every item in it is on the menu.
+const food = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/holiday-food.json'), 'utf8')).holidays;
+const menuIds = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'data/menu.json'), 'utf8')).items.map((m) => m.id));
+const SHARES = { anniversary: 'thanksgiving' }; // the café's anniversary uses Thanksgiving's look and food
+for (const h of holidays.filter((x) => x.enabled)) {
+  const f = food[SHARES[h.id] || h.id];
+  if (!f) { problems.push(`${h.id} has no food row in data/holiday-food.json`); continue; }
+  for (const id of f.items) if (!menuIds.has(id)) problems.push(`${h.id} food row lists "${id}", which is not on the menu`);
+  if (f.items.length < 3) warnings.push(`${h.id} food row has only ${f.items.length} items`);
+}
+
 // New Year greeting must show the year that is starting.
 for (const y of years) {
   const d = new Date(y, 11, 31), shown = d.getMonth() === 11 ? d.getFullYear() + 1 : d.getFullYear();

@@ -97,6 +97,18 @@ async function scan(label) {
   u(r.tight).forEach((t) => problems.push(`[${label}] text touches the edge of its button: “${t}”`));
 }
 const click = (sel) => p.evaluate((s) => { const e = document.querySelector(s); if (!e) return false; e.click(); return true; }, sel);
+// every add button must go through the bag engine: if it has anything to choose or offer, the dish page opens
+async function checkAdds(label) {
+  const bad = await p.evaluate(async () => { const out = [];
+    for (const bt of [...document.querySelectorAll('.screen [data-add], .screen [data-qadd]')]) { if (!bt.offsetParent) continue;
+      const id = bt.dataset.add || bt.dataset.qadd, plan = Bag.plan({ available: avail(id).ok, groups: ENG.OPTS(OB[id]), pairs: ENG.PAIR(OB[id]) || [] }), before = S.bag.length;
+      bt.click(); await new Promise((r) => setTimeout(r, 60)); const opened = !!document.querySelector('#dish'), added = S.bag.length > before;
+      if (plan.do === 'sheet' && !opened) out.push(`${MENU[id].name}: + skipped the dish page (${plan.why})${added ? ' and went straight into the bag' : ''}`);
+      if (plan.do === 'add' && !added) out.push(`${MENU[id].name}: + did nothing`);
+      const d = document.querySelector('#dish'); if (d) d.remove(); S.dish = null; S.bag.length = before; }
+    syncChrome(); return out; });
+  bad.forEach((t) => problems.push(`[${label}] ${t}`));
+}
 const scrollAll = async (sel, label) => { const h = await p.evaluate((s) => { const e = document.querySelector(s); return e ? e.scrollHeight : 0; }, sel); for (let y = 0; y < h; y += 600) { await p.evaluate((s, y) => { const e = document.querySelector(s); if (e) e.scrollTo(0, y); }, sel, y); await scan(`${label} @${y}`); } };
 
 await start();
@@ -109,12 +121,14 @@ for (const [d, name] of HOLIDAY_DAYS) {
   if (name === 'New Year' && !/2027/.test(hello)) problems.push(`[holiday] New Year's Eve 2026 greeting should say 2027, says "${hello}"`);
   if (name === 'Christmas' && !(await p.evaluate(() => /Hot cocoa season/.test(document.querySelector('#home-body').innerText)))) problems.push('[holiday] Christmas Home is missing the hot cocoa row');
   await scrollAll('#home-scroll', `Home · ${name}`);
+  await checkAdds(`Home · ${name}`);
 }
 await start();
 await p.evaluate(() => go('order')); await wait(1200);
 for (const meal of ['drinks', 'breakfast', 'lunch', 'sweets']) {
   await click(`[data-meal="${meal}"]`); await wait(600); await p.evaluate(() => document.querySelector('#order-scroll').scrollTo(0, 0));
   await scrollAll('#order-scroll', `Order · ${meal}`);
+  await checkAdds(`Order · ${meal}`);
   const grps = await p.evaluate(() => [...document.querySelectorAll('[data-grp]')].map((b) => b.dataset.grp));
   for (const g of grps) {
     await click(`[data-grp="${g}"]`); await wait(700);

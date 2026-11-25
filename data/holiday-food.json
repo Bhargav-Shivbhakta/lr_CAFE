@@ -1,0 +1,126 @@
+{
+  "$about": "Food each holiday puts on Home, above Specials. Keyed by the holiday id in design-system/tokens/tokens.json → themes.holidays. Items are menu ids from data/menu.json; sold-out or missing items are skipped. Edit here, not in screen code.",
+  "holidays": {
+    "valentines": {
+      "title": "Made for two",
+      "sub": "Sweet things to share this week",
+      "items": [
+        "nutella-crepe",
+        "raspberry-white-mocha",
+        "waffle",
+        "strawberry-banana",
+        "brownie"
+      ]
+    },
+    "holidaySeason": {
+      "title": "Hot cocoa season",
+      "sub": "The holiday favorites, through Dec 26",
+      "items": [
+        "hot-chocolate",
+        "tuxedo-hot-chocolate",
+        "white-hot-chocolate",
+        "mexican-hot-chocolate",
+        "sugar-cookie",
+        "chocolate-scone"
+      ]
+    },
+    "thanksgiving": {
+      "title": "For the table",
+      "sub": "Order ahead for Thursday morning",
+      "items": [
+        "psl",
+        "pumpkin-muffin",
+        "pumpkin-chai",
+        "quiche",
+        "french-toast"
+      ]
+    },
+    "newYear": {
+      "title": "New Year’s brunch",
+      "sub": "For the first morning of the year",
+      "items": [
+        "classic-benedict",
+        "french-toast",
+        "oj",
+        "lox-benedict",
+        "acai-bowl"
+      ]
+    },
+    "july4": {
+      "title": "For the parade",
+      "sub": "Iced, cold and ready to go",
+      "items": [
+        "very-berry",
+        "cold-brew",
+        "watermelon-sour",
+        "lemonade",
+        "sams-burger"
+      ]
+    },
+    "veterans": {
+      "title": "On the menu today",
+      "sub": "A strong cup and a good breakfast",
+      "items": [
+        "house-coffee",
+        "americano",
+        "breakfast-croissant",
+        "blueberry-scone"
+      ]
+    },
+    "halloween": {
+      "title": "Pumpkin everything",
+      "sub": "Through Oct 31",
+      "items": [
+        "psl",
+        "pumpkin-muffin",
+        "pumpkin-shaken",
+        "pumpkin-chai",
+        "cinnamon-cold-brew"
+      ]
+    },
+    "coffeeDay": {
+      "title": "Coffee Day picks",
+      "sub": "Our baristas’ favorites",
+      "items": [
+        "couch-blend",
+        "cortado",
+        "spanish-latte",
+        "cold-brew",
+        "cafe-latte"
+      ]
+    },
+    "mothersDay": {
+      "title": "Brunch for Mom",
+      "sub": "Order ahead for Sunday",
+      "items": [
+        "lox-benedict",
+        "acai-bowl",
+        "earl-grey-matcha",
+        "nutella-crepe",
+        "oj"
+      ]
+    },
+    "fathersDay": {
+      "title": "Dad’s order",
+      "sub": "Big breakfast, strong coffee",
+      "items": [
+        "breakfast-burrito",
+        "short-rib-grilled-cheese",
+        "chorizo-skillet",
+        "americano",
+        "cold-brew"
+      ]
+    },
+    "backToSchool": {
+      "title": "Study fuel",
+      "sub": "For long days on campus",
+      "items": [
+        "dirty-chai",
+        "sdsu-croissant",
+        "cold-brew",
+        "redbull",
+        "choc-chip-cookie"
+      ]
+    }
+  }
+}
