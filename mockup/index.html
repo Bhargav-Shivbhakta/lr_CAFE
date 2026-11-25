@@ -501,7 +501,7 @@ button{font-family:inherit;cursor:pointer;white-space:nowrap} a{color:#A3162B}
 .hrow{display:flex;gap:12px;padding:0 20px;overflow-x:auto;scrollbar-width:none} .hrow::-webkit-scrollbar{display:none}
 .toast{position:absolute;left:20px;right:20px;bottom:120px;height:52px;border-radius:999px;background:#2B1D16;color:#F6F0E6;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 20px;font-size:14px;font-weight:600;box-shadow:0 2px 4px rgba(43,29,22,0.08), 0 16px 40px rgba(43,29,22,0.16);z-index:40;opacity:0;transform:translateY(16px);pointer-events:none;transition:all 240ms cubic-bezier(.2,.8,.2,1)}
 .toast.on{opacity:1;transform:none;pointer-events:auto}
-.sheetwrap{position:absolute;inset:0;z-index:30;display:none} .screen:has(#dish) #bagbar, .screen:has(.sheetwrap.on) #bagbar{display:none!important} .sheetwrap.on{display:block}
+.sheetwrap{position:absolute;inset:0;z-index:30;display:none} .logo-plate{position:absolute;left:-14px;right:-14px;top:-12px;bottom:-12px;border-radius:50%;background:radial-gradient(closest-side,var(--plate,#F6F0E6) 62%,transparent 100%);z-index:-1;pointer-events:none} .screen:has(#dish) #bagbar, .screen:has(.sheetwrap.on) #bagbar{display:none!important} .sheetwrap.on{display:block}
 .sheetwrap .scrim{position:absolute;inset:0;background:rgba(43,29,22,.35);animation:m-scrim-in 380ms linear both}
 .sheetwrap .sheet{position:absolute;left:0;right:0;bottom:0;background:#F6F0E6;border-radius:28px 28px 0 0;padding:10px 20px 40px;display:flex;flex-direction:column;gap:16px;animation:m-sheet-in 380ms cubic-bezier(.32,.72,0,1) both;max-height:86%}
 @keyframes neon{0%,18%{opacity:.15;text-shadow:none}20%{opacity:1}22%{opacity:.3}26%,100%{opacity:1;text-shadow:0 0 12px rgba(200,16,46,.45),0 0 28px rgba(200,16,46,.25)}}
@@ -570,7 +570,7 @@ button{font-family:inherit;cursor:pointer;white-space:nowrap} a{color:#A3162B}
 <p>Use your real location, pick a café on the map, order now or schedule, and add things to the bag. Home is built live by the specials engine and the holiday calendar.</p>
 <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Open the app as</span><div class="ctl"><button data-as="guest">A new guest</button><button data-as="member">Bhargav · last ordered at College Area</button><button data-as="member-lj">Bhargav · last ordered in La Jolla</button></div><span style="font-size:13px;color:#6E5F54">Plays the opening again, then lands where that person would: a guest picks a café and gets the tips, Bhargav goes straight to Home.</span></div>
 <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Pretend today is</span><div class="ctl"><button data-date="">Today</button><button data-date="2026-10-06">A normal day</button><button data-date="2027-02-12">Valentine’s week</button><button data-date="2026-12-20">Christmas</button><button data-date="2026-11-24">Thanksgiving week</button><button data-date="2026-12-31">New Year’s Eve</button><button data-date="2027-07-03">4th of July</button><button data-date="2026-11-11">Veterans Day</button><button data-date="2026-10-29">Halloween</button><button data-date="2026-09-29">Coffee Day</button><button data-date="2027-05-09">Mother’s Day</button><button data-date="2027-06-20">Father’s Day</button><button data-date="2026-08-24">Back to School (College Area)</button><button data-date="2027-02-02">Before Valentine’s (countdown)</button></div><span id="themeinfo" style="font-size:13px;color:#6E5F54"></span><span style="font-size:13px;color:#6E5F54">On a holiday the whole app changes from Home onward. The opening and choosing a café stay the same. Tap the cup on Home to play the holiday animation again.</span></div>
-<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Loading screen</span><span style="font-size:12.5px;color:#6E5F54">Home usually loads too fast to see it. This shows it for 8 seconds.</span><div class="ctl"><button id="demo-loader">Play the loading game</button></div></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Menu right now</span><span style="font-size:12.5px;color:#6E5F54">Breakfast is served 7 AM – 3 PM. Use “Pretend today is” or the time to see it end.</span><div class="ctl"><button data-sold="">Nothing sold out</button><button data-sold="1">A few things sold out</button></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Loading screen</span><span style="font-size:12.5px;color:#6E5F54">The game only appears when the internet is slow or offline. This pretends it is, for 8 seconds.</span><div class="ctl"><button id="demo-loader">Pretend the internet is slow</button></div></div><div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Menu right now</span><span style="font-size:12.5px;color:#6E5F54">Breakfast is served 7 AM – 3 PM. Use “Pretend today is” or the time to see it end.</span><div class="ctl"><button data-sold="">Nothing sold out</button><button data-sold="1">A few things sold out</button></div></div>
 <div style="display:flex;flex-direction:column;gap:8px"><span style="font-size:13px;font-weight:700">Where I am right now</span><div class="ctl"><button data-where="sdsu">Near SDSU</button><button data-where="lajolla">In La Jolla</button><button data-where="inside">Inside the College Area café</button><button data-where="off">Location turned off</button></div></div>
 <div class="ctl"><button id="reset">Start over</button></div>
 <p style="font-size:13px">Photos are placeholders. Busy levels and wait times are examples until the app reads them from Toast. Order, Rewards and Account are the next screens.</p>
@@ -1675,23 +1675,34 @@ function waitForPhotos(root) {
   if (!imgs.length) return Promise.resolve(0);
   S.loading = true; let done = 0; const total = imgs.length;
   const shown = setTimeout(() => showLoader(), 150); // no flash when it's fast
+  // the game is only for a slow or missing connection: still loading after 2.5 s, or the phone is offline
+  const slow = setTimeout(() => startGame(), navigator.onLine === false ? 160 : 2500);
   const each = imgs.map((i) => new Promise((r) => { const ok = () => { done++; const n = $('#ld-n');  r(); }; i.addEventListener('load', ok, { once: true }); i.addEventListener('error', ok, { once: true }); }));
-  return Promise.race([Promise.all(each), new Promise((r) => setTimeout(r, 8000))]).then(() => { clearTimeout(shown); hideLoader(); S.loading = false; (S.afterLoad || []).splice(0).forEach((f) => f()); });
+  return Promise.race([Promise.all(each), new Promise((r) => setTimeout(r, 8000))]).then(() => { clearTimeout(shown); clearTimeout(slow); hideLoader(() => { S.loading = false; (S.afterLoad || []).splice(0).forEach((f) => f()); }); });
 }
-// While Home loads, the cup plays a tiny game: beans fall and the cup follows your finger to gulp them.
-// Loading never waits for the game. If you are playing when Home is ready, we don't yank it away:
+// Home loading, in two steps. Normally: a quiet "Brewing for you…" with the logo and the cup filling (most
+// loads are over before it shows at all). Only when the connection is slow or offline does it turn into a
+// tiny game: beans fall and the cup follows your finger to gulp them. It is only ever used for Home, never
+// for choosing a café or other screens. Loading never waits for the game. If you are playing when Home is ready, we don't yank it away:
 // a "You're all set" pill appears and Home opens when you tap it (or after 5 quiet seconds).
 function showLoader() {
   if ($('#loader')) return;
   const l = document.createElement('div'); l.id = 'loader'; l.setAttribute('role', 'status'); l.setAttribute('aria-live', 'polite');
   l.style.cssText = `position:absolute;inset:0;z-index:55;background:${C.G};overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none`;
-  l.innerHTML = `<div style="position:absolute;left:0;right:0;top:96px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;pointer-events:none">
+  l.innerHTML = `<div style="position:absolute;left:0;right:0;top:62px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;pointer-events:none">
+      <img src="brand/logo-clear.png" alt="Living Room Coffeehouse" width="96" height="91" style="display:block;margin-bottom:8px">
       <span style="font-family:Fraunces,Georgia,serif;font-size:26px;color:${C.INK}">Brewing for you…</span>
-      <span id="bg-hint" style="font-size:14px;color:${C.MUT}">Slide to catch the beans</span>
+      <span id="bg-hint" style="font-size:14px;color:${C.MUT}"></span>
       <span id="bg-score" aria-live="off" style="margin-top:6px;min-height:28px;font-size:15px;font-weight:700;color:${C.RED};font-variant-numeric:tabular-nums"></span></div>
-    <div id="bg-cup" aria-hidden="true" style="position:absolute;bottom:110px;left:0;width:84px;transform:translateX(153px);will-change:transform">${PIPS.eater}</div>
-    <button id="bg-go" class="press" style="display:none;position:absolute;left:50%;top:214px;transform:translateX(-50%);z-index:2;height:52px;padding:0 26px;border:0;border-radius:999px;background:${C.RED};color:#fff;font-size:15.5px;font-weight:700;white-space:nowrap;box-shadow:${C.EL2}">You’re all set · Let’s go</button>`;
+    <div id="bg-cup" aria-hidden="true" style="position:absolute;top:330px;left:50%;transform:translateX(-50%)">${PIPS.loading}</div>
+    <button id="bg-go" class="press" style="display:none;position:absolute;left:50%;top:310px;transform:translateX(-50%);z-index:2;height:52px;padding:0 26px;border:0;border-radius:999px;background:${C.RED};color:#fff;font-size:15.5px;font-weight:700;white-space:nowrap;box-shadow:${C.EL2}">You’re all set · Let’s go</button>`;
   $('.screen').appendChild(l);
+}
+function startGame() {
+  const l = $('#loader'); if (!l || S.game) return;
+  $('#bg-hint', l).textContent = navigator.onLine === false ? 'You’re offline. Catch some beans while we reconnect' : 'Slow connection. Catch some beans while you wait';
+  const c = $('#bg-cup', l); c.style.cssText = 'position:absolute;bottom:110px;left:0;width:84px;will-change:transform'; c.innerHTML = PIPS.eater;
+  c.animate && c.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300 });
   S.game = beanGame(l);
 }
 function beanGame(l) {
@@ -1699,12 +1710,12 @@ function beanGame(l) {
   const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let x = (W - CW) / 2, target = x, n = 0, beans = [], last = performance.now(), spawn = 0, raf = 0, played = false, gulpT = 0;
   const cupTop = H - 110 - 84 + 26; // where the cup's rim is
-  const move = (e) => { const r = l.getBoundingClientRect(), z = parseFloat(getComputedStyle($('.device')).zoom) || 1; target = Math.max(6, Math.min(W - CW - 6, (e.clientX - r.left) / z - CW / 2)); if (!played) { played = true; $('#bg-hint', l).textContent = 'Nice. Keep going!'; } };
+  const hint = $('#bg-hint', l), move = (e) => { const r = l.getBoundingClientRect(), z = parseFloat(getComputedStyle($('.device')).zoom) || 1; target = Math.max(6, Math.min(W - CW - 6, (e.clientX - r.left) / z - CW / 2)); if (!played) { played = true; hint.textContent = 'Nice. Keep going!'; } };
   l.addEventListener('pointerdown', move); l.addEventListener('pointermove', move);
   const bean = () => { const e = document.createElement('div'); e.setAttribute('aria-hidden', 'true');
     e.style.cssText = 'position:absolute;top:0;left:0;width:22px;height:28px;pointer-events:none;will-change:transform';
     e.innerHTML = `<svg viewBox="0 0 22 28" width="22" height="28"><ellipse cx="11" cy="14" rx="9" ry="12.5" fill="#5A3A26"/><path d="M11 3c-4 5 4 9 0 22" stroke="#2B1D16" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`;
-    l.appendChild(e); return { e, x: 14 + Math.random() * (W - 50), y: 200, v: 150 + Math.random() * 90 + Math.min(n * 6, 120), r: Math.random() * 360, vr: (Math.random() - 0.5) * 240 }; };
+    l.appendChild(e); return { e, x: 14 + Math.random() * (W - 50), y: 300, v: 150 + Math.random() * 90 + Math.min(n * 6, 120), r: Math.random() * 360, vr: (Math.random() - 0.5) * 240 }; };
   const gulp = () => { n++; score.textContent = `${n} bean${n === 1 ? '' : 's'}`; cup.innerHTML = PIPS.gulp; clearTimeout(gulpT); gulpT = setTimeout(() => (cup.innerHTML = PIPS.eater), 260);
     cup.animate && cup.animate([{ scale: 1 }, { scale: 1.14 }, { scale: 1 }], { duration: 240, easing: 'cubic-bezier(.3,.7,.3,1)' }); };
   const tick = (t) => { const dt = Math.min(0.05, (t - last) / 1000); last = t;
@@ -1719,9 +1730,11 @@ function beanGame(l) {
   raf = requestAnimationFrame(tick);
   return { played: () => played, score: () => n, stop: () => cancelAnimationFrame(raf) };
 }
-function hideLoader() {
-  const l = $('#loader'); if (!l) return;
-  const g = S.game, go = () => { if (!l.isConnected) return; if (g) g.stop(); S.game = null; if (l.animate) { l.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, fill: 'forwards' }); setTimeout(() => l.remove(), 270); } else l.remove(); };
+// onGone runs once Home is really visible: that is when the holiday act and tips start, so nobody misses them
+function hideLoader(onGone = () => {}) {
+  const l = $('#loader'); if (!l) return onGone();
+  const g = S.game; let gone = false;
+  const go = () => { if (gone || !l.isConnected) return; gone = true; if (g) g.stop(); S.game = null; if (l.animate) { l.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 260, fill: 'forwards' }); setTimeout(() => { l.remove(); onGone(); }, 270); } else { l.remove(); onGone(); } };
   if (!g || !g.played()) return go();
   // they're playing: let them finish the moment, then open Home on their tap (or after 5 quiet seconds)
   const b = $('#bg-go', l); b.style.display = 'block'; b.animate && b.animate([{ opacity: 0, translate: '0 12px' }, { opacity: 1, translate: '0 0' }], { duration: 300, easing: 'ease-out' });
@@ -1748,7 +1761,7 @@ function rHome() {
     if (s.type === 'feed') return `<section style="display:flex;flex-direction:column;gap:14px"><h2 style="margin:0 20px;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:21px">What’s new</h2>${s.cards.map((k) => { const it = k.itemId ? MENU[k.itemId] : null; return `<article ${it ? `data-card="${it.id}" role="button" tabindex="0" aria-label="${it.name}, ${money(it.price)}. Open" class="press"` : ''} style="margin:0 20px;background:${C.SURF};border-radius:22px;overflow:hidden;box-shadow:${C.EL1};${it ? 'cursor:pointer' : ''}">${photo('100%', 'sq', it ? it.name : 'the café', it ? tone(it.cat) : 'room')}<div style="padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px">${eyebrow(k.eyebrow)}<h3 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:21px">${k.title}</h3><p style="margin:0;font-size:14px;line-height:1.5;color:${C.MUT}">${k.text}</p>${it ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px"><b style="font-size:15px">${money(it.price)}</b>${addPill(it)}</div>` : ''}</div></article>`; }).join('')}</section>`;
     return '';
   }).join('');
-  $('#home-body').innerHTML = `<header style="height:64px;padding:0 12px 0 18px;display:flex;align-items:center;justify-content:space-between"><button id="b-logo" aria-label="Living Room Coffeehouse. Tap to go to the top, double-tap to refresh" style="border:0;background:none;padding:0;margin:0;position:relative;line-height:0"><img src="brand/logo-clear.png" alt="Living Room Coffeehouse" width="54" height="51" style="display:block;transform-origin:50% 80%"><span id="logo-bar" aria-hidden="true" style="position:absolute;left:4px;right:4px;bottom:-6px;height:2px;border-radius:1px;background:${C.RED};transform:scaleX(0);transform-origin:left"></span></button><button class="press" data-toast="No new notifications" aria-label="Notifications" style="width:44px;height:44px;border:0;background:transparent;display:flex;align-items:center;justify-content:center">${icon('Bell')}</button></header><div style="display:flex;flex-direction:column;gap:24px">${out}<p style="margin:8px 20px 0;font-size:11.5px;color:${C.MUT};text-align:center">Concept demo · not the official Living Room app · no real orders</p></div>`;
+  $('#home-body').innerHTML = `<header style="height:64px;padding:0 12px 0 18px;display:flex;align-items:center;justify-content:space-between"><button id="b-logo" aria-label="Living Room Coffeehouse. Tap to go to the top, double-tap to refresh" style="border:0;background:none;padding:0;margin:0;position:relative;z-index:2;line-height:0"><span aria-hidden="true" class="logo-plate"></span><img src="brand/logo-clear.png" alt="Living Room Coffeehouse" width="54" height="51" style="display:block;transform-origin:50% 80%"><span id="logo-bar" aria-hidden="true" style="position:absolute;left:4px;right:4px;bottom:-6px;height:2px;border-radius:1px;background:${C.RED};transform:scaleX(0);transform-origin:left"></span></button><button class="press" data-toast="No new notifications" aria-label="Notifications" style="width:44px;height:44px;border:0;background:transparent;display:flex;align-items:center;justify-content:center">${icon('Bell')}</button></header><div style="display:flex;flex-direction:column;gap:24px">${out}<p style="margin:8px 20px 0;font-size:11.5px;color:${C.MUT};text-align:center">Concept demo · not the official Living Room app · no real orders</p></div>`;
   if (S.kit) $('#home-body').insertAdjacentHTML('afterbegin', kitBanner(S.kit));
   if (!$('#coach')) $('#home-scroll').scrollTop = 0;
   // the logo: tap = back to the top, double-tap = refresh Home
@@ -2000,7 +2013,7 @@ function kitCSS(k) {
   const c = k.colors;
   return `.screen{background:${c.G}!important}.screen a{color:${c.RED}}#bagbar{background:${k.dark}!important}.toast{background:${k.dark}!important}
 .sheetwrap .sheet{background:${c.G}!important}#tabs{background:${k.dark}!important;border-top-color:${k.dark}!important;position:relative}
-#home-body{position:relative;isolation:isolate;background:linear-gradient(180deg, ${k.band} 0, ${k.band} 150px, ${c.G} 330px)}#home-body::before{content:'';position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;opacity:.55;background-image:url("data:image/svg+xml,${encodeURIComponent(kitTile(k))}");background-size:132px 132px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}.view{background:${c.G}}
+#home-body{--plate:${k.band};position:relative;isolation:isolate;background:linear-gradient(180deg, ${k.band} 0, ${k.band} 150px, ${c.G} 330px)}#home-body::before{content:'';position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;opacity:.55;background-image:url("data:image/svg+xml,${encodeURIComponent(kitTile(k))}");background-size:132px 132px;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}.view{background:${c.G}}
 ${k.mark ? `#v-home h2::before{content:'';display:inline-block;width:13px;height:13px;margin-right:8px;vertical-align:1px;background:url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='${c.BRASS}'>${MARK[k.mark]}</svg>`)}") center/contain no-repeat}` : ''}`;
 }
 // dress the app for the view we're going to; location screens always stay plain
@@ -3210,7 +3223,7 @@ function boot() {
   S.now = store.get('now', null);
   $$('[data-date]').forEach((b) => (b.onclick = () => { S.now = b.dataset.date ? b.dataset.date + 'T18:30:00' : null; store.set('now', S.now); S.kit = undefined; dress(S.view); syncChrome(); if (S.view === 'home') setTimeout(() => playAct(true), 400); syncPanel(); render(S.view); }));
   $$('[data-brk]').forEach((b) => (b.onclick = () => { S.avail.brkEnds = b.dataset.brk || null; $$('[data-brk]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); if (S.view === 'order') rOrder(); }));
-  const lg = $('#demo-loader'); if (lg) lg.onclick = () => { const pn = $('#panel'); if (pn) pn.classList.remove('open'); showLoader(); setTimeout(hideLoader, 8000); };
+  const lg = $('#demo-loader'); if (lg) lg.onclick = () => { const pn = $('#panel'); if (pn) pn.classList.remove('open'); S.loading = true; showLoader(); startGame(); setTimeout(() => hideLoader(() => { S.loading = false; (S.afterLoad || []).splice(0).forEach((f) => f()); if (S.view === 'home' && S.kit) playAct(true); }), 8000); };
   $$('[data-sold]').forEach((b) => (b.onclick = () => { S.avail.soldOut = new Set(b.dataset.sold ? ['shakshouka', 'breakfast-burrito', 'cold-brew', 'side-bacon'] : []); $$('[data-sold]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); if (S.view === 'order') rOrder(); }));
   $$('[data-where]').forEach((b) => (b.onclick = () => { const w = b.dataset.where; S.demoLoc = w === 'inside' || w === 'off' ? w : null; S.you = w === 'lajolla' ? [32.8455, -117.2730] : w === 'inside' ? D.cafes[0].ll : w === 'off' ? S.you : D.you; S.real = false; S.far = false; $$('[data-where]').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); if (S.view === 'home') checkNearby(); render(S.view); }));
   const pnl = $('#panel'); $('#demo-btn').onclick = () => pnl.classList.add('open'); $('#panel-x').onclick = () => pnl.classList.remove('open');
