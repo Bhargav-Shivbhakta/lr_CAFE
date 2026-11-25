@@ -70,9 +70,11 @@ function srow(id) {
 // the top: "Order", and a round search button that grows into the search bar
 function oTop() {
   const open = S.o.sOpen;
-  return `<div style="position:relative;height:48px;margin:2px 0 10px;display:flex;align-items:center">
-    <h1 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:30px;letter-spacing:-.5px;opacity:${open ? 0 : 1};transition:opacity 200ms">Order</h1>
-    <div id="o-sw" style="position:absolute;right:0;top:0;height:48px;width:${open ? '100%' : '48px'};transition:width 420ms cubic-bezier(.32,.72,0,1)">
+  // same header shape on every tab: the logo at the left (same size and place as Home), the title centered, the action on the right
+  return `<div style="position:relative;height:56px;margin:4px 0 8px;display:flex;align-items:center;justify-content:center">
+    <button id="o-logo" aria-label="Living Room Coffeehouse. Back to the top of the menu" style="position:absolute;left:-2px;top:50%;transform:translateY(-50%);border:0;background:none;padding:0;line-height:0;opacity:${open ? 0 : 1};pointer-events:${open ? 'none' : 'auto'};transition:opacity 200ms"><img src="brand/logo-clear.png" alt="" width="54" height="51" style="display:block"></button>
+    <h1 style="margin:0;font-family:Fraunces,Georgia,serif;font-weight:500;font-size:28px;letter-spacing:-.5px;text-align:center;opacity:${open ? 0 : 1};transition:opacity 200ms">Order</h1>
+    <div id="o-sw" style="position:absolute;right:0;top:4px;height:48px;width:${open ? '100%' : '48px'};transition:width 420ms cubic-bezier(.32,.72,0,1)">
       ${open ? `<label style="height:100%;display:flex;align-items:center;gap:10px;padding:0 5px 0 15px;border-radius:24px;background:${C.SURF};box-shadow:inset 0 0 0 2px ${C.INK};box-sizing:border-box">${oi('search', 19, C.INK, 2.2)}<input id="o-q" type="search" placeholder="Try “iced latte” or “vegan under $12”" aria-label="Search the menu" value="${S.o.q.replace(/"/g, '&quot;')}" style="flex:1;border:0;background:none;outline:none;font-size:15.5px;color:${C.INK};min-width:0"><button class="press" id="o-sx" aria-label="Close search" style="width:38px;height:38px;border-radius:19px;border:0;background:${C.TINT};display:flex;align-items:center;justify-content:center;flex:none">${oi('x', 16, C.INK, 2.4)}</button></label>`
       : `<button class="press" id="o-so" aria-label="Search the menu" style="width:48px;height:48px;border-radius:24px;border:0;background:${C.INK};display:flex;align-items:center;justify-content:center">${oi('search', 21, C.G, 2.2)}</button>`}
     </div></div>`;
@@ -157,6 +159,7 @@ function rOrder() {
 function wireOrder() {
   const v = $('#v-order');
   if (!S.o.sOpen) wireModeRow('o', 'o-ctx');
+  const lg = $('#o-logo'); if (lg) lg.onclick = () => { const sc = $('#order-scroll'); if (sc) sc.scrollTo({ top: 0, behavior: 'smooth' }); };
   const so = $('#o-so'); if (so) so.onclick = () => { S.o.sOpen = true; S.o.q = ''; S.ojump = true; rOrder(); setTimeout(() => { const i = $('#o-q'); if (i) i.focus(); }, 400); };
   const sx = $('#o-sx'); if (sx) sx.onclick = () => { S.o.sOpen = false; S.o.q = ''; S.ojump = true; rOrder(); };
   const q = $('#o-q'); if (q) q.oninput = () => { S.o.q = q.value; const pos = q.selectionStart; const body = $('#o-sres'); rOrderSearchOnly(pos); };

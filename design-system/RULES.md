@@ -309,3 +309,8 @@ Short, warm, plain. No exclamation marks in a row, no all-caps sentences, no emo
 - Big cards: price and dates on the left, **Add to bag** pill on the right. When the dish can't be ordered right now, the pill becomes a short note (e.g. "Sold out", "From 7 AM").
 - The Add to bag pill goes through the bag engine like every other add button (§24).
 - The daily screen check taps every card on Home and fails if one doesn't open or if Add to bag isn't on the right.
+
+## 27. Same header on every tab; quiet loading
+
+- The logo sits at the top left of every main tab, at the same size and place as on Home (54 × 51). The title is centered, and the tab's action (search on Order) sits on the right. Tapping the logo scrolls back to the top.
+- The loading screen says only "Brewing your Home…". It never says what it is waiting for (no "2 of 4 photos").
